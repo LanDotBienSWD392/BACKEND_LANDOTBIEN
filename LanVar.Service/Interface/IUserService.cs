@@ -6,6 +6,6 @@ namespace LanVar.Service.Interface;
 
 public interface IUserService
 {
-    Task<User> Register(UserRegisterRequest userRegisterRequest);
-    public Task<(string, LoginDTOResponse)> Login(LoginDTORequest loginDtoRequest);
+    Task<User> Register(UserRegisterRequest userRegisterRequest); 
+    Task<(string, LoginDTOResponse)> Login(LoginDTORequest loginDtoRequest);
 }

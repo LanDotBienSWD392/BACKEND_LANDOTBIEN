@@ -24,10 +24,18 @@ namespace LanVar.Insfrastructure.Repository
 
 		}
 
-        public void Add(TEntity entity)
+        public async Task<TEntity> Add(TEntity entity)
         {
             _context.Set<TEntity>().Add(entity);
-            _context.SaveChanges(); // Save changes synchronously
+            await _context.SaveChangesAsync(); // Save changes asynchronously
+            return entity;
+        }
+
+        public async Task<TEntity> Update(TEntity entity)
+        {
+            _context.Entry(entity).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return entity;
         }
 
 
@@ -36,12 +44,15 @@ namespace LanVar.Insfrastructure.Repository
             _context.Set<TEntity>().AddRange(entities);
         }
 
-        public IQueryable<TEntity> GetAll()
+        
+
+        public async Task<IEnumerable<TEntity>> GetAllAsync() 
         {
-            return _context.Set<TEntity>().AsQueryable();
+            return await _context.Set<TEntity>().ToListAsync();
         }
 
-        public virtual async Task<TEntity> GetById(int id)
+
+        public virtual async Task<TEntity> GetById(long id)
         {
             return await _context.Set<TEntity>().FindAsync(id);
         }
@@ -49,6 +60,19 @@ namespace LanVar.Insfrastructure.Repository
         public void Remove(TEntity entity)
         {
             _context.Set<TEntity>().Remove(entity);
+        }
+
+        public async Task<bool> Delete(long id)
+        {
+            var entity = await dbSet.FindAsync(id);
+            if (entity == null)
+            {
+                return false; // Entity not found, return false
+            }
+
+            dbSet.Remove(entity);
+            await _context.SaveChangesAsync();
+            return true; // Entity successfully deleted
         }
 
         public void RemoveRange(IEnumerable<TEntity> entities)

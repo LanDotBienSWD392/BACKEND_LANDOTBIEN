@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using AutoMapper;
 using LanVar.Core.Entity;
 using LanVar.Core.Interfaces;
@@ -57,7 +58,7 @@ namespace LanVar.Service.Service
 			user.Image = "nguyen rua anh nao de image laf required";
 			user.Package_id = 1;
 			
-			_userRepository.Add(user);
+			await _userRepository.Add(user);
 			return user;
 		}
 
@@ -70,13 +71,13 @@ namespace LanVar.Service.Service
 			);
 			if (!check.Any())
 			{
-				throw new CustomException.InvalidDataException($"Username or password error");
+				throw new CustomException.InvalidDataException(HttpStatusCode.BadRequest.ToString(),$"Username or password error");
 			}
 
 			User user = check.First();
 			if (user.Status == false)
 			{
-				throw new CustomException.InvalidDataException($"User is not active");
+				throw new CustomException.InvalidDataException(HttpStatusCode.BadRequest.ToString(),$"User is not active");
 			}
 
 			LoginDTOResponse loginDtoResponse = _mapper.Map<LoginDTOResponse>(user);
