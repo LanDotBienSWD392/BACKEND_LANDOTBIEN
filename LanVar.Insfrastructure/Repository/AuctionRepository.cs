@@ -7,10 +7,10 @@ namespace LanVar.Insfrastructure.Repository
 {
 	public class AuctionRepository : GenericRepository<Auction>, IAuctionRepository
 	{
-        private readonly ILogger<AuctionRepository> _logger;
-        public AuctionRepository(MyDbContext context, ILogger<AuctionRepository> logger) : base(context, logger)
+       
+        public AuctionRepository(MyDbContext context) : base(context)
 		{
-			_logger = logger;
+			
 		}
 	}
 }

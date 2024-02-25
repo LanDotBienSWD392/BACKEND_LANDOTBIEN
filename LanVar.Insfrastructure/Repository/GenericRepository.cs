@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq.Expressions;
 using LanVar.Core.Entity;
 using LanVar.Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -10,15 +11,15 @@ namespace LanVar.Insfrastructure.Repository
 	{
         protected MyDbContext _context;
         protected DbSet<TEntity> dbSet;
-        protected readonly ILogger _logger;
+        
         public GenericRepository(
-            MyDbContext context,
-            ILogger logger
+            MyDbContext context
+            
             
             )
 		{
             _context = context;
-            _logger = logger;
+            
             dbSet = _context.Set<TEntity>();
 
 		}
@@ -26,7 +27,9 @@ namespace LanVar.Insfrastructure.Repository
         public void Add(TEntity entity)
         {
             _context.Set<TEntity>().Add(entity);
+            _context.SaveChanges(); // Save changes synchronously
         }
+
 
         public void AddRange(IEnumerable<TEntity> entities)
         {
@@ -51,6 +54,14 @@ namespace LanVar.Insfrastructure.Repository
         public void RemoveRange(IEnumerable<TEntity> entities)
         {
             _context.Set<TEntity>().RemoveRange(entities);
+        }
+
+        public async Task<IEnumerable<TEntity>> GetByFilterAsync(Expression<Func<TEntity, bool>> filterExpression)
+        {
+            var query = _context.Set<TEntity>().Where(filterExpression);
+            var queryableType = query.GetType().GetProperty("ElementType");
+            // use queryableType here
+            return await query.ToListAsync();
         }
     }
 }
