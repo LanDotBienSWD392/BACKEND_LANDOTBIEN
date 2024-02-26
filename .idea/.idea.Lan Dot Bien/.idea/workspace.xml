@@ -11,15 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/LanDotBien_BackEnd.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/LanDotBien_BackEnd.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IGenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Interfaces/IGenericRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Service/Interface/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Interface/IUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Service/LanVar.Service.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/LanVar.Service.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Service/Service/UserPermissionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Service/UserPermissionService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Service/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Service/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Tools/CustomException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/Tools/CustomException.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +45,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/87bed8ddb3a8426686194432a8407b75d82200/83/052ec8b7/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Migrations/20240224100130_initial.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Migrations/MyDbContextModelSnapshot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Volumes/Hoaq's Gke dit bu/FU/Kì 7/SWD391/BackEnd_LANDOTBIEN/Tools/Tools/CustomException.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -161,7 +153,8 @@
       <workItem from="1708875729018" duration="1151000" />
       <workItem from="1708876934373" duration="54000" />
       <workItem from="1708877021532" duration="3182000" />
-      <workItem from="1708880229879" duration="2584000" />
+      <workItem from="1708880229879" duration="3227000" />
+      <workItem from="1708933656705" duration="4007000" />
     </task>
     <task id="LOCAL-00001" summary="add login, generate jwt and register, check validate, custom error, delete ILogger in repository">
       <option name="closed" value="true" />
@@ -171,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708845731220</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add crud for role and api response, update more function for generic repository">
+      <option name="closed" value="true" />
+      <created>1708882897675</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1708882897675</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +195,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="fix setting in Program.cs" />
     <MESSAGE value="add login, generate jwt and register, check validate, custom error, delete ILogger in repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="add login, generate jwt and register, check validate, custom error, delete ILogger in repository" />
+    <MESSAGE value="add crud for role and api response, update more function for generic repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="add crud for role and api response, update more function for generic repository" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
