@@ -9,9 +9,9 @@ namespace LanVar.Insfrastructure.Repository
     public class BillRepository : GenericRepository<Bill>, IBillRepository
     {
         private readonly ILogger<BillRepository> _logger;
-        public BillRepository(MyDbContext context, ILogger<BillRepository> logger) : base(context, logger)
+        public BillRepository(MyDbContext context) : base(context)
         {
-            _logger = logger;
+            
         }
     }
 }

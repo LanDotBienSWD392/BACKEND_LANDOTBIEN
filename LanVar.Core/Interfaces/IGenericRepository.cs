@@ -5,12 +5,16 @@ namespace LanVar.Core.Interfaces
 {
     public interface IGenericRepository<TEntity> where TEntity : class
     {
-        IQueryable<TEntity> GetAll();
-        Task<TEntity> GetById(int id);
-        void Add(TEntity entity);
+        
+        public Task<IEnumerable<TEntity>> GetAllAsync();
+        Task<TEntity> GetById(long id);
+        Task<TEntity> Add(TEntity entity);
+        Task<TEntity> Update(TEntity entity);
         void AddRange(IEnumerable<TEntity> entities);
         void Remove(TEntity entity);
+        Task<bool> Delete(long id);
         void RemoveRange(IEnumerable<TEntity> entities);
+        Task<IEnumerable<TEntity>> GetByFilterAsync(Expression<Func<TEntity, bool>> filterExpression);
     }
 }
 

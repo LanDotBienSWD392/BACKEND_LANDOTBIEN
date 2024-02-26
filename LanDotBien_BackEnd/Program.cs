@@ -8,6 +8,8 @@ using LanVar.Service.Service;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
+using System.Reflection;
+using LanVar.Service.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,30 +26,36 @@ builder.Services.AddDbContext<MyDbContext>(options =>
 }
 );
 
-builder.Services.AddTransient<IAuctionRepository, AuctionRepository>();
-builder.Services.AddTransient<IBidRepository, BidRepository>();
-builder.Services.AddTransient<IBillRepository, BillRepository>();
-builder.Services.AddTransient<ICartRepository, CartRepository>();
-builder.Services.AddTransient<IOrderRepository, OrderRepository>();
-builder.Services.AddTransient<IOrderItemRepository, OrderItemRepository>();
-builder.Services.AddTransient<IPackageRepository, PackageRepository>();
-builder.Services.AddTransient<IProductRepository, ProductRepository>();
-builder.Services.AddTransient<IRoomRegistrationsRepository, RoomRegistrationsRepository>();
-builder.Services.AddTransient<IUserRepository, UserRepository>();
-builder.Services.AddTransient<IUserPermissionRepository, UserPermissionRepository>();
+builder.Services.AddScoped<IAuctionRepository, AuctionRepository>();
+builder.Services.AddScoped<IBidRepository, BidRepository>();
+builder.Services.AddScoped<IBillRepository, BillRepository>();
+builder.Services.AddScoped<ICartRepository, CartRepository>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IOrderItemRepository, OrderItemRepository>();
+builder.Services.AddScoped<IPackageRepository, PackageRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IRoomRegistrationsRepository, RoomRegistrationsRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserPermissionRepository, UserPermissionRepository>();
 
-builder.Services.AddTransient<UserService>();
+builder.Services.AddScoped<IUserService,UserService>();
+builder.Services.AddScoped<IUserPermissionService, UserPermissionService>();
+builder.Services.AddScoped<IPackageService, PackageService>();
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 //sau class service cuar ai tu add vao day
+
 
 var config = new MapperConfiguration(cfg =>
 {
     cfg.AddProfile(new AutoMapperProfile());
 });
+builder.Services.AddSingleton<IMapper>(config.CreateMapper());
 
-var app = builder.Build();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

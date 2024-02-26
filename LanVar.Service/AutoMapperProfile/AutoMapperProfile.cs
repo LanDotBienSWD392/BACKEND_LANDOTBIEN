@@ -1,5 +1,8 @@
 ﻿using System;
 using AutoMapper;
+using LanVar.Core.Entity;
+using LanVar.Service.DTO;
+using LanVar.Service.DTO.response;
 
 namespace LanVar.Service.AutoMapperProfile
 {
@@ -7,6 +10,9 @@ namespace LanVar.Service.AutoMapperProfile
 	{
 		public AutoMapperProfile()
 		{
+			CreateMap<UserRegisterRequest, User>().ReverseMap();
+			CreateMap<LoginDTORequest, User>().ReverseMap();
+			CreateMap<LoginDTOResponse, User>().ReverseMap();
 		}
 	}
 }
