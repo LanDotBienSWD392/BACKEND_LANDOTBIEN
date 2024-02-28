@@ -7,10 +7,10 @@ namespace LanVar.Insfrastructure.Repository
 {
 	public class OrderItemRepository : GenericRepository<OrderItem>, IOrderItemRepository
     {
-        private readonly ILogger<OrderItemRepository> _logger;
-        public OrderItemRepository(MyDbContext context, ILogger<OrderItemRepository> logger) : base(context, logger)
+        
+        public OrderItemRepository(MyDbContext context, ILogger<OrderItemRepository> logger) : base(context)
         {
-            _logger = logger;
+            
         }
 	}
 }

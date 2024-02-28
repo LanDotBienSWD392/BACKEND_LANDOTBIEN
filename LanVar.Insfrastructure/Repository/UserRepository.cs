@@ -1,17 +1,21 @@
 ﻿using System;
+using System.Linq.Expressions;
 using LanVar.Core.Entity;
 using LanVar.Core.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace LanVar.Insfrastructure.Repository
 {
 	public class UserRepository : GenericRepository<User>, IUserRepository
     {
-        private readonly ILogger<UserRepository> _logger;
-        public UserRepository(MyDbContext context, ILogger<UserRepository> logger) : base(context, logger)
+        
+        public UserRepository(MyDbContext context) : base(context)
         {
-            _logger = logger;
+            
         }
+
+        
 	}
 }
 

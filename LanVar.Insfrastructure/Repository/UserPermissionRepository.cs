@@ -7,10 +7,10 @@ namespace LanVar.Insfrastructure.Repository
 {
 	public class UserPermissionRepository : GenericRepository<UserPermission>, IUserPermissionRepository
     {
-        private readonly ILogger<UserPermissionRepository> _logger;
-        public UserPermissionRepository(MyDbContext context, ILogger<UserPermissionRepository> logger) : base(context, logger)
+        
+        public UserPermissionRepository(MyDbContext context) : base(context)
         {
-            _logger = logger;
+            
         }
 	}
 }

@@ -7,10 +7,10 @@ namespace LanVar.Insfrastructure.Repository
 {
 	public class BidRepository : GenericRepository<Bid>, IBidRepository
 	{
-        private readonly ILogger<BidRepository> _logger;
-        public BidRepository(MyDbContext context, ILogger<BidRepository> logger) : base(context, logger)
+        
+        public BidRepository(MyDbContext context) : base(context)
         {
-            _logger = logger;
+            
         }
 	}
 }

@@ -9,14 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="fix setting in Program.cs">
+    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="main" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -25,8 +27,25 @@
       </map>
     </option>
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;hoaq139&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="d3343411-4217-4fac-8a63-c710f37c0d61" />
+        <option name="url" value="https://github.com/LanDotBienSWD392/BackEnd_LANDOTBIEN.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Volumes/Hoaq's Gke dit bu/FU/Kì 7/SWD391/BackEnd_LANDOTBIEN/LanDotBien_BackEnd/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/87bed8ddb3a8426686194432a8407b75d82200/83/052ec8b7/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Migrations/20240224100130_initial.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Migrations/MyDbContextModelSnapshot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Volumes/Hoaq's Gke dit bu/FU/Kì 7/SWD391/BackEnd_LANDOTBIEN/Tools/Tools/CustomException.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -56,10 +75,13 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;HotReloadSettingsPage&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;C#&quot;
+    ],
     &quot;rider.external.source.directories&quot;: [
       &quot;/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
       &quot;/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
@@ -124,7 +146,33 @@
       <updated>1708765086134</updated>
       <workItem from="1708765087072" duration="275000" />
       <workItem from="1708783882037" duration="881000" />
+      <workItem from="1708788572971" duration="17438000" />
+      <workItem from="1708841555168" duration="4594000" />
+      <workItem from="1708855974721" duration="82000" />
+      <workItem from="1708856513540" duration="7014000" />
+      <workItem from="1708875729018" duration="1151000" />
+      <workItem from="1708876934373" duration="54000" />
+      <workItem from="1708877021532" duration="3182000" />
+      <workItem from="1708880229879" duration="3227000" />
+      <workItem from="1708933656705" duration="4007000" />
     </task>
+    <task id="LOCAL-00001" summary="add login, generate jwt and register, check validate, custom error, delete ILogger in repository">
+      <option name="closed" value="true" />
+      <created>1708845731220</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708845731220</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add crud for role and api response, update more function for generic repository">
+      <option name="closed" value="true" />
+      <created>1708882897675</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1708882897675</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +194,12 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="fix setting in Program.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix setting in Program.cs" />
+    <MESSAGE value="add login, generate jwt and register, check validate, custom error, delete ILogger in repository" />
+    <MESSAGE value="add crud for role and api response, update more function for generic repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="add crud for role and api response, update more function for generic repository" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
