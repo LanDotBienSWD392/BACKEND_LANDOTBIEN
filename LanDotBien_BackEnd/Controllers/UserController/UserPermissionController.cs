@@ -6,7 +6,7 @@ using LanVar.Service.Service;
 using Microsoft.AspNetCore.Mvc;
 using Tools.Tools;
 
-namespace LanDotBien_BackEnd.Controllers;
+namespace LanDotBien_BackEnd.Controllers.UserController;
 [Route("api/[controller]")]
 [ApiController]
 public class UserPermissionController : ControllerBase
@@ -21,8 +21,8 @@ public class UserPermissionController : ControllerBase
     [HttpPost("AddUserRole")]
     public async Task<IActionResult> UserPermissionAdd(UserPermission userPermission)
     {
-        
-        
+
+
         try
         {
             var role = await _userPermissionService.AddUserPermission(userPermission);
@@ -34,9 +34,9 @@ public class UserPermissionController : ControllerBase
             var response = new ApiResponse<UserPermission>(HttpStatusCode.Conflict, ex.Message);
             return BadRequest(response); // Trả về lỗi 400 Bad Request với thông báo lỗi
         }
-        
 
-        
+
+
     }
 
     [HttpGet("GetAllUserRole")]
@@ -54,7 +54,7 @@ public class UserPermissionController : ControllerBase
             var response = new ApiResponse<UserPermission>(updatedRole, HttpStatusCode.Accepted);
             return Ok(response); // Return success result with the updated UserPermission data
         }
-        
+
         catch (CustomException.InvalidDataException ex)
         {
             var response = new ApiResponse<UserPermission>(HttpStatusCode.Conflict, ex.Message);
@@ -68,10 +68,10 @@ public class UserPermissionController : ControllerBase
         try
         {
             var deleted = await _userPermissionService.DeleteRole(id);
-            
-                var response = new ApiResponse<string>("Role deleted successfully", HttpStatusCode.OK);
-                return Ok(response);
-            
+
+            var response = new ApiResponse<string>("Role deleted successfully", HttpStatusCode.OK);
+            return Ok(response);
+
         }
         catch (CustomException.InvalidDataException ex)
         {

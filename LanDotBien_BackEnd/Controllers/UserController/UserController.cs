@@ -4,7 +4,7 @@ using LanVar.Service.DTO.response;
 using LanVar.Service.Interface;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LanDotBien_BackEnd.Controllers;
+namespace LanDotBien_BackEnd.Controllers.UserController;
 [Route("api/[controller]")]
 [ApiController]
 public class UserController : ControllerBase
