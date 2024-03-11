@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace LanDotBien_BackEnd.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class dante : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
