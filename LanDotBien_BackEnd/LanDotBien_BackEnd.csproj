@@ -33,17 +33,12 @@
     <ProjectReference Include="..\LanVar.Core\LanVar.Core.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\LanVar.Insfrastructure\LanVar.Insfrastructure.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
-    <ProjectReference Include="..\LanVar.Service\LanVar.Service.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
+    <ProjectReference Include="..\LanVar.Insfrastructure\LanVar.Insfrastructure.csproj" />
+    <ProjectReference Include="..\LanVar.Service\LanVar.Service.csproj" />
     <ProjectReference Include="..\Tools\Tools.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\AdminController\" />
     <Folder Include="Controllers\ManagerController\" />
     <Folder Include="Controllers\GuestController\" />
     <Folder Include="Controllers\CustomerController\" />
