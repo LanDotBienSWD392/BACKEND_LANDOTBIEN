@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+﻿using LanVar.Core.Entity;
+using LanVar.Service.Interface;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace LanDotBien_BackEnd.Controllers.AdminController
 {
@@ -8,36 +10,93 @@ namespace LanDotBien_BackEnd.Controllers.AdminController
     [ApiController]
     public class Manage_Manager_Accounts : ControllerBase
     {
-        // GET: api/<Manage_Manager_Accounts>
-        [HttpGet]
-        public IEnumerable<string> GetAllUser()
+        private readonly IAccountService _accountService;
+
+        public Manage_Manager_Accounts(IAccountService accountService)
         {
-            return new string[] { "value1", "value2" };
+            _accountService = accountService;
         }
 
-        // GET api/<Manage_Manager_Accounts>/5
-        [HttpGet("{id}")]
-        public string GetUserById(int id)
+        [HttpGet("GetAllUser")]
+        public async Task<IEnumerable<User>> GetAllUser()
         {
-            return "value";
+            return await _accountService.GetAllUsers();
         }
 
-        // POST api/<Manage_Manager_Accounts>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpGet("GetUserById/{id}")]
+        public async Task<IActionResult> GetUserById(long id)
         {
+            var user = await _accountService.GetUserById(id);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(user);
         }
 
-        // PUT api/<Manage_Manager_Accounts>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPost("CreateUser")]
+        public async Task<IActionResult> Post([FromBody] User user)
         {
+            var addedUser = await _accountService.AddUser(user);
+            return CreatedAtAction(nameof(GetUserById), new { id = addedUser.id }, addedUser);
         }
 
-        // DELETE api/<Manage_Manager_Accounts>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpPut("UpdateUser/{id}")]
+        public async Task<IActionResult> Put(long id, [FromBody] User user)
         {
+            var updatedUser = await _accountService.UpdateUser(id, user);
+
+            if (updatedUser == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(updatedUser);
+        }
+
+        [HttpPut("DeactivateUser/{id}")]
+        public async Task<IActionResult> DeactivateUser(long id)
+        {
+            var result = await _accountService.DeactivateUser(id);
+
+            if (result)
+            {
+                return Ok("Tài khoản đã bị khóa.");
+            }
+            else
+            {
+                return NotFound("Không tìm thấy tài khoản.");
+            }
+        }
+
+        [HttpPut("ActivateUser/{id}")]
+        public async Task<IActionResult> ActivateUser(long id)
+        {
+            var result = await _accountService.ActivateUser(id);
+
+            if (result)
+            {
+                return Ok("Tài khoản đã được kích hoạt.");
+            }
+            else
+            {
+                return NotFound("Không tìm thấy tài khoản.");
+            }
+        }
+
+        [HttpDelete("DeleteUser{id}")]
+        public async Task<IActionResult> DeleteUser(long id)
+        {
+            var result = await _accountService.DeactivateUser(id);
+
+            if (!result)
+            {
+                return NotFound();
+            }
+
+            return NoContent();
         }
     }
 }
