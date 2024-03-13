@@ -2,6 +2,7 @@ using System.Net;
 using LanVar.Core.Entity;
 using LanVar.Service.DTO.response;
 using LanVar.Service.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Tools.Tools;
 
@@ -32,6 +33,7 @@ public class PackageController : ControllerBase
         }
         
     }
+    [Authorize]
     [HttpGet("GetAllPackage")]
     public async Task<IActionResult> GetAllPackage()
     {
