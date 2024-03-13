@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+﻿using LanVar.Core.Entity;
+using LanVar.Core.Interfaces;
+using LanVar.Insfrastructure.Repository;
+using LanVar.Service.Interface;
+using LanVar.Service.Service;
+using Microsoft.AspNetCore.Mvc;
 
 namespace LanDotBien_BackEnd.Controllers.CustomerController
 {
@@ -8,36 +11,60 @@ namespace LanDotBien_BackEnd.Controllers.CustomerController
     [ApiController]
     public class SearchAndBuyProduct : ControllerBase
     {
-        // GET: api/<SearchAndBuyProduct>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private readonly IProductService _productService;
+
+        public SearchAndBuyProduct(IProductService productService)
         {
-            return new string[] { "value1", "value2" };
+            _productService = productService;
         }
 
-        // GET api/<SearchAndBuyProduct>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("GetAllProducts")]
+        public async Task<IActionResult> GetAllProducts()
         {
-            return "value";
+            try
+            {
+                var products = await _productService.GetAllProducts();
+                return Ok(products);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
 
-        // POST api/<SearchAndBuyProduct>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("SearchProducts")]
+        public async Task<IActionResult> SearchProductsAsync(SearchProductDTORequest searchRequest)
         {
+            try
+            {
+                var results = await _productService.SearchProductsAsync(searchRequest);
+                return Ok(results);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
 
-        // PUT api/<SearchAndBuyProduct>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPost("BuyProduct/{productId}")]
+        public async Task<IActionResult> BuyProduct(int productId)
         {
-        }
-
-        // DELETE api/<SearchAndBuyProduct>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            try
+            {
+                var result = await _productService.BuyProductAsync(productId);
+                if (result)
+                {
+                    return Ok("Product purchased successfully.");
+                }
+                else
+                {
+                    return NotFound("Product not found or unable to purchase.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
     }
 }

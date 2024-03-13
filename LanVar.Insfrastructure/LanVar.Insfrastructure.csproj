@@ -14,5 +14,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LanVar.Core\LanVar.Core.csproj" />
+    <ProjectReference Include="..\LanVar.Service\LanVar.Service.csproj" />
   </ItemGroup>
 </Project>

@@ -1,96 +1,75 @@
-﻿using LanVar.Core.Entity;
-using LanVar.Service.Interface;
-using Microsoft.EntityFrameworkCore;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using LanVar.Core.Entity;
+using LanVar.Core.Interfaces;
+using LanVar.Service.DTO;
+using LanVar.Service.DTO.request;
+using LanVar.Service.Interface;
 
 namespace LanVar.Service.Implementation
 {
     public class AccountService : IAccountService
     {
-        private readonly MyDbContext _myDbContext;
+        private readonly IUserRepository _userRepository;
+        private readonly IMapper _mapper;
 
-        public AccountService(MyDbContext dbContext)
+        public AccountService(IUserRepository userRepository, IMapper mapper)
         {
-            _myDbContext = dbContext;
+            _userRepository = userRepository;
+            _mapper = mapper;
         }
 
-        public async Task<User> AddUser(User user)
+        public async Task<User> CreateUser(UserRegisterRequest userRegisterRequest)
         {
-            _myDbContext.Users.Add(user);
-            await _myDbContext.SaveChangesAsync();
-            return user;
+            var user = _mapper.Map<User>(userRegisterRequest);
+            var addedUser = await _userRepository.AddAsync(user);
+            await _userRepository.SaveChangesAsync();
+            return addedUser;
         }
 
         public async Task<IEnumerable<User>> GetAllUsers()
         {
-            return await _myDbContext.Users.ToListAsync();
+            return await _userRepository.GetAllAsync();
         }
 
         public async Task<User> GetUserById(long id)
         {
-            return await _myDbContext.Users.FindAsync(id);
+            return await _userRepository.GetByIdAsync(id);
         }
 
-        public async Task<User> UpdateUser(long id, User updatedUser)
+        public async Task<User> UpdateUser(long id, UpdateUserDTORequest updateUserDTORequest)
         {
-            var existingUser = await _myDbContext.Users.FindAsync(id);
-
-            if (existingUser == null)
+            var userToUpdate = await _userRepository.GetByIdAsync(id);
+            if (userToUpdate == null)
             {
-                // Handle not found scenario, có thể trả về null hoặc thực hiện xử lý phù hợp
-                return null;
+                return null; // User not found
             }
 
-            _myDbContext.Entry(existingUser).CurrentValues.SetValues(updatedUser);
+            _mapper.Map(updateUserDTORequest, userToUpdate);
 
-            await _myDbContext.SaveChangesAsync();
-            return existingUser;
+            _userRepository.Update(userToUpdate);
+            await _userRepository.SaveChangesAsync();
+            return userToUpdate;
         }
 
         public async Task<bool> DeactivateUser(long id)
         {
-            var user = await _myDbContext.Users.FindAsync(id);
-
-            if (user == null)
-            {
-                // Handle not found scenario
-                return false;
-            }
-
-            user.Status = false; // Assuming 'Status' is a property representing user's active status
-            await _myDbContext.SaveChangesAsync();
-            return true;
+            var success = await _userRepository.DeactivateUser(id);
+            return success;
         }
 
         public async Task<bool> ActivateUser(long id)
         {
-            var user = await _myDbContext.Users.FindAsync(id);
-
-            if (user == null)
-            {
-                // Handle not found scenario
-                return false;
-            }
-
-            user.Status = true; // Assuming 'Status' is a property representing user's active status
-            await _myDbContext.SaveChangesAsync();
-            return true;
+            var success = await _userRepository.ActivateUser(id);
+            return success;
         }
-        public async Task<User> DeleteUser(long id)
+
+        public async Task<bool> DeleteUser(long id)
         {
-            var user = await _myDbContext.Users.FindAsync(id);
-
-            if (user == null)
-            {
-                // Handle not found scenario
-                return null;
-            }
-
-            _myDbContext.Users.Remove(user);
-            await _myDbContext.SaveChangesAsync();
-            return user;
+            var success = await _userRepository.DeleteUser(id);
+            return success;
         }
     }
 }

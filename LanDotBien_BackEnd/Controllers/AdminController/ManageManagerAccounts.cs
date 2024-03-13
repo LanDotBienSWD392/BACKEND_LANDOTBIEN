@@ -1,6 +1,9 @@
 ﻿using LanVar.Core.Entity;
+using LanVar.Service.DTO;
+using LanVar.Service.DTO.request;
 using LanVar.Service.Interface;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -18,85 +21,121 @@ namespace LanDotBien_BackEnd.Controllers.AdminController
         }
 
         [HttpGet("GetAllUser")]
-        public async Task<IEnumerable<User>> GetAllUser()
+        public async Task<IActionResult> GetAllUser()
         {
-            return await _accountService.GetAllUsers();
+            try
+            {
+                var users = await _accountService.GetAllUsers();
+                return Ok(users);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
 
         [HttpGet("GetUserById/{id}")]
         public async Task<IActionResult> GetUserById(long id)
         {
-            var user = await _accountService.GetUserById(id);
-
-            if (user == null)
+            try
             {
-                return NotFound();
+                var user = await _accountService.GetUserById(id);
+                if (user == null)
+                {
+                    return NotFound();
+                }
+                return Ok(user);
             }
-
-            return Ok(user);
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
 
         [HttpPost("CreateUser")]
-        public async Task<IActionResult> Post([FromBody] User user)
+        public async Task<IActionResult> CreateUser([FromBody] UserRegisterRequest userRegisterRequest)
         {
-            var addedUser = await _accountService.AddUser(user);
-            return CreatedAtAction(nameof(GetUserById), new { id = addedUser.id }, addedUser);
+            try
+            {
+                var createdUser = await _accountService.CreateUser(userRegisterRequest);
+                return CreatedAtAction(nameof(GetUserById), new { id = createdUser.id }, createdUser);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
 
         [HttpPut("UpdateUser/{id}")]
-        public async Task<IActionResult> Put(long id, [FromBody] User user)
+        public async Task<IActionResult> UpdateUser(long id, [FromBody] UpdateUserDTORequest updateUserDTORequest)
         {
-            var updatedUser = await _accountService.UpdateUser(id, user);
-
-            if (updatedUser == null)
+            try
             {
-                return NotFound();
+                var updatedUser = await _accountService.UpdateUser(id, updateUserDTORequest);
+                if (updatedUser == null)
+                {
+                    return NotFound();
+                }
+                return Ok(updatedUser);
             }
-
-            return Ok(updatedUser);
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
 
         [HttpPut("DeactivateUser/{id}")]
         public async Task<IActionResult> DeactivateUser(long id)
         {
-            var result = await _accountService.DeactivateUser(id);
-
-            if (result)
+            try
             {
-                return Ok("Tài khoản đã bị khóa.");
+                var result = await _accountService.DeactivateUser(id);
+                if (!result)
+                {
+                    return NotFound();
+                }
+                return Ok(new { message = "User deactivated successfully." });
             }
-            else
+            catch (Exception ex)
             {
-                return NotFound("Không tìm thấy tài khoản.");
+                return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
 
         [HttpPut("ActivateUser/{id}")]
         public async Task<IActionResult> ActivateUser(long id)
         {
-            var result = await _accountService.ActivateUser(id);
-
-            if (result)
+            try
             {
-                return Ok("Tài khoản đã được kích hoạt.");
+                var result = await _accountService.ActivateUser(id);
+                if (!result)
+                {
+                    return NotFound();
+                }
+                return Ok(new { message = "User activated successfully." });
             }
-            else
+            catch (Exception ex)
             {
-                return NotFound("Không tìm thấy tài khoản.");
+                return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
 
-        [HttpDelete("DeleteUser{id}")]
+        [HttpDelete("DeleteUser/{id}")]
         public async Task<IActionResult> DeleteUser(long id)
         {
-            var result = await _accountService.DeactivateUser(id);
-
-            if (!result)
+            try
             {
-                return NotFound();
+                var deletedUser = await _accountService.DeleteUser(id);
+                if (deletedUser == null)
+                {
+                    return NotFound();
+                }
+                return Ok(new { message = "User deleted successfully." });
             }
-
-            return NoContent();
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
     }
 }
