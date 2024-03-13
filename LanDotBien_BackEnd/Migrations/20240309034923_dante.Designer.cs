@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LanDotBien_BackEnd.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20240224100130_initial")]
-    partial class initial
+    [Migration("20240309034923_dante")]
+    partial class dante
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
