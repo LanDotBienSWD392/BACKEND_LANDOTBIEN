@@ -40,13 +40,13 @@ namespace Tools.Tools;
 
             List<Claim> claims = new List<Claim>
             {
-                new Claim("id", user.id.ToString()),
+                new Claim(ClaimTypes.Sid, user.id.ToString()),
                 new Claim("Name", user.Username),
                 new Claim(ClaimTypes.Role, role.Role)
             };
 
             var token = new JwtSecurityToken(
-                _configuration["Jwt:Issuer"], 
+                _configuration["Jwt:Issuer"],     
                 _configuration["Jwt:Audience"],
                 claims: claims,
                 expires: DateTime.Now.AddHours(hour),

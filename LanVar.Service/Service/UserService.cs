@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Net;
+using System.Security.Claims;
 using AutoMapper;
 using LanVar.Core.Entity;
 using LanVar.Core.Interfaces;
 using LanVar.Service.DTO;
 using LanVar.Service.DTO.response;
 using LanVar.Service.Interface;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Tools.Tools;
 
@@ -18,12 +20,15 @@ namespace LanVar.Service.Service
 		private readonly IGenericRepository<User> _genericRepository;
 		private readonly IConfiguration _configuration;
 		private readonly IMapper _mapper;
+		private readonly IHttpContextAccessor _httpContextAccessor;
 		public UserService(
 			IUserRepository userRepository,
 			IMapper mapper,
 			IGenericRepository<User> genericRepository,
 			IConfiguration configuration,
-			IUserPermissionRepository userPermissionRepository
+			IUserPermissionRepository userPermissionRepository,
+			IHttpContextAccessor httpContextAccessor
+			
 			)
 		{
 			_userRepository = userRepository;
@@ -31,6 +36,7 @@ namespace LanVar.Service.Service
 			_configuration = configuration;
 			_genericRepository = genericRepository;
 			_userPermissionRepository = userPermissionRepository;
+			_httpContextAccessor = httpContextAccessor;
 		}
 
 		public async Task<User> Register(UserRegisterRequest userRegisterRequest)
@@ -85,6 +91,22 @@ namespace LanVar.Service.Service
 			string token = await authentication.GenerateJwtToken(user, 15);
 			return (token, loginDtoResponse);
 		}
+
+		
+		public string GetUserID()
+		{
+			var result = string.Empty;
+			if (_httpContextAccessor.HttpContext != null)
+			{
+				var claim = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Sid);
+				if (claim != null)
+				{
+					result = claim.Value;
+				}
+			}
+			return result;
+		}
+
 	}
 }
 

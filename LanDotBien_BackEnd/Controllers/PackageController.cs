@@ -33,7 +33,7 @@ public class PackageController : ControllerBase
         }
         
     }
-    [Authorize(Roles = "Customer")]
+    [Authorize(Roles = "Admin")]
     [HttpGet("GetAllPackage")]
     public async Task<IActionResult> GetAllPackage()
     {

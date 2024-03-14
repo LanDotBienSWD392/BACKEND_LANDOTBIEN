@@ -3,6 +3,7 @@ using LanVar.Core.Entity;
 using LanVar.Service.DTO;
 using LanVar.Service.DTO.response;
 using LanVar.Service.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LanDotBien_BackEnd.Controllers.UserController;
@@ -19,18 +20,23 @@ public class UserController : ControllerBase
         _httpContextAccessor = httpContextAccessor;
     }
     [HttpGet("CurrentUser")]
-    public IActionResult GetCurrentLoggedInUser()
+    public ActionResult<string> GetCurrentLoggedInUser()
     {
-        var userId = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        // You can extract other user information similarly from claims
-
-        if (userId == null)
+        try
         {
-            return NotFound(); // or any other appropriate response
-        }
+            var userId = _userService.GetUserID();
 
-        return Ok(userId);
+            return Ok(new { UserId = userId });
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
     }
+
+
+
+
 
     [HttpPost("Register")]
     public async Task<IActionResult> Register(UserRegisterRequest userRegisterRequest)
