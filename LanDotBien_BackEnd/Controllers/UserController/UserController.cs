@@ -1,7 +1,7 @@
 using System.Security.Claims;
 using LanVar.Core.Entity;
-using LanVar.Service.DTO;
-using LanVar.Service.DTO.response;
+using LanVar.DTO.DTO.request;
+using LanVar.DTO.DTO.response;
 using LanVar.Service.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -19,7 +19,7 @@ public class UserController : ControllerBase
         _userService = userService;
         _httpContextAccessor = httpContextAccessor;
     }
-    [HttpGet("CurrentUser")]
+    [HttpGet("CurrentUser"), Authorize]
     public ActionResult<string> GetCurrentLoggedInUser()
     {
         try

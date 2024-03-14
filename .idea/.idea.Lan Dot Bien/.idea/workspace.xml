@@ -11,11 +11,20 @@
   <component name="ChangeListManager">
     <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="fix jwt, add more user information to jwt">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lan Dot Bien.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Lan Dot Bien.sln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/PackageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/PackageController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/UserController/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/UserController/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/UserController/UserPermissionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/UserController/UserPermissionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/LanDotBien_BackEnd.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/LanDotBien_BackEnd.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Service/AutoMapperProfile/AutoMapperProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/AutoMapperProfile/AutoMapperProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Service/DTO/request/LoginDTORequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/DTO/request/LoginDTORequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Service/DTO/request/UserRegisterRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/DTO/request/UserRegisterRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Service/DTO/response/ApiResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/DTO/response/ApiResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Service/DTO/response/LoginDTOResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/DTO/response/LoginDTOResponse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LanVar.Service/Interface/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Interface/IUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Service/LanVar.Service.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/LanVar.Service.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LanVar.Service/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Service/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Tools/Authentication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/Tools/Authentication.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,15 +64,18 @@
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanVar.Core/Entity/MyDbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Core/Entity/Order.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Core/Entity/Product.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Core/Entity/User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/BidRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/CartRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/ProductRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Service/Class1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Service/Service/UserPermissionService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Service/Service/UserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Volumes/Hoaq's Gke dit bu/FU/Kì 7/SWD391/BackEnd_LANDOTBIEN/Tools/Tools/Authentication.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/Tools/Authentication.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -82,33 +94,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.LanDotBien_BackEnd: IIS Express.executor": "Run",
-    ".NET Launch Settings Profile.LanDotBien_BackEnd: http.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.39751554",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "HotReloadSettingsPage",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.LanDotBien_BackEnd: IIS Express.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.LanDotBien_BackEnd: http.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.39751554&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;HotReloadSettingsPage&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "C#"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;C#&quot;
     ],
-    "rider.external.source.directories": [
-      "/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
-      "/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache",
-      "/Users/hoangdinh/.local/share/Symbols/src"
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
+      &quot;/Users/hoangdinh/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.LanDotBien_BackEnd: http">
     <configuration name="LanDotBien_BackEnd: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/LanDotBien_BackEnd/LanDotBien_BackEnd.csproj" />
@@ -253,25 +265,6 @@
     <MESSAGE value="add authorization" />
     <MESSAGE value="fix jwt, add more user information to jwt" />
     <option name="LAST_COMMIT_MESSAGE" value="fix jwt, add more user information to jwt" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LanVar.Service/Service/UserService.cs</url>
-          <line>90</line>
-          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/UserService.cs" initialLine="84" containingFunctionPresentation="Method 'Login'">
-            <startOffsets>
-              <option value="3132" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3195" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

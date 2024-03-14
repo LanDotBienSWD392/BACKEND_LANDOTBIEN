@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace LanVar.Service.DTO;
+namespace LanVar.DTO.DTO.request;
 
 public class LoginDTORequest
 {

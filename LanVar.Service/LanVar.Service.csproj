@@ -12,9 +12,6 @@
     <None Remove="Service\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AutoMapperProfile\" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="CoreApiResponse" Version="1.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.2">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -30,6 +27,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LanVar.Core\LanVar.Core.csproj" />
+    <ProjectReference Include="..\LanVar.DTO\LanVar.DTO.csproj" />
     <ProjectReference Include="..\Tools\Tools.csproj" />
   </ItemGroup>
 </Project>

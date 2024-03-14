@@ -37,6 +37,7 @@
     <ProjectReference Include="..\LanVar.Core\LanVar.Core.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\LanVar.DTO\LanVar.DTO.csproj" />
     <ProjectReference Include="..\LanVar.Insfrastructure\LanVar.Insfrastructure.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>

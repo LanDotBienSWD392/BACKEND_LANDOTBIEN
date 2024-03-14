@@ -4,8 +4,9 @@ using System.Security.Claims;
 using AutoMapper;
 using LanVar.Core.Entity;
 using LanVar.Core.Interfaces;
-using LanVar.Service.DTO;
-using LanVar.Service.DTO.response;
+using LanVar.DTO.DTO.request;
+using LanVar.DTO.DTO.response;
+
 using LanVar.Service.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;

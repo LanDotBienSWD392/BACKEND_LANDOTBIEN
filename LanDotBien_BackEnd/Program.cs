@@ -3,13 +3,14 @@ using AutoMapper;
 using LanVar.Core.Entity;
 using LanVar.Core.Interfaces;
 using LanVar.Insfrastructure.Repository;
-using LanVar.Service.AutoMapperProfile;
+
 using LanVar.Service.Service;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Reflection;
 using System.Text;
+using LanVar.DTO.AutoMapperProfile;
 using LanVar.Service.Interface;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
