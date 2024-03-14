@@ -13,5 +13,6 @@ namespace LanVar.Core.Interfaces
         Task<bool> DeactivateUser(long id);
         Task<bool> ActivateUser(long id);
         Task<bool> DeleteUser(long id);
+        Task<User> AddAsync(User user);
     }
 }

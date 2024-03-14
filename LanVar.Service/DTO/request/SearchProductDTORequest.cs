@@ -13,6 +13,6 @@ public class SearchProductDTORequest
     [Required(ErrorMessage = "Product_Name is required")]
     public string Product_Name { get; set; }
     [Required(ErrorMessage = "Product_Price is required")]
-    public string Product_Price { get; set; }
+    public double Product_Price { get; set; }
 }
 

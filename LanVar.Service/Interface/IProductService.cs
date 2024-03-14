@@ -11,6 +11,6 @@ namespace LanVar.Service.Interface
     {
         Task<IEnumerable<Product>> GetAllProducts();
         Task<IEnumerable<Product>> SearchProductsAsync(SearchProductDTORequest searchRequest);
-        Task<bool> BuyProductAsync(int productId);
+        
     }
 }

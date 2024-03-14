@@ -9,11 +9,11 @@ namespace LanDotBien_BackEnd.Controllers.CustomerController
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SearchAndBuyProduct : ControllerBase
+    public class SearchProduct : ControllerBase
     {
         private readonly IProductService _productService;
 
-        public SearchAndBuyProduct(IProductService productService)
+        public SearchProduct(IProductService productService)
         {
             _productService = productService;
         }
@@ -39,27 +39,6 @@ namespace LanDotBien_BackEnd.Controllers.CustomerController
             {
                 var results = await _productService.SearchProductsAsync(searchRequest);
                 return Ok(results);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
-        }
-
-        [HttpPost("BuyProduct/{productId}")]
-        public async Task<IActionResult> BuyProduct(int productId)
-        {
-            try
-            {
-                var result = await _productService.BuyProductAsync(productId);
-                if (result)
-                {
-                    return Ok("Product purchased successfully.");
-                }
-                else
-                {
-                    return NotFound("Product not found or unable to purchase.");
-                }
             }
             catch (Exception ex)
             {
