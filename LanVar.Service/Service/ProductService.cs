@@ -24,7 +24,7 @@ namespace LanVar.Service.Service
 
         public async Task<IEnumerable<Product>> SearchProductsAsync(SearchProductDTORequest searchRequest)
         {
-            return await _productRepository.SearchAsync(searchRequest);
+            return await _productRepository.SearchProductsAsync(searchRequest);
         }
     }
 }

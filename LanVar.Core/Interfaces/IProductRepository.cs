@@ -7,7 +7,7 @@ namespace LanVar.Core.Interfaces
     public interface IProductRepository : IGenericRepository<Product>
     {
         Task<IEnumerable<Product>> GetAllProductsAsync();
-        Task<IEnumerable<Product>> SearchAsync(SearchProductDTORequest searchRequest);
+        Task<IEnumerable<Product>> SearchProductsAsync(SearchProductDTORequest searchRequest);
     }
 }
 
