@@ -40,7 +40,7 @@ namespace Tools.Tools;
 
             List<Claim> claims = new List<Claim>
             {
-                
+                new Claim("id", user.id.ToString()),
                 new Claim("Name", user.Username),
                 new Claim(ClaimTypes.Role, role.Role)
             };
