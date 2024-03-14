@@ -56,6 +56,11 @@ namespace LanVar.Insfrastructure.Repository
         {
             return await _context.Set<TEntity>().FindAsync(id);
         }
+        public virtual async Task<TEntity> GetByIdAsync(long id)
+        {
+            return await dbSet.FindAsync(id);
+        }
+
 
         public void Remove(TEntity entity)
         {

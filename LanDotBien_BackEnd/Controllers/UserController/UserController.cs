@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using LanVar.Core.Entity;
 using LanVar.Service.DTO;
 using LanVar.Service.DTO.response;
@@ -10,10 +11,25 @@ namespace LanDotBien_BackEnd.Controllers.UserController;
 public class UserController : ControllerBase
 {
     private readonly IUserService _userService;
+    private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public UserController(IUserService userService)
+    public UserController(IUserService userService, IHttpContextAccessor httpContextAccessor)
     {
         _userService = userService;
+        _httpContextAccessor = httpContextAccessor;
+    }
+    [HttpGet("CurrentUser")]
+    public IActionResult GetCurrentLoggedInUser()
+    {
+        var userId = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        // You can extract other user information similarly from claims
+
+        if (userId == null)
+        {
+            return NotFound(); // or any other appropriate response
+        }
+
+        return Ok(userId);
     }
 
     [HttpPost("Register")]
@@ -24,7 +40,7 @@ public class UserController : ControllerBase
     }
 
     [HttpPost("Login")]
-    public async Task<IActionResult> LoginUser(LoginDTORequest loginDtoRequest)
+    public async Task<IActionResult> LoginUser([FromBody] LoginDTORequest loginDtoRequest)
     {
         if (!ModelState.IsValid)
         {

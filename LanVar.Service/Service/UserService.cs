@@ -81,8 +81,8 @@ namespace LanVar.Service.Service
 			}
 
 			LoginDTOResponse loginDtoResponse = _mapper.Map<LoginDTOResponse>(user);
-			Authentication authentication = new(_configuration);
-			string token = authentication.GenerateJwtToken(user.id.ToString(), 15);
+			Authentication authentication = new(_configuration, _userPermissionRepository);
+			string token = await authentication.GenerateJwtToken(user, 15);
 			return (token, loginDtoResponse);
 		}
 	}

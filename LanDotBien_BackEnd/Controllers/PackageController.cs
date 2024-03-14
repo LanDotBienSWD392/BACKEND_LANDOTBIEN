@@ -33,10 +33,16 @@ public class PackageController : ControllerBase
         }
         
     }
-    [Authorize]
+    [Authorize(Roles = "Customer")]
     [HttpGet("GetAllPackage")]
     public async Task<IActionResult> GetAllPackage()
     {
+        var user = HttpContext.User;
+        if (!user.Identity.IsAuthenticated)
+        {
+            // User is not authenticated
+            return Unauthorized();
+        }
         var roles = await _packageService.GetAllRole();
         return Ok(roles);
     }
