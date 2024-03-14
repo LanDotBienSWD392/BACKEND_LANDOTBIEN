@@ -1,11 +1,10 @@
 ﻿using System;
 using AutoMapper;
-using LanVar.Core.Entity;
-using LanVar.Service.DTO;
-using LanVar.Service.DTO.request;
-using LanVar.Service.DTO.response;
+using LanVar.DTO.DTO.request;
+using LanVar.DTO.DTO.response;
 
-namespace LanVar.Service.AutoMapperProfile
+
+namespace LanVar.DTO.AutoMapperProfile
 {
 	public class AutoMapperProfile : Profile
 	{

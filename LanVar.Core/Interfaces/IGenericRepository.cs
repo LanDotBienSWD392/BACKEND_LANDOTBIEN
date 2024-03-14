@@ -8,6 +8,7 @@ namespace LanVar.Core.Interfaces
         
         public Task<IEnumerable<TEntity>> GetAllAsync();
         Task<TEntity> GetById(long id);
+        Task<TEntity> GetByIdAsync(long id);
         Task<TEntity> Add(TEntity entity);
         Task<TEntity> Update(TEntity entity);
         void AddRange(IEnumerable<TEntity> entities);
