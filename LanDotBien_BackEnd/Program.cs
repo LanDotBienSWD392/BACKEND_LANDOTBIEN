@@ -1,4 +1,4 @@
-
+﻿
 using AutoMapper;
 using LanVar.Core.Entity;
 using LanVar.Core.Interfaces;
@@ -50,6 +50,7 @@ builder.Services.AddScoped<IPackageService, PackageService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 //sau class service cuar ai tu add vao day
+//Làm Ơn Add Service vào đây khi đã tạo rồi 
 
 
 var config = new MapperConfiguration(cfg =>
