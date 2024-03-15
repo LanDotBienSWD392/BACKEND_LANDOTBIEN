@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using LanVar.Core.Entity;
 using LanVar.Core.Interfaces;
+using LanVar.DTO.DTO.request;
 using LanVar.Service.DTO;
 using LanVar.Service.DTO.request;
 using LanVar.Service.Interface;
@@ -13,6 +14,7 @@ namespace LanVar.Service.Implementation
     public class AccountService : IAccountService
     {
         private readonly IUserRepository _userRepository;
+        
         private readonly IMapper _mapper;
 
         public AccountService(IUserRepository userRepository, IMapper mapper)
@@ -28,6 +30,8 @@ namespace LanVar.Service.Implementation
             await _userRepository.SaveChangesAsync();
             return addedUser;
         }
+
+        
 
         public async Task<IEnumerable<User>> GetAllUsers()
         {
