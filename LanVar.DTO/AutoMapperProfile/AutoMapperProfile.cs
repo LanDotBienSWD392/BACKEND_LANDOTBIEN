@@ -17,6 +17,8 @@ namespace LanVar.DTO.AutoMapperProfile
 			CreateMap<LoginDTOResponse, User>().ReverseMap();
 			CreateMap<SearchProductDTORequest, Product>().ReverseMap();
 			CreateMap<UpdateUserDTORequest, User>().ReverseMap();
+			CreateMap<CreateProductDTORequest, Product>().ReverseMap();
+			CreateMap<ProductDTOResponse, Product>().ReverseMap();
 		}
 	}
 }
