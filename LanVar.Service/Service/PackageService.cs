@@ -8,8 +8,8 @@ namespace LanVar.Service.Service;
 
 public class PackageService : IPackageService
 {
-    private readonly IPackageRepository _packageRepository;
-    public PackageService(IPackageRepository packageRepository)
+    private readonly IGenericRepository<Package> _packageRepository;
+    public PackageService(IGenericRepository<Package> packageRepository)
     {
         _packageRepository = packageRepository;
     }

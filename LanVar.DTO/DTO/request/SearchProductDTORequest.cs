@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 public class SearchProductDTORequest
 {
-    [Required(ErrorMessage = "ISBN is required")]
+   
     public string ISBN { get; set; }
-    [Required(ErrorMessage = "Product_Name is required")]
+    
     public string Product_Name { get; set; }
-    [Required(ErrorMessage = "Product_Price is required")]
+    
     public double Product_Price { get; set; }
 }
 

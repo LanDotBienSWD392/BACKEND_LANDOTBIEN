@@ -1,7 +1,9 @@
 ﻿using System;
 using AutoMapper;
+using LanVar.Core.Entity;
 using LanVar.DTO.DTO.request;
 using LanVar.DTO.DTO.response;
+using LanVar.Service.DTO.request;
 
 
 namespace LanVar.DTO.AutoMapperProfile

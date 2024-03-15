@@ -26,7 +26,7 @@ namespace LanVar.Insfrastructure.Repository
             return await _context.Products.ToListAsync();
         }
 
-        public async Task<IEnumerable<Product>> SearchProductsAsync(SearchProductDTORequest searchRequest)
+        public async Task<IEnumerable<Product>> SearchProductsAsync(Product searchRequest)
         {
             return await _context.Products
                 .Where(p => p.ISBN == searchRequest.ISBN && p.Product_Name == searchRequest.Product_Name && p.Product_Price == searchRequest.Product_Price)
