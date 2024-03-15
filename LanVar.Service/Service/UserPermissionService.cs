@@ -36,7 +36,7 @@ public class UserPermissionService : IUserPermissionService
 
     public async Task<IEnumerable<UserPermission>> GetAllRole()
     {
-        return await _userPermissionRepository.GetAllAsync();
+        return await _userPermissionRepository.GetAllAsync(qweqw);
     }
 
     public async Task<UserPermission> UpdateRole(long id, UserPermission updatedUserPermission)
