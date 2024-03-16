@@ -34,10 +34,6 @@ public class UserController : ControllerBase
         }
     }
 
-
-
-
-
     [HttpPost("Register")]
     public async Task<IActionResult> Register(UserRegisterRequest userRegisterRequest)
     {
