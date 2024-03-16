@@ -9,7 +9,7 @@ namespace LanVar.Service.Interface
 {
     public interface IAccountService
     {
-        Task<User> CreateUser(UserRegisterRequest userRegisterRequest);
+        Task<User> CreateUser(AdminCreateAccountDTORequest adminCreateAccountRequest);
         Task<IEnumerable<User>> GetAllUsers();
         Task<User> GetUserById(long id);
         Task<User> UpdateUser(long id, UpdateUserDTORequest updateUserDTORequest);
