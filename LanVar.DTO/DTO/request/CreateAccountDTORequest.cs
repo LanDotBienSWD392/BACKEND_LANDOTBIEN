@@ -8,7 +8,7 @@ using Tools.Tools;
 
 namespace LanVar.DTO.DTO.request
 {
-    public class AdminCreateAccountDTORequest
+    public class CreateAccountDTORequest
     {
         [StringLength(maximumLength: 40, MinimumLength = 8)]
         public required string Name { get; set; }
