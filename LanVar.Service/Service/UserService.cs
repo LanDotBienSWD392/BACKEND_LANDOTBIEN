@@ -40,7 +40,7 @@ namespace LanVar.Service.Service
 			_httpContextAccessor = httpContextAccessor;
 		}
 
-		public async Task<User> Register(UserRegisterRequest userRegisterRequest)
+		public async Task<User> Register(UserRegisterDTORequest userRegisterRequest)
 		{
 			IEnumerable<User> checkEmail =
 				await _userRepository.GetByFilterAsync(x => x.Email.Equals(userRegisterRequest.Email));
@@ -60,7 +60,7 @@ namespace LanVar.Service.Service
 			user.Permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.Role.Equals("Customer"))).First().id;
 			user.Password = EncryptPassword.Encrypt(userRegisterRequest.Password);
 			user.Status = true;
-			user.RegisterDay = DateTime.Now.Date.ToString();
+			user.RegisterDay = DateTime.Now.Date;
 			user.Gender = userRegisterRequest.Gender;
 			user.Image = "nguyen rua anh nao de image laf required";
 			user.Package_id = 1;

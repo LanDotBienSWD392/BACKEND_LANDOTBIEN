@@ -54,7 +54,7 @@ namespace LanDotBien_BackEnd.Controllers.AdminController
         }
 
         [HttpPost("CreateUser")]
-        public async Task<IActionResult> CreateUser([FromBody] UserRegisterRequest userRegisterRequest)
+        public async Task<IActionResult> CreateUser([FromBody] UserRegisterDTORequest userRegisterRequest)
         {
             try
             {

@@ -12,10 +12,8 @@ namespace LanVar.Core.Entity
         [Required]
         public long User_id { get; set; }
 
-        [Required]
         public DateTime Date { get; set; }
 
-        [Required]
         public double Total_Price { get; set; }
 
         [ForeignKey("User_id")]

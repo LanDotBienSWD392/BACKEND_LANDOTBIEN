@@ -18,7 +18,6 @@ namespace LanVar.Core.Entity
         [Required]
         public double BID { get; set; }
 
-        [Required]
         public DateTime Bid_time { get; set; }
 
         [ForeignKey("Auction_id")]
