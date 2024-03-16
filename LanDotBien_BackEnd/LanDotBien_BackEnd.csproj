@@ -51,7 +51,6 @@
     <Folder Include="Controllers\ManagerController\" />
     <Folder Include="Controllers\GuestController\" />
     <Folder Include="Controllers\ProductOwnerController\" />
-    <Folder Include="Controllers\StaffController\" />
   </ItemGroup>
 
   <ItemGroup>

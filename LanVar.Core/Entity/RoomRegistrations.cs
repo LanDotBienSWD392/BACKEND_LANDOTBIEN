@@ -15,7 +15,6 @@ namespace LanVar.Core.Entity
         [Required]
         public long Auction_id { get; set; }
 
-        [Required]
         public DateTime Register_time { get; set; }
 
         [ForeignKey("User_id")]

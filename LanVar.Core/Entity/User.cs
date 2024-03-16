@@ -15,7 +15,6 @@ namespace LanVar.Core.Entity
         [Required]
         public long Package_id { get; set; }
 
-        [Required]
         public string IdentityCard { get; set; }
 
         [Required]
@@ -32,22 +31,17 @@ namespace LanVar.Core.Entity
 
         public string Image { get; set; }
 
-        [Required]
         public int Phone { get; set; }
 
-        [Required]
         public DateTime Dob { get; set; }
 
-        [Required]
         public string Address { get; set; }
 
-        [Required]
+        
         public string Gender { get; set; }
 
-        [Required]
-        public string RegisterDay { get; set; }
+        public DateTime RegisterDay { get; set; }
 
-        [Required]
         public bool Status { get; set; }
 
         [ForeignKey("Permission_id")]

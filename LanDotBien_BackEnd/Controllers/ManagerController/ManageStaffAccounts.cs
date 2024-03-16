@@ -1,29 +1,20 @@
-﻿using LanVar.Core.Entity;
-using LanVar.Service.DTO;
+﻿using LanVar.DTO.DTO.request;
 using LanVar.Service.DTO.request;
 using LanVar.Service.Interface;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using LanVar.DTO.DTO.request;
 using Tools.Tools;
-using LanVar.DTO.request;
 
-namespace LanDotBien_BackEnd.Controllers.AdminController
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+namespace LanDotBien_BackEnd.Controllers.ManagerController
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class Manage_Manager_Accounts : ControllerBase
+    public class ManageStaffAccounts : ControllerBase
     {
         private readonly IAccountService _accountService;
-
-        public Manage_Manager_Accounts(IAccountService accountService)
-        {
-            _accountService = accountService;
-        }
-
-        [HttpGet("GetAllUser")]
+        // GET: api/<ManageStaffAccounts>
+        [HttpGet("GetAllStaff")]
         public async Task<IActionResult> GetAllUser()
         {
             try
@@ -37,7 +28,8 @@ namespace LanDotBien_BackEnd.Controllers.AdminController
             }
         }
 
-        [HttpGet("GetUserById/{id}")]
+        // GET api/<ManageStaffAccounts>/5
+        [HttpGet("GetStaffById{id}")]
         public async Task<IActionResult> GetUserById(long id)
         {
             try
@@ -55,7 +47,8 @@ namespace LanDotBien_BackEnd.Controllers.AdminController
             }
         }
 
-        [HttpPost("CreateUser")]
+        // POST api/<ManageStaffAccounts>
+        [HttpPost("CreateStaff")]
         public async Task<IActionResult> CreateUser([FromBody] CreateAccountDTORequest createAccountRequest)
         {
             try
@@ -69,7 +62,8 @@ namespace LanDotBien_BackEnd.Controllers.AdminController
             }
         }
 
-        [HttpPut("UpdateUser/{id}")]
+        // PUT api/<ManageStaffAccounts>/5
+        [HttpPut("UpdateStaff{id}")]
         public async Task<IActionResult> UpdateUser(long id, [FromBody] UpdateUserDTORequest updateUserDTORequest)
         {
             try
@@ -86,8 +80,7 @@ namespace LanDotBien_BackEnd.Controllers.AdminController
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
-
-        [HttpPut("DeactivateUser/{id}")]
+        [HttpPut("DeactivateStaff/{id}")]
         public async Task<IActionResult> DeactivateUser(long id)
         {
             try
@@ -105,7 +98,7 @@ namespace LanDotBien_BackEnd.Controllers.AdminController
             }
         }
 
-        [HttpPut("ActivateUser/{id}")]
+        [HttpPut("ActivateStaff/{id}")]
         public async Task<IActionResult> ActivateUser(long id)
         {
             try
@@ -123,7 +116,7 @@ namespace LanDotBien_BackEnd.Controllers.AdminController
             }
         }
 
-        [HttpDelete("DeleteUser/{id}")]
+        [HttpDelete("DeleteStaff/{id}")]
         public async Task<IActionResult> DeleteUser(long id)
         {
             try

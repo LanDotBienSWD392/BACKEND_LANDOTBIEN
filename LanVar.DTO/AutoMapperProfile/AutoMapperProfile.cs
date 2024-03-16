@@ -12,7 +12,7 @@ namespace LanVar.DTO.AutoMapperProfile
 	{
 		public AutoMapperProfile()
 		{
-			CreateMap<UserRegisterRequest, User>().ReverseMap();
+			CreateMap<CreateAccountDTORequest, User>().ReverseMap();
 			CreateMap<LoginDTORequest, User>().ReverseMap();
 			CreateMap<LoginDTOResponse, User>().ReverseMap();
 			CreateMap<SearchProductDTORequest, Product>().ReverseMap();

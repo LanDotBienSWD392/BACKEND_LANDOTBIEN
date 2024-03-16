@@ -12,11 +12,10 @@ namespace LanVar.Core.Entity
         [Required]
         public long Product_id { get; set; }
 
-        [Required]
-        public DateTime StartDay { get; set; }
+        public DateTime StartDay { get; set; } //ngay khoi tao Auction
 
         [Required]
-        public DateTime AuctionDay { get; set; }
+        public DateTime AuctionDay { get; set; } // ngay dau gia
 
         [Required]
         public string Auction_Name { get; set; }

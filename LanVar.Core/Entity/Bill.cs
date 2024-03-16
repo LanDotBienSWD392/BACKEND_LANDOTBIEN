@@ -12,10 +12,8 @@ namespace LanVar.Core.Entity
         [Required]
         public long Order_id { get; set; }
 
-        [Required]
         public string Payment_Method { get; set; }
 
-        [Required]
         public double Total_Price { get; set; }
 
         [ForeignKey("Order_id")]

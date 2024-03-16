@@ -40,12 +40,12 @@ namespace LanVar.Service.Service
 			_httpContextAccessor = httpContextAccessor;
 		}
 
-		public async Task<User> Register(UserRegisterRequest userRegisterRequest)
+		public async Task<User> Register(CreateAccountDTORequest createAccountDTORequest)
 		{
 			IEnumerable<User> checkEmail =
-				await _userRepository.GetByFilterAsync(x => x.Email.Equals(userRegisterRequest.Email));
+				await _userRepository.GetByFilterAsync(x => x.Email.Equals(createAccountDTORequest.Email));
 			IEnumerable<User> checkUsername =
-				await _userRepository.GetByFilterAsync(x => x.Username.Equals(userRegisterRequest.Username));
+				await _userRepository.GetByFilterAsync(x => x.Username.Equals(createAccountDTORequest.Username));
 			if (checkEmail.Count() != 0)
 			{
 				throw new InvalidDataException($"Email is exist");
@@ -56,12 +56,11 @@ namespace LanVar.Service.Service
 				throw new InvalidDataException($"Username is exist");
 			}
 
-			var user = _mapper.Map<User>(userRegisterRequest);
+			var user = _mapper.Map<User>(createAccountDTORequest);
 			user.Permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.Role.Equals("Customer"))).First().id;
-			user.Password = EncryptPassword.Encrypt(userRegisterRequest.Password);
+			user.Password = EncryptPassword.Encrypt(createAccountDTORequest.Password);
 			user.Status = true;
-			user.RegisterDay = DateTime.Now.Date.ToString();
-			user.Gender = userRegisterRequest.Gender;
+			user.RegisterDay = DateTime.Now.Date;
 			user.Image = "nguyen rua anh nao de image laf required";
 			user.Package_id = 1;
 			
