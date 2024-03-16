@@ -1,11 +1,13 @@
 using System.Net;
 using LanVar.Core.Entity;
-using LanVar.Service.DTO.response;
+using LanVar.DTO.DTO.response;
+
 using LanVar.Service.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Tools.Tools;
 
-namespace LanDotBien_BackEnd.Controllers;
+namespace LanDotBien_BackEnd.Controllers.AdminController;
 [Route("api/[controller]")]
 [ApiController]
 public class PackageController : ControllerBase
@@ -30,11 +32,18 @@ public class PackageController : ControllerBase
             var response = new ApiResponse<Package>(HttpStatusCode.Conflict, ex.Message);
             return BadRequest(response); // Trả về lỗi 400 Bad Request với thông báo lỗi
         }
-        
+
     }
+    [Authorize(Roles = "Admin")]
     [HttpGet("GetAllPackage")]
     public async Task<IActionResult> GetAllPackage()
     {
+        var user = HttpContext.User;
+        if (!user.Identity.IsAuthenticated)
+        {
+            // User is not authenticated
+            return Unauthorized();
+        }
         var roles = await _packageService.GetAllRole();
         return Ok(roles);
     }
@@ -47,7 +56,7 @@ public class PackageController : ControllerBase
             var response = new ApiResponse<Package>(updatePackage, HttpStatusCode.Accepted);
             return Ok(response); // Return success result with the updated UserPermission data
         }
-        
+
         catch (CustomException.InvalidDataException ex)
         {
             var response = new ApiResponse<Package>(HttpStatusCode.Conflict, ex.Message);
@@ -60,10 +69,10 @@ public class PackageController : ControllerBase
         try
         {
             var deleted = await _packageService.DeletePackage(id);
-            
+
             var response = new ApiResponse<string>("Package deleted successfully", HttpStatusCode.OK);
             return Ok(response);
-            
+
         }
         catch (CustomException.InvalidDataException ex)
         {

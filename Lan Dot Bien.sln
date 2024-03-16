@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanVar.Service", "LanVar.Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "Tools\Tools.csproj", "{DF95B958-EE2B-4293-AE51-5F312E6BB7BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanVar.DTO", "LanVar.DTO\LanVar.DTO.csproj", "{4B7465DC-FBCA-40C5-9027-B1686196257F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{DF95B958-EE2B-4293-AE51-5F312E6BB7BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF95B958-EE2B-4293-AE51-5F312E6BB7BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF95B958-EE2B-4293-AE51-5F312E6BB7BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B7465DC-FBCA-40C5-9027-B1686196257F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B7465DC-FBCA-40C5-9027-B1686196257F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B7465DC-FBCA-40C5-9027-B1686196257F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B7465DC-FBCA-40C5-9027-B1686196257F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

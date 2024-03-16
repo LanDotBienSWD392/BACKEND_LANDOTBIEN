@@ -1,6 +1,8 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using LanVar.Core.Entity;
+using LanVar.Core.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -11,31 +13,50 @@ namespace Tools.Tools;
     {
 
         private readonly IConfiguration _configuration;
+        private readonly IUserPermissionRepository userPermissionRepository;
 
-        public Authentication(IConfiguration configuration)
+        public Authentication(IConfiguration configuration, IUserPermissionRepository userPermissionRepository)
         {
             _configuration = configuration;
+            this.userPermissionRepository = userPermissionRepository;
         }
 
-        public string GenerateJwtToken(string userId, float hour)
+        public async Task<string> GenerateJwtToken(User user, float hour)
         {
+            if (user == null)
+            {
+                throw new ArgumentNullException(nameof(user), "User cannot be null");
+            }
+
             var jwtKey = _configuration["Jwt:Key"];
             var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey ?? ""));
             var signingCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
 
-            var claims = new[]
+            long roleId = user.Permission_id;
+            UserPermission role = await userPermissionRepository.GetByIdAsync(roleId);
+
+            // Log role value to console
+            Console.WriteLine($"Role: {role}");
+
+            List<Claim> claims = new List<Claim>
             {
-                new Claim("Id", userId),
+                new Claim(ClaimTypes.Sid, user.id.ToString()),
+                new Claim("Name", user.Username),
+                new Claim(ClaimTypes.Role, role.Role)
             };
+
             var token = new JwtSecurityToken(
-                _configuration["Jwt:Issure"],
+                _configuration["Jwt:Issuer"],     
                 _configuration["Jwt:Audience"],
                 claims: claims,
                 expires: DateTime.Now.AddHours(hour),
                 signingCredentials: signingCredentials
             );
+
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
+
 
         public static string GetUserIdFromHttpContext(HttpContext httpContext)
         {

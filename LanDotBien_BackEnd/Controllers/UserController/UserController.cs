@@ -1,7 +1,9 @@
+using System.Security.Claims;
 using LanVar.Core.Entity;
-using LanVar.Service.DTO;
-using LanVar.Service.DTO.response;
+using LanVar.DTO.DTO.request;
+using LanVar.DTO.DTO.response;
 using LanVar.Service.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LanDotBien_BackEnd.Controllers.UserController;
@@ -10,11 +12,31 @@ namespace LanDotBien_BackEnd.Controllers.UserController;
 public class UserController : ControllerBase
 {
     private readonly IUserService _userService;
+    private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public UserController(IUserService userService)
+    public UserController(IUserService userService, IHttpContextAccessor httpContextAccessor)
     {
         _userService = userService;
+        _httpContextAccessor = httpContextAccessor;
     }
+    [HttpGet("CurrentUser"), Authorize]
+    public ActionResult<string> GetCurrentLoggedInUser()
+    {
+        try
+        {
+            var userId = _userService.GetUserID();
+
+            return Ok(new { UserId = userId });
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
+
+
+
 
     [HttpPost("Register")]
     public async Task<IActionResult> Register(UserRegisterRequest userRegisterRequest)
@@ -24,7 +46,7 @@ public class UserController : ControllerBase
     }
 
     [HttpPost("Login")]
-    public async Task<IActionResult> LoginUser(LoginDTORequest loginDtoRequest)
+    public async Task<IActionResult> LoginUser([FromBody] LoginDTORequest loginDtoRequest)
     {
         if (!ModelState.IsValid)
         {

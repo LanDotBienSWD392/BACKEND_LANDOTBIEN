@@ -14,5 +14,13 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LanVar.Core\LanVar.Core.csproj" />
+    <ProjectReference Include="..\LanVar.DTO\LanVar.DTO.csproj" />
+    <ProjectReference Include="..\LanVar.Service\LanVar.Service.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="8.0.3" />
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="7.4.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
   </ItemGroup>
 </Project>

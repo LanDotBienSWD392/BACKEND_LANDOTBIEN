@@ -1,4 +1,4 @@
-namespace LanVar.Service.DTO.response;
+namespace LanVar.DTO.DTO.response;
 
 public class LoginDTOResponse
 {

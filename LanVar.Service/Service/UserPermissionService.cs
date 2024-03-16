@@ -9,10 +9,10 @@ namespace LanVar.Service.Service;
 
 public class UserPermissionService : IUserPermissionService
 {
-    private readonly IUserPermissionRepository _userPermissionRepository;
+    private readonly IGenericRepository<UserPermission> _userPermissionRepository;
 
     public UserPermissionService(
-        IUserPermissionRepository userPermissionRepository
+        IGenericRepository<UserPermission> userPermissionRepository
         )
     {
         _userPermissionRepository = userPermissionRepository;
