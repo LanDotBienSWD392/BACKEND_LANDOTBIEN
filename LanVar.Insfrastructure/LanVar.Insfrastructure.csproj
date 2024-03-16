@@ -10,9 +10,6 @@
     <None Remove="Repository\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Repository\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\LanVar.Core\LanVar.Core.csproj" />
     <ProjectReference Include="..\LanVar.DTO\LanVar.DTO.csproj" />
     <ProjectReference Include="..\LanVar.Service\LanVar.Service.csproj" />
