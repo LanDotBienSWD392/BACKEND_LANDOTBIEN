@@ -43,7 +43,7 @@ public class PackageService : IPackageService
         var existingRole = await _packageRepository.GetById(id);
         if (existingRole == null)
         {
-            throw new CustomException.InvalidDataException(HttpStatusCode.NotFound.ToString(), "Role not found");
+            throw new CustomException.InvalidDataException(HttpStatusCode.NotFound.ToString(), "Package not found");
         }
 
         // Update the properties of the existing role

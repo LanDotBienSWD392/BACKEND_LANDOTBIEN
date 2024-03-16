@@ -18,25 +18,45 @@ namespace LanVar.Service.Service
         private readonly IProductRepository _productRepository;
         private readonly IGenericRepository<Product> _genericProductRepository;
         private readonly IUserService _userService;
+        private readonly IGenericRepository<User> _genericUserRepository;
         private readonly IMapper _mapper;
 
-        public ProductService(IProductRepository productRepository, IMapper mapper,  IGenericRepository<Product> genericProductRepository, IUserService userService)
+        public ProductService(IProductRepository productRepository, 
+            IMapper mapper,  
+            IGenericRepository<Product> genericProductRepository, 
+            IUserService userService,
+            IGenericRepository<User> genericUserRepository
+            )
         {
             _productRepository = productRepository;
             _mapper = mapper;
             _genericProductRepository = genericProductRepository;
             _userService = userService;
+            _genericUserRepository = genericUserRepository;
         }
 
         public async Task<IEnumerable<ProductDTOResponse>> GetAllProducts()
         {
             IEnumerable<Product> products = await _productRepository.GetAllProductsAsync();
 
+            List<ProductDTOResponse> productResponses = new List<ProductDTOResponse>();
+
             // Map each Product object to ProductDTOResponse
-            IEnumerable<ProductDTOResponse> productResponses = _mapper.Map<IEnumerable<ProductDTOResponse>>(products);
+            foreach (var product in products)
+            {
+                ProductDTOResponse productResponse = _mapper.Map<ProductDTOResponse>(product);
+        
+                // Fetch user ID and retrieve user details
+                
+                User productOwner = await _genericUserRepository.GetById(product.User_id);
+                productResponse.Product_Owner = productOwner.Name;
+
+                productResponses.Add(productResponse);
+            }
 
             return productResponses;
         }
+
 
 
         public async Task<IEnumerable<Product>> SearchProductsAsync(SearchProductDTORequest searchRequest)
@@ -57,10 +77,13 @@ namespace LanVar.Service.Service
             string userId = _userService.GetUserID();
             product.User_id = int.Parse(userId);
             product.Status = false;
+            
             Product addedProduct = await _genericProductRepository.Add(product);
 
             // Map the added product to ProductDTOResponse
             ProductDTOResponse productResponse = _mapper.Map<ProductDTOResponse>(addedProduct);
+            User productOwner = await _genericUserRepository.GetById(long.Parse(userId));
+            productResponse.Product_Owner = productOwner.Name;
 
             return productResponse;
         }

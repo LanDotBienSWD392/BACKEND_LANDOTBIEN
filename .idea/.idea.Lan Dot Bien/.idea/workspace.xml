@@ -11,7 +11,14 @@
   <component name="ChangeListManager">
     <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/PackageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/PackageController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/ProductOwnerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/ProductOwnerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/ICartRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Interfaces/ICartRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.DTO/AutoMapperProfile/AutoMapperProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/AutoMapperProfile/AutoMapperProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.DTO/DTO/response/ProductDTOResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/DTO/response/ProductDTOResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/CartRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/CartRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Service/Service/PackageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Service/PackageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Service/Service/ProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Service/ProductService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,36 +92,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.LanDotBien_BackEnd: IIS Express.executor": "Run",
-    ".NET Launch Settings Profile.LanDotBien_BackEnd: http.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.39751554",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "HotReloadSettingsPage",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.LanDotBien_BackEnd: IIS Express.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.LanDotBien_BackEnd: http.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.37751004&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;HotReloadSettingsPage&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ],
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "C#"
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;C#&quot;
     ],
-    "rider.external.source.directories": [
-      "/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
-      "/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache",
-      "/Users/hoangdinh/.local/share/Symbols/src"
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
+      &quot;/Users/hoangdinh/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.LanDotBien_BackEnd: http">
     <configuration name="LanDotBien_BackEnd: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/LanDotBien_BackEnd/LanDotBien_BackEnd.csproj" />
@@ -190,6 +197,9 @@
       <workItem from="1710375619879" duration="4611000" />
       <workItem from="1710380871149" duration="8588000" />
       <workItem from="1710409695333" duration="7163000" />
+      <workItem from="1710514831676" duration="4518000" />
+      <workItem from="1710556850064" duration="6827000" />
+      <workItem from="1710582405527" duration="2160000" />
     </task>
     <task id="LOCAL-00001" summary="add login, generate jwt and register, check validate, custom error, delete ILogger in repository">
       <option name="closed" value="true" />
@@ -247,7 +257,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710493810525</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="package">
+      <option name="closed" value="true" />
+      <created>1710514883403</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1710514883404</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,7 +294,8 @@
     <MESSAGE value="fix jwt, add more user information to jwt" />
     <MESSAGE value="fix search product engine" />
     <MESSAGE value="add create product for product owner" />
-    <option name="LAST_COMMIT_MESSAGE" value="add create product for product owner" />
+    <MESSAGE value="package" />
+    <option name="LAST_COMMIT_MESSAGE" value="package" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

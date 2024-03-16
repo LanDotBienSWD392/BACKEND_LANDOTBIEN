@@ -35,7 +35,7 @@ namespace LanDotBien_BackEnd.Controllers.ProductOwnerController
         }
 
         // POST api/<ProductOwnerController>
-        [HttpPost("CreateProduct"), Authorize]
+        [HttpPost("CreateProductForProductOwner"), Authorize(Roles = "ProductOwner")]
         public async Task<IActionResult> Post(CreateProductDTORequest createProductDtoRequest)
         {
             try
