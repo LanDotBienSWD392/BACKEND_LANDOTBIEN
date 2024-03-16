@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using Tools.Tools;
-namespace LanVar.DTO.DTO.request;
+namespace LanVar.DTO.request;
 
 public class UserRegisterDTORequest
 {

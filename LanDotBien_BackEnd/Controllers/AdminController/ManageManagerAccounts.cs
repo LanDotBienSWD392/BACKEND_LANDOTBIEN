@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using LanVar.DTO.DTO.request;
+using Tools.Tools;
+using LanVar.DTO.request;
 
 namespace LanDotBien_BackEnd.Controllers.AdminController
 {
@@ -29,7 +31,7 @@ namespace LanDotBien_BackEnd.Controllers.AdminController
                 var users = await _accountService.GetAllUsers();
                 return Ok(users);
             }
-            catch (Exception ex)
+            catch (CustomException.InvalidDataException ex)
             {
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
@@ -47,18 +49,18 @@ namespace LanDotBien_BackEnd.Controllers.AdminController
                 }
                 return Ok(user);
             }
-            catch (Exception ex)
+            catch (CustomException.InvalidDataException ex)
             {
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
 
         [HttpPost("CreateUser")]
-        public async Task<IActionResult> CreateUser([FromBody] UserRegisterDTORequest userRegisterRequest)
+        public async Task<IActionResult> CreateUser([FromBody] CreateAccountDTORequest createAccountRequest)
         {
             try
             {
-                var createdUser = await _accountService.CreateUser(userRegisterRequest);
+                var createdUser = await _accountService.CreateUser(createAccountRequest);
                 return CreatedAtAction(nameof(GetUserById), new { id = createdUser.id }, createdUser);
             }
             catch (Exception ex)

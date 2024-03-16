@@ -23,7 +23,7 @@ namespace LanVar.Service.Implementation
             _mapper = mapper;
         }
 
-        public async Task<User> CreateUser(AdminCreateAccountDTORequest adminCreateAccountDTORequest)
+        public async Task<User> CreateUser(CreateAccountDTORequest adminCreateAccountDTORequest)
         {
             var user = _mapper.Map<User>(adminCreateAccountDTORequest);
             var addedUser = await _userRepository.AddAsync(user);
