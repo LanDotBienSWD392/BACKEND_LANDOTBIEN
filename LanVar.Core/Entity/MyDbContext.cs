@@ -13,7 +13,7 @@ namespace LanVar.Core.Entity
         public DbSet<OrderItem> Items { get; set; }
         public DbSet<Package> Packages { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<RoomRegistrations> RoomRegistrations { get; set;}
+        public DbSet<RoomRegistrations> RoomRegistrations { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserPermission> UsersPermission { get; set; }
 
@@ -39,15 +39,10 @@ namespace LanVar.Core.Entity
             );
 
             // Seed data for Users
-            modelBuilder.Entity<User>().HasData(
-                new User { id = 1, Permission_id = 1, Package_id = 1, IdentityCard = "123456789", Name = "Admin", Email = "admin@example.com", Username = "admin", Password = "admin", Image = "null", Phone = 123456789, Dob = DateTime.Now, Address = "Admin Address", Gender = "Male", RegisterDay = DateTime.Now.ToString(), Status = true },
-                new User { id = 2, Permission_id = 2, Package_id = 1, IdentityCard = "987654321", Name = "Manager", Email = "manager@example.com", Username = "manager", Password = "manager", Image = "null", Phone = 987654321, Dob = DateTime.Now, Address = "Manager Address", Gender = "Female", RegisterDay = DateTime.Now.ToString(), Status = true },
-                new User { id = 3, Permission_id = 3, Package_id = 1, IdentityCard = "456789123", Name = "Staff", Email = "staff@example.com", Username = "staff", Password = "staff", Image = "null", Phone = 456789123, Dob = DateTime.Now, Address = "Staff Address", Gender = "Male", RegisterDay = DateTime.Now.ToString(), Status = true },
-                new User { id = 4, Permission_id = 4, Package_id = 1, IdentityCard = "789123456", Name = "ProductOwner", Email = "owner@example.com", Username = "owner", Password = "owner", Image = "null", Phone = 789123456, Dob = DateTime.Now, Address = "Owner Address", Gender = "Female", RegisterDay = DateTime.Now.ToString(), Status = true },
-                new User { id = 5, Permission_id = 5, Package_id = 1, IdentityCard = "321654987", Name = "Customer", Email = "customer@example.com", Username = "customer", Password = "customer", Image = "null", Phone = 321654987, Dob = DateTime.Now, Address = "Customer Address", Gender = "Male", RegisterDay = DateTime.Now.ToString(), Status = true },
-                new User { id = 6, Permission_id = 6, Package_id = 1, IdentityCard = "654987321", Name = "Guest", Email = "guest@example.com", Username = "guest", Password = "guest", Image = "null", Phone = 654987321, Dob = DateTime.Now, Address = "Guest Address", Gender = "Female", RegisterDay = DateTime.Now.ToString(), Status = true },
-                new User { id = 7, Permission_id = 7, Package_id = 1, IdentityCard = "159263478", Name = "User", Email = "user@example.com", Username = "user", Password = "user", Image = "null", Phone = 159263478, Dob = DateTime.Now, Address = "User Address", Gender = "Male", RegisterDay = DateTime.Now.ToString(), Status = true }
-            );
+            // Thằng nào muốn thêm thì tạo nhưng nó chưa giải quyết được chuyện mã hóa account
+            //modelBuilder.Entity<User>().HasData(
+
+            //);
 
             // Seed data for Products
             modelBuilder.Entity<Product>().HasData(

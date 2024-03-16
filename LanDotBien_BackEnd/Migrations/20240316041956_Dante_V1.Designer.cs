@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LanDotBien_BackEnd.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20240309034923_dante")]
-    partial class dante
+    [Migration("20240316041956_Dante_V1")]
+    partial class Dante_V1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -52,6 +52,18 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasIndex("Product_id");
 
                     b.ToTable("Auction");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            AuctionDay = new DateTime(2024, 3, 23, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2576),
+                            Auction_Name = "Auction 1",
+                            Deposit_Money = 50.0,
+                            Product_id = 1L,
+                            StartDay = new DateTime(2024, 3, 16, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2575),
+                            Status = true
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.Bid", b =>
@@ -79,6 +91,16 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasIndex("User_id");
 
                     b.ToTable("Bid");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            Auction_id = 1L,
+                            BID = 60.0,
+                            Bid_time = new DateTime(2024, 3, 16, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2672),
+                            User_id = 1L
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.Bill", b =>
@@ -102,6 +124,15 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasIndex("Order_id");
 
                     b.ToTable("Bill");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            Order_id = 1L,
+                            Payment_Method = "Credit Card",
+                            Total_Price = 100.0
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.Cart", b =>
@@ -126,6 +157,15 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasIndex("User_id");
 
                     b.ToTable("Cart");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            Product_id = 1L,
+                            User_id = 1L,
+                            isSelected = true
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.Order", b =>
@@ -148,6 +188,15 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasIndex("User_id");
 
                     b.ToTable("Order");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            Date = new DateTime(2024, 3, 16, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2624),
+                            Total_Price = 100.0,
+                            User_id = 1L
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.OrderItem", b =>
@@ -169,6 +218,14 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasIndex("Product_id");
 
                     b.ToTable("OrderItem");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            Order_id = 1L,
+                            Product_id = 1L
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.Package", b =>
@@ -197,6 +254,26 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Package");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            EndDay = new DateTime(2024, 4, 15, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2478),
+                            PackageName = "Basic",
+                            Package_Description = "Basic package",
+                            StartDay = new DateTime(2024, 3, 16, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2468),
+                            Status = true
+                        },
+                        new
+                        {
+                            id = 2L,
+                            EndDay = new DateTime(2024, 4, 15, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2485),
+                            PackageName = "Premium",
+                            Package_Description = "Premium package",
+                            StartDay = new DateTime(2024, 3, 16, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2485),
+                            Status = true
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.Product", b =>
@@ -239,6 +316,20 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasIndex("User_id");
 
                     b.ToTable("Product");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            ISBN = "123456789",
+                            Image = "",
+                            Product_Description = "Description for Product 1",
+                            Product_Name = "Product 1",
+                            Product_Price = 100.0,
+                            Status = true,
+                            Type = "Type 1",
+                            User_id = 1L
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.RoomRegistrations", b =>
@@ -263,6 +354,15 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasIndex("User_id");
 
                     b.ToTable("RoomRegistrations");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            Auction_id = 1L,
+                            Register_time = new DateTime(2024, 3, 16, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2598),
+                            User_id = 1L
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.User", b =>
@@ -311,9 +411,8 @@ namespace LanDotBien_BackEnd.Migrations
                     b.Property<int>("Phone")
                         .HasColumnType("int");
 
-                    b.Property<string>("RegisterDay")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<DateTime>("RegisterDay")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<bool>("Status")
                         .HasColumnType("tinyint(1)");
@@ -329,6 +428,134 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasIndex("Permission_id");
 
                     b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            Address = "Admin Address",
+                            Dob = new DateTime(2024, 3, 16, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2510),
+                            Email = "admin@example.com",
+                            Gender = "Male",
+                            IdentityCard = "123456789",
+                            Image = "null",
+                            Name = "Admin",
+                            Package_id = 1L,
+                            Password = "admin",
+                            Permission_id = 1L,
+                            Phone = 123456789,
+                            RegisterDay = new DateTime(2024, 3, 16, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2512),
+                            Status = true,
+                            Username = "admin"
+                        },
+                        new
+                        {
+                            id = 2L,
+                            Address = "Manager Address",
+                            Dob = new DateTime(2024, 3, 16, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2515),
+                            Email = "manager@example.com",
+                            Gender = "Female",
+                            IdentityCard = "987654321",
+                            Image = "null",
+                            Name = "Manager",
+                            Package_id = 1L,
+                            Password = "manager",
+                            Permission_id = 2L,
+                            Phone = 987654321,
+                            RegisterDay = new DateTime(2024, 3, 16, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2516),
+                            Status = true,
+                            Username = "manager"
+                        },
+                        new
+                        {
+                            id = 3L,
+                            Address = "Staff Address",
+                            Dob = new DateTime(2024, 3, 16, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2518),
+                            Email = "staff@example.com",
+                            Gender = "Male",
+                            IdentityCard = "456789123",
+                            Image = "null",
+                            Name = "Staff",
+                            Package_id = 1L,
+                            Password = "staff",
+                            Permission_id = 3L,
+                            Phone = 456789123,
+                            RegisterDay = new DateTime(2024, 3, 16, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2518),
+                            Status = true,
+                            Username = "staff"
+                        },
+                        new
+                        {
+                            id = 4L,
+                            Address = "Owner Address",
+                            Dob = new DateTime(2024, 3, 16, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2520),
+                            Email = "owner@example.com",
+                            Gender = "Female",
+                            IdentityCard = "789123456",
+                            Image = "null",
+                            Name = "ProductOwner",
+                            Package_id = 1L,
+                            Password = "owner",
+                            Permission_id = 4L,
+                            Phone = 789123456,
+                            RegisterDay = new DateTime(2024, 3, 16, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2521),
+                            Status = true,
+                            Username = "owner"
+                        },
+                        new
+                        {
+                            id = 5L,
+                            Address = "Customer Address",
+                            Dob = new DateTime(2024, 3, 16, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2523),
+                            Email = "customer@example.com",
+                            Gender = "Male",
+                            IdentityCard = "321654987",
+                            Image = "null",
+                            Name = "Customer",
+                            Package_id = 1L,
+                            Password = "customer",
+                            Permission_id = 5L,
+                            Phone = 321654987,
+                            RegisterDay = new DateTime(2024, 3, 16, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2524),
+                            Status = true,
+                            Username = "customer"
+                        },
+                        new
+                        {
+                            id = 6L,
+                            Address = "Guest Address",
+                            Dob = new DateTime(2024, 3, 16, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2526),
+                            Email = "guest@example.com",
+                            Gender = "Female",
+                            IdentityCard = "654987321",
+                            Image = "null",
+                            Name = "Guest",
+                            Package_id = 1L,
+                            Password = "guest",
+                            Permission_id = 6L,
+                            Phone = 654987321,
+                            RegisterDay = new DateTime(2024, 3, 16, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2527),
+                            Status = true,
+                            Username = "guest"
+                        },
+                        new
+                        {
+                            id = 7L,
+                            Address = "User Address",
+                            Dob = new DateTime(2024, 3, 16, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2528),
+                            Email = "user@example.com",
+                            Gender = "Male",
+                            IdentityCard = "159263478",
+                            Image = "null",
+                            Name = "User",
+                            Package_id = 1L,
+                            Password = "user",
+                            Permission_id = 7L,
+                            Phone = 159263478,
+                            RegisterDay = new DateTime(2024, 3, 16, 11, 19, 54, 602, DateTimeKind.Local).AddTicks(2529),
+                            Status = true,
+                            Username = "user"
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.UserPermission", b =>
@@ -344,6 +571,43 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasKey("id");
 
                     b.ToTable("UserPermission");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            Role = "Admin"
+                        },
+                        new
+                        {
+                            id = 2L,
+                            Role = "Manager"
+                        },
+                        new
+                        {
+                            id = 3L,
+                            Role = "Staff"
+                        },
+                        new
+                        {
+                            id = 4L,
+                            Role = "ProductOwner"
+                        },
+                        new
+                        {
+                            id = 5L,
+                            Role = "Customer"
+                        },
+                        new
+                        {
+                            id = 6L,
+                            Role = "Guest"
+                        },
+                        new
+                        {
+                            id = 7L,
+                            Role = "User"
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.Auction", b =>

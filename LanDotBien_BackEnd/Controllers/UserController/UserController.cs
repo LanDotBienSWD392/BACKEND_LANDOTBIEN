@@ -34,15 +34,11 @@ public class UserController : ControllerBase
         }
     }
 
-
-
-
-
     [HttpPost("Register")]
-    public async Task<IActionResult> Register(UserRegisterDTORequest userRegisterRequest)
+    public async Task<IActionResult> Register(CreateAccountDTORequest createAccountDTORequest)
     {
-        User user = await _userService.Register(userRegisterRequest);
-        return Ok(userRegisterRequest);
+        User user = await _userService.Register(createAccountDTORequest);
+        return Ok(createAccountDTORequest);
     }
 
     [HttpPost("Login")]
