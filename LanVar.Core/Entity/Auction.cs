@@ -20,10 +20,10 @@ namespace LanVar.Core.Entity
         public long product_id { get; set; }
 
         [Required]
-        public string Password { get; set; }
+        public string password { get; set; }
 
         [Required]
-        public DateTime StartDay { get; set; } //ngay khoi tao Auction
+        public DateTime startDay { get; set; } //ngay khoi tao Auction
 
         public DateTime endDay { get; set; }
 

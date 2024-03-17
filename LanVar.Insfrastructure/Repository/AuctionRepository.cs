@@ -106,7 +106,7 @@ namespace LanVar.Repository.Repository
 
         public async Task<Auction> GetByProductIdAsync(long productId)
         {
-            return await _context.Auctions.FirstOrDefaultAsync(a => a.Product_id == productId);
+            return await _context.Auctions.FirstOrDefaultAsync(a => a.product_id == productId);
         }
 
         public async Task<bool> DeleteAsync(long id)
@@ -116,7 +116,7 @@ namespace LanVar.Repository.Repository
                 return false;
 
             // Chuyển trạng thái của đấu giá thành Inactive thay vì xóa nó
-            auction.Status = AuctionStatus.INACTIVE;
+            auction.status = AuctionStatus.INACTIVE;
 
             await _context.SaveChangesAsync();
             return true;
@@ -124,7 +124,7 @@ namespace LanVar.Repository.Repository
 
         public async Task<Auction> GetByAuctionNameAsync(string auctionName)
         {
-            return await _context.Auctions.FirstOrDefaultAsync(a => a.Auction_Name == auctionName);
+            return await _context.Auctions.FirstOrDefaultAsync(a => a.auction_Name == auctionName);
         }
         public async Task<List<Auction>> GetAllAsync()
         {

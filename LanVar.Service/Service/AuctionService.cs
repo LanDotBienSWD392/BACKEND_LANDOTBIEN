@@ -42,7 +42,7 @@ namespace LanVar.Service.Service
                 throw new Exception($"Auction Product existing!."); ;
             }
             var product = await _productRepository.GetByIdAsync(auctionDto.Product_id);
-            if (product == null || !product.Status)
+            if (product == null || !product.status)
             {
                 throw new Exception($"Product is not available for auction!");
             }
@@ -59,10 +59,10 @@ namespace LanVar.Service.Service
             var auction = await _auctionRepository.GetByIdAsync(id);
             if (auction == null)
                 return false;
-            var product = await _productRepository.GetByIdAsync(auction.Product_id);
+            var product = await _productRepository.GetByIdAsync(auction.product_id);
             if (product != null)
             {
-                product.Status = false;
+                product.status = false;
                 await _productRepository.Update(product);
             }
             return await _auctionRepository.DeleteAsync(id);
@@ -101,8 +101,8 @@ namespace LanVar.Service.Service
             }
 
             // Cập nhật thông tin của đấu giá
-            existingAuction.Auction_Name = auctionDto.Auction_Name;
-            existingAuction.Product_id = auctionDto.Product_id;
+            existingAuction.auction_Name = auctionDto.Auction_Name;
+            existingAuction.product_id = auctionDto.Product_id;
             // Cập nhật các trường khác nếu cần
             var auction = _mapper.Map(auctionDto, existingAuction);
             var updatedAuction = await _auctionRepository.UpdateAsync(auction);
