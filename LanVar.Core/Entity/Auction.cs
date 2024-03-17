@@ -5,8 +5,8 @@ namespace LanVar.Core.Entity
 {
     public enum AuctionStatus
     {
-        Active,
-        Inactive
+        ACTIVE,
+        INACTIVE
     }
 
     [Table("Auction")]
@@ -20,7 +20,10 @@ namespace LanVar.Core.Entity
         public long product_id { get; set; }
 
         [Required]
-        public DateTime startDay { get; set; } //ngay khoi tao Auction
+        public string Password { get; set; }
+
+        [Required]
+        public DateTime StartDay { get; set; } //ngay khoi tao Auction
 
         public DateTime endDay { get; set; }
 
