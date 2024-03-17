@@ -44,10 +44,10 @@ namespace LanVar.Core.Entity
 
         public bool status { get; set; }
 
-        [ForeignKey("Permission_id")]
+        [ForeignKey("permission_id")]
         public UserPermission userPermission { get; set; }
 
-        [ForeignKey("Package_id")]
+        [ForeignKey("package_id")]
         public Package package { get; set; }
     }
 }

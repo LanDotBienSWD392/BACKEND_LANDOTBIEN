@@ -17,10 +17,10 @@ namespace LanVar.Core.Entity
 
         public DateTime register_time { get; set; }
 
-        [ForeignKey("User_id")]
+        [ForeignKey("user_id")]
         public User user { get; set; }
 
-        [ForeignKey("Auction_id")]
+        [ForeignKey("auction_id")]
         public Auction auction { get; set; }
     }
 }

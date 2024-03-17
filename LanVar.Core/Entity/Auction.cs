@@ -36,7 +36,7 @@ namespace LanVar.Core.Entity
         [Required]
         public AuctionStatus status { get; set; }
 
-        [ForeignKey("Product_id")]
+        [ForeignKey("product_id")]
         public Product product { get; set; }
     }
 }

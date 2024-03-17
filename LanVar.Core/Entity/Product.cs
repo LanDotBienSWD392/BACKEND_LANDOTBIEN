@@ -32,7 +32,7 @@ namespace LanVar.Core.Entity
         [Required]
         public bool status { get; set; }
 
-        [ForeignKey("User_id")]
+        [ForeignKey("user_id")]
         public User user { get; set; }
     }
 }
