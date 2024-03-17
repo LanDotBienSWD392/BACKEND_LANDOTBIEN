@@ -10,15 +10,15 @@ namespace LanVar.Core.Entity
         public long id { get; set; }
 
         [Required]
-        public long Order_id { get; set; }
+        public long order_id { get; set; }
 
         [Required]
-        public long Product_id { get; set; }
+        public long product_id { get; set; }
 
         [ForeignKey("Order_id")]
-        public Order Order { get; set; }
+        public Order order { get; set; }
 
         [ForeignKey("Product_id")]
-        public Product Product { get; set; }
+        public Product product { get; set; }
     }
 }
