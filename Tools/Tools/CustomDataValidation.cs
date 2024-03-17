@@ -117,5 +117,4 @@ public class CustomDataValidation
             return new ValidationResult($"Invalid value for {validationContext.DisplayName}");
         }
     }
-    
 }

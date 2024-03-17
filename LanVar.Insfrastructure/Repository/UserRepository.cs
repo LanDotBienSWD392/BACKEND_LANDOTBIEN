@@ -8,17 +8,25 @@ namespace LanVar.Insfrastructure.Repository
 {
     public class UserRepository : GenericRepository<User>, IUserRepository
     {
-        private readonly IMapper _mapper;
+        
+        private readonly MyDbContext _dbContext;
+        protected DbSet<User> _users;
 
-        public UserRepository(MyDbContext context, IMapper mapper) : base(context)
+        public UserRepository(MyDbContext context) : base(context)
         {
-            _mapper = mapper;
+            _dbContext = context;
+            _users = _context.Set<User>();
         }
 
         public async Task<User> AddAsync(User user)
         {
-            await _context.Users.AddAsync(user);
+            _context.Set<User>().Add(user);
+            await _context.SaveChangesAsync();
             return user;
+
+            //_context.Set<TEntity>().Add(entity);
+            //await _context.SaveChangesAsync(); // Save changes asynchronously
+            //return entity;
         }
 
         public async Task<IEnumerable<User>> GetAllAsync()
@@ -80,6 +88,11 @@ namespace LanVar.Insfrastructure.Repository
             _context.Users.Remove(userToDelete);
             await _context.SaveChangesAsync();
             return true;
+        }
+
+        public async Task<IEnumerable<User>> GetAllStaffUsers()
+        {
+            return await _context.Users.Where(u => u.Permission_id == 3).ToListAsync();
         }
     }
 }
