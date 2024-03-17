@@ -78,4 +78,3 @@ namespace LanVar.Insfrastructure.Repository
         }
     }
 }
-

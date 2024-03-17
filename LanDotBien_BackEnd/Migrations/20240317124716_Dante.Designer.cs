@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LanDotBien_BackEnd.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20240309034923_dante")]
-    partial class dante
+    [Migration("20240317124716_Dante")]
+    partial class Dante
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,20 +38,36 @@ namespace LanDotBien_BackEnd.Migrations
                     b.Property<double>("Deposit_Money")
                         .HasColumnType("double");
 
+                    b.Property<DateTime>("EndDay")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<long>("Product_id")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("StartDay")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("tinyint(1)");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasKey("id");
 
                     b.HasIndex("Product_id");
 
                     b.ToTable("Auction");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            AuctionDay = new DateTime(2024, 3, 24, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4510),
+                            Auction_Name = "Auction 1",
+                            Deposit_Money = 50.0,
+                            EndDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Product_id = 1L,
+                            StartDay = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4510),
+                            Status = 0
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.Bid", b =>
@@ -79,6 +95,16 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasIndex("User_id");
 
                     b.ToTable("Bid");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            Auction_id = 1L,
+                            BID = 60.0,
+                            Bid_time = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4630),
+                            User_id = 1L
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.Bill", b =>
@@ -102,6 +128,15 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasIndex("Order_id");
 
                     b.ToTable("Bill");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            Order_id = 1L,
+                            Payment_Method = "Credit Card",
+                            Total_Price = 100.0
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.Cart", b =>
@@ -126,6 +161,15 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasIndex("User_id");
 
                     b.ToTable("Cart");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            Product_id = 1L,
+                            User_id = 1L,
+                            isSelected = true
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.Order", b =>
@@ -136,6 +180,9 @@ namespace LanDotBien_BackEnd.Migrations
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<double>("Total_Price")
                         .HasColumnType("double");
@@ -148,6 +195,40 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasIndex("User_id");
 
                     b.ToTable("Order");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            Date = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4559),
+                            Status = 0,
+                            Total_Price = 100.0,
+                            User_id = 1L
+                        },
+                        new
+                        {
+                            id = 2L,
+                            Date = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4560),
+                            Status = 1,
+                            Total_Price = 100.0,
+                            User_id = 1L
+                        },
+                        new
+                        {
+                            id = 3L,
+                            Date = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4562),
+                            Status = 2,
+                            Total_Price = 100.0,
+                            User_id = 1L
+                        },
+                        new
+                        {
+                            id = 4L,
+                            Date = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4563),
+                            Status = 3,
+                            Total_Price = 100.0,
+                            User_id = 1L
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.OrderItem", b =>
@@ -169,6 +250,14 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasIndex("Product_id");
 
                     b.ToTable("OrderItem");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            Order_id = 1L,
+                            Product_id = 1L
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.Package", b =>
@@ -197,6 +286,26 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Package");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            EndDay = new DateTime(2024, 4, 16, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4418),
+                            PackageName = "Basic",
+                            Package_Description = "Basic package",
+                            StartDay = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4405),
+                            Status = true
+                        },
+                        new
+                        {
+                            id = 2L,
+                            EndDay = new DateTime(2024, 4, 16, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4430),
+                            PackageName = "Premium",
+                            Package_Description = "Premium package",
+                            StartDay = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4430),
+                            Status = true
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.Product", b =>
@@ -239,6 +348,20 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasIndex("User_id");
 
                     b.ToTable("Product");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            ISBN = "123456789",
+                            Image = "",
+                            Product_Description = "Description for Product 1",
+                            Product_Name = "Product 1",
+                            Product_Price = 100.0,
+                            Status = true,
+                            Type = "Type 1",
+                            User_id = 1L
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.RoomRegistrations", b =>
@@ -263,6 +386,15 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasIndex("User_id");
 
                     b.ToTable("RoomRegistrations");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            Auction_id = 1L,
+                            Register_time = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4535),
+                            User_id = 1L
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.User", b =>
@@ -311,9 +443,8 @@ namespace LanDotBien_BackEnd.Migrations
                     b.Property<int>("Phone")
                         .HasColumnType("int");
 
-                    b.Property<string>("RegisterDay")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<DateTime>("RegisterDay")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<bool>("Status")
                         .HasColumnType("tinyint(1)");
@@ -329,6 +460,26 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasIndex("Permission_id");
 
                     b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            Address = "Admin Address",
+                            Dob = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4459),
+                            Email = "admin@example.com",
+                            Gender = "Male",
+                            IdentityCard = "123456789",
+                            Image = "null",
+                            Name = "Admin",
+                            Package_id = 1L,
+                            Password = "admin",
+                            Permission_id = 1L,
+                            Phone = 123456789,
+                            RegisterDay = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4460),
+                            Status = true,
+                            Username = "admin"
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.UserPermission", b =>
@@ -344,6 +495,43 @@ namespace LanDotBien_BackEnd.Migrations
                     b.HasKey("id");
 
                     b.ToTable("UserPermission");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1L,
+                            Role = "Admin"
+                        },
+                        new
+                        {
+                            id = 2L,
+                            Role = "Manager"
+                        },
+                        new
+                        {
+                            id = 3L,
+                            Role = "Staff"
+                        },
+                        new
+                        {
+                            id = 4L,
+                            Role = "ProductOwner"
+                        },
+                        new
+                        {
+                            id = 5L,
+                            Role = "Customer"
+                        },
+                        new
+                        {
+                            id = 6L,
+                            Role = "Guest"
+                        },
+                        new
+                        {
+                            id = 7L,
+                            Role = "User"
+                        });
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.Auction", b =>

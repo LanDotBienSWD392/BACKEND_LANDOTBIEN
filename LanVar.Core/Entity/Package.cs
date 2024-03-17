@@ -15,13 +15,10 @@ namespace LanVar.Core.Entity
         [Required]
         public string Package_Description { get; set; }
 
-        [Required]
         public DateTime StartDay { get; set; }
 
-        [Required]
         public DateTime EndDay { get; set; }
 
-        [Required]
         public bool Status { get; set; }
     }
 }

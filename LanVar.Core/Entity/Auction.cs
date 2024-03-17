@@ -3,9 +3,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LanVar.Core.Entity
 {
+    public enum AuctionStatus
+    {
+        Active,
+        Inactive
+    }
+
     [Table("Auction")]
     public class Auction
     {
+
         [Key]
         public long id { get; set; }
 
@@ -13,10 +20,12 @@ namespace LanVar.Core.Entity
         public long Product_id { get; set; }
 
         [Required]
-        public DateTime StartDay { get; set; }
+        public DateTime StartDay { get; set; } //ngay khoi tao Auction
+
+        public DateTime EndDay { get; set; }
 
         [Required]
-        public DateTime AuctionDay { get; set; }
+        public DateTime AuctionDay { get; set; } // ngay dau gia
 
         [Required]
         public string Auction_Name { get; set; }
@@ -25,7 +34,7 @@ namespace LanVar.Core.Entity
         public double Deposit_Money { get; set; }
 
         [Required]
-        public bool Status { get; set; }
+        public AuctionStatus Status { get; set; }
 
         [ForeignKey("Product_id")]
         public Product Product { get; set; }

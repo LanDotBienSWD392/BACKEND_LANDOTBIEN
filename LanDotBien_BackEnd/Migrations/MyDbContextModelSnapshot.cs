@@ -35,14 +35,17 @@ namespace LanDotBien_BackEnd.Migrations
                     b.Property<double>("Deposit_Money")
                         .HasColumnType("double");
 
+                    b.Property<DateTime>("EndDay")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<long>("Product_id")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("StartDay")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("tinyint(1)");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasKey("id");
 
@@ -54,12 +57,13 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 1L,
-                            AuctionDay = new DateTime(2024, 3, 23, 8, 30, 29, 418, DateTimeKind.Local).AddTicks(4445),
+                            AuctionDay = new DateTime(2024, 3, 24, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4510),
                             Auction_Name = "Auction 1",
                             Deposit_Money = 50.0,
+                            EndDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Product_id = 1L,
-                            StartDay = new DateTime(2024, 3, 16, 8, 30, 29, 418, DateTimeKind.Local).AddTicks(4444),
-                            Status = true
+                            StartDay = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4510),
+                            Status = 0
                         });
                 });
 
@@ -95,7 +99,7 @@ namespace LanDotBien_BackEnd.Migrations
                             id = 1L,
                             Auction_id = 1L,
                             BID = 60.0,
-                            Bid_time = new DateTime(2024, 3, 16, 8, 30, 29, 418, DateTimeKind.Local).AddTicks(4528),
+                            Bid_time = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4630),
                             User_id = 1L
                         });
                 });
@@ -174,6 +178,9 @@ namespace LanDotBien_BackEnd.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
                     b.Property<double>("Total_Price")
                         .HasColumnType("double");
 
@@ -190,7 +197,32 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 1L,
-                            Date = new DateTime(2024, 3, 16, 8, 30, 29, 418, DateTimeKind.Local).AddTicks(4485),
+                            Date = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4559),
+                            Status = 0,
+                            Total_Price = 100.0,
+                            User_id = 1L
+                        },
+                        new
+                        {
+                            id = 2L,
+                            Date = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4560),
+                            Status = 1,
+                            Total_Price = 100.0,
+                            User_id = 1L
+                        },
+                        new
+                        {
+                            id = 3L,
+                            Date = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4562),
+                            Status = 2,
+                            Total_Price = 100.0,
+                            User_id = 1L
+                        },
+                        new
+                        {
+                            id = 4L,
+                            Date = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4563),
+                            Status = 3,
                             Total_Price = 100.0,
                             User_id = 1L
                         });
@@ -256,19 +288,19 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 1L,
-                            EndDay = new DateTime(2024, 4, 15, 8, 30, 29, 418, DateTimeKind.Local).AddTicks(4282),
+                            EndDay = new DateTime(2024, 4, 16, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4418),
                             PackageName = "Basic",
                             Package_Description = "Basic package",
-                            StartDay = new DateTime(2024, 3, 16, 8, 30, 29, 418, DateTimeKind.Local).AddTicks(4271),
+                            StartDay = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4405),
                             Status = true
                         },
                         new
                         {
                             id = 2L,
-                            EndDay = new DateTime(2024, 4, 15, 8, 30, 29, 418, DateTimeKind.Local).AddTicks(4289),
+                            EndDay = new DateTime(2024, 4, 16, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4430),
                             PackageName = "Premium",
                             Package_Description = "Premium package",
-                            StartDay = new DateTime(2024, 3, 16, 8, 30, 29, 418, DateTimeKind.Local).AddTicks(4289),
+                            StartDay = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4430),
                             Status = true
                         });
                 });
@@ -357,7 +389,7 @@ namespace LanDotBien_BackEnd.Migrations
                         {
                             id = 1L,
                             Auction_id = 1L,
-                            Register_time = new DateTime(2024, 3, 16, 8, 30, 29, 418, DateTimeKind.Local).AddTicks(4468),
+                            Register_time = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4535),
                             User_id = 1L
                         });
                 });
@@ -408,9 +440,8 @@ namespace LanDotBien_BackEnd.Migrations
                     b.Property<int>("Phone")
                         .HasColumnType("int");
 
-                    b.Property<string>("RegisterDay")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<DateTime>("RegisterDay")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<bool>("Status")
                         .HasColumnType("tinyint(1)");
@@ -432,7 +463,7 @@ namespace LanDotBien_BackEnd.Migrations
                         {
                             id = 1L,
                             Address = "Admin Address",
-                            Dob = new DateTime(2024, 3, 16, 8, 30, 29, 418, DateTimeKind.Local).AddTicks(4314),
+                            Dob = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4459),
                             Email = "admin@example.com",
                             Gender = "Male",
                             IdentityCard = "123456789",
@@ -442,117 +473,9 @@ namespace LanDotBien_BackEnd.Migrations
                             Password = "admin",
                             Permission_id = 1L,
                             Phone = 123456789,
-                            RegisterDay = "03/16/2024 08:30:29",
+                            RegisterDay = new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4460),
                             Status = true,
                             Username = "admin"
-                        },
-                        new
-                        {
-                            id = 2L,
-                            Address = "Manager Address",
-                            Dob = new DateTime(2024, 3, 16, 8, 30, 29, 418, DateTimeKind.Local).AddTicks(4344),
-                            Email = "manager@example.com",
-                            Gender = "Female",
-                            IdentityCard = "987654321",
-                            Image = "null",
-                            Name = "Manager",
-                            Package_id = 1L,
-                            Password = "manager",
-                            Permission_id = 2L,
-                            Phone = 987654321,
-                            RegisterDay = "03/16/2024 08:30:29",
-                            Status = true,
-                            Username = "manager"
-                        },
-                        new
-                        {
-                            id = 3L,
-                            Address = "Staff Address",
-                            Dob = new DateTime(2024, 3, 16, 8, 30, 29, 418, DateTimeKind.Local).AddTicks(4348),
-                            Email = "staff@example.com",
-                            Gender = "Male",
-                            IdentityCard = "456789123",
-                            Image = "null",
-                            Name = "Staff",
-                            Package_id = 1L,
-                            Password = "staff",
-                            Permission_id = 3L,
-                            Phone = 456789123,
-                            RegisterDay = "03/16/2024 08:30:29",
-                            Status = true,
-                            Username = "staff"
-                        },
-                        new
-                        {
-                            id = 4L,
-                            Address = "Owner Address",
-                            Dob = new DateTime(2024, 3, 16, 8, 30, 29, 418, DateTimeKind.Local).AddTicks(4351),
-                            Email = "owner@example.com",
-                            Gender = "Female",
-                            IdentityCard = "789123456",
-                            Image = "null",
-                            Name = "ProductOwner",
-                            Package_id = 1L,
-                            Password = "owner",
-                            Permission_id = 4L,
-                            Phone = 789123456,
-                            RegisterDay = "03/16/2024 08:30:29",
-                            Status = true,
-                            Username = "owner"
-                        },
-                        new
-                        {
-                            id = 5L,
-                            Address = "Customer Address",
-                            Dob = new DateTime(2024, 3, 16, 8, 30, 29, 418, DateTimeKind.Local).AddTicks(4355),
-                            Email = "customer@example.com",
-                            Gender = "Male",
-                            IdentityCard = "321654987",
-                            Image = "null",
-                            Name = "Customer",
-                            Package_id = 1L,
-                            Password = "customer",
-                            Permission_id = 5L,
-                            Phone = 321654987,
-                            RegisterDay = "03/16/2024 08:30:29",
-                            Status = true,
-                            Username = "customer"
-                        },
-                        new
-                        {
-                            id = 6L,
-                            Address = "Guest Address",
-                            Dob = new DateTime(2024, 3, 16, 8, 30, 29, 418, DateTimeKind.Local).AddTicks(4358),
-                            Email = "guest@example.com",
-                            Gender = "Female",
-                            IdentityCard = "654987321",
-                            Image = "null",
-                            Name = "Guest",
-                            Package_id = 1L,
-                            Password = "guest",
-                            Permission_id = 6L,
-                            Phone = 654987321,
-                            RegisterDay = "03/16/2024 08:30:29",
-                            Status = true,
-                            Username = "guest"
-                        },
-                        new
-                        {
-                            id = 7L,
-                            Address = "User Address",
-                            Dob = new DateTime(2024, 3, 16, 8, 30, 29, 418, DateTimeKind.Local).AddTicks(4395),
-                            Email = "user@example.com",
-                            Gender = "Male",
-                            IdentityCard = "159263478",
-                            Image = "null",
-                            Name = "User",
-                            Package_id = 1L,
-                            Password = "user",
-                            Permission_id = 7L,
-                            Phone = 159263478,
-                            RegisterDay = "03/16/2024 08:30:29",
-                            Status = true,
-                            Username = "user"
                         });
                 });
 

@@ -4,10 +4,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace LanDotBien_BackEnd.Migrations
 {
     /// <inheritdoc />
-    public partial class dante : Migration
+    public partial class Dante : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -76,8 +78,7 @@ namespace LanDotBien_BackEnd.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Gender = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    RegisterDay = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    RegisterDay = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     Status = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
                 constraints: table =>
@@ -106,7 +107,8 @@ namespace LanDotBien_BackEnd.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     User_id = table.Column<long>(type: "bigint", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    Total_Price = table.Column<double>(type: "double", nullable: false)
+                    Total_Price = table.Column<double>(type: "double", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -183,11 +185,12 @@ namespace LanDotBien_BackEnd.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Product_id = table.Column<long>(type: "bigint", nullable: false),
                     StartDay = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    EndDay = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     AuctionDay = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     Auction_Name = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Deposit_Money = table.Column<double>(type: "double", nullable: false),
-                    Status = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                    Status = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -312,6 +315,80 @@ namespace LanDotBien_BackEnd.Migrations
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.InsertData(
+                table: "Package",
+                columns: new[] { "id", "EndDay", "PackageName", "Package_Description", "StartDay", "Status" },
+                values: new object[,]
+                {
+                    { 1L, new DateTime(2024, 4, 16, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4418), "Basic", "Basic package", new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4405), true },
+                    { 2L, new DateTime(2024, 4, 16, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4430), "Premium", "Premium package", new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4430), true }
+                });
+
+            migrationBuilder.InsertData(
+                table: "UserPermission",
+                columns: new[] { "id", "Role" },
+                values: new object[,]
+                {
+                    { 1L, "Admin" },
+                    { 2L, "Manager" },
+                    { 3L, "Staff" },
+                    { 4L, "ProductOwner" },
+                    { 5L, "Customer" },
+                    { 6L, "Guest" },
+                    { 7L, "User" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "User",
+                columns: new[] { "id", "Address", "Dob", "Email", "Gender", "IdentityCard", "Image", "Name", "Package_id", "Password", "Permission_id", "Phone", "RegisterDay", "Status", "Username" },
+                values: new object[] { 1L, "Admin Address", new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4459), "admin@example.com", "Male", "123456789", "null", "Admin", 1L, "admin", 1L, 123456789, new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4460), true, "admin" });
+
+            migrationBuilder.InsertData(
+                table: "Order",
+                columns: new[] { "id", "Date", "Status", "Total_Price", "User_id" },
+                values: new object[,]
+                {
+                    { 1L, new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4559), 0, 100.0, 1L },
+                    { 2L, new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4560), 1, 100.0, 1L },
+                    { 3L, new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4562), 2, 100.0, 1L },
+                    { 4L, new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4563), 3, 100.0, 1L }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Product",
+                columns: new[] { "id", "ISBN", "Image", "Product_Description", "Product_Name", "Product_Price", "Status", "Type", "User_id" },
+                values: new object[] { 1L, "123456789", "", "Description for Product 1", "Product 1", 100.0, true, "Type 1", 1L });
+
+            migrationBuilder.InsertData(
+                table: "Auction",
+                columns: new[] { "id", "AuctionDay", "Auction_Name", "Deposit_Money", "EndDay", "Product_id", "StartDay", "Status" },
+                values: new object[] { 1L, new DateTime(2024, 3, 24, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4510), "Auction 1", 50.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1L, new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4510), 0 });
+
+            migrationBuilder.InsertData(
+                table: "Bill",
+                columns: new[] { "id", "Order_id", "Payment_Method", "Total_Price" },
+                values: new object[] { 1L, 1L, "Credit Card", 100.0 });
+
+            migrationBuilder.InsertData(
+                table: "Cart",
+                columns: new[] { "id", "Product_id", "User_id", "isSelected" },
+                values: new object[] { 1L, 1L, 1L, true });
+
+            migrationBuilder.InsertData(
+                table: "OrderItem",
+                columns: new[] { "id", "Order_id", "Product_id" },
+                values: new object[] { 1L, 1L, 1L });
+
+            migrationBuilder.InsertData(
+                table: "Bid",
+                columns: new[] { "id", "Auction_id", "BID", "Bid_time", "User_id" },
+                values: new object[] { 1L, 1L, 60.0, new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4630), 1L });
+
+            migrationBuilder.InsertData(
+                table: "RoomRegistrations",
+                columns: new[] { "id", "Auction_id", "Register_time", "User_id" },
+                values: new object[] { 1L, 1L, new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4535), 1L });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Auction_Product_id",
