@@ -29,9 +29,9 @@ namespace LanVar.Service.Implementation
         public async Task<User> CreateUser(CreateAccountDTORequest createAccountDTORequest)
         {
             IEnumerable<User> checkEmail =
-                await _userRepository.GetByFilterAsync(x => x.Email.Equals(createAccountDTORequest.Email));
+                await _userRepository.GetByFilterAsync(x => x.email.Equals(createAccountDTORequest.Email));
             IEnumerable<User> checkUsername =
-                await _userRepository.GetByFilterAsync(x => x.Username.Equals(createAccountDTORequest.Username));
+                await _userRepository.GetByFilterAsync(x => x.username.Equals(createAccountDTORequest.Username));
             if (checkEmail.Count() != 0)
             {
                 throw new InvalidDataException($"Email is exist");
@@ -44,14 +44,14 @@ namespace LanVar.Service.Implementation
             var user = _mapper.Map<User>(createAccountDTORequest);
 
             // Set status = false when initializing user
-            user.IdentityCard = "123123123123";
-            user.Permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.Role.Equals("Manager"))).First().id;
-            user.Password = EncryptPassword.Encrypt(createAccountDTORequest.Password);
-            user.Status = false;
-            user.RegisterDay = DateTime.Now.Date;
-            user.Image = "";
-            user.Package_id = 1;
-            user.Gender = "Gay";
+            user.identityCard = "123123123123";
+            user.permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.role.Equals("Manager"))).First().id;
+            user.password = EncryptPassword.Encrypt(createAccountDTORequest.Password);
+            user.status = false;
+            user.registerDay = DateTime.Now.Date;
+            user.image = "";
+            user.package_id = 1;
+            user.gender = "Gay";
             await _userRepository.Add(user);
             return user;
         }
@@ -105,9 +105,9 @@ namespace LanVar.Service.Implementation
         public async Task<User> CreateStaffUser(CreateAccountDTORequest createAccountDTORequest)
         {
             IEnumerable<User> checkEmail =
-                await _userRepository.GetByFilterAsync(x => x.Email.Equals(createAccountDTORequest.Email));
+                await _userRepository.GetByFilterAsync(x => x.email.Equals(createAccountDTORequest.Email));
             IEnumerable<User> checkUsername =
-                await _userRepository.GetByFilterAsync(x => x.Username.Equals(createAccountDTORequest.Username));
+                await _userRepository.GetByFilterAsync(x => x.username.Equals(createAccountDTORequest.Username));
             if (checkEmail.Count() != 0)
             {
                 throw new InvalidDataException($"Email is exist");
@@ -120,14 +120,14 @@ namespace LanVar.Service.Implementation
             var users = _mapper.Map<User>(createAccountDTORequest);
 
             // Set status = false when initializing user
-            users.IdentityCard = "12312312333123";
-            users.Permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.Role.Equals("Staff"))).First().id;
-            users.Password = EncryptPassword.Encrypt(createAccountDTORequest.Password);
-            users.Status = true;
-            users.RegisterDay = DateTime.Now.Date;
-            users.Image = "";
-            users.Package_id = 1;
-            users.Gender = "Gay";
+            users.identityCard = "12312312333123";
+            users.permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.role.Equals("Staff"))).First().id;
+            users.password = EncryptPassword.Encrypt(createAccountDTORequest.Password);
+            users.status = true;
+            users.registerDay = DateTime.Now.Date;
+            users.image = "";
+            users.package_id = 1;
+            users.gender = "Gay";
             await _userRepository.Add(users);
             return users;
         }
@@ -139,7 +139,7 @@ namespace LanVar.Service.Implementation
             {
                 return null; // User not found
             }
-            if (userToUpdate.Permission_id == 1 || userToUpdate.Permission_id == 2 || userToUpdate.Permission_id == 6 || userToUpdate.Permission_id == 7)
+            if (userToUpdate.permission_id == 1 || userToUpdate.permission_id == 2 || userToUpdate.permission_id == 6 || userToUpdate.permission_id == 7)
             {
                 throw new Exception("Không được phép cập nhật người dùng với quyền này.");
             }
@@ -159,7 +159,7 @@ namespace LanVar.Service.Implementation
             }
 
             // Kiểm tra nếu permission_id = 1, không cho phép xóa
-            if (userToDelete.Permission_id == 1 || userToDelete.Permission_id == 2 || userToDelete.Permission_id == 6 || userToDelete.Permission_id == 7)
+            if (userToDelete.permission_id == 1 || userToDelete.permission_id == 2 || userToDelete.permission_id == 6 || userToDelete.permission_id == 7)
             {
                 throw new Exception("Không được phép xóa người dùng với quyền này.");
             }
