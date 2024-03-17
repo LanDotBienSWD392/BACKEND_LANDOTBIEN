@@ -24,11 +24,15 @@ namespace LanDotBien_BackEnd.Controllers.AdminController
         }
 
         [HttpGet("GetAllUser")]
-        public async Task<IActionResult> GetAllUser()
+        public async Task<IActionResult> GetAllUsers()
         {
             try
             {
                 var users = await _accountService.GetAllUsers();
+                if (users == null || !users.Any()) // Kiểm tra nếu không có người dùng nào được trả về
+                {
+                    return NotFound("Đéo Có Thằng Nào Hết"); // Báo trạng thái "Not Found" (404)
+                }
                 return Ok(users);
             }
             catch (CustomException.InvalidDataException ex)

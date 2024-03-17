@@ -1,7 +1,9 @@
-﻿using LanVar.DTO.DTO.request;
+﻿using LanVar.Core.Entity;
+using LanVar.DTO.DTO.request;
 using LanVar.Service.DTO.request;
 using LanVar.Service.Interface;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Principal;
 using Tools.Tools;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -13,13 +15,22 @@ namespace LanDotBien_BackEnd.Controllers.ManagerController
     public class ManageStaffAccounts : ControllerBase
     {
         private readonly IAccountService _accountService;
-        // GET: api/<ManageStaffAccounts>
+
+        public ManageStaffAccounts(IAccountService accountService)
+        {
+            _accountService = accountService;
+        }
+
         [HttpGet("GetAllStaff")]
-        public async Task<IActionResult> GetAllUser()
+        public async Task<IActionResult> GetAllStaffUsers()
         {
             try
             {
-                var users = await _accountService.GetAllUsers();
+                var users = await _accountService.GetAllStaffUsers();
+                if (users == null || !users.Any()) // Kiểm tra nếu không có người dùng nào được trả về
+                {
+                    return NotFound("Đéo Có User Nào Hết"); // Báo trạng thái "Not Found" (404)
+                }
                 return Ok(users);
             }
             catch (CustomException.InvalidDataException ex)
@@ -28,33 +39,13 @@ namespace LanDotBien_BackEnd.Controllers.ManagerController
             }
         }
 
-        // GET api/<ManageStaffAccounts>/5
-        [HttpGet("GetStaffById{id}")]
-        public async Task<IActionResult> GetUserById(long id)
-        {
-            try
-            {
-                var user = await _accountService.GetUserById(id);
-                if (user == null)
-                {
-                    return NotFound();
-                }
-                return Ok(user);
-            }
-            catch (CustomException.InvalidDataException ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
-        }
-
-        // POST api/<ManageStaffAccounts>
         [HttpPost("CreateStaff")]
-        public async Task<IActionResult> CreateUser([FromBody] CreateAccountDTORequest createAccountRequest)
+        public async Task<IActionResult> CreateStaffUser([FromBody] CreateAccountDTORequest createAccountDTORequest)
         {
             try
             {
-                var createdUser = await _accountService.CreateUser(createAccountRequest);
-                return CreatedAtAction(nameof(GetUserById), new { id = createdUser.id }, createdUser);
+                User user = await _accountService.CreateStaffUser(createAccountDTORequest);
+                return Ok(createAccountDTORequest);
             }
             catch (Exception ex)
             {
@@ -64,14 +55,14 @@ namespace LanDotBien_BackEnd.Controllers.ManagerController
 
         // PUT api/<ManageStaffAccounts>/5
         [HttpPut("UpdateStaff{id}")]
-        public async Task<IActionResult> UpdateUser(long id, [FromBody] UpdateUserDTORequest updateUserDTORequest)
+        public async Task<IActionResult> UpdateStaffUser(long id, [FromBody] UpdateUserDTORequest updateUserDTORequest)
         {
             try
             {
-                var updatedUser = await _accountService.UpdateUser(id, updateUserDTORequest);
+                var updatedUser = await _accountService.UpdateStaffUser(id, updateUserDTORequest);
                 if (updatedUser == null)
                 {
-                    return NotFound();
+                    return NotFound("Không Tìm Thấy Account");
                 }
                 return Ok(updatedUser);
             }
@@ -80,51 +71,15 @@ namespace LanDotBien_BackEnd.Controllers.ManagerController
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
-        [HttpPut("DeactivateStaff/{id}")]
-        public async Task<IActionResult> DeactivateUser(long id)
-        {
-            try
-            {
-                var result = await _accountService.DeactivateUser(id);
-                if (!result)
-                {
-                    return NotFound();
-                }
-                return Ok(new { message = "User deactivated successfully." });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
-        }
-
-        [HttpPut("ActivateStaff/{id}")]
-        public async Task<IActionResult> ActivateUser(long id)
-        {
-            try
-            {
-                var result = await _accountService.ActivateUser(id);
-                if (!result)
-                {
-                    return NotFound();
-                }
-                return Ok(new { message = "User activated successfully." });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
-        }
-
         [HttpDelete("DeleteStaff/{id}")]
-        public async Task<IActionResult> DeleteUser(long id)
+        public async Task<IActionResult> DeleteStaffUser(long id)
         {
             try
             {
-                var deletedUser = await _accountService.DeleteUser(id);
+                var deletedUser = await _accountService.DeleteStaffUser(id);
                 if (deletedUser == null)
                 {
-                    return NotFound();
+                    return NotFound("Không Tìm Thấy Account");
                 }
                 return Ok(new { message = "User deleted successfully." });
             }

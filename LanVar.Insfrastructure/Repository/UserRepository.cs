@@ -89,5 +89,10 @@ namespace LanVar.Insfrastructure.Repository
             await _context.SaveChangesAsync();
             return true;
         }
+
+        public async Task<IEnumerable<User>> GetAllStaffUsers()
+        {
+            return await _context.Users.Where(u => u.Permission_id == 3).ToListAsync();
+        }
     }
 }

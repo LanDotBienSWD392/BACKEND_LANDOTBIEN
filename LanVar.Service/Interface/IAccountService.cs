@@ -17,5 +17,9 @@ namespace LanVar.Service.Interface
         Task<bool> DeactivateUser(long id);
         Task<bool> ActivateUser(long id);
         Task<bool> DeleteUser(long id);
+        Task<IEnumerable<User>> GetAllStaffUsers();
+        Task<User> CreateStaffUser(CreateAccountDTORequest createAccountRequest);
+        Task<User> UpdateStaffUser(long id, UpdateUserDTORequest updateUserDTORequest);
+        Task<bool> DeleteStaffUser(long id);
     }
 }
