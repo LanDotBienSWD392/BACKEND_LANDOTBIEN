@@ -30,7 +30,7 @@ namespace LanDotBien_BackEnd.Controllers.StaffController
         {
             try
             {
-                var auction = await _auctionService.GetAllAuctions();
+                var auction = await _auctionService.GetAllAuctionsAsync();
                 return Ok(auction);
             }
             catch (Exception ex)
@@ -44,7 +44,7 @@ namespace LanDotBien_BackEnd.Controllers.StaffController
         {
             try
             {
-                var auction = await _auctionService.GetAuctionById(id);
+                var auction = await _auctionService.GetAuctionByIdAsync(id);
                 if (auction == null)
                 {
                     return NotFound();
@@ -63,9 +63,9 @@ namespace LanDotBien_BackEnd.Controllers.StaffController
         {
             try
             {
-                var auctionCreate = await _auctionService.CreateAuction(auctionDTORequest);
-                var response = new ApiResponse<Auction>(auctionCreate, HttpStatusCode.OK, "Auction add success");
-                return Ok(response); // Trả về kết quả thành công với dữ liệu UserPermission đã thêm
+                var auctionCreate = await _auctionService.CreateAuctionAsync(auctionDTORequest);
+/*                var response = new ApiResponse<Auction>(auctionCreate, HttpStatusCode.OK, "Auction add success");
+*/                return Ok(auctionCreate); // Trả về kết quả thành công với dữ liệu UserPermission đã thêm
             }
             catch (CustomException.InvalidDataException ex)
             {
@@ -80,7 +80,7 @@ namespace LanDotBien_BackEnd.Controllers.StaffController
         {
             try
             {
-                var updatedAuction = await _auctionService.UpdateAuction(id, auctionDTORequest);
+                var updatedAuction = await _auctionService.UpdateAuctionAsync(id, auctionDTORequest);
                 if (updatedAuction == null)
                 {
                     return NotFound();
@@ -99,7 +99,7 @@ namespace LanDotBien_BackEnd.Controllers.StaffController
         {
             try
             {
-                var existingAuction = await _auctionService.DeleteAuction(id);
+                var existingAuction = await _auctionService.DeleteAuctionAsync(id);
                 if (existingAuction == null)
                 {
                     return NotFound();

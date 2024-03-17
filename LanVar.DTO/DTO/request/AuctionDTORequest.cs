@@ -6,20 +6,19 @@ namespace LanVar.DTO.DTO.request;
 public class AuctionDTORequest
 {
     
-    public long product_id { get; set; }
+    public long Product_id { get; set; }
 
     [Required(ErrorMessage = "Start Day is required")]
-    public DateTime startDay { get; set; }
+    public DateTime StartDay { get; set; }
 
     [Required(ErrorMessage = "Auction Day is required")]
-    public DateTime auctionDay { get; set; }
+    public DateTime AuctionDay { get; set; }
 
-    [Required(ErrorMessage = "Auction Name is required")]
-    public required string auctionName { get; set; }
+    public string Auction_Name { get; set; }
 
     [Required(ErrorMessage = "Deposit Money is required")]
-    public double depositMoney { get; set; }
+    public double Deposit_Money { get; set; }
 
-    public bool status { get; set; }
+    public bool Status { get; set; }
 
 }

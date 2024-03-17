@@ -20,7 +20,7 @@ namespace LanVar.DTO.AutoMapperProfile
 			CreateMap<CreateProductDTORequest, Product>().ReverseMap();
 			CreateMap<ProductDTOResponse, Product>().ReverseMap();
             CreateMap<AuctionDTOResponse, Auction>().ReverseMap();
-
+            CreateMap<AuctionDTORequest, Auction>().ReverseMap();
         }
 	}
 }

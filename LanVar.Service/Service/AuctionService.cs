@@ -8,66 +8,58 @@ using LanVar.Service.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Tools.Tools;
 
 namespace LanVar.Service.Service
 {
     public class AuctionService : IAuctionService
     {
-        private readonly IGenericRepository<Auction> _auctionGenericRepository;
         private readonly IAuctionRepository _auctionRepository;
         private readonly IMapper _mapper;
 
-        public AuctionService(
-            IGenericRepository<Auction> auctionGenericRepository, IMapper mapper, IAuctionRepository auctionRepository
-            )
+        public AuctionService(IAuctionRepository auctionRepository, IMapper mapper)
         {
             _auctionRepository = auctionRepository;
-            _auctionGenericRepository = auctionGenericRepository;
             _mapper = mapper;
         }
 
-        public async Task<Auction> CreateAuction(AuctionDTORequest auctionDTORequest)
+        public async Task<AuctionDTOResponse> GetAuctionByIdAsync(long id)
         {
-            var auction = _mapper.Map<Auction>(auctionDTORequest);
-            // Adding auction to repository
-            return await _auctionGenericRepository.Add(auction);
+            var auction = await _auctionRepository.GetByIdAsync(id);
+            return _mapper.Map<AuctionDTOResponse>(auction);
         }
 
-        public async Task<bool> DeleteAuction(long id)
+        public async Task<IEnumerable<AuctionDTOResponse>> GetAllAuctionsAsync()
         {
-            return await _auctionGenericRepository.Delete(id);
+            var auctions = await _auctionRepository.GetAllAsync();
+            return _mapper.Map<IEnumerable<AuctionDTOResponse>>(auctions);
         }
 
-        public async Task<IEnumerable<AuctionDTOResponse>> GetAllAuctions()
+        public async Task<AuctionDTOResponse> CreateAuctionAsync(AuctionDTORequest auctionDTO)
         {
-            IEnumerable<Auction> auctions = await _auctionRepository.GetAllAuctionsAsync();
-            IEnumerable<AuctionDTOResponse> auctionDTOResponses = _mapper.Map<IEnumerable<AuctionDTOResponse>>(auctions);
-
-            return auctionDTOResponses;
+            var auctionEntity = _mapper.Map<Auction>(auctionDTO);
+            var addedAuction = await _auctionRepository.AddAsync(auctionEntity);
+            return _mapper.Map<AuctionDTOResponse>(addedAuction);
         }
 
-        public async Task<Auction> GetAuctionById(long id)
+        public async Task<AuctionDTOResponse> UpdateAuctionAsync(long id, AuctionDTORequest auctionDTO)
         {
-            return await _auctionRepository.GetByIdAsync(id);
-        }
-
-        public async Task<Auction> UpdateAuction(long id, AuctionDTORequest auctionDTORequest)
-        {
-            var existingAuction = await _auctionGenericRepository.GetByIdAsync(id);
+            var existingAuction = await _auctionRepository.GetByIdAsync(id);
             if (existingAuction == null)
                 return null;
 
-            // Map DTO to entity and update
-            existingAuction = _mapper.Map(auctionDTORequest, existingAuction);
-
-            // Update the auction
-            await _auctionGenericRepository.Update(existingAuction);
-
-            return existingAuction;
+            _mapper.Map(auctionDTO, existingAuction);
+            var updatedAuction = await _auctionRepository.UpdateAsync(existingAuction);
+            return _mapper.Map<AuctionDTOResponse>(updatedAuction);
         }
 
-        
+        public async Task<bool> DeleteAuctionAsync(long id)
+        {
+            return await _auctionRepository.DeleteAsync(id);
+        }
+
     }
 }

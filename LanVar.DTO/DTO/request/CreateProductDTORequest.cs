@@ -11,7 +11,7 @@ public class CreateProductDTORequest
     public string Product_Name { get; set; }
     [Required(ErrorMessage = "Product Description is required")]
     public string Product_Description { get; set; }
-    [Required(ErrorMessage = "Image is required")]
+    /*[Required(ErrorMessage = "Image is required")]*/
     public string Image { get; set; }
     [Required(ErrorMessage = "Product Price is required")]
     public double Product_Price { get; set; }

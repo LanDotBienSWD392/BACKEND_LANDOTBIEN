@@ -11,10 +11,10 @@ namespace LanVar.Service.Interface
 {
     public interface IAuctionService
     {
-        Task<Auction> CreateAuction(AuctionDTORequest auctionDTORequest);
-        Task<IEnumerable<AuctionDTOResponse>> GetAllAuctions();
-        Task<Auction> UpdateAuction(long id, AuctionDTORequest auctionDTORequest);
-        Task<bool> DeleteAuction(long id);
-        Task<Auction> GetAuctionById(long id);
+        Task<AuctionDTOResponse> GetAuctionByIdAsync(long id);
+        Task<IEnumerable<AuctionDTOResponse>> GetAllAuctionsAsync();
+        Task<AuctionDTOResponse> CreateAuctionAsync(AuctionDTORequest auctionDTO);
+        Task<AuctionDTOResponse> UpdateAuctionAsync(long id, AuctionDTORequest auctionDTO);
+        Task<bool> DeleteAuctionAsync(long id);
     }
 }
