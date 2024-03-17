@@ -18,12 +18,8 @@ namespace LanVar.DTO.DTO.request
         public required string Email { get; set; }
         [CustomDataValidation.PasswordValidation]
         public required string Password { get; set; }
-        [CustomDataValidation.AgeValidation(18, 65)]
-        public DateTime RegisterDay { get; set; }
-        public string Image { get; set; }
+        public required string Gender { get; set; }
         [StringLength(maximumLength: 99, MinimumLength = 4)]
         public required string Address { get; set; }
-        public bool Status { get; set; }
-        public int Package_id { get; set; }
     }
 }

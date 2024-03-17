@@ -8,27 +8,52 @@ using LanVar.DTO.DTO.request;
 using LanVar.Service.DTO;
 using LanVar.Service.DTO.request;
 using LanVar.Service.Interface;
+using Tools.Tools;
 
 namespace LanVar.Service.Implementation
 {
     public class AccountService : IAccountService
     {
         private readonly IUserRepository _userRepository;
+        private readonly IUserPermissionRepository _userPermissionRepository;
         
         private readonly IMapper _mapper;
 
-        public AccountService(IUserRepository userRepository, IMapper mapper)
+        public AccountService(IUserRepository userRepository, IMapper mapper, IUserPermissionRepository userPermissionRepository)
         {
             _userRepository = userRepository;
+            _userPermissionRepository = userPermissionRepository;
             _mapper = mapper;
         }
 
-        public async Task<User> CreateUser(CreateAccountDTORequest CreateAccountDTORequest)
+        public async Task<User> CreateUser(CreateAccountDTORequest createAccountDTORequest)
         {
-            var user = _mapper.Map<User>(CreateAccountDTORequest);
-            var addedUser = await _userRepository.AddAsync(user);
-            await _userRepository.SaveChangesAsync();
-            return addedUser;
+            IEnumerable<User> checkEmail =
+                await _userRepository.GetByFilterAsync(x => x.Email.Equals(createAccountDTORequest.Email));
+            IEnumerable<User> checkUsername =
+                await _userRepository.GetByFilterAsync(x => x.Username.Equals(createAccountDTORequest.Username));
+            if (checkEmail.Count() != 0)
+            {
+                throw new InvalidDataException($"Email is exist");
+            }
+
+            if (checkUsername.Count() != 0)
+            {
+                throw new InvalidDataException($"Username is exist");
+            }
+            var user = _mapper.Map<User>(createAccountDTORequest);
+
+            // Set status = false when initializing user
+            user.IdentityCard = "123123123123";
+            user.Permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.Role.Equals("Manager"))).First().id;
+            user.Password = EncryptPassword.Encrypt(createAccountDTORequest.Password);
+            user.Status = false;
+            user.RegisterDay = DateTime.Now.Date;
+            user.Image = "";
+            user.Package_id = 1;
+            user.Gender = "Gay";
+            await _userRepository.Add(user);
+            return user;
         }
 
         public async Task<IEnumerable<User>> GetAllUsers()
@@ -48,9 +73,7 @@ namespace LanVar.Service.Implementation
             {
                 return null; // User not found
             }
-
             _mapper.Map(updateUserDTORequest, userToUpdate);
-
             _userRepository.Update(userToUpdate);
             await _userRepository.SaveChangesAsync();
             return userToUpdate;
