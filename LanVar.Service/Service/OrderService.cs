@@ -26,7 +26,6 @@ namespace LanVar.Service.Implementation
         {
             var order = _mapper.Map<Order>(createOrderDTORequest);
             var addOrder = await _orderRepository.AddAsync(order);
-            await _orderRepository.SaveChangesAsynce();
             return addOrder;
         }
         public async Task<IEnumerable<Order>> GetAllOrders()
@@ -48,12 +47,12 @@ namespace LanVar.Service.Implementation
             _mapper.Map(updateOrderDTORequest, orderToUpdate);
 
             _orderRepository.Update(orderToUpdate);
-            await _orderRepository.SaveChangesAsynce();
+            await _orderRepository.GetAllAsync();
             return orderToUpdate;
         }
         public async Task<bool> DeleteOrder(long id)
         {
-            var success = await _orderRepository.DeleteOrder(id);
+            var success = await _orderRepository.Delete(id);
             return success;
         }
     }

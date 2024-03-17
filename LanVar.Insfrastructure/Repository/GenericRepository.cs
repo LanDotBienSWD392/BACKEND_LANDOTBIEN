@@ -12,16 +12,10 @@ namespace LanVar.Insfrastructure.Repository
         protected MyDbContext _context;
         protected DbSet<TEntity> dbSet;
         
-        public GenericRepository(
-            MyDbContext context
-            
-            
-            )
+        public GenericRepository(MyDbContext context)
 		{
             _context = context;
-            
             dbSet = _context.Set<TEntity>();
-
 		}
 
         public async Task<TEntity> Add(TEntity entity)

@@ -6,10 +6,10 @@ using Microsoft.Extensions.Logging;
 
 namespace LanVar.Insfrastructure.Repository
 {
-	public class OrderRepository : GenericRepository<Order>, IOrderRepository
-	{
+    public class OrderRepository : GenericRepository<Order>, IOrderRepository
+    {
         private readonly IMapper _mapper;
-       
+
         public OrderRepository(MyDbContext context, IMapper mapper) : base(context)
         {
             _mapper = mapper;
@@ -30,7 +30,7 @@ namespace LanVar.Insfrastructure.Repository
         {
             await _context.SaveChangesAsync();
         }
-        
+
         public async Task<bool> DeleteOrder(long id)
         {
             var orderToDelete = await _context.Order.FindAsync(id);
