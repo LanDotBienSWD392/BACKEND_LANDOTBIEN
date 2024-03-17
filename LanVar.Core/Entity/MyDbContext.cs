@@ -4,7 +4,12 @@ namespace LanVar.Core.Entity
 {
     public class MyDbContext : DbContext
     {
-        public MyDbContext(DbContextOptions<MyDbContext> options) : base(options) { }
+        public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
+        {
+            
+        }
+
+        
         public DbSet<Auction> Auctions { get; set; }
         public DbSet<Bid> Bids { get; set; }
         public DbSet<Bill> Bills { get; set; }
