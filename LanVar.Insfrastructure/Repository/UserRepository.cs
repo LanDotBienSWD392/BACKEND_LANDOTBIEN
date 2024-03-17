@@ -92,7 +92,7 @@ namespace LanVar.Insfrastructure.Repository
 
         public async Task<IEnumerable<User>> GetAllStaffUsers()
         {
-            return await _context.Users.Where(u => u.Permission_id == 3).ToListAsync();
+            return await _context.Users.Where(u => u.permission_id == 3).ToListAsync();
         }
     }
 }
