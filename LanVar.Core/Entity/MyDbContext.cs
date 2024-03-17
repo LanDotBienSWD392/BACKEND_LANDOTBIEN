@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using static System.Net.Mime.MediaTypeNames;
-using System.Net;
-using System.Numerics;
-using System.Reflection;
-using System.Xml.Linq;
+using System;
+using LanVar.Core.Entity;
 
 namespace LanVar.Core.Entity
 {
@@ -14,7 +11,7 @@ namespace LanVar.Core.Entity
         public DbSet<Bid> Bids { get; set; }
         public DbSet<Bill> Bills { get; set; }
         public DbSet<Cart> Carts { get; set; }
-        public DbSet<Order> Order { get; set; }
+        public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> Items { get; set; }
         public DbSet<Package> Packages { get; set; }
         public DbSet<Product> Products { get; set; }
@@ -44,19 +41,18 @@ namespace LanVar.Core.Entity
             );
 
             // Seed data for Users
-            //Thằng nào muốn thêm thì tạo nhưng nó chưa giải quyết được chuyện mã hóa account
             modelBuilder.Entity<User>().HasData(
-            new User { id = 1, Permission_id = 1, Package_id = 1, IdentityCard = "123456789", Name = "Admin", Email = "admin@example.com", Username = "admin", Password = "admin", Image = "null", Phone = 123456789, Dob = DateTime.Now, Address = "Admin Address", Gender = "Male", RegisterDay = DateTime.Now, Status = true }
+                new User { id = 1, Permission_id = 1, Package_id = 1, IdentityCard = "123456789", Name = "Admin", Email = "admin@example.com", Username = "admin", Password = "admin", Image = "null", Phone = 123456789, Dob = DateTime.Now, Address = "Admin Address", Gender = "Male", RegisterDay = DateTime.Now, Status = true }
             );
 
             // Seed data for Products
             modelBuilder.Entity<Product>().HasData(
-            new Product { id = 1, ISBN = "123456789", User_id = 1, Product_Name = "Product 1", Product_Description = "Description for Product 1", Image = "", Product_Price = 100.00, Type = "Type 1", Status = true }
+                new Product { id = 1, ISBN = "123456789", User_id = 1, Product_Name = "Product 1", Product_Description = "Description for Product 1", Image = "", Product_Price = 100.00, Type = "Type 1", Status = true }
             );
 
             // Seed data for Auctions
             modelBuilder.Entity<Auction>().HasData(
-            new Auction { id = 1, Product_id = 1, StartDay = DateTime.Now, AuctionDay = DateTime.Now.AddDays(7), Auction_Name = "Auction 1", Deposit_Money = 50.00, Status = true }
+                new Auction { id = 1, Product_id = 1, StartDay = DateTime.Now, AuctionDay = DateTime.Now.AddDays(7), Auction_Name = "Auction 1", Deposit_Money = 50.00, Status = AuctionStatus.Active }
             );
 
             // Seed data for RoomRegistrations
@@ -66,10 +62,10 @@ namespace LanVar.Core.Entity
 
             // Seed data for Orders
             modelBuilder.Entity<Order>().HasData(
-                new Order { id = 1, User_id = 1, Date = DateTime.Now, Total_Price = 100.00, Status = "Confirmed" },
-                new Order { id = 2, User_id = 1, Date = DateTime.Now, Total_Price = 100.00, Status = "In Transit" },
-                new Order { id = 3, User_id = 1, Date = DateTime.Now, Total_Price = 100.00, Status = "Delivered" },
-                new Order { id = 4, User_id = 1, Date = DateTime.Now, Total_Price = 100.00, Status = "Canceled" }
+                new Order { id = 1, User_id = 1, Date = DateTime.Now, Total_Price = 100.00, Status = OrderStatus.Confirmed },
+                new Order { id = 2, User_id = 1, Date = DateTime.Now, Total_Price = 100.00, Status = OrderStatus.InTransit },
+                new Order { id = 3, User_id = 1, Date = DateTime.Now, Total_Price = 100.00, Status = OrderStatus.Delivered },
+                new Order { id = 4, User_id = 1, Date = DateTime.Now, Total_Price = 100.00, Status = OrderStatus.Canceled }
             );
 
             // Seed data for OrderItems

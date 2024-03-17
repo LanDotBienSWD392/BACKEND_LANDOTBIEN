@@ -17,13 +17,13 @@ namespace LanVar.Insfrastructure.Repository
 
         public async Task<Order> AddAsync(Order order)
         {
-            await _context.Order.AddAsync(order);
+            await _context.Orders.AddAsync(order);
             return order;
         }
 
         void IOrderRepository.Update(Order order)
         {
-            _context.Order.Update(order);
+            _context.Orders.Update(order);
         }
 
         public async Task SaveChangesAsynce()
@@ -33,13 +33,13 @@ namespace LanVar.Insfrastructure.Repository
 
         public async Task<bool> DeleteOrder(long id)
         {
-            var orderToDelete = await _context.Order.FindAsync(id);
+            var orderToDelete = await _context.Orders.FindAsync(id);
             if (orderToDelete == null)
             {
                 return false;
             }
 
-            _context.Order.Remove(orderToDelete);
+            _context.Orders.Remove(orderToDelete);
             await _context.SaveChangesAsync();
             return true;
         }

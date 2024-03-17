@@ -35,14 +35,17 @@ namespace LanDotBien_BackEnd.Migrations
                     b.Property<double>("Deposit_Money")
                         .HasColumnType("double");
 
+                    b.Property<DateTime>("EndDay")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<long>("Product_id")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("StartDay")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("tinyint(1)");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasKey("id");
 
@@ -54,12 +57,13 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 1L,
-                            AuctionDay = new DateTime(2024, 3, 24, 15, 34, 46, 209, DateTimeKind.Local).AddTicks(7221),
+                            AuctionDay = new DateTime(2024, 3, 24, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5794),
                             Auction_Name = "Auction 1",
                             Deposit_Money = 50.0,
+                            EndDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Product_id = 1L,
-                            StartDay = new DateTime(2024, 3, 17, 15, 34, 46, 209, DateTimeKind.Local).AddTicks(7220),
-                            Status = true
+                            StartDay = new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5794),
+                            Status = 0
                         });
                 });
 
@@ -95,7 +99,7 @@ namespace LanDotBien_BackEnd.Migrations
                             id = 1L,
                             Auction_id = 1L,
                             BID = 60.0,
-                            Bid_time = new DateTime(2024, 3, 17, 15, 34, 46, 209, DateTimeKind.Local).AddTicks(7315),
+                            Bid_time = new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5927),
                             User_id = 1L
                         });
                 });
@@ -174,9 +178,8 @@ namespace LanDotBien_BackEnd.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<double>("Total_Price")
                         .HasColumnType("double");
@@ -194,32 +197,32 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 1L,
-                            Date = new DateTime(2024, 3, 17, 15, 34, 46, 209, DateTimeKind.Local).AddTicks(7263),
-                            Status = "Confirmed",
+                            Date = new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5846),
+                            Status = 0,
                             Total_Price = 100.0,
                             User_id = 1L
                         },
                         new
                         {
                             id = 2L,
-                            Date = new DateTime(2024, 3, 17, 15, 34, 46, 209, DateTimeKind.Local).AddTicks(7265),
-                            Status = "In Transit",
+                            Date = new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5850),
+                            Status = 1,
                             Total_Price = 100.0,
                             User_id = 1L
                         },
                         new
                         {
                             id = 3L,
-                            Date = new DateTime(2024, 3, 17, 15, 34, 46, 209, DateTimeKind.Local).AddTicks(7266),
-                            Status = "Delivered",
+                            Date = new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5852),
+                            Status = 2,
                             Total_Price = 100.0,
                             User_id = 1L
                         },
                         new
                         {
                             id = 4L,
-                            Date = new DateTime(2024, 3, 17, 15, 34, 46, 209, DateTimeKind.Local).AddTicks(7267),
-                            Status = "Canceled",
+                            Date = new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5853),
+                            Status = 3,
                             Total_Price = 100.0,
                             User_id = 1L
                         });
@@ -285,19 +288,19 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 1L,
-                            EndDay = new DateTime(2024, 4, 16, 15, 34, 46, 209, DateTimeKind.Local).AddTicks(7115),
+                            EndDay = new DateTime(2024, 4, 16, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5691),
                             PackageName = "Basic",
                             Package_Description = "Basic package",
-                            StartDay = new DateTime(2024, 3, 17, 15, 34, 46, 209, DateTimeKind.Local).AddTicks(7104),
+                            StartDay = new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5676),
                             Status = true
                         },
                         new
                         {
                             id = 2L,
-                            EndDay = new DateTime(2024, 4, 16, 15, 34, 46, 209, DateTimeKind.Local).AddTicks(7121),
+                            EndDay = new DateTime(2024, 4, 16, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5700),
                             PackageName = "Premium",
                             Package_Description = "Premium package",
-                            StartDay = new DateTime(2024, 3, 17, 15, 34, 46, 209, DateTimeKind.Local).AddTicks(7121),
+                            StartDay = new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5699),
                             Status = true
                         });
                 });
@@ -386,7 +389,7 @@ namespace LanDotBien_BackEnd.Migrations
                         {
                             id = 1L,
                             Auction_id = 1L,
-                            Register_time = new DateTime(2024, 3, 17, 15, 34, 46, 209, DateTimeKind.Local).AddTicks(7243),
+                            Register_time = new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5822),
                             User_id = 1L
                         });
                 });
@@ -460,7 +463,7 @@ namespace LanDotBien_BackEnd.Migrations
                         {
                             id = 1L,
                             Address = "Admin Address",
-                            Dob = new DateTime(2024, 3, 17, 15, 34, 46, 209, DateTimeKind.Local).AddTicks(7175),
+                            Dob = new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5732),
                             Email = "admin@example.com",
                             Gender = "Male",
                             IdentityCard = "123456789",
@@ -470,7 +473,7 @@ namespace LanDotBien_BackEnd.Migrations
                             Password = "admin",
                             Permission_id = 1L,
                             Phone = 123456789,
-                            RegisterDay = new DateTime(2024, 3, 17, 15, 34, 46, 209, DateTimeKind.Local).AddTicks(7176),
+                            RegisterDay = new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5733),
                             Status = true,
                             Username = "admin"
                         });

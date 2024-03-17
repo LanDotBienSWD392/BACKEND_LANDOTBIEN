@@ -32,7 +32,7 @@ builder.Services.AddDbContext<MyDbContext>(options =>
     options.UseMySql(connectionString, serverVersion, options => options.MigrationsAssembly("LanDotBien_BackEnd"));
 }
 );
-
+//Repository add o day
 builder.Services.AddScoped<IAuctionRepository, AuctionRepository>();
 builder.Services.AddScoped<IBidRepository, BidRepository>();
 builder.Services.AddScoped<IBillRepository, BillRepository>();
@@ -44,7 +44,7 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IRoomRegistrationsRepository, RoomRegistrationsRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserPermissionRepository, UserPermissionRepository>();
-
+// Service add o day
 builder.Services.AddScoped<IUserService,UserService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IUserPermissionService, UserPermissionService>();

@@ -3,6 +3,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LanVar.Core.Entity
 {
+    public enum OrderStatus
+    {
+        Confirmed,
+        InTransit,
+        Delivered,
+        Canceled
+    }
     [Table("Order")]
     public class Order
     {
@@ -16,7 +23,7 @@ namespace LanVar.Core.Entity
 
         public double Total_Price { get; set; }
         
-        public string Status { get; set; } // Confirmed - In Transit - Delivered - Canceled
+        public OrderStatus Status { get; set; } // Confirmed - In Transit - Delivered - Canceled
 
         [ForeignKey("User_id")]
         public User User { get; set; }
