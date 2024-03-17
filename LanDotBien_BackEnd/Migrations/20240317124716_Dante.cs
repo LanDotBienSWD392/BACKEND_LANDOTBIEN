@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace LanDotBien_BackEnd.Migrations
 {
     /// <inheritdoc />
-    public partial class Kane : Migration
+    public partial class Dante : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -321,8 +321,8 @@ namespace LanDotBien_BackEnd.Migrations
                 columns: new[] { "id", "EndDay", "PackageName", "Package_Description", "StartDay", "Status" },
                 values: new object[,]
                 {
-                    { 1L, new DateTime(2024, 4, 16, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5691), "Basic", "Basic package", new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5676), true },
-                    { 2L, new DateTime(2024, 4, 16, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5700), "Premium", "Premium package", new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5699), true }
+                    { 1L, new DateTime(2024, 4, 16, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4418), "Basic", "Basic package", new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4405), true },
+                    { 2L, new DateTime(2024, 4, 16, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4430), "Premium", "Premium package", new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4430), true }
                 });
 
             migrationBuilder.InsertData(
@@ -342,17 +342,17 @@ namespace LanDotBien_BackEnd.Migrations
             migrationBuilder.InsertData(
                 table: "User",
                 columns: new[] { "id", "Address", "Dob", "Email", "Gender", "IdentityCard", "Image", "Name", "Package_id", "Password", "Permission_id", "Phone", "RegisterDay", "Status", "Username" },
-                values: new object[] { 1L, "Admin Address", new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5732), "admin@example.com", "Male", "123456789", "null", "Admin", 1L, "admin", 1L, 123456789, new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5733), true, "admin" });
+                values: new object[] { 1L, "Admin Address", new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4459), "admin@example.com", "Male", "123456789", "null", "Admin", 1L, "admin", 1L, 123456789, new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4460), true, "admin" });
 
             migrationBuilder.InsertData(
                 table: "Order",
                 columns: new[] { "id", "Date", "Status", "Total_Price", "User_id" },
                 values: new object[,]
                 {
-                    { 1L, new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5846), 0, 100.0, 1L },
-                    { 2L, new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5850), 1, 100.0, 1L },
-                    { 3L, new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5852), 2, 100.0, 1L },
-                    { 4L, new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5853), 3, 100.0, 1L }
+                    { 1L, new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4559), 0, 100.0, 1L },
+                    { 2L, new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4560), 1, 100.0, 1L },
+                    { 3L, new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4562), 2, 100.0, 1L },
+                    { 4L, new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4563), 3, 100.0, 1L }
                 });
 
             migrationBuilder.InsertData(
@@ -363,7 +363,7 @@ namespace LanDotBien_BackEnd.Migrations
             migrationBuilder.InsertData(
                 table: "Auction",
                 columns: new[] { "id", "AuctionDay", "Auction_Name", "Deposit_Money", "EndDay", "Product_id", "StartDay", "Status" },
-                values: new object[] { 1L, new DateTime(2024, 3, 24, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5794), "Auction 1", 50.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1L, new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5794), 0 });
+                values: new object[] { 1L, new DateTime(2024, 3, 24, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4510), "Auction 1", 50.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1L, new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4510), 0 });
 
             migrationBuilder.InsertData(
                 table: "Bill",
@@ -383,12 +383,12 @@ namespace LanDotBien_BackEnd.Migrations
             migrationBuilder.InsertData(
                 table: "Bid",
                 columns: new[] { "id", "Auction_id", "BID", "Bid_time", "User_id" },
-                values: new object[] { 1L, 1L, 60.0, new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5927), 1L });
+                values: new object[] { 1L, 1L, 60.0, new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4630), 1L });
 
             migrationBuilder.InsertData(
                 table: "RoomRegistrations",
                 columns: new[] { "id", "Auction_id", "Register_time", "User_id" },
-                values: new object[] { 1L, 1L, new DateTime(2024, 3, 17, 19, 39, 24, 355, DateTimeKind.Local).AddTicks(5822), 1L });
+                values: new object[] { 1L, 1L, new DateTime(2024, 3, 17, 19, 47, 14, 689, DateTimeKind.Local).AddTicks(4535), 1L });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Auction_Product_id",
