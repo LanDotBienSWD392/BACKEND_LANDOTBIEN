@@ -6,7 +6,7 @@ namespace LanVar.Core.Interfaces
     public interface IGenericRepository<TEntity> where TEntity : class
     {
         
-        public Task<IEnumerable<TEntity>> GetAllAsync();
+        Task<IEnumerable<TEntity>> GetAllAsync();
         Task<TEntity> GetById(long id);
         Task<TEntity> GetByIdAsync(long id);
         Task<TEntity> Add(TEntity entity);

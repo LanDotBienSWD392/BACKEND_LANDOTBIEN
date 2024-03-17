@@ -46,6 +46,7 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserPermissionRepository, UserPermissionRepository>();
 
 builder.Services.AddScoped<IUserService,UserService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IUserPermissionService, UserPermissionService>();
 builder.Services.AddScoped<IPackageService, PackageService>();
 builder.Services.AddScoped<IProductService, ProductService>();

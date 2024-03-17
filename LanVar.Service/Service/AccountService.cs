@@ -31,8 +31,6 @@ namespace LanVar.Service.Implementation
             return addedUser;
         }
 
-        
-
         public async Task<IEnumerable<User>> GetAllUsers()
         {
             return await _userRepository.GetAllAsync();
