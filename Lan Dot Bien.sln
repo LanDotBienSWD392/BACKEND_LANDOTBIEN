@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanVar.Core", "LanVar.Core\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanVar.Insfrastructure", "LanVar.Insfrastructure\LanVar.Insfrastructure.csproj", "{68B2E8F8-5C02-4211-94F5-5E4EE05F65CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanVar.Service", "LanVar.Service\LanVar.Service.csproj", "{B0D5AA6B-3600-4611-AAC9-F3866A97CB36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanVar.Services", "LanVar.Services\LanVar.Services.csproj", "{B0D5AA6B-3600-4611-AAC9-F3866A97CB36}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "Tools\Tools.csproj", "{DF95B958-EE2B-4293-AE51-5F312E6BB7BE}"
 EndProject

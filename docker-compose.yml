@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  landotbien_backend:
+    image: ${DOCKER_REGISTRY-}landotbienbackend
+    container_name: lanvar.api
+    build:
+      context: .
+      dockerfile: LanDotBien_BackEnd/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ConnectionStrings__MyDB=server=mysql;port=3306;database=lanvar;User=root;Password=12345;
+
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: lanvar
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:

@@ -1,19 +1,29 @@
-﻿FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR /app
-
-# Add a local NuGet package source
-RUN dotnet nuget add source /app/packages
-
-# Copy the project file and restore dependencies
-COPY *.csproj ./
-RUN dotnet restore
-
-# Copy the remaining files and build the application
-COPY . ./
-RUN dotnet publish -c Release -o out
-
-# Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
-COPY --from=build /app/out ./
+EXPOSE 80
+EXPOSE 443
+
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+COPY ["LanDotBien_BackEnd/LanDotBien_BackEnd.csproj", "LanDotBien_BackEnd/"]
+COPY ["LanVar.Core/LanVar.Core.csproj", "LanVar.Core/"]
+COPY ["LanVar.DTO/LanVar.DTO.csproj", "LanVar.DTO/"]
+COPY ["Tools/Tools.csproj", "Tools/"]
+COPY ["LanVar.Insfrastructure/LanVar.Insfrastructure.csproj", "LanVar.Insfrastructure/"]
+COPY ["LanVar.Services/LanVar.Services.csproj", "LanVar.Services/"]
+RUN dotnet restore "LanDotBien_BackEnd/LanDotBien_BackEnd.csproj"
+COPY . .
+
+WORKDIR "/src/LanDotBien_BackEnd"
+RUN dotnet build "LanDotBien_BackEnd.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "LanDotBien_BackEnd.csproj" -c Release -o /app/publish /p:UseAppHost=false
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "LanDotBien_BackEnd.dll"]
+
+# Install .NET SDK
+

@@ -14,7 +14,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LanVar.Core\LanVar.Core.csproj" />
-    <ProjectReference Include="..\LanVar.Service\LanVar.Service.csproj" />
+    <ProjectReference Include="..\LanVar.Services\LanVar.Services.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="13.0.1" />
