@@ -1,9 +1,11 @@
 ﻿using LanVar.Core.Entity;
+using LanVar.Core.Interfaces;
 using LanVar.DTO.DTO.request;
 using LanVar.DTO.DTO.response;
 using LanVar.Service.DTO.request;
 using LanVar.Service.Implementation;
 using LanVar.Service.Interface;
+using LanVar.Service.IService;
 using LanVar.Service.Service;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -64,8 +66,12 @@ namespace LanDotBien_BackEnd.Controllers.StaffController
             try
             {
                 var auctionCreate = await _auctionService.CreateAuctionAsync(auctionDTORequest);
-/*                var response = new ApiResponse<Auction>(auctionCreate, HttpStatusCode.OK, "Auction add success");
-*/                return Ok(auctionCreate); // Trả về kết quả thành công với dữ liệu UserPermission đã thêm
+                if (auctionCreate != null)
+                {
+                    var response = new ApiResponse<AuctionDTOResponse>(auctionCreate, HttpStatusCode.OK, "Auction add success");
+                    return Ok(response);
+                }
+                return Ok(new { message = "Error to add." });
             }
             catch (CustomException.InvalidDataException ex)
             {
@@ -104,7 +110,7 @@ namespace LanDotBien_BackEnd.Controllers.StaffController
                 {
                     return NotFound();
                 }
-                return Ok(new { message = "User deleted successfully." });
+                return Ok(new { message = "Auction deleted successfully." });
             }
             catch (Exception ex)
             {

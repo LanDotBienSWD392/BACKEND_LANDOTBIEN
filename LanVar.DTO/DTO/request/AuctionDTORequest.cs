@@ -1,5 +1,6 @@
 ﻿using LanVar.Core.Entity;
 using System.ComponentModel.DataAnnotations;
+using Tools.Tools;
 
 namespace LanVar.DTO.DTO.request;
 
@@ -14,11 +15,16 @@ public class AuctionDTORequest
     [Required(ErrorMessage = "Auction Day is required")]
     public DateTime AuctionDay { get; set; }
 
+    [StringLength(maximumLength: 40, MinimumLength = 4)]
     public string Auction_Name { get; set; }
+    
 
-    [Required(ErrorMessage = "Deposit Money is required")]
+    [Required(ErrorMessage = "Deposit Money is required"), CustomDataValidation.IntRangeValidation(1000000, 1000000000)]
     public double Deposit_Money { get; set; }
 
-    public bool Status { get; set; }
+    public String Status { get; set; }
+
+    [Required(ErrorMessage = "Deposit Money is required")]
+    public string Password { get; set; }
 
 }

@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using AutoMapper;
 using LanVar.Core.Entity;
 using LanVar.Core.Interfaces;
@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace LanVar.Insfrastructure.Repository
 {
-/*	public class AuctionRepository : GenericRepository<Auction>, IAuctionRepository
+*//*	public class AuctionRepository : GenericRepository<Auction>, IAuctionRepository
 	{
         private readonly IMapper _mapper;
         public AuctionRepository(MyDbContext context) : base(context)
@@ -31,7 +31,7 @@ namespace LanVar.Insfrastructure.Repository
         {
             await _context.SaveChangesAsync();
         }
-    }*/
+    }*//*
 
     public class AuctionRepository : GenericRepository<Auction>, IAuctionRepository
     {
@@ -78,3 +78,70 @@ namespace LanVar.Insfrastructure.Repository
         }
     }
 }
+*/
+using LanVar.Core.Entity;
+using LanVar.Repository.IRepository;
+
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace LanVar.Repository.Repository
+{
+    public class AuctionRepository : IAuctionRepository
+    {
+        private readonly MyDbContext _context;
+
+        public AuctionRepository(MyDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<Auction> CreateAsync(Auction auction)
+        {
+            _context.Auctions.Add(auction);
+            await _context.SaveChangesAsync();
+            return auction;
+        }
+
+        public async Task<Auction> GetByProductIdAsync(long productId)
+        {
+            return await _context.Auctions.FirstOrDefaultAsync(a => a.Product_id == productId);
+        }
+
+        public async Task<bool> DeleteAsync(long id)
+        {
+            var auction = await _context.Auctions.FindAsync(id);
+            if (auction == null)
+                return false;
+
+            // Chuyển trạng thái của đấu giá thành Inactive thay vì xóa nó
+            auction.Status = AuctionStatus.INACTIVE;
+
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<Auction> GetByAuctionNameAsync(string auctionName)
+        {
+            return await _context.Auctions.FirstOrDefaultAsync(a => a.Auction_Name == auctionName);
+        }
+        public async Task<List<Auction>> GetAllAsync()
+        {
+            return await _context.Auctions.ToListAsync();
+        }
+
+        public async Task<Auction> GetByIdAsync(long id)
+        {
+            return await _context.Auctions.FindAsync(id);
+        }
+
+        public async Task<Auction> UpdateAsync(Auction auction)
+        {
+            _context.Entry(auction).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return auction;
+        }
+    }
+}
+

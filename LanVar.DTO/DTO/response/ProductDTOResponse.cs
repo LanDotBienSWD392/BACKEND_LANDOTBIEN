@@ -8,4 +8,5 @@ public class ProductDTOResponse
     public string Image { get; set; }
     public double Product_Price { get; set; }
     public string Type { get; set; }
+    public bool Status { get; set; }
 }

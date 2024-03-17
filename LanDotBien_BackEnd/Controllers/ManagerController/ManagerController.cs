@@ -51,11 +51,11 @@ namespace LanDotBien_BackEnd.Controllers.ManagerController
         }
 
         [HttpPost("CreateStaff")]
-        public async Task<IActionResult> CreateStaff([FromBody] UserRegisterRequest userRegisterRequest)
+        public async Task<IActionResult> CreateStaff([FromBody] CreateAccountDTORequest createAccountDTORequest)
         {
             try
             {
-                var createdUser = await _accountService.CreateUser(userRegisterRequest);
+                var createdUser = await _accountService.CreateUser(createAccountDTORequest);
                 return CreatedAtAction(nameof(GetStaffById), new { id = createdUser.id }, createdUser);
             }
             catch (Exception ex)

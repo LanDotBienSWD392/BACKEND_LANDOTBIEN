@@ -17,6 +17,9 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 using LanVar.Service.Implementation;
+using LanVar.Repository.IRepository;
+using LanVar.Repository.Repository;
+using LanVar.Service.IService;
 
 var builder = WebApplication.CreateBuilder(args);
 

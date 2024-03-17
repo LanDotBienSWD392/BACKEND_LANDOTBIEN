@@ -6,6 +6,7 @@ namespace LanVar.DTO.DTO.response;
 
 public class AuctionDTOResponse
 {
+    public long id { get; set; }
 
     public long Product_id { get; set; }
 
@@ -13,10 +14,12 @@ public class AuctionDTOResponse
 
     public DateTime AuctionDay { get; set; }
 
-    public required string Auction_Name { get; set; }
+    public string Auction_Name { get; set; }
 
     public double Deposit_Money { get; set; }
 
-    public bool Status { get; set; }
+    public String Status { get; set; }
 
+    public string Password { get; set; }
+    /*public string ErrorMessage { get; set; }*/
 }
