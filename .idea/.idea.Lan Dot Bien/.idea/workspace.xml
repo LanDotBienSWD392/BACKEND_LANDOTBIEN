@@ -4,24 +4,39 @@
     <projectFile profileName="IIS Express">LanDotBien_BackEnd/LanDotBien_BackEnd.csproj</projectFile>
     <projectFile profileName="http">LanDotBien_BackEnd/LanDotBien_BackEnd.csproj</projectFile>
     <projectFile profileName="https">LanDotBien_BackEnd/LanDotBien_BackEnd.csproj</projectFile>
+    <projectFile kind="DockerCompose">docker-compose.dcproj</projectFile>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="fix jwt, add more user information to jwt">
+    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/ManageManagerAccounts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/ManageManagerAccounts.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Interfaces/IProductRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.DTO/AutoMapperProfile/AutoMapperProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/AutoMapperProfile/AutoMapperProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/LanVar.Insfrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Insfrastructure/LanVar.Insfrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IAuctionRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IBidRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IBillRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/ICartRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IGenericRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IOrderItemRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IOrderRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IPackageRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IProductRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IRoomRegistrationsRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IUserPermissionRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IUserRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/Interfaces/ICartRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/CartRepository.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/ProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/ProductRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Service/Interface/IAccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Interface/IAccountService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/UserRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LanVar.Service/Service/PackageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Service/PackageService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Service/Service/ProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Service/ProductService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LanVar.Service/Service/UserPermissionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Service/UserPermissionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Service/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Service/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/Tools/Authentication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/Tools/Authentication.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.DTO/AutoMapperProfile/AutoMapperProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/AutoMapperProfile/AutoMapperProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Service/Interface/IProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Interface/IProductService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Service/Service/ProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Service/ProductService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +44,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="main" />
+    <option name="BRANCH" value="Dante" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -93,33 +108,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.LanDotBien_BackEnd: IIS Express.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.LanDotBien_BackEnd: http.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.39751554&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;HotReloadSettingsPage&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.LanDotBien_BackEnd: IIS Express.executor": "Run",
+    ".NET Launch Settings Profile.LanDotBien_BackEnd: http.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.39751554",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "HotReloadSettingsPage",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;C#&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ],
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
-      &quot;/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
-      &quot;/Users/hoangdinh/.local/share/Symbols/src&quot;
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "C#"
+    ],
+    "rider.external.source.directories": [
+      "/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
+      "/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache",
+      "/Users/hoangdinh/.local/share/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.LanDotBien_BackEnd: http">
     <configuration name="LanDotBien_BackEnd: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/LanDotBien_BackEnd/LanDotBien_BackEnd.csproj" />
@@ -165,6 +183,24 @@
       <method v="2">
         <option name="Build" />
       </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="secondarySourceFiles">
+            <list>
+              <option value="$PROJECT_DIR$/docker-compose.override.yml" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -236,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710416065322</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix search product engine">
+      <option name="closed" value="true" />
+      <created>1710489344194</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710489344194</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +307,8 @@
     <MESSAGE value="add crud for package" />
     <MESSAGE value="add authorization" />
     <MESSAGE value="fix jwt, add more user information to jwt" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix jwt, add more user information to jwt" />
+    <MESSAGE value="fix search product engine" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix search product engine" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

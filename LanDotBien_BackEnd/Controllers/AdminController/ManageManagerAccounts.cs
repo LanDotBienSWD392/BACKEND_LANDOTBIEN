@@ -24,11 +24,15 @@ namespace LanDotBien_BackEnd.Controllers.AdminController
         }
 
         [HttpGet("GetAllUser")]
-        public async Task<IActionResult> GetAllUser()
+        public async Task<IActionResult> GetAllUsers()
         {
             try
             {
                 var users = await _accountService.GetAllUsers();
+                if (users == null || !users.Any()) // Kiểm tra nếu không có người dùng nào được trả về
+                {
+                    return NotFound("Đéo Có Thằng Nào Hết"); // Báo trạng thái "Not Found" (404)
+                }
                 return Ok(users);
             }
             catch (CustomException.InvalidDataException ex)
@@ -56,14 +60,14 @@ namespace LanDotBien_BackEnd.Controllers.AdminController
         }
 
         [HttpPost("CreateUser")]
-        public async Task<IActionResult> CreateUser([FromBody] CreateAccountDTORequest createAccountRequest)
+        public async Task<IActionResult> CreateUser([FromBody] CreateAccountDTORequest createAccountDTORequest)
         {
             try
             {
-                var createdUser = await _accountService.CreateUser(createAccountRequest);
-                return CreatedAtAction(nameof(GetUserById), new { id = createdUser.id }, createdUser);
+                User user = await _accountService.CreateUser(createAccountDTORequest);
+                return Ok(createAccountDTORequest);
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
@@ -74,12 +78,12 @@ namespace LanDotBien_BackEnd.Controllers.AdminController
         {
             try
             {
-                var updatedUser = await _accountService.UpdateUser(id, updateUserDTORequest);
-                if (updatedUser == null)
+                User user= await _accountService.UpdateUser(id, updateUserDTORequest);
+                if (user == null)
                 {
                     return NotFound();
                 }
-                return Ok(updatedUser);
+                return Ok(user);
             }
             catch (Exception ex)
             {
@@ -122,7 +126,6 @@ namespace LanDotBien_BackEnd.Controllers.AdminController
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
-
         [HttpDelete("DeleteUser/{id}")]
         public async Task<IActionResult> DeleteUser(long id)
         {

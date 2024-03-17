@@ -8,5 +8,6 @@ namespace LanVar.DTO.DTO.request
 {
     public class CreateOrderDTORequest
     {
+
     }
 }

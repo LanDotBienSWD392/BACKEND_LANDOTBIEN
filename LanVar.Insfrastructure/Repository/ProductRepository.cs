@@ -30,7 +30,7 @@ namespace LanVar.Insfrastructure.Repository
         public async Task<IEnumerable<Product>> SearchProductsAsync(Product searchRequest)
         {
             return await _context.Products
-                .Where(p => p.ISBN == searchRequest.ISBN && p.Product_Name == searchRequest.Product_Name && p.Product_Price == searchRequest.Product_Price)
+                .Where(p => p.ISBN == searchRequest.ISBN && p.product_Name == searchRequest.product_Name && p.product_Price == searchRequest.product_Price)
                 .ToListAsync();
         }
     }

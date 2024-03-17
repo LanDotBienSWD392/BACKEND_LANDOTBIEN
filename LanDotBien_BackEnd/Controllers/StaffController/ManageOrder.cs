@@ -87,7 +87,7 @@ namespace LanDotBien_BackEnd.Controllers.StaffController
         }
 
         // DELETE api/<ManageOrder>/5
-        [HttpDelete("DeleteOrder{id}")]
+        [HttpDelete("DeleteOrder/{id}")]
         public async Task<IActionResult> DeleteOrder (long id)
         {
             try

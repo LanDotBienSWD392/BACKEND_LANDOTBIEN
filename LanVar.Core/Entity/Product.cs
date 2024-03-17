@@ -13,26 +13,26 @@ namespace LanVar.Core.Entity
         public string ISBN { get; set; }
 
         [Required]
-        public long User_id { get; set; }
+        public long user_id { get; set; }
 
         [Required]
-        public string Product_Name { get; set; }
+        public string product_Name { get; set; }
 
         [Required]
-        public string Product_Description { get; set; }
+        public string product_Description { get; set; }
 
-        public string Image { get; set; }
-
-        [Required]
-        public double Product_Price { get; set; }
+        public string image { get; set; }
 
         [Required]
-        public string Type { get; set; }
+        public double product_Price { get; set; }
 
         [Required]
-        public bool Status { get; set; }
+        public string type { get; set; }
 
-        [ForeignKey("User_id")]
-        public User User { get; set; }
+        [Required]
+        public bool status { get; set; }
+
+        [ForeignKey("user_id")]
+        public User user { get; set; }
     }
 }

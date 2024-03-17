@@ -19,7 +19,8 @@ public class UserController : ControllerBase
         _userService = userService;
         _httpContextAccessor = httpContextAccessor;
     }
-    [HttpGet("CurrentUser"), Authorize]
+    /*[HttpGet("CurrentUser"), Authorize]*/
+    [HttpGet("CurrentUser")]
     public ActionResult<string> GetCurrentLoggedInUser()
     {
         try

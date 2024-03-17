@@ -10,17 +10,17 @@ namespace LanVar.Core.Entity
         public long id { get; set; }
 
         [Required]
-        public long User_id { get; set; }
+        public long user_id { get; set; }
 
         [Required]
-        public long Auction_id { get; set; }
+        public long auction_id { get; set; }
 
-        public DateTime Register_time { get; set; }
+        public DateTime register_time { get; set; }
 
-        [ForeignKey("User_id")]
-        public User User { get; set; }
+        [ForeignKey("user_id")]
+        public User user { get; set; }
 
-        [ForeignKey("Auction_id")]
-        public Auction Auction { get; set; }
+        [ForeignKey("auction_id")]
+        public Auction auction { get; set; }
     }
 }

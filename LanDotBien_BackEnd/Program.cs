@@ -17,6 +17,9 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 using LanVar.Service.Implementation;
+using LanVar.Repository.IRepository;
+using LanVar.Repository.Repository;
+using LanVar.Service.IService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,11 +35,11 @@ builder.Services.AddDbContext<MyDbContext>(options =>
     options.UseMySql(connectionString, serverVersion, options => options.MigrationsAssembly("LanDotBien_BackEnd"));
 }
 );
-
+//Repository add o day
 builder.Services.AddScoped<IAuctionRepository, AuctionRepository>();
 builder.Services.AddScoped<IBidRepository, BidRepository>();
 builder.Services.AddScoped<IBillRepository, BillRepository>();
-builder.Services.AddScoped<ICartRepository, CartRepository>();
+
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderItemRepository, OrderItemRepository>();
 builder.Services.AddScoped<IPackageRepository, PackageRepository>();
@@ -44,8 +47,10 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IRoomRegistrationsRepository, RoomRegistrationsRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserPermissionRepository, UserPermissionRepository>();
-
+// Service add o day
 builder.Services.AddScoped<IUserService,UserService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IAuctionService, AuctionService>();
 builder.Services.AddScoped<IUserPermissionService, UserPermissionService>();
 builder.Services.AddScoped<IPackageService, PackageService>();
 builder.Services.AddScoped<IProductService, ProductService>();

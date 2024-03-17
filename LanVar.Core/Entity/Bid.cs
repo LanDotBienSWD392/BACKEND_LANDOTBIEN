@@ -10,20 +10,20 @@ namespace LanVar.Core.Entity
         public long id { get; set; }
 
         [Required]
-        public long Auction_id { get; set; }
+        public long auction_id { get; set; }
 
         [Required]
-        public long User_id { get; set; }
+        public long user_id { get; set; }
 
         [Required]
-        public double BID { get; set; }
+        public double bid { get; set; }
 
-        public DateTime Bid_time { get; set; }
+        public DateTime bid_time { get; set; }
 
-        [ForeignKey("Auction_id")]
-        public Auction Auction { get; set; }
+        [ForeignKey("auction_id")]
+        public Auction auction { get; set; }
 
-        [ForeignKey("User_id")]
-        public User User { get; set; }
+        [ForeignKey("user_id")]
+        public User user { get; set; }
     }
 }

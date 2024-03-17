@@ -10,15 +10,15 @@ namespace LanVar.Core.Entity
         public long id { get; set; }
 
         [Required]
-        public string PackageName { get; set; }
+        public string packageName { get; set; }
 
         [Required]
-        public string Package_Description { get; set; }
+        public string package_Description { get; set; }
 
-        public DateTime StartDay { get; set; }
+        public DateTime startDay { get; set; }
 
-        public DateTime EndDay { get; set; }
+        public DateTime endDay { get; set; }
 
-        public bool Status { get; set; }
+        public bool status { get; set; }
     }
 }
