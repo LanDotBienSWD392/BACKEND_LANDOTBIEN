@@ -49,7 +49,7 @@ namespace LanVar.Insfrastructure.Repository
                 return false; // User not found
             }
 
-            userToDeactivate.Status = false;
+            userToDeactivate.status = false;
             _context.Users.Update(userToDeactivate);
             await _context.SaveChangesAsync();
             return true;
@@ -63,7 +63,7 @@ namespace LanVar.Insfrastructure.Repository
                 return false; // User not found
             }
 
-            userToActivate.Status = true;
+            userToActivate.status = true;
             _context.Users.Update(userToActivate);
             await _context.SaveChangesAsync();
             return true;

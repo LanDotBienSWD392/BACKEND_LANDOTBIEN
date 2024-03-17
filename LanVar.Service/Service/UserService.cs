@@ -43,9 +43,9 @@ namespace LanVar.Service.Service
 		public async Task<User> Register(CreateAccountDTORequest createAccountDTORequest)
 		{
 			IEnumerable<User> checkEmail =
-				await _userRepository.GetByFilterAsync(x => x.Email.Equals(createAccountDTORequest.Email));
+				await _userRepository.GetByFilterAsync(x => x.email.Equals(createAccountDTORequest.Email));
 			IEnumerable<User> checkUsername =
-				await _userRepository.GetByFilterAsync(x => x.Username.Equals(createAccountDTORequest.Username));
+				await _userRepository.GetByFilterAsync(x => x.username.Equals(createAccountDTORequest.Username));
 			if (checkEmail.Count() != 0)
 			{
 				throw new InvalidDataException($"Email is exist");
@@ -57,12 +57,12 @@ namespace LanVar.Service.Service
 			}
 
 			var user = _mapper.Map<User>(createAccountDTORequest);
-			user.Permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.Role.Equals("Customer"))).First().id;
-			user.Password = EncryptPassword.Encrypt(createAccountDTORequest.Password);
-			user.Status = true;
-			user.RegisterDay = DateTime.Now.Date;
-			user.Image = "nguyen rua anh nao de image laf required";
-			user.Package_id = 1;
+			user.permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.role.Equals("Customer"))).First().id;
+			user.password = EncryptPassword.Encrypt(createAccountDTORequest.Password);
+			user.status = true;
+			user.registerDay = DateTime.Now.Date;
+			user.image = "nguyen rua anh nao de image laf required";
+			user.package_id = 1;
 			
 			await _userRepository.Add(user);
 			return user;
@@ -72,8 +72,8 @@ namespace LanVar.Service.Service
 		{
 			string hashedPass = EncryptPassword.Encrypt(loginDtoRequest.Password);
 			IEnumerable<User> check = await _userRepository.GetByFilterAsync(x =>
-				x.Username.Equals(loginDtoRequest.Username)
-				&& x.Password.Equals(hashedPass)
+				x.username.Equals(loginDtoRequest.Username)
+				&& x.password.Equals(hashedPass)
 			);
 			if (!check.Any())
 			{
@@ -81,7 +81,7 @@ namespace LanVar.Service.Service
 			}
 
 			User user = check.First();
-			if (user.Status == false)
+			if (user.status == false)
 			{
 				throw new CustomException.InvalidDataException(HttpStatusCode.BadRequest.ToString(),$"User is not active");
 			}

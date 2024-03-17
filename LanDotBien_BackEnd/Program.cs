@@ -36,7 +36,7 @@ builder.Services.AddDbContext<MyDbContext>(options =>
 builder.Services.AddScoped<IAuctionRepository, AuctionRepository>();
 builder.Services.AddScoped<IBidRepository, BidRepository>();
 builder.Services.AddScoped<IBillRepository, BillRepository>();
-builder.Services.AddScoped<ICartRepository, CartRepository>();
+
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderItemRepository, OrderItemRepository>();
 builder.Services.AddScoped<IPackageRepository, PackageRepository>();

@@ -4,24 +4,36 @@
     <projectFile profileName="IIS Express">LanDotBien_BackEnd/LanDotBien_BackEnd.csproj</projectFile>
     <projectFile profileName="http">LanDotBien_BackEnd/LanDotBien_BackEnd.csproj</projectFile>
     <projectFile profileName="https">LanDotBien_BackEnd/LanDotBien_BackEnd.csproj</projectFile>
+    <projectFile kind="DockerCompose">docker-compose.dcproj</projectFile>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="fix jwt, add more user information to jwt">
+    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/ManageManagerAccounts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/ManageManagerAccounts.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Interfaces/IProductRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.DTO/AutoMapperProfile/AutoMapperProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/AutoMapperProfile/AutoMapperProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/LanVar.Insfrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Insfrastructure/LanVar.Insfrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IAuctionRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IBidRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IBillRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/ICartRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IGenericRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IOrderItemRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IOrderRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IPackageRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IProductRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IRoomRegistrationsRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IUserPermissionRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IUserRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/Interfaces/ICartRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/CartRepository.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/ProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/ProductRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Service/Interface/IAccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Interface/IAccountService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/UserRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LanVar.Service/Service/PackageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Service/PackageService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Service/Service/ProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Service/ProductService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LanVar.Service/Service/UserPermissionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Service/UserPermissionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Service/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Service/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/Tools/Authentication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/Tools/Authentication.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,6 +177,24 @@
       <method v="2">
         <option name="Build" />
       </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="secondarySourceFiles">
+            <list>
+              <option value="$PROJECT_DIR$/docker-compose.override.yml" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
