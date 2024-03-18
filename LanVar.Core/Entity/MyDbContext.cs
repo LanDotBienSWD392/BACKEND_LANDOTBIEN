@@ -27,8 +27,7 @@ namespace LanVar.Core.Entity
                 new UserPermission { id = 3, role = "Staff" },
                 new UserPermission { id = 4, role = "ProductOwner" },
                 new UserPermission { id = 5, role = "Customer" },
-                new UserPermission { id = 6, role = "Guest" },
-                new UserPermission { id = 7, role = "User" }
+                new UserPermission { id = 6, role = "Guest" }
             );
 
             // Seed data for Packages
