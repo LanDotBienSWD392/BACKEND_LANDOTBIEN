@@ -31,7 +31,7 @@ namespace LanVar.Core.Entity
 
         public byte[]? image { get; set; }
 
-        public int phone { get; set; }
+        public string phone { get; set; }
 
         public DateTime dob { get; set; }
 
