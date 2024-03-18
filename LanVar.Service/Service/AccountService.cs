@@ -49,9 +49,8 @@ namespace LanVar.Service.Implementation
             user.password = EncryptPassword.Encrypt(createAccountDTORequest.Password);
             user.status = false;
             user.registerDay = DateTime.Now.Date;
-            user.image = "";
+            user.image = null;
             user.package_id = 1;
-            user.gender = "Gay";
             await _userRepository.Add(user);
             return user;
         }
@@ -125,12 +124,38 @@ namespace LanVar.Service.Implementation
             users.password = EncryptPassword.Encrypt(createAccountDTORequest.Password);
             users.status = true;
             users.registerDay = DateTime.Now.Date;
-            users.image = "";
+            users.image = null;
             users.package_id = 1;
-            users.gender = "Gay";
             await _userRepository.Add(users);
             return users;
         }
+        private byte[] ReadImageDataFromFile(string imageName)
+        {
+            string imagePath = Path.Combine("Images", imageName); // Đường dẫn tương đối tới thư mục "Images"
+            // Đọc dữ liệu của ảnh từ file
+            byte[] imageData = File.ReadAllBytes(imagePath);
+            return imageData;
+        }
+
+        private  byte[] GetDefaultImageForRole(string role)
+        {
+            switch (role)
+            {
+                case "Admin":
+                    return ReadImageDataFromFile("Admin.jpg"); // Thay đổi tên tập tin hình ảnh cho quản trị viên
+                case "Manager":
+                    return ReadImageDataFromFile("manager.jpg"); // Thay đổi tên tập tin hình ảnh cho quản lý viên
+                case "Staff":
+                    return ReadImageDataFromFile("Staff.jpg"); // Thay đổi tên tập tin hình ảnh cho nhân viên
+                case "ProductOwner":
+                    return ReadImageDataFromFile("ProductOwner.jpg"); // Thay đổi tên tập tin hình ảnh cho chủ sản phẩm
+                case "Customer":
+                    return ReadImageDataFromFile("Customer.jpg"); // Thay đổi tên tập tin hình ảnh cho khách hàng
+                default:
+                    return ReadImageDataFromFile("Guest.jpg"); // Trả về hình ảnh mặc định nếu không tìm thấy vai trò phù hợp
+            }
+        }
+
 
         public async Task<User> UpdateStaffUser(long id, UpdateUserDTORequest updateUserDTORequest)
         {
