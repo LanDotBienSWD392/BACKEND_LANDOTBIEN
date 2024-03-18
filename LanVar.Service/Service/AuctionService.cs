@@ -37,7 +37,8 @@ namespace LanVar.Service.Service
             }
             existingAuction.status = AuctionStatus.ACTIVE;
             var auction = _mapper.Map<Auction>(existingAuction);
-            return _mapper.Map<AuctionDTOResponse>(auction);
+            var acceptAuction = await _auctionRepository.UpdateAsync(auction);
+            return _mapper.Map<AuctionDTOResponse>(acceptAuction);
         }
 
         public async Task<AuctionDTOResponse> CreateAuctionAsync(AuctionDTORequest auctionDto)
@@ -61,7 +62,8 @@ namespace LanVar.Service.Service
             {
                 throw new Exception($"Product is not available for auction!");
             }
-
+            product.type = "auction";
+            await _productRepository.Update(product);
             // Nếu không có phòng nào trùng Product_id, tiến hành tạo đấu giá
             auctionDto.Status = AuctionStatus.WAITING.ToString();
             var auction = _mapper.Map<Auction>(auctionDto);

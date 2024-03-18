@@ -2,6 +2,7 @@ namespace LanVar.DTO.DTO.response;
 
 public class ProductDTOResponse
 {
+    public long id { get; set; }
     public string ISBN { get; set; }
     public string Product_Name { get; set; }
     public string Product_Description { get; set; }
