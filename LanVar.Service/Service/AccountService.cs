@@ -17,14 +17,16 @@ namespace LanVar.Service.Implementation
     {
         private readonly IUserRepository _userRepository;
         private readonly IUserPermissionRepository _userPermissionRepository;
+        private readonly IGenericRepository<User> _genericUserRepository;
         private readonly IPackageService _packageService;
         private readonly IMapper _mapper;
 
-        public AccountService(IUserRepository userRepository, IMapper mapper, IUserPermissionRepository userPermissionRepository)
+        public AccountService(IUserRepository userRepository, IMapper mapper, IUserPermissionRepository userPermissionRepository,IGenericRepository<User> genericUserRepository)
         {
             _userRepository = userRepository;
             _userPermissionRepository = userPermissionRepository;
             _mapper = mapper;
+            _genericUserRepository = genericUserRepository;
         }
 
         public async Task<User> CreateUser(CreateAccountDTORequest createAccountDTORequest)
@@ -170,7 +172,7 @@ namespace LanVar.Service.Implementation
             return success;
         }
 
-        public async Task<User> PurchasePackage(long userId, long packageId)
+        public async Task<User> PurchasePackage(long userId)
         {
             try
             {
@@ -184,10 +186,10 @@ namespace LanVar.Service.Implementation
                 // Cập nhật package_id cho user
                 userToUpdate.package_id = 2;
 
-                _userRepository.Update(userToUpdate);
-                await _userRepository.SaveChangesAsync();
+               return await _genericUserRepository.Update(userToUpdate);
+               
 
-                return userToUpdate;
+                
             }
             catch (Exception ex)
             {

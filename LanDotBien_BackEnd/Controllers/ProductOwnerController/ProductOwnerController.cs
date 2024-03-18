@@ -19,9 +19,10 @@ namespace LanDotBien_BackEnd.Controllers.ProductOwnerController
         private readonly IProductService _productService;
         private readonly IUserService _userService;
         private readonly IAccountService _accountService;
-        public ProductOwnerController(IProductService productService)
+        public ProductOwnerController(IProductService productService, IAccountService accountService)
         {
             _productService = productService;
+            _accountService = accountService;
         }
         // GET: api/<ProductOwnerController>
         [HttpGet]
@@ -57,17 +58,13 @@ namespace LanDotBien_BackEnd.Controllers.ProductOwnerController
         }
         
         [HttpPost("PurchasePackage")]
-        public async Task<IActionResult> PurchasePackage(long userId, long packageId)
+        public async Task<IActionResult> PurchasePackage(long userId)
         {
-            try
-            {
-                var updatedUser = await _accountService.PurchasePackage(userId, packageId);
+            
+                var updatedUser = await _accountService.PurchasePackage(userId);
                 return Ok(updatedUser);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            
+            
         }
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)

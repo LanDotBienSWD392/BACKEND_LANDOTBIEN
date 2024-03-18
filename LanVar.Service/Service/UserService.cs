@@ -62,6 +62,7 @@ namespace LanVar.Service.Service
 			user.status = true;
 			user.registerDay = DateTime.Now.Date;
 			user.image = "nguyen rua anh nao de image laf required";
+			user.identityCard = "";
 			user.package_id = 1;
 			
 			await _userRepository.Add(user);

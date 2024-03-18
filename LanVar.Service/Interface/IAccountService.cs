@@ -21,6 +21,6 @@ namespace LanVar.Service.Interface
         Task<User> CreateStaffUser(CreateAccountDTORequest createAccountRequest);
         Task<User> UpdateStaffUser(long id, UpdateUserDTORequest updateUserDTORequest);
         Task<bool> DeleteStaffUser(long id);
-        Task<User> PurchasePackage(long userId, long packageId);
+        Task<User> PurchasePackage(long userId);
     }
 }
