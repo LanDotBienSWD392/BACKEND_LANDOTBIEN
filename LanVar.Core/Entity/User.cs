@@ -29,14 +29,13 @@ namespace LanVar.Core.Entity
         [Required]
         public string password { get; set; }
 
-        public string image { get; set; }
+        public byte[]? image { get; set; }
 
         public int phone { get; set; }
 
         public DateTime dob { get; set; }
 
         public string address { get; set; }
-
         
         public string gender { get; set; }
 
