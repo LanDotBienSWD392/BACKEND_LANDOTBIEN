@@ -61,13 +61,13 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 1L,
-                            auctionDay = new DateTime(2024, 3, 25, 14, 48, 30, 364, DateTimeKind.Local).AddTicks(8498),
+                            auctionDay = new DateTime(2024, 3, 25, 17, 31, 57, 921, DateTimeKind.Local).AddTicks(9296),
                             auction_Name = "Auction 1",
                             deposit_Money = 50.0,
                             endDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             password = "1",
                             product_id = 1L,
-                            startDay = new DateTime(2024, 3, 18, 14, 48, 30, 364, DateTimeKind.Local).AddTicks(8496),
+                            startDay = new DateTime(2024, 3, 18, 17, 31, 57, 921, DateTimeKind.Local).AddTicks(9294),
                             status = 0
                         });
                 });
@@ -104,7 +104,7 @@ namespace LanDotBien_BackEnd.Migrations
                             id = 1L,
                             auction_id = 1L,
                             bid = 60.0,
-                            bid_time = new DateTime(2024, 3, 18, 14, 48, 30, 364, DateTimeKind.Local).AddTicks(8603),
+                            bid_time = new DateTime(2024, 3, 18, 17, 31, 57, 921, DateTimeKind.Local).AddTicks(9397),
                             user_id = 1L
                         });
                 });
@@ -172,7 +172,7 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 1L,
-                            date = new DateTime(2024, 3, 18, 14, 48, 30, 364, DateTimeKind.Local).AddTicks(8538),
+                            date = new DateTime(2024, 3, 18, 17, 31, 57, 921, DateTimeKind.Local).AddTicks(9333),
                             orderItem_id = 0L,
                             status = 1,
                             total_Price = 100.0,
@@ -181,7 +181,7 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 2L,
-                            date = new DateTime(2024, 3, 18, 14, 48, 30, 364, DateTimeKind.Local).AddTicks(8541),
+                            date = new DateTime(2024, 3, 18, 17, 31, 57, 921, DateTimeKind.Local).AddTicks(9336),
                             orderItem_id = 0L,
                             status = 2,
                             total_Price = 100.0,
@@ -190,7 +190,7 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 3L,
-                            date = new DateTime(2024, 3, 18, 14, 48, 30, 364, DateTimeKind.Local).AddTicks(8542),
+                            date = new DateTime(2024, 3, 18, 17, 31, 57, 921, DateTimeKind.Local).AddTicks(9337),
                             orderItem_id = 0L,
                             status = 3,
                             total_Price = 100.0,
@@ -199,7 +199,7 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 4L,
-                            date = new DateTime(2024, 3, 18, 14, 48, 30, 364, DateTimeKind.Local).AddTicks(8543),
+                            date = new DateTime(2024, 3, 18, 17, 31, 57, 921, DateTimeKind.Local).AddTicks(9338),
                             orderItem_id = 0L,
                             status = 4,
                             total_Price = 100.0,
@@ -267,19 +267,19 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 1L,
-                            endDay = new DateTime(2024, 4, 17, 14, 48, 30, 364, DateTimeKind.Local).AddTicks(8405),
+                            endDay = new DateTime(2024, 4, 17, 17, 31, 57, 921, DateTimeKind.Local).AddTicks(9206),
                             packageName = "Basic",
                             package_Description = "Basic package",
-                            startDay = new DateTime(2024, 3, 18, 14, 48, 30, 364, DateTimeKind.Local).AddTicks(8391),
+                            startDay = new DateTime(2024, 3, 18, 17, 31, 57, 921, DateTimeKind.Local).AddTicks(9193),
                             status = true
                         },
                         new
                         {
                             id = 2L,
-                            endDay = new DateTime(2024, 4, 17, 14, 48, 30, 364, DateTimeKind.Local).AddTicks(8413),
+                            endDay = new DateTime(2024, 4, 17, 17, 31, 57, 921, DateTimeKind.Local).AddTicks(9213),
                             packageName = "Premium",
                             package_Description = "Premium package",
-                            startDay = new DateTime(2024, 3, 18, 14, 48, 30, 364, DateTimeKind.Local).AddTicks(8412),
+                            startDay = new DateTime(2024, 3, 18, 17, 31, 57, 921, DateTimeKind.Local).AddTicks(9213),
                             status = true
                         });
                 });
@@ -368,7 +368,7 @@ namespace LanDotBien_BackEnd.Migrations
                         {
                             id = 1L,
                             auction_id = 1L,
-                            register_time = new DateTime(2024, 3, 18, 14, 48, 30, 364, DateTimeKind.Local).AddTicks(8522),
+                            register_time = new DateTime(2024, 3, 18, 17, 31, 57, 921, DateTimeKind.Local).AddTicks(9316),
                             user_id = 1L
                         });
                 });
@@ -441,7 +441,7 @@ namespace LanDotBien_BackEnd.Migrations
                         {
                             id = 1L,
                             address = "Admin Address",
-                            dob = new DateTime(2024, 3, 18, 14, 48, 30, 364, DateTimeKind.Local).AddTicks(8445),
+                            dob = new DateTime(2024, 3, 18, 17, 31, 57, 921, DateTimeKind.Local).AddTicks(9240),
                             email = "admin@example.com",
                             gender = "Male",
                             identityCard = "123456789",
@@ -450,7 +450,7 @@ namespace LanDotBien_BackEnd.Migrations
                             password = "admin",
                             permission_id = 1L,
                             phone = 123456789,
-                            registerDay = new DateTime(2024, 3, 18, 14, 48, 30, 364, DateTimeKind.Local).AddTicks(8447),
+                            registerDay = new DateTime(2024, 3, 18, 17, 31, 57, 921, DateTimeKind.Local).AddTicks(9242),
                             status = true,
                             username = "admin"
                         });
@@ -495,16 +495,6 @@ namespace LanDotBien_BackEnd.Migrations
                         {
                             id = 5L,
                             role = "Customer"
-                        },
-                        new
-                        {
-                            id = 6L,
-                            role = "Guest"
-                        },
-                        new
-                        {
-                            id = 7L,
-                            role = "User"
                         });
                 });
 
