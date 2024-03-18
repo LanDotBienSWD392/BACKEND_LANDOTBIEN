@@ -164,7 +164,7 @@ namespace LanVar.Service.Implementation
             {
                 return null; // User not found
             }
-            if (userToUpdate.permission_id == 1 || userToUpdate.permission_id == 2 || userToUpdate.permission_id == 6 || userToUpdate.permission_id == 7)
+            if (userToUpdate.permission_id == 1 || userToUpdate.permission_id == 2)
             {
                 throw new Exception("Không được phép cập nhật người dùng với quyền này.");
             }
@@ -184,7 +184,7 @@ namespace LanVar.Service.Implementation
             }
 
             // Kiểm tra nếu permission_id = 1, không cho phép xóa
-            if (userToDelete.permission_id == 1 || userToDelete.permission_id == 2 || userToDelete.permission_id == 6 || userToDelete.permission_id == 7)
+            if (userToDelete.permission_id == 1 || userToDelete.permission_id == 2)
             {
                 throw new Exception("Không được phép xóa người dùng với quyền này.");
             }
