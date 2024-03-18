@@ -6,6 +6,31 @@ namespace Tools.Tools;
 public class CustomDataValidation
 {
     [AttributeUsage(AttributeTargets.Property)]
+    public class IntRangeValidation : ValidationAttribute
+    {
+        private readonly double _minValue;
+        private readonly double _maxValue;
+
+        public IntRangeValidation(double minValue, double maxValue)
+        {
+            _minValue = minValue;
+            _maxValue = maxValue;
+        }
+
+        protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
+        {
+            if (value is double intValue)
+            {
+                if (intValue >= _minValue && intValue <= _maxValue)
+                {
+                    return ValidationResult.Success;
+                }
+            }
+            return new ValidationResult($"Value must be between {_minValue} and {_maxValue}");
+        }
+    }
+
+    [AttributeUsage(AttributeTargets.Property)]
     public class AgeValidation : ValidationAttribute
     {
         private readonly int _minAge;
@@ -117,5 +142,4 @@ public class CustomDataValidation
             return new ValidationResult($"Invalid value for {validationContext.DisplayName}");
         }
     }
-    
 }

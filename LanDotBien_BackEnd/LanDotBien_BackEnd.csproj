@@ -42,17 +42,15 @@
     <ProjectReference Include="..\LanVar.Insfrastructure\LanVar.Insfrastructure.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\LanVar.Services\LanVar.Services.csproj">
+    <ProjectReference Include="..\LanVar.Service\LanVar.Service.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
     <ProjectReference Include="..\Tools\Tools.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\ManagerController\" />
     <Folder Include="Controllers\GuestController\" />
     <Folder Include="Controllers\ProductOwnerController\" />
-    <Folder Include="Controllers\StaffController\" />
   </ItemGroup>
 
   <ItemGroup>

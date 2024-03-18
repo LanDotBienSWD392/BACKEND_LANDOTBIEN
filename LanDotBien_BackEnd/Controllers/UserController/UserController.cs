@@ -19,7 +19,8 @@ public class UserController : ControllerBase
         _userService = userService;
         _httpContextAccessor = httpContextAccessor;
     }
-    [HttpGet("CurrentUser"), Authorize]
+    /*[HttpGet("CurrentUser"), Authorize]*/
+    [HttpGet("CurrentUser")]
     public ActionResult<string> GetCurrentLoggedInUser()
     {
         try
@@ -34,15 +35,11 @@ public class UserController : ControllerBase
         }
     }
 
-
-
-
-
     [HttpPost("Register")]
-    public async Task<IActionResult> Register(UserRegisterRequest userRegisterRequest)
+    public async Task<IActionResult> Register(CreateAccountDTORequest createAccountDTORequest)
     {
-        User user = await _userService.Register(userRegisterRequest);
-        return Ok(userRegisterRequest);
+        User user = await _userService.Register(createAccountDTORequest);
+        return Ok(createAccountDTORequest);
     }
 
     [HttpPost("Login")]

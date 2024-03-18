@@ -10,50 +10,44 @@ namespace LanVar.Core.Entity
         public long id { get; set; }
 
         [Required]
-        public long Permission_id { get; set; }
+        public long permission_id { get; set; }
 
         [Required]
-        public long Package_id { get; set; }
+        public long package_id { get; set; }
+
+        public string identityCard { get; set; }
 
         [Required]
-        public string IdentityCard { get; set; }
+        public string name { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string email { get; set; }
 
         [Required]
-        public string Email { get; set; }
+        public string username { get; set; }
 
         [Required]
-        public string Username { get; set; }
+        public string password { get; set; }
 
-        [Required]
-        public string Password { get; set; }
+        public string image { get; set; }
 
-        public string Image { get; set; }
+        public int phone { get; set; }
 
-        [Required]
-        public int Phone { get; set; }
+        public DateTime dob { get; set; }
 
-        [Required]
-        public DateTime Dob { get; set; }
+        public string address { get; set; }
 
-        [Required]
-        public string Address { get; set; }
+        
+        public string gender { get; set; }
 
-        [Required]
-        public string Gender { get; set; }
+        public DateTime registerDay { get; set; }
 
-        [Required]
-        public string RegisterDay { get; set; }
+        public bool status { get; set; }
 
-        [Required]
-        public bool Status { get; set; }
+        [ForeignKey("permission_id")]
+        public UserPermission userPermission { get; set; }
 
-        [ForeignKey("Permission_id")]
-        public UserPermission UserPermission { get; set; }
-
-        [ForeignKey("Package_id")]
-        public Package Package { get; set; }
+        [ForeignKey("package_id")]
+        public Package package { get; set; }
     }
 }

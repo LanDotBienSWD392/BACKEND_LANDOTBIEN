@@ -10,6 +10,6 @@ namespace LanVar.Core.Entity
         public long id { get; set; }
 
         [Required]
-        public string Role { get; set; }
+        public string role { get; set; }
     }
 }

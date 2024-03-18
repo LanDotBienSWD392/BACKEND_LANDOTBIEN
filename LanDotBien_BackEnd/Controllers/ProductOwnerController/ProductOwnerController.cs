@@ -2,7 +2,9 @@ using System.Net;
 using LanVar.Core.Entity;
 using LanVar.DTO.DTO.request;
 using LanVar.DTO.DTO.response;
+using LanVar.Service.Implementation;
 using LanVar.Service.Interface;
+using LanVar.Service.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,10 +17,12 @@ namespace LanDotBien_BackEnd.Controllers.ProductOwnerController
     public class ProductOwnerController : ControllerBase
     {
         private readonly IProductService _productService;
-
-        public ProductOwnerController(IProductService productService)
+        private readonly IUserService _userService;
+        private readonly IAccountService _accountService;
+        public ProductOwnerController(IProductService productService, IAccountService accountService)
         {
             _productService = productService;
+            _accountService = accountService;
         }
         // GET: api/<ProductOwnerController>
         [HttpGet]
@@ -35,7 +39,8 @@ namespace LanDotBien_BackEnd.Controllers.ProductOwnerController
         }
 
         // POST api/<ProductOwnerController>
-        [HttpPost("CreateProductForProductOwner"), Authorize(Roles = "ProductOwner")]
+        /*[HttpPost("CreateProduct"), Authorize]*/
+        [HttpPost("CreateProduct")]
         public async Task<IActionResult> Post(CreateProductDTORequest createProductDtoRequest)
         {
             try
@@ -49,10 +54,18 @@ namespace LanDotBien_BackEnd.Controllers.ProductOwnerController
                 var response = new ApiResponse<Package>(HttpStatusCode.Conflict, ex.Message);
                 return BadRequest(response); // Trả về lỗi 400 Bad Request với thông báo lỗi
             }
-           
-        }
 
-        // PUT api/<ProductOwnerController>/5
+        }
+        
+        [HttpPost("PurchasePackage")]
+        public async Task<IActionResult> PurchasePackage(long userId)
+        {
+            
+                var updatedUser = await _accountService.PurchasePackage(userId);
+                return Ok(updatedUser);
+            
+            
+        }
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {

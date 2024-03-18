@@ -16,14 +16,14 @@ public class PackageService : IPackageService
 
     public async Task<Package> AddPackage(Package package)
     {
-        string id = package.PackageName.ToString();
+        string id = package.packageName.ToString();
         if (string.IsNullOrEmpty(id))
         {
             throw new CustomException.InvalidDataException(HttpStatusCode.BadRequest.ToString(),"Package name invalid");
             
         }
         IEnumerable<Package> duplicatePackage =
-            await _packageRepository.GetByFilterAsync(x => x.PackageName.Equals(id));
+            await _packageRepository.GetByFilterAsync(x => x.packageName.Equals(id));
 
         if (duplicatePackage.Any())
         {
@@ -33,7 +33,7 @@ public class PackageService : IPackageService
         return await _packageRepository.Add(package);
     }
 
-    public async Task<IEnumerable<Package>> GetAllRole()
+    public async Task<IEnumerable<Package>> GetAllPackage()
     {
         return await _packageRepository.GetAllAsync();
     }
@@ -48,11 +48,11 @@ public class PackageService : IPackageService
 
         // Update the properties of the existing role
         
-        existingRole.Package_Description = updatedPackage.Package_Description;
-        existingRole.PackageName = updatedPackage.PackageName;
-        existingRole.StartDay = updatedPackage.StartDay;
-        existingRole.EndDay = updatedPackage.EndDay;
-        existingRole.Status = updatedPackage.Status;
+        existingRole.package_Description = updatedPackage.package_Description;
+        existingRole.packageName = updatedPackage.packageName;
+        existingRole.startDay = updatedPackage.startDay;
+        existingRole.endDay = updatedPackage.endDay;
+        existingRole.status = updatedPackage.status;
             
 
         // Save the changes
@@ -70,5 +70,10 @@ public class PackageService : IPackageService
 
         await _packageRepository.Delete(id);
         return true;
+    }
+
+    public async Task<Package> GetPackageById(long id)
+    {
+        return await _packageRepository.GetById(id);
     }
 }

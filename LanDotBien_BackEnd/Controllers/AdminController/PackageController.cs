@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Tools.Tools;
 
-namespace LanDotBien_BackEnd.Controllers;
+namespace LanDotBien_BackEnd.Controllers.AdminController;
 [Route("api/[controller]")]
 [ApiController]
 public class PackageController : ControllerBase
@@ -32,7 +32,7 @@ public class PackageController : ControllerBase
             var response = new ApiResponse<Package>(HttpStatusCode.Conflict, ex.Message);
             return BadRequest(response); // Trả về lỗi 400 Bad Request với thông báo lỗi
         }
-        
+
     }
     [Authorize(Roles = "Admin")]
     [HttpGet("GetAllPackage")]
@@ -44,7 +44,7 @@ public class PackageController : ControllerBase
             // User is not authenticated
             return Unauthorized();
         }
-        var roles = await _packageService.GetAllRole();
+        var roles = await _packageService.GetAllPackage();
         return Ok(roles);
     }
     [HttpPut("UpdatePackage/{id}")]
@@ -56,11 +56,11 @@ public class PackageController : ControllerBase
             var response = new ApiResponse<Package>(updatePackage, HttpStatusCode.Accepted);
             return Ok(response); // Return success result with the updated UserPermission data
         }
-        
+
         catch (CustomException.InvalidDataException ex)
         {
             var response = new ApiResponse<Package>(HttpStatusCode.Conflict, ex.Message);
-            return BadRequest(response); // Return 400 Bad Request with the error message
+            return BadRequest(response); // Return 400fsfds Bad Request with the error message
         }
     }
     [HttpDelete("DeleteUserRole/{id}")]
@@ -69,10 +69,10 @@ public class PackageController : ControllerBase
         try
         {
             var deleted = await _packageService.DeletePackage(id);
-            
+
             var response = new ApiResponse<string>("Package deleted successfully", HttpStatusCode.OK);
             return Ok(response);
-            
+
         }
         catch (CustomException.InvalidDataException ex)
         {

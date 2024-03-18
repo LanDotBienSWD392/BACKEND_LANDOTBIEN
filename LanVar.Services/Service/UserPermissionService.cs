@@ -19,14 +19,14 @@ public class UserPermissionService : IUserPermissionService
     }
     public async Task<UserPermission> AddUserPermission(UserPermission userPermission)
     {
-        string id = userPermission.Role.ToString();
+        string id = userPermission.role.ToString();
         if (string.IsNullOrEmpty(id))
         {
             throw new CustomException.InvalidDataException(HttpStatusCode.BadRequest.ToString(),"Invalid Role");
         }
 
         IEnumerable<UserPermission> duplicateRole =
-            await _userPermissionRepository.GetByFilterAsync(x => x.Role.Equals(id));
+            await _userPermissionRepository.GetByFilterAsync(x => x.role.Equals(id));
         if (duplicateRole.Any())
         {
             throw new CustomException.InvalidDataException(HttpStatusCode.BadRequest.ToString(),"Dupliacte Role");
@@ -48,7 +48,7 @@ public class UserPermissionService : IUserPermissionService
         }
 
         // Update the properties of the existing role
-        existingRole.Role = updatedUserPermission.Role;
+        existingRole.role = updatedUserPermission.role;
 
         // Save the changes
         return await _userPermissionRepository.Update(existingRole);

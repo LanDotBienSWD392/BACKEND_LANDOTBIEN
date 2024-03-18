@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanDotBien_BackEnd", "LanDotBien_BackEnd\LanDotBien_BackEnd.csproj", "{4714E128-63CF-45C5-AF1F-AB6C7DC0FEA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanDotBien_BackEnd", "LanDotBien_BackEnd\LanDotBien_BackEnd.csproj", "{4714E128-63CF-45C5-AF1F-AB6C7DC0FEA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanVar.Core", "LanVar.Core\LanVar.Core.csproj", "{E9088D88-D3BE-4692-9595-67011B5B9511}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanVar.Core", "LanVar.Core\LanVar.Core.csproj", "{E9088D88-D3BE-4692-9595-67011B5B9511}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanVar.Insfrastructure", "LanVar.Insfrastructure\LanVar.Insfrastructure.csproj", "{68B2E8F8-5C02-4211-94F5-5E4EE05F65CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanVar.Insfrastructure", "LanVar.Insfrastructure\LanVar.Insfrastructure.csproj", "{68B2E8F8-5C02-4211-94F5-5E4EE05F65CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanVar.Services", "LanVar.Services\LanVar.Services.csproj", "{B0D5AA6B-3600-4611-AAC9-F3866A97CB36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanVar.Service", "LanVar.Service\LanVar.Service.csproj", "{B0D5AA6B-3600-4611-AAC9-F3866A97CB36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "Tools\Tools.csproj", "{DF95B958-EE2B-4293-AE51-5F312E6BB7BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools", "Tools\Tools.csproj", "{DF95B958-EE2B-4293-AE51-5F312E6BB7BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanVar.DTO", "LanVar.DTO\LanVar.DTO.csproj", "{4B7465DC-FBCA-40C5-9027-B1686196257F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanVar.DTO", "LanVar.DTO\LanVar.DTO.csproj", "{4B7465DC-FBCA-40C5-9027-B1686196257F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

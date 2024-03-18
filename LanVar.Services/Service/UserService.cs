@@ -40,12 +40,12 @@ namespace LanVar.Service.Service
 			_httpContextAccessor = httpContextAccessor;
 		}
 
-		public async Task<User> Register(UserRegisterRequest userRegisterRequest)
+		public async Task<User> Register(CreateAccountDTORequest createAccountDTORequest)
 		{
 			IEnumerable<User> checkEmail =
-				await _userRepository.GetByFilterAsync(x => x.Email.Equals(userRegisterRequest.Email));
+				await _userRepository.GetByFilterAsync(x => x.email.Equals(createAccountDTORequest.Email));
 			IEnumerable<User> checkUsername =
-				await _userRepository.GetByFilterAsync(x => x.Username.Equals(userRegisterRequest.Username));
+				await _userRepository.GetByFilterAsync(x => x.username.Equals(createAccountDTORequest.Username));
 			if (checkEmail.Count() != 0)
 			{
 				throw new InvalidDataException($"Email is exist");
@@ -56,14 +56,14 @@ namespace LanVar.Service.Service
 				throw new InvalidDataException($"Username is exist");
 			}
 
-			var user = _mapper.Map<User>(userRegisterRequest);
-			user.Permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.Role.Equals("Customer"))).First().id;
-			user.Password = EncryptPassword.Encrypt(userRegisterRequest.Password);
-			user.Status = true;
-			user.RegisterDay = DateTime.Now.Date.ToString();
-			user.Gender = userRegisterRequest.Gender;
-			user.Image = "nguyen rua anh nao de image laf required";
-			user.Package_id = 1;
+			var user = _mapper.Map<User>(createAccountDTORequest);
+			user.permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.role.Equals("Customer"))).First().id;
+			user.password = EncryptPassword.Encrypt(createAccountDTORequest.Password);
+			user.status = true;
+			user.registerDay = DateTime.Now.Date;
+			user.image = "nguyen rua anh nao de image laf required";
+			user.identityCard = "";
+			user.package_id = 1;
 			
 			await _userRepository.Add(user);
 			return user;
@@ -73,8 +73,8 @@ namespace LanVar.Service.Service
 		{
 			string hashedPass = EncryptPassword.Encrypt(loginDtoRequest.Password);
 			IEnumerable<User> check = await _userRepository.GetByFilterAsync(x =>
-				x.Username.Equals(loginDtoRequest.Username)
-				&& x.Password.Equals(hashedPass)
+				x.username.Equals(loginDtoRequest.Username)
+				&& x.password.Equals(hashedPass)
 			);
 			if (!check.Any())
 			{
@@ -82,7 +82,7 @@ namespace LanVar.Service.Service
 			}
 
 			User user = check.First();
-			if (user.Status == false)
+			if (user.status == false)
 			{
 				throw new CustomException.InvalidDataException(HttpStatusCode.BadRequest.ToString(),$"User is not active");
 			}

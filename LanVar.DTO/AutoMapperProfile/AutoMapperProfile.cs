@@ -12,17 +12,16 @@ namespace LanVar.DTO.AutoMapperProfile
 	{
 		public AutoMapperProfile()
 		{
-			CreateMap<UserRegisterRequest, User>().ReverseMap();
+			CreateMap<CreateAccountDTORequest, User>().ReverseMap();
 			CreateMap<LoginDTORequest, User>().ReverseMap();
 			CreateMap<LoginDTOResponse, User>().ReverseMap();
 			CreateMap<SearchProductDTORequest, Product>().ReverseMap();
 			CreateMap<UpdateUserDTORequest, User>().ReverseMap();
 			CreateMap<CreateProductDTORequest, Product>().ReverseMap();
 			CreateMap<ProductDTOResponse, Product>().ReverseMap();
-			CreateMap<CartDTORequest, Cart>().ReverseMap();
-			CreateMap<CartDTOResponse, Cart>().ReverseMap();
-			CreateMap<SelectProductInCartDTORequest, Cart>().ReverseMap();
-		}
+            CreateMap<AuctionDTOResponse, Auction>().ReverseMap();
+            CreateMap<AuctionDTORequest, Auction>().ReverseMap();
+        }
 	}
 }
 

@@ -8,10 +8,11 @@ namespace LanVar.Service.DTO.request
 {
     public class UpdateUserDTORequest
     {
-        public string IdentityCard {  get; set; }
-        public string Name { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }   
-        public string Email { get; set; }
+        public required string IdentityCard {  get; set; }
+        public required string Name { get; set; }
+        public required string Email { get; set; }
+        public required string Gender { get; set; }
+        public required long Permission_id { get; set; }
+        public required Boolean Status { get; set; }
     }
 }

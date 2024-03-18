@@ -32,7 +32,7 @@ namespace Tools.Tools;
             var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey ?? ""));
             var signingCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
 
-            long roleId = user.Permission_id;
+            long roleId = user.permission_id;
             UserPermission role = await userPermissionRepository.GetByIdAsync(roleId);
 
             // Log role value to console
@@ -41,8 +41,8 @@ namespace Tools.Tools;
             List<Claim> claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Sid, user.id.ToString()),
-                new Claim("Name", user.Username),
-                new Claim(ClaimTypes.Role, role.Role)
+                new Claim("Name", user.username),
+                new Claim(ClaimTypes.Role, role.role)
             };
 
             var token = new JwtSecurityToken(
