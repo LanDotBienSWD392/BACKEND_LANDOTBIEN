@@ -51,7 +51,6 @@ namespace LanVar.Service.Implementation
             user.registerDay = DateTime.Now.Date;
             user.image = "";
             user.package_id = 1;
-            user.gender = "Gay";
             await _userRepository.Add(user);
             return user;
         }
@@ -127,7 +126,6 @@ namespace LanVar.Service.Implementation
             users.registerDay = DateTime.Now.Date;
             users.image = "";
             users.package_id = 1;
-            users.gender = "Gay";
             await _userRepository.Add(users);
             return users;
         }
