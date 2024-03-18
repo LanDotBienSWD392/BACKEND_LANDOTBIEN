@@ -1,10 +1,13 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using LanVar.Core.Entity;
 
-namespace LanVar.Core.Interfaces
+public interface IBidRepository
 {
-	public interface IBidRepository : IGenericRepository<Bid>
-	{
-	}
+    Task<Bid> GetBidById(long id);
+    Task<List<Bid>> GetAllBids();
+    Task CreateBid(Bid bid);
+    Task UpdateBid(Bid bid);
+    Task DeleteBid(long id);
+    Task<Bid> GetHighestBid(long auctionId);
 }
-

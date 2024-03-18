@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LanVar.DTO.DTO.request;
+
+public class BidDTORequest
+{
+
+    [Required(ErrorMessage = "Auction is required")]
+    public long auction_id { get; set; }
+
+    [Required(ErrorMessage = "User is required")]
+    public long user_id { get; set; }
+
+    [Required(ErrorMessage = "Bid is required")]
+    public double bid { get; set; }
+
+    public DateTime bid_time { get; set; }
+}
