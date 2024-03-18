@@ -4,7 +4,7 @@ using LanVar.Core.Interfaces;
 using LanVar.Service.Interface;
 using Tools.Tools;
 
-namespace LanVar.Service.Service;
+namespace LanVar.Services.Service;
 
 public class PackageService : IPackageService
 {

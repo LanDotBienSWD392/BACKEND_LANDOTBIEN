@@ -12,10 +12,27 @@
   <component name="ChangeListManager">
     <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lan Dot Bien.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Lan Dot Bien.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/ManageManagerAccounts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/ManageManagerAccounts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/CartController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/CustomerController/SearchProduct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/CustomerController/SearchProduct.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/ManagerController/ManageStaffAccounts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/ManagerController/ManageStaffAccounts.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/ProductOwnerController/ProductOwnerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/ProductOwnerController/ProductOwnerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Service/Interface/IAccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Interface/IAccountService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Service/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Service/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/StaffController/AuctionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/StaffController/AuctionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/UserController/UserPermissionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/UserController/UserPermissionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/LanDotBien_BackEnd.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/LanDotBien_BackEnd.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/LanVar.Insfrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Insfrastructure/LanVar.Insfrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Interface/IAccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Interface/IAccountService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/AccountService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/AuctionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/AuctionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/CartService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/PackageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/PackageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/ProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/ProductService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/UserPermissionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/UserPermissionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/Tools.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/Tools.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +40,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="Dante" />
+    <option name="BRANCH" value="Kaneki" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -48,9 +65,15 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/87bed8ddb3a8426686194432a8407b75d82200/83/052ec8b7/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/ManageManagerAccounts.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/PackageController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/CustomerController/SearchProduct.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/ManagerController/ManageStaffAccounts.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/ProductOwnerController/ProductOwnerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/StaffController/AuctionController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/UserController/UserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/UserController/UserPermissionController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Migrations/20240317192505_Dante.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Migrations/MyDbContextModelSnapshot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
@@ -59,17 +82,14 @@
     <setting file="file://$PROJECT_DIR$/LanVar.Core/Entity/Order.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Core/Entity/Product.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Core/Entity/User.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Volumes/Hoaq's Gke dit bu/FU/Kì 7/SWD391/BackEnd_LANDOTBIEN/LanVar.DTO/AutoMapperProfile/AutoMapperProfile.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/BidRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/CartRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/CartRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/ProductRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/LanVar.Service/Class1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Volumes/Hoaq's Gke dit bu/FU/Kì 7/SWD391/BackEnd_LANDOTBIEN/LanVar.Service/Service/AccountService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/LanVar.Service/Service/PackageService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/LanVar.Service/Service/UserPermissionService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/LanVar.Service/Service/UserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/UserRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/ProductService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/Tools/Authentication.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/Tools/CustomDataValidation.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -78,7 +98,7 @@
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="Toolset" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -98,7 +118,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.37751004&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.37044147&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -245,6 +265,9 @@
       <workItem from="1710582405527" duration="2160000" />
       <workItem from="1710660611824" duration="10661000" />
       <workItem from="1710683142817" duration="3622000" />
+      <workItem from="1710744217405" duration="469000" />
+      <workItem from="1710744689847" duration="121000" />
+      <workItem from="1710744889623" duration="1844000" />
     </task>
     <task id="LOCAL-00001" summary="add login, generate jwt and register, check validate, custom error, delete ILogger in repository">
       <option name="closed" value="true" />
@@ -326,7 +349,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710683202100</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="workspace">
+      <option name="closed" value="true" />
+      <created>1710743577946</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1710743577946</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,7 +389,8 @@
     <MESSAGE value="package" />
     <MESSAGE value="update docker" />
     <MESSAGE value="docker" />
-    <option name="LAST_COMMIT_MESSAGE" value="docker" />
+    <MESSAGE value="workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -366,66 +398,31 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs</url>
           <line>178</line>
-          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="178" containingFunctionPresentation="Method 'PurchasePackage'">
-            <startOffsets>
-              <option value="6977" />
-            </startOffsets>
-            <endOffsets>
-              <option value="7039" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="178" containingFunctionPresentation="Method 'PurchasePackage'" />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs</url>
           <line>179</line>
-          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="179" containingFunctionPresentation="Method 'PurchasePackage'">
-            <startOffsets>
-              <option value="7056" />
-            </startOffsets>
-            <endOffsets>
-              <option value="7081" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="179" containingFunctionPresentation="Method 'PurchasePackage'" />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs</url>
           <line>182</line>
-          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="182" containingFunctionPresentation="Method 'PurchasePackage'">
-            <startOffsets>
-              <option value="7175" />
-            </startOffsets>
-            <endOffsets>
-              <option value="7176" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="182" containingFunctionPresentation="Method 'PurchasePackage'" />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs</url>
           <line>186</line>
-          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="186" containingFunctionPresentation="Method 'PurchasePackage'">
-            <startOffsets>
-              <option value="7293" />
-            </startOffsets>
-            <endOffsets>
-              <option value="7321" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="186" containingFunctionPresentation="Method 'PurchasePackage'" />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs</url>
           <line>188</line>
-          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="188" containingFunctionPresentation="Method 'PurchasePackage'">
-            <startOffsets>
-              <option value="7338" />
-            </startOffsets>
-            <endOffsets>
-              <option value="7395" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="188" containingFunctionPresentation="Method 'PurchasePackage'" />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>

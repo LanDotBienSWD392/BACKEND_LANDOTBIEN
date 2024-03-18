@@ -8,10 +8,11 @@ using LanVar.DTO.DTO.request;
 using LanVar.Service.DTO;
 using LanVar.Service.DTO.request;
 using LanVar.Service.Interface;
-using LanVar.Service.Service;
+
+using LanVar.Services.Interface;
 using Tools.Tools;
 
-namespace LanVar.Service.Implementation
+namespace LanVar.Services.Implementation
 {
     public class AccountService : IAccountService
     {

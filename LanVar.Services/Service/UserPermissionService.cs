@@ -5,7 +5,7 @@ using LanVar.Service.Interface;
 using Microsoft.EntityFrameworkCore;
 using Tools.Tools;
 
-namespace LanVar.Service.Service;
+namespace LanVar.Services.Service;
 
 public class UserPermissionService : IUserPermissionService
 {

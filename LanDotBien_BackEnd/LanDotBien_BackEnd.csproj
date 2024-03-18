@@ -42,9 +42,8 @@
     <ProjectReference Include="..\LanVar.Insfrastructure\LanVar.Insfrastructure.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\LanVar.Service\LanVar.Service.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
+    <ProjectReference Include="..\LanVar.Services\LanVar.Services.csproj" />
+   
     <ProjectReference Include="..\Tools\Tools.csproj" />
   </ItemGroup>
 
@@ -57,5 +56,11 @@
     <Content Include="..\.dockerignore">
       <Link>.dockerignore</Link>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="LanVar.Service">
+      <HintPath>..\..\..\..\Kì 7\SWD391\BackEnd_LANDOTBIEN\LanDotBien_BackEnd\bin\Debug\net8.0\LanVar.Service.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

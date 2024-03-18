@@ -3,10 +3,10 @@ using LanVar.Core.Interfaces;
 using LanVar.DTO.DTO.request;
 using LanVar.DTO.DTO.response;
 using LanVar.Service.DTO.request;
-using LanVar.Service.Implementation;
+
 using LanVar.Service.Interface;
 using LanVar.Service.IService;
-using LanVar.Service.Service;
+
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using Tools.Tools;

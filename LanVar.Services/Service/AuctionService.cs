@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace LanVar.Service.Service
+namespace LanVar.Services.Service
 {
     public class AuctionService : IAuctionService
     {

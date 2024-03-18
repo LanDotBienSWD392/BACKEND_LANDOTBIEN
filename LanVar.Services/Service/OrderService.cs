@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LanVar.Service.Implementation
+namespace LanVar.Services.Implementation
 {
     public class OrderService : IOrderService
     {

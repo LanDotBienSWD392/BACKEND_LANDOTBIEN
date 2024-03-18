@@ -11,7 +11,7 @@ using LanVar.DTO.DTO.request;
 using LanVar.DTO.DTO.response;
 using Tools.Tools;
 
-namespace LanVar.Service.Service
+namespace LanVar.Services.Service
 {
     public class ProductService : IProductService
     {
@@ -48,8 +48,7 @@ namespace LanVar.Service.Service
         
                 // Fetch user ID and retrieve user details
                 
-                User productOwner = await _genericUserRepository.GetById(product.User_id);
-                productResponse.Product_Owner = productOwner.Name;
+                
 
                 productResponses.Add(productResponse);
             }
@@ -75,15 +74,14 @@ namespace LanVar.Service.Service
             }
             var product = _mapper.Map<Product>(createProductDtoRequest);
             string userId = _userService.GetUserID();
-            product.User_id = int.Parse(userId);
-            product.Status = false;
+            product.user_id = int.Parse(userId);
+            product.status = false;
             
             Product addedProduct = await _genericProductRepository.Add(product);
 
             // Map the added product to ProductDTOResponse
             ProductDTOResponse productResponse = _mapper.Map<ProductDTOResponse>(addedProduct);
-            User productOwner = await _genericUserRepository.GetById(long.Parse(userId));
-            productResponse.Product_Owner = productOwner.Name;
+            
 
             return productResponse;
         }
