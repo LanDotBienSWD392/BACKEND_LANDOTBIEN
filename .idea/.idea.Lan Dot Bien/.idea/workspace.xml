@@ -4,15 +4,13 @@
     <projectFile profileName="IIS Express">LanDotBien_BackEnd/LanDotBien_BackEnd.csproj</projectFile>
     <projectFile profileName="http">LanDotBien_BackEnd/LanDotBien_BackEnd.csproj</projectFile>
     <projectFile profileName="https">LanDotBien_BackEnd/LanDotBien_BackEnd.csproj</projectFile>
+    <projectFile kind="DockerCompose">docker-compose.dcproj</projectFile>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Core/Entity/MyDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Entity/MyDbContext.cs" afterDir="false" />
-    </list>
+    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Kaneki" />
       </map>
     </option>
   </component>
@@ -355,6 +353,77 @@
     <MESSAGE value="update docker" />
     <MESSAGE value="docker" />
     <option name="LAST_COMMIT_MESSAGE" value="docker" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs</url>
+          <line>178</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="178" containingFunctionPresentation="Method 'PurchasePackage'">
+            <startOffsets>
+              <option value="6977" />
+            </startOffsets>
+            <endOffsets>
+              <option value="7039" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs</url>
+          <line>179</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="179" containingFunctionPresentation="Method 'PurchasePackage'">
+            <startOffsets>
+              <option value="7056" />
+            </startOffsets>
+            <endOffsets>
+              <option value="7081" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs</url>
+          <line>182</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="182" containingFunctionPresentation="Method 'PurchasePackage'">
+            <startOffsets>
+              <option value="7175" />
+            </startOffsets>
+            <endOffsets>
+              <option value="7176" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs</url>
+          <line>186</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="186" containingFunctionPresentation="Method 'PurchasePackage'">
+            <startOffsets>
+              <option value="7293" />
+            </startOffsets>
+            <endOffsets>
+              <option value="7321" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs</url>
+          <line>188</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="188" containingFunctionPresentation="Method 'PurchasePackage'">
+            <startOffsets>
+              <option value="7338" />
+            </startOffsets>
+            <endOffsets>
+              <option value="7395" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
