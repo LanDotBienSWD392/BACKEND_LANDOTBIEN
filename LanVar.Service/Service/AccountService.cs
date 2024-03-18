@@ -44,7 +44,6 @@ namespace LanVar.Service.Implementation
             var user = _mapper.Map<User>(createAccountDTORequest);
 
             // Set status = false when initializing user
-            user.identityCard = "123123123123";
             user.permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.role.Equals("Manager"))).First().id;
             user.password = EncryptPassword.Encrypt(createAccountDTORequest.Password);
             user.status = false;
@@ -119,7 +118,6 @@ namespace LanVar.Service.Implementation
             var users = _mapper.Map<User>(createAccountDTORequest);
 
             // Set status = false when initializing user
-            users.identityCard = "12312312333123";
             users.permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.role.Equals("Staff"))).First().id;
             users.password = EncryptPassword.Encrypt(createAccountDTORequest.Password);
             users.status = true;

@@ -37,7 +37,7 @@ namespace LanVar.Core.Entity
 
             // Seed data for User
             modelBuilder.Entity<User>().HasData(
-                new User { id = 1, permission_id = 1, package_id = 1, identityCard = "123456789", name = "Admin", email = "admin@example.com", username = "admin", password = "admin", phone = 123456789, dob = DateTime.Now, address = "Admin Address", gender = "Male", registerDay = DateTime.Now, status = true }
+                new User { id = 1, permission_id = 1, package_id = 1, identityCard = "123456789", name = "Admin", email = "admin@example.com", username = "admin", password = "admin", phone = "123456789", dob = DateTime.Now, address = "Admin Address", gender = "Male", registerDay = DateTime.Now, status = true }
 
             );
 
