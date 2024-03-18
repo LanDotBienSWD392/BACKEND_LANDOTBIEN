@@ -16,7 +16,7 @@ namespace LanVar.Core.Entity
 
         public double total_Price { get; set; }
 
-        [ForeignKey("Order_id")]
+        [ForeignKey("order_id")]
         public Order order { get; set; }
     }
 }

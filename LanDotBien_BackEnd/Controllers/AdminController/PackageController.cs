@@ -60,7 +60,7 @@ public class PackageController : ControllerBase
         catch (CustomException.InvalidDataException ex)
         {
             var response = new ApiResponse<Package>(HttpStatusCode.Conflict, ex.Message);
-            return BadRequest(response); // Return 400 Bad Request with the error message
+            return BadRequest(response); // Return 400fsfds Bad Request with the error message
         }
     }
     [HttpDelete("DeleteUserRole/{id}")]

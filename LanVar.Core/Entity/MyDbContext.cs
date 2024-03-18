@@ -49,7 +49,7 @@ namespace LanVar.Core.Entity
 
             // Seed data for Auctions
             modelBuilder.Entity<Auction>().HasData(
-                new Auction { id = 1, product_id = 1, startDay = DateTime.Now, auctionDay = DateTime.Now.AddDays(7), auction_Name = "Auction 1", deposit_Money = 50.00, status = AuctionStatus.Active }
+                new Auction { id = 1, product_id = 1, password = "1" ,startDay = DateTime.Now, auctionDay = DateTime.Now.AddDays(7), auction_Name = "Auction 1", deposit_Money = 50.00, status = AuctionStatus.ACTIVE }
             );
 
             // Seed data for RoomRegistrations

@@ -29,7 +29,7 @@ namespace LanVar.Core.Entity
         
         public OrderStatus status { get; set; } // Confirmed - In Transit - Delivered - Canceled
 
-        [ForeignKey("User_id")]
+        [ForeignKey("user_id")]
         public User user { get; set; }
     }
 }
