@@ -2,7 +2,9 @@ using System.Net;
 using LanVar.Core.Entity;
 using LanVar.DTO.DTO.request;
 using LanVar.DTO.DTO.response;
+using LanVar.Service.Implementation;
 using LanVar.Service.Interface;
+using LanVar.Service.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,7 +17,8 @@ namespace LanDotBien_BackEnd.Controllers.ProductOwnerController
     public class ProductOwnerController : ControllerBase
     {
         private readonly IProductService _productService;
-
+        private readonly IUserService _userService;
+        private readonly IAccountService _accountService;
         public ProductOwnerController(IProductService productService)
         {
             _productService = productService;
@@ -50,10 +53,22 @@ namespace LanDotBien_BackEnd.Controllers.ProductOwnerController
                 var response = new ApiResponse<Package>(HttpStatusCode.Conflict, ex.Message);
                 return BadRequest(response); // Trả về lỗi 400 Bad Request với thông báo lỗi
             }
-           
-        }
 
-        // PUT api/<ProductOwnerController>/5
+        }
+        
+        [HttpPost("PurchasePackage")]
+        public async Task<IActionResult> PurchasePackage(long userId, long packageId)
+        {
+            try
+            {
+                var updatedUser = await _accountService.PurchasePackage(userId, packageId);
+                return Ok(updatedUser);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {

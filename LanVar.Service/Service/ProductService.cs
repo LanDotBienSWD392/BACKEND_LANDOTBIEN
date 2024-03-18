@@ -17,15 +17,13 @@ namespace LanVar.Service.Service
     {
         private readonly IProductRepository _productRepository;
         private readonly IGenericRepository<Product> _genericProductRepository;
-        private readonly IUserService _userService;
         private readonly IMapper _mapper;
 
-        public ProductService(IProductRepository productRepository, IMapper mapper,  IGenericRepository<Product> genericProductRepository, IUserService userService)
+        public ProductService(IProductRepository productRepository, IMapper mapper,  IGenericRepository<Product> genericProductRepository)
         {
             _productRepository = productRepository;
             _mapper = mapper;
             _genericProductRepository = genericProductRepository;
-            _userService = userService;
         }
 
         public async Task<IEnumerable<ProductDTOResponse>> GetAllProducts()
@@ -64,5 +62,6 @@ namespace LanVar.Service.Service
 
             return productResponse;
         }
+
     }
 }

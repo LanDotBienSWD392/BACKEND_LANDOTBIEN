@@ -8,6 +8,7 @@ using LanVar.DTO.DTO.request;
 using LanVar.Service.DTO;
 using LanVar.Service.DTO.request;
 using LanVar.Service.Interface;
+using LanVar.Service.Service;
 using Tools.Tools;
 
 namespace LanVar.Service.Implementation
@@ -16,7 +17,7 @@ namespace LanVar.Service.Implementation
     {
         private readonly IUserRepository _userRepository;
         private readonly IUserPermissionRepository _userPermissionRepository;
-        
+        private readonly IPackageService _packageService;
         private readonly IMapper _mapper;
 
         public AccountService(IUserRepository userRepository, IMapper mapper, IUserPermissionRepository userPermissionRepository)
@@ -167,6 +168,31 @@ namespace LanVar.Service.Implementation
             // Tiến hành xóa chỉ khi không có vấn đề với quyền
             var success = await _userRepository.DeleteUser(id);
             return success;
+        }
+
+        public async Task<User> PurchasePackage(long userId, long packageId)
+        {
+            try
+            {
+                var userToUpdate = await _userRepository.GetByIdAsync(userId);
+                if (userToUpdate == null)
+                {
+                    throw new Exception("User not found");
+                }
+                //Thêm func check đã thanh toán ch
+
+                // Cập nhật package_id cho user
+                userToUpdate.package_id = 2;
+
+                _userRepository.Update(userToUpdate);
+                await _userRepository.SaveChangesAsync();
+
+                return userToUpdate;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Thanh toán không thành công");
+            }
         }
     }
 }

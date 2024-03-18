@@ -14,6 +14,5 @@ namespace LanVar.Service.DTO.request
         public required string Gender { get; set; }
         public required long Permission_id { get; set; }
         public required Boolean Status { get; set; }
-        public required long Package_id {  get; set; }
     }
 }

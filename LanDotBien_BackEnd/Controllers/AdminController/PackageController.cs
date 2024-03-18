@@ -44,7 +44,7 @@ public class PackageController : ControllerBase
             // User is not authenticated
             return Unauthorized();
         }
-        var roles = await _packageService.GetAllRole();
+        var roles = await _packageService.GetAllPackage();
         return Ok(roles);
     }
     [HttpPut("UpdatePackage/{id}")]
