@@ -128,12 +128,16 @@ namespace LanVar.Repository.Repository
         }
         public async Task<List<Auction>> GetAllAsync()
         {
-            return await _context.Auctions.ToListAsync();
+            return await _context.Auctions
+                .Include(auction => auction.product) // Liên kết với bảng Product
+                .ToListAsync();
         }
 
         public async Task<Auction> GetByIdAsync(long id)
         {
-            return await _context.Auctions.FindAsync(id);
+            return await _context.Auctions
+                .Include(auction => auction.product) // Liên kết với bảng Product
+                .FirstOrDefaultAsync(auction => auction.product_id == id);
         }
 
         public async Task<Auction> UpdateAsync(Auction auction)
