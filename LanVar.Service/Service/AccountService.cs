@@ -187,9 +187,6 @@ namespace LanVar.Service.Implementation
                 userToUpdate.package_id = 2;
 
                return await _genericUserRepository.Update(userToUpdate);
-               
-
-                
             }
             catch (Exception ex)
             {

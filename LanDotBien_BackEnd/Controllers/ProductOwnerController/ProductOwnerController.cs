@@ -63,8 +63,6 @@ namespace LanDotBien_BackEnd.Controllers.ProductOwnerController
             
                 var updatedUser = await _accountService.PurchasePackage(userId);
                 return Ok(updatedUser);
-            
-            
         }
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
