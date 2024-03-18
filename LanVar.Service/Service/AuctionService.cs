@@ -25,6 +25,21 @@ namespace LanVar.Service.Service
 
         }
 
+        public async Task<AuctionDTOResponse> AcceptAuction(long id)
+        {
+            var existingAuction = await _auctionRepository.GetByIdAsync(id);
+            if (existingAuction == null)
+                throw new Exception($"Auction not existing!."); ;
+            var product = await _productRepository.GetByIdAsync(existingAuction.product_id);
+            if (product == null || !product.status)
+            {
+                throw new Exception($"Product is not available for auction!");
+            }
+            existingAuction.status = AuctionStatus.ACTIVE;
+            var auction = _mapper.Map<Auction>(existingAuction);
+            return _mapper.Map<AuctionDTOResponse>(auction);
+        }
+
         public async Task<AuctionDTOResponse> CreateAuctionAsync(AuctionDTORequest auctionDto)
         {
 
@@ -48,7 +63,7 @@ namespace LanVar.Service.Service
             }
 
             // Nếu không có phòng nào trùng Product_id, tiến hành tạo đấu giá
-            auctionDto.Status = AuctionStatus.ACTIVE.ToString();
+            auctionDto.Status = AuctionStatus.WAITING.ToString();
             var auction = _mapper.Map<Auction>(auctionDto);
             var createdAuction = await _auctionRepository.CreateAsync(auction);
             return _mapper.Map<AuctionDTOResponse>(createdAuction);
@@ -66,6 +81,25 @@ namespace LanVar.Service.Service
                 await _productRepository.Update(product);
             }
             return await _auctionRepository.DeleteAsync(id);
+        }
+
+        public async Task<AuctionDTOResponse> EnterAuctionAsync(long id, string password)
+        {
+            // Kiểm tra xem đấu giá có tồn tại không
+            var existingAuction = await _auctionRepository.GetByIdAsync(id);
+            if (existingAuction == null)
+            {
+                throw new Exception($"Auction with ID {id} not found.");
+            }
+
+            // Kiểm tra mật khẩu
+            if (existingAuction.password != password)
+            {
+                throw new Exception("Incorrect password.");
+            }
+
+            // Nếu mật khẩu đúng, trả về thông tin đấu giá
+            return _mapper.Map<AuctionDTOResponse>(existingAuction);
         }
 
         public async Task<List<AuctionDTOResponse>> GetAllAuctionsAsync()
