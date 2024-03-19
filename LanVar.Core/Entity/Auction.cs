@@ -6,7 +6,8 @@ namespace LanVar.Core.Entity
     public enum AuctionStatus
     {
         ACTIVE,
-        INACTIVE
+        INACTIVE,
+        WAITING
     }
 
     [Table("Auction")]

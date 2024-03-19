@@ -26,9 +26,7 @@ namespace LanVar.Core.Entity
                 new UserPermission { id = 2, role = "Manager" },
                 new UserPermission { id = 3, role = "Staff" },
                 new UserPermission { id = 4, role = "ProductOwner" },
-                new UserPermission { id = 5, role = "Customer" },
-                new UserPermission { id = 6, role = "Guest" },
-                new UserPermission { id = 7, role = "User" }
+                new UserPermission { id = 5, role = "Customer" }
             );
 
             // Seed data for Packages
@@ -37,9 +35,10 @@ namespace LanVar.Core.Entity
                 new Package { id = 2, packageName = "Premium", package_Description = "Premium package", startDay = DateTime.Now, endDay = DateTime.Now.AddDays(30), status = true }
             );
 
-            // Seed data for Users
+            // Seed data for User
             modelBuilder.Entity<User>().HasData(
-                new User { id = 1, permission_id = 1, package_id = 1, identityCard = "123456789", name = "Admin", email = "admin@example.com", username = "admin", password = "admin", image = "null", phone = 123456789, dob = DateTime.Now, address = "Admin Address", gender = "Male", registerDay = DateTime.Now, status = true }
+                new User { id = 1, permission_id = 1, package_id = 1, identityCard = "123456789", name = "Admin", email = "admin@example.com", username = "admin", password = "admin", phone = "123456789", dob = DateTime.Now, address = "Admin Address", gender = "Male", registerDay = DateTime.Now, status = true }
+
             );
 
             // Seed data for Products
@@ -79,7 +78,6 @@ namespace LanVar.Core.Entity
             modelBuilder.Entity<Bid>().HasData(
                 new Bid { id = 1, auction_id = 1, user_id = 1, bid = 60.00, bid_time = DateTime.Now }
             );
-
         }
     }
 }
