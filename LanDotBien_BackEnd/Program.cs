@@ -20,6 +20,7 @@ using LanVar.Service.Implementation;
 using LanVar.Repository.IRepository;
 using LanVar.Repository.Repository;
 using LanVar.Service.IService;
+using LanVar.Infrastructure.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -57,6 +58,8 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IBidService, BidService>();
+builder.Services.AddScoped<IVnPayService, VnPayService>();
+builder.Services.AddScoped<IRoomRegistrationsService, RoomRegistrationsService>();
 //sau class service cuar ai tu add vao day
 //Làm Ơn Add Service vào đây khi đã tạo rồi 
 

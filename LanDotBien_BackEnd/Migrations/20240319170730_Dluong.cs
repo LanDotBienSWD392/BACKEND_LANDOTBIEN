@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace LanDotBien_BackEnd.Migrations
 {
     /// <inheritdoc />
-    public partial class Dante : Migration
+    public partial class Dluong : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -271,7 +271,8 @@ namespace LanDotBien_BackEnd.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     user_id = table.Column<long>(type: "bigint", nullable: false),
                     auction_id = table.Column<long>(type: "bigint", nullable: false),
-                    register_time = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    register_time = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    status = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -296,8 +297,8 @@ namespace LanDotBien_BackEnd.Migrations
                 columns: new[] { "id", "endDay", "packageName", "package_Description", "startDay", "status" },
                 values: new object[,]
                 {
-                    { 1L, new DateTime(2024, 4, 17, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(494), "Basic", "Basic package", new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(479), true },
-                    { 2L, new DateTime(2024, 4, 17, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(504), "Premium", "Premium package", new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(503), true }
+                    { 1L, new DateTime(2024, 4, 19, 0, 7, 29, 328, DateTimeKind.Local).AddTicks(3505), "Basic", "Basic package", new DateTime(2024, 3, 20, 0, 7, 29, 328, DateTimeKind.Local).AddTicks(3492), true },
+                    { 2L, new DateTime(2024, 4, 19, 0, 7, 29, 328, DateTimeKind.Local).AddTicks(3511), "Premium", "Premium package", new DateTime(2024, 3, 20, 0, 7, 29, 328, DateTimeKind.Local).AddTicks(3511), true }
                 });
 
             migrationBuilder.InsertData(
@@ -317,17 +318,17 @@ namespace LanDotBien_BackEnd.Migrations
             migrationBuilder.InsertData(
                 table: "User",
                 columns: new[] { "id", "address", "dob", "email", "gender", "identityCard", "image", "name", "package_id", "password", "permission_id", "phone", "registerDay", "status", "username" },
-                values: new object[] { 1L, "Admin Address", new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(540), "admin@example.com", "Male", "123456789", "null", "Admin", 1L, "admin", 1L, 123456789, new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(543), true, "admin" });
+                values: new object[] { 1L, "Admin Address", new DateTime(2024, 3, 20, 0, 7, 29, 328, DateTimeKind.Local).AddTicks(3539), "admin@example.com", "Male", "123456789", "null", "Admin", 1L, "admin", 1L, 123456789, new DateTime(2024, 3, 20, 0, 7, 29, 328, DateTimeKind.Local).AddTicks(3540), true, "admin" });
 
             migrationBuilder.InsertData(
                 table: "Order",
                 columns: new[] { "id", "date", "orderItem_id", "status", "total_Price", "user_id" },
                 values: new object[,]
                 {
-                    { 1L, new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(676), 0L, 1, 100.0, 1L },
-                    { 2L, new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(678), 0L, 2, 100.0, 1L },
-                    { 3L, new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(679), 0L, 3, 100.0, 1L },
-                    { 4L, new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(680), 0L, 4, 100.0, 1L }
+                    { 1L, new DateTime(2024, 3, 20, 0, 7, 29, 328, DateTimeKind.Local).AddTicks(3626), 0L, 1, 100.0, 1L },
+                    { 2L, new DateTime(2024, 3, 20, 0, 7, 29, 328, DateTimeKind.Local).AddTicks(3628), 0L, 2, 100.0, 1L },
+                    { 3L, new DateTime(2024, 3, 20, 0, 7, 29, 328, DateTimeKind.Local).AddTicks(3630), 0L, 3, 100.0, 1L },
+                    { 4L, new DateTime(2024, 3, 20, 0, 7, 29, 328, DateTimeKind.Local).AddTicks(3631), 0L, 4, 100.0, 1L }
                 });
 
             migrationBuilder.InsertData(
@@ -338,7 +339,7 @@ namespace LanDotBien_BackEnd.Migrations
             migrationBuilder.InsertData(
                 table: "Auction",
                 columns: new[] { "id", "auctionDay", "auction_Name", "deposit_Money", "endDay", "password", "product_id", "startDay", "status" },
-                values: new object[] { 1L, new DateTime(2024, 3, 25, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(613), "Auction 1", 50.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "1", 1L, new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(613), 0 });
+                values: new object[] { 1L, new DateTime(2024, 3, 27, 0, 7, 29, 328, DateTimeKind.Local).AddTicks(3582), "Auction 1", 50.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "1", 1L, new DateTime(2024, 3, 20, 0, 7, 29, 328, DateTimeKind.Local).AddTicks(3582), 0 });
 
             migrationBuilder.InsertData(
                 table: "Bill",
@@ -353,12 +354,12 @@ namespace LanDotBien_BackEnd.Migrations
             migrationBuilder.InsertData(
                 table: "Bid",
                 columns: new[] { "id", "auction_id", "bid", "bid_time", "user_id" },
-                values: new object[] { 1L, 1L, 60.0, new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(750), 1L });
+                values: new object[] { 1L, 1L, 60.0, new DateTime(2024, 3, 20, 0, 7, 29, 328, DateTimeKind.Local).AddTicks(3724), 1L });
 
             migrationBuilder.InsertData(
                 table: "RoomRegistrations",
-                columns: new[] { "id", "auction_id", "register_time", "user_id" },
-                values: new object[] { 1L, 1L, new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(645), 1L });
+                columns: new[] { "id", "auction_id", "register_time", "status", "user_id" },
+                values: new object[] { 1L, 1L, new DateTime(2024, 3, 20, 0, 7, 29, 328, DateTimeKind.Local).AddTicks(3610), 2, 1L });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Auction_product_id",

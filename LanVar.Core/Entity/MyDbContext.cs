@@ -54,7 +54,7 @@ namespace LanVar.Core.Entity
 
             // Seed data for RoomRegistrations
             modelBuilder.Entity<RoomRegistrations>().HasData(
-                new RoomRegistrations { id = 1, user_id = 1, auction_id = 1, register_time = DateTime.Now }
+                new RoomRegistrations { id = 1, user_id = 1, auction_id = 1, status = RegisterStatus.WAITING, register_time = DateTime.Now }
             );
 
             // Seed data for Orders
