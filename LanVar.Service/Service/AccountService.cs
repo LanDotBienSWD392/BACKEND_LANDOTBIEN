@@ -47,7 +47,8 @@ namespace LanVar.Service.Implementation
             var user = _mapper.Map<User>(createAccountDTORequest);
 
             // Set status = false when initializing user
-            user.permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.role.Equals("Manager"))).First().id;
+            // 12:17AM 20-3-2024 troll cái role (Dante làm)
+            user.permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.role.Equals("Admin"))).First().id;
             user.password = EncryptPassword.Encrypt(createAccountDTORequest.Password);
             user.status = false;
             user.registerDay = DateTime.Now.Date;
