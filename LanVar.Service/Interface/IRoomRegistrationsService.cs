@@ -15,5 +15,7 @@ namespace LanVar.Service.Interface
         Task<RoomRegistrationsDTOResponse> CreateAsync(RoomRegistrationsDTORequest roomRegistrationsDTO);
         Task<RoomRegistrationsDTOResponse> UpdateAsync(long id, RoomRegistrationsDTORequest roomRegistrationsDTO);
         Task DeleteAsync(long id);
+        Task<List<RoomRegistrationsDTOResponse>> GetByAuctionIdAsync(long auctionId);
+        Task<RoomRegistrationsDTOResponse> AcceptUser(long roomRegistrationId);
     }
 }

@@ -41,5 +41,15 @@ namespace LanVar.Infrastructure.Repository
             _context.Set<RoomRegistrations>().Remove(roomRegistrations);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<List<RoomRegistrations>> GetByAuctionIdAsync(long auctionId)
+        {
+            return await _context.Set<RoomRegistrations>()
+                .Include(rr => rr.user)
+                .Include(rr => rr.auction)
+                .Where(rr => rr.auction_id == auctionId)
+                .ToListAsync();
+        }
+
     }
 }

@@ -27,6 +27,7 @@ namespace LanVar.DTO.AutoMapperProfile
             CreateMap<RoomRegistrationsDTORequest, RoomRegistrations>().ReverseMap();
             CreateMap<RoomRegistrationsDTOResponse, RoomRegistrations>().ReverseMap();
 
+            CreateMap<RoomRegistrations, RoomRegistrationsDTOResponse>();
         }
 	}
 }

@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tools.Tools;
 
 namespace LanVar.Service.Service
 {
@@ -25,7 +26,8 @@ namespace LanVar.Service.Service
 
         public async Task<RoomRegistrationsDTOResponse> GetByIdAsync(long id)
         {
-            var roomRegistrations = await _roomRegistrationsRepository.GetByIdAsync(id);
+            var roomRegistrations = await _roomRegistrationsRepository.GetByAuctionIdAsync(id);
+
             return _mapper.Map<RoomRegistrationsDTOResponse>(roomRegistrations);
         }
 
@@ -48,6 +50,31 @@ namespace LanVar.Service.Service
             _mapper.Map(roomRegistrationsDTO, existingRoomRegistrations);
             await _roomRegistrationsRepository.UpdateAsync(existingRoomRegistrations);
             return _mapper.Map<RoomRegistrationsDTOResponse>(existingRoomRegistrations);
+        }
+
+        public async Task<List<RoomRegistrationsDTOResponse>> GetByAuctionIdAsync(long auctionId)
+        {
+            var roomRegistrationsList = await _roomRegistrationsRepository.GetByAuctionIdAsync(auctionId);
+            return _mapper.Map<List<RoomRegistrationsDTOResponse>>(roomRegistrationsList);
+        }
+
+        public async Task<RoomRegistrationsDTOResponse> AcceptUser(long roomRegistrationId)
+        {
+            var roomRegistration = await _roomRegistrationsRepository.GetByIdAsync(roomRegistrationId);
+            if (roomRegistration == null)
+            {
+                throw new Exception("RoomRegistrations not found");
+            }
+
+            // Perform your logic to accept the user here.
+            // For example, you may change the status of the room registration to "ACTIVE".
+            roomRegistration.status = RegisterStatus.ACTIVE;
+
+            // Save the changes to the database.
+            await _roomRegistrationsRepository.UpdateAsync(roomRegistration);
+
+            // Map the updated room registration to DTO response and return it.
+            return _mapper.Map<RoomRegistrationsDTOResponse>(roomRegistration);
         }
 
         public async Task DeleteAsync(long id)

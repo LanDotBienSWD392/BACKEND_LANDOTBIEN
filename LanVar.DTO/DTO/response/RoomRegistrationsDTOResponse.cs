@@ -11,9 +11,9 @@ public class RoomRegistrationsDTOResponse
 {
     public long id { get; set; }
 
-    public long user_id { get; set; }
+    public UserDTOResponse User { get; set; } // Thêm thông tin người dùng
 
-    public long auction_id { get; set; }
+    public AuctionDTOResponse Auction { get; set; } // Thêm thông tin phiên đấu giá
 
     public string status { get; set; }
 

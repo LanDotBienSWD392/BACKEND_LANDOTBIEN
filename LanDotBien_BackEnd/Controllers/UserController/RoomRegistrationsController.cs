@@ -39,13 +39,29 @@ namespace LanDotBien_BackEnd.Controllers.UserController
             }
         }
 
-        [HttpGet("GetRoomRegistration/{id}")]
-        public async Task<IActionResult> GetRoomRegistration(long id)
+        [HttpGet("GetListUserInRoom/{id}")]
+        public async Task<IActionResult> GetListUserInRoom(long id)
         {
             try
             {
-                var roomRegistration = await _roomRegistrationsService.GetByIdAsync(id);
-                return Ok(roomRegistration);
+                var roomRegistrations = await _roomRegistrationsService.GetByAuctionIdAsync(id);
+                return Ok(roomRegistrations);
+            }
+            catch (CustomException.InvalidDataException ex)
+            {
+                var response = new ApiResponse<List<RoomRegistrationsDTOResponse>>(HttpStatusCode.NotFound, ex.Message);
+                return NotFound(response);
+            }
+        }
+
+        [HttpPut("AcceptUser/{id}")]
+        public async Task<IActionResult> AcceptUser(long id)
+        {
+            try
+            {
+                var acceptedRoomRegistration = await _roomRegistrationsService.AcceptUser(id);
+                var response = new ApiResponse<RoomRegistrationsDTOResponse>(acceptedRoomRegistration, HttpStatusCode.Accepted);
+                return Ok(response);
             }
             catch (CustomException.InvalidDataException ex)
             {
