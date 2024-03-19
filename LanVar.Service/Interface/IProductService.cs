@@ -14,6 +14,6 @@ namespace LanVar.Service.Interface
         Task<IEnumerable<ProductDTOResponse>> GetAllProducts();
         Task<IEnumerable<Product>> SearchProductsAsync(SearchProductDTORequest searchRequest);
         Task<ProductDTOResponse> CreateProduct(CreateProductDTORequest createProductDtoRequest);
-        
     }
+
 }

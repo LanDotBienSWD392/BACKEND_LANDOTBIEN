@@ -33,7 +33,7 @@ public class PackageService : IPackageService
         return await _packageRepository.Add(package);
     }
 
-    public async Task<IEnumerable<Package>> GetAllRole()
+    public async Task<IEnumerable<Package>> GetAllPackage()
     {
         return await _packageRepository.GetAllAsync();
     }
@@ -70,5 +70,10 @@ public class PackageService : IPackageService
 
         await _packageRepository.Delete(id);
         return true;
+    }
+
+    public async Task<Package> GetPackageById(long id)
+    {
+        return await _packageRepository.GetById(id);
     }
 }
