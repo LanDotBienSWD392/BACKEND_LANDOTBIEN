@@ -3,6 +3,7 @@ using LanVar.Core.Entity;
 using LanVar.Core.Interfaces;
 using LanVar.DTO.DTO.request;
 using LanVar.DTO.DTO.response;
+using LanVar.Repository.IRepository;
 using LanVar.Service.Interface;
 using System;
 using System.Collections.Generic;
@@ -15,11 +16,13 @@ namespace LanVar.Service.Service
 {
     public class RoomRegistrationsService : IRoomRegistrationsService
     {
+        private readonly IAuctionRepository _auctionRepository;
         private readonly IRoomRegistrationsRepository _roomRegistrationsRepository;
         private readonly IMapper _mapper;
 
-        public RoomRegistrationsService(IRoomRegistrationsRepository roomRegistrationsRepository, IMapper mapper)
+        public RoomRegistrationsService(IAuctionRepository auctionRepository, IRoomRegistrationsRepository roomRegistrationsRepository, IMapper mapper)
         {
+            _auctionRepository = auctionRepository;
             _roomRegistrationsRepository = roomRegistrationsRepository;
             _mapper = mapper;
         }
@@ -33,6 +36,13 @@ namespace LanVar.Service.Service
 
         public async Task<RoomRegistrationsDTOResponse> CreateAsync(RoomRegistrationsDTORequest roomRegistrationsDTO)
         {
+            var auction = await _auctionRepository.GetByIdAsync(roomRegistrationsDTO.auction_id);
+
+            // Check if the auction status is ACTIVE
+            if (auction == null || auction.status != AuctionStatus.ACTIVE)
+            {
+                throw new Exception("Auction is not active.");
+            }
             var roomRegistrations = _mapper.Map<RoomRegistrations>(roomRegistrationsDTO);
             roomRegistrations.register_time = DateTime.Now; // Assuming register time should be set upon creation
             await _roomRegistrationsRepository.AddAsync(roomRegistrations);
