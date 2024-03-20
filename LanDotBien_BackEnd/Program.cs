@@ -57,6 +57,17 @@ builder.Services.AddScoped<IPackageService, PackageService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IAccountService, AccountService>();
+
+//Build CORS
+builder.Services.AddCors(p => p.AddPolicy("MyCors", build =>
+{
+    // Dòng ở dưới là đường cứng
+    //build.WithOrigins("https:localhost:3000", "https:localhost:7022");
+
+    //Dòng dưới là nhận hết
+    build.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
+
 builder.Services.AddScoped<IBidService, BidService>();
 builder.Services.AddScoped<IVnPayService, VnPayService>();
 builder.Services.AddScoped<IRoomRegistrationsService, RoomRegistrationsService>();
@@ -116,6 +127,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("MyCors");
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();

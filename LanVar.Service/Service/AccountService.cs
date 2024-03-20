@@ -8,6 +8,7 @@ using LanVar.DTO.DTO.request;
 using LanVar.Service.DTO;
 using LanVar.Service.DTO.request;
 using LanVar.Service.Interface;
+using LanVar.Service.Service;
 using Tools.Tools;
 
 namespace LanVar.Service.Implementation
@@ -16,14 +17,16 @@ namespace LanVar.Service.Implementation
     {
         private readonly IUserRepository _userRepository;
         private readonly IUserPermissionRepository _userPermissionRepository;
-        
+        private readonly IGenericRepository<User> _genericUserRepository;
+        private readonly IPackageService _packageService;
         private readonly IMapper _mapper;
 
-        public AccountService(IUserRepository userRepository, IMapper mapper, IUserPermissionRepository userPermissionRepository)
+        public AccountService(IUserRepository userRepository, IMapper mapper, IUserPermissionRepository userPermissionRepository,IGenericRepository<User> genericUserRepository)
         {
             _userRepository = userRepository;
             _userPermissionRepository = userPermissionRepository;
             _mapper = mapper;
+            _genericUserRepository = genericUserRepository;
         }
 
         public async Task<User> CreateUser(CreateAccountDTORequest createAccountDTORequest)
@@ -44,14 +47,13 @@ namespace LanVar.Service.Implementation
             var user = _mapper.Map<User>(createAccountDTORequest);
 
             // Set status = false when initializing user
-            user.identityCard = "123123123123";
-            user.permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.role.Equals("Manager"))).First().id;
+            // 12:17AM 20-3-2024 troll cái role (Dante làm)
+            user.permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.role.Equals("Admin"))).First().id;
             user.password = EncryptPassword.Encrypt(createAccountDTORequest.Password);
             user.status = false;
             user.registerDay = DateTime.Now.Date;
-            user.image = "";
+            user.image = null;
             user.package_id = 1;
-            user.gender = "Gay";
             await _userRepository.Add(user);
             return user;
         }
@@ -120,17 +122,42 @@ namespace LanVar.Service.Implementation
             var users = _mapper.Map<User>(createAccountDTORequest);
 
             // Set status = false when initializing user
-            users.identityCard = "12312312333123";
             users.permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.role.Equals("Staff"))).First().id;
             users.password = EncryptPassword.Encrypt(createAccountDTORequest.Password);
             users.status = true;
             users.registerDay = DateTime.Now.Date;
-            users.image = "";
+            users.image = null;
             users.package_id = 1;
-            users.gender = "Gay";
             await _userRepository.Add(users);
             return users;
         }
+        private byte[] ReadImageDataFromFile(string imageName)
+        {
+            string imagePath = Path.Combine("Images", imageName); // Đường dẫn tương đối tới thư mục "Images"
+            // Đọc dữ liệu của ảnh từ file
+            byte[] imageData = File.ReadAllBytes(imagePath);
+            return imageData;
+        }
+
+        private  byte[] GetDefaultImageForRole(string role)
+        {
+            switch (role)
+            {
+                case "Admin":
+                    return ReadImageDataFromFile("Admin.jpg"); // Thay đổi tên tập tin hình ảnh cho quản trị viên
+                case "Manager":
+                    return ReadImageDataFromFile("manager.jpg"); // Thay đổi tên tập tin hình ảnh cho quản lý viên
+                case "Staff":
+                    return ReadImageDataFromFile("Staff.jpg"); // Thay đổi tên tập tin hình ảnh cho nhân viên
+                case "ProductOwner":
+                    return ReadImageDataFromFile("ProductOwner.jpg"); // Thay đổi tên tập tin hình ảnh cho chủ sản phẩm
+                case "Customer":
+                    return ReadImageDataFromFile("Customer.jpg"); // Thay đổi tên tập tin hình ảnh cho khách hàng
+                default:
+                    return ReadImageDataFromFile("Guest.jpg"); // Trả về hình ảnh mặc định nếu không tìm thấy vai trò phù hợp
+            }
+        }
+
 
         public async Task<User> UpdateStaffUser(long id, UpdateUserDTORequest updateUserDTORequest)
         {
@@ -139,7 +166,7 @@ namespace LanVar.Service.Implementation
             {
                 return null; // User not found
             }
-            if (userToUpdate.permission_id == 1 || userToUpdate.permission_id == 2 || userToUpdate.permission_id == 6 || userToUpdate.permission_id == 7)
+            if (userToUpdate.permission_id == 1 || userToUpdate.permission_id == 2)
             {
                 throw new Exception("Không được phép cập nhật người dùng với quyền này.");
             }
@@ -159,7 +186,7 @@ namespace LanVar.Service.Implementation
             }
 
             // Kiểm tra nếu permission_id = 1, không cho phép xóa
-            if (userToDelete.permission_id == 1 || userToDelete.permission_id == 2 || userToDelete.permission_id == 6 || userToDelete.permission_id == 7)
+            if (userToDelete.permission_id == 1 || userToDelete.permission_id == 2)
             {
                 throw new Exception("Không được phép xóa người dùng với quyền này.");
             }
@@ -167,6 +194,28 @@ namespace LanVar.Service.Implementation
             // Tiến hành xóa chỉ khi không có vấn đề với quyền
             var success = await _userRepository.DeleteUser(id);
             return success;
+        }
+
+        public async Task<User> PurchasePackage(long userId)
+        {
+            try
+            {
+                var userToUpdate = await _userRepository.GetByIdAsync(userId);
+                if (userToUpdate == null)
+                {
+                    throw new Exception("User not found");
+                }
+                //Thêm func check đã thanh toán ch
+
+                // Cập nhật package_id cho user
+                userToUpdate.package_id = 2;
+
+               return await _genericUserRepository.Update(userToUpdate);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Thanh toán không thành công");
+            }
         }
     }
 }
