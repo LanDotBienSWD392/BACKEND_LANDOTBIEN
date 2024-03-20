@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tools.Tools;
 
 namespace LanVar.DTO.DTO.request;
 
@@ -16,7 +17,7 @@ public class BidDTORequest
     [Required(ErrorMessage = "User is required")]
     public long user_id { get; set; }
 
-    [Required(ErrorMessage = "Bid is required")]
+    [Required(ErrorMessage = "Bid is required"), CustomDataValidation.MinBidValidation(0)]
     public double bid { get; set; }
 
     public DateTime bid_time { get; set; }
