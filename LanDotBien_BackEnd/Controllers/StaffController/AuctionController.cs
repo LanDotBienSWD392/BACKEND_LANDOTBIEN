@@ -122,7 +122,7 @@ namespace LanDotBien_BackEnd.Controllers.StaffController
         {
             try
             {
-                var auction = await _auctionService.EnterAuctionAsync(enterAuctionDTORequest.id, enterAuctionDTORequest.Password);
+                var auction = await _auctionService.EnterAuctionAsync(enterAuctionDTORequest);
                 if (auction == null)
                 {
                     return NotFound();

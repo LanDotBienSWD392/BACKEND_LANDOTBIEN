@@ -17,7 +17,7 @@ public class BidDTORequest
     [Required(ErrorMessage = "User is required")]
     public long user_id { get; set; }
 
-    [Required(ErrorMessage = "Bid is required"), CustomDataValidation.MinBidValidation(0)]
+    [Required(ErrorMessage = "Bid is required"), CustomDataValidation.IntRangeValidation(0, 1000000000000)]
     public double bid { get; set; }
 
     public DateTime bid_time { get; set; }

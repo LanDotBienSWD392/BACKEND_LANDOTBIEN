@@ -13,12 +13,16 @@ namespace LanVar.Services.Service
 {
     public class AuctionService : IAuctionService
     {
+        private readonly IRoomRegistrationsRepository _roomRegistrationsRepository;
+        private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
         private readonly IAuctionRepository _auctionRepository;
         private readonly IProductRepository _productRepository;
 
-        public AuctionService(IMapper mapper, IAuctionRepository auctionRepository, IProductRepository productRepository)
+        public AuctionService(IRoomRegistrationsRepository roomRegistrationsRepository ,IUserRepository userRepository, IMapper mapper, IAuctionRepository auctionRepository, IProductRepository productRepository)
         {
+            _roomRegistrationsRepository = roomRegistrationsRepository;
+            _userRepository = userRepository;
             _mapper = mapper;
             _auctionRepository = auctionRepository;
             _productRepository = productRepository;
@@ -43,12 +47,12 @@ namespace LanVar.Services.Service
 
         public async Task<AuctionDTOResponse> CreateAuctionAsync(AuctionDTORequest auctionDto)
         {
-
+            var checkPackage = await _userRepository.GetByIdAsync(auctionDto.User_id);
+            if (checkPackage.package_id == 1)
+                throw new Exception($"You should buy package to create Auction!."); ;
             var existingAuction = await _auctionRepository.GetByAuctionNameAsync(auctionDto.Auction_Name);
             if (existingAuction != null)
             {
-                // Nếu có, bạn có thể xử lý ở đây, ví dụ như trả về null hoặc một giá trị đặc biệt để xác định rằng đã xảy ra trùng lặp
-                // Trong ví dụ này, tôi sẽ trả về null
                 throw new Exception($"Auction Name existing!."); ;
             }
             // Kiểm tra xem có phòng nào trùng Product_id không
@@ -85,24 +89,32 @@ namespace LanVar.Services.Service
             return await _auctionRepository.DeleteAsync(id);
         }
 
-        public async Task<AuctionDTOResponse> EnterAuctionAsync(long id, string password)
+        public async Task<AuctionDTOResponse> EnterAuctionAsync(EnterAuctionDTORequest enterAuctionDTORequest)
         {
             // Kiểm tra xem đấu giá có tồn tại không
-            var existingAuction = await _auctionRepository.GetByIdAsync(id);
+            var existingAuction = await _auctionRepository.GetByIdAsync(enterAuctionDTORequest.id);
             if (existingAuction == null)
             {
-                throw new Exception($"Auction with ID {id} not found.");
+                throw new Exception($"Auction with ID {enterAuctionDTORequest.id} not found.");
             }
 
             // Kiểm tra mật khẩu
-            if (existingAuction.password != password)
+            if (existingAuction.password != enterAuctionDTORequest.Password)
             {
                 throw new Exception("Incorrect password.");
             }
 
-            // Nếu mật khẩu đúng, trả về thông tin đấu giá
+            // Kiểm tra xem người dùng đã đăng ký vào phòng đấu giá này chưa
+            var roomRegistration = await _roomRegistrationsRepository.GetByFilterAsync(x => x.auction_id == existingAuction.id && x.status == RegisterStatus.ACTIVE && x.user_id == enterAuctionDTORequest.user_id);
+            if (!roomRegistration.Any())
+            {
+                throw new Exception("You must register for this auction before entering.");
+            }
+
+            // Nếu mật khẩu đúng và người dùng đã đăng ký, trả về thông tin đấu giá
             return _mapper.Map<AuctionDTOResponse>(existingAuction);
         }
+
 
         public async Task<List<AuctionDTOResponse>> GetAllAuctionsAsync()
         {

@@ -6,7 +6,7 @@ namespace LanVar.DTO.DTO.request;
 
 public class AuctionDTORequest
 {
-    
+    public long User_id { get; set; }
     public long Product_id { get; set; }
 
     [Required(ErrorMessage = "Start Day is required")]
