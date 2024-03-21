@@ -80,7 +80,7 @@ namespace LanVar.Service.Service
 			return user;
 		}
 
-		public async Task<(string, LoginDTOResponse)> Login(LoginDTORequest loginDtoRequest)
+        public async Task<(string, LoginDTOResponse)> Login(LoginDTORequest loginDtoRequest)
 		{
 			string hashedPass = EncryptPassword.Encrypt(loginDtoRequest.Password);
 			IEnumerable<User> check = await _userRepository.GetByFilterAsync(x =>
@@ -118,7 +118,6 @@ namespace LanVar.Service.Service
 			}
 			return result;
 		}
-
-	}
+    }
 }
 

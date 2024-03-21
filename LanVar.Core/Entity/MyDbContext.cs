@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace LanVar.Core.Entity
 {
@@ -15,6 +17,20 @@ namespace LanVar.Core.Entity
         public DbSet<RoomRegistrations> RoomRegistrations { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserPermission> UsersPermission { get; set; }
+        private string HashPassword(string password)
+        {
+            using (SHA512 sha512 = SHA512.Create())
+            {
+                byte[] hashBytes = sha512.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    builder.Append(hashBytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -36,9 +52,11 @@ namespace LanVar.Core.Entity
             );
 
             // Seed data for User
-            modelBuilder.Entity<User>().HasData(
-                new User { id = 1, permission_id = 1, package_id = 1, identityCard = "123456789", name = "Admin", email = "admin@example.com", username = "admin", password = "admin", phone = "123456789", dob = DateTime.Now, address = "Admin Address", gender = "Male", registerDay = DateTime.Now, status = true }
+            string plaintextPassword = "admin"; // Mật khẩu gốc
+            string hashedPassword = HashPassword(plaintextPassword); // Mã hóa mật khẩu bằng SHA-512
 
+            modelBuilder.Entity<User>().HasData(
+                new User { id = 1, permission_id = 1, package_id = 1, identityCard = "123456789", name = "Admin", email = "admin@example.com", username = "admin", password = hashedPassword, phone = "123456789", dob = DateTime.Now, address = "Admin Address", gender = "Male", registerDay = DateTime.Now, status = true }
             );
 
             // Seed data for Products
