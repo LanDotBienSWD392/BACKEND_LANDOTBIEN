@@ -3,6 +3,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LanVar.Core.Entity
 {
+    public enum RegisterStatus
+    {
+        ACTIVE,
+        INACTIVE,
+        WAITING
+    }
+
     [Table("RoomRegistrations")]
     public class RoomRegistrations
     {
@@ -16,6 +23,8 @@ namespace LanVar.Core.Entity
         public long auction_id { get; set; }
 
         public DateTime register_time { get; set; }
+
+        public RegisterStatus status { get; set; }
 
         [ForeignKey("user_id")]
         public User user { get; set; }

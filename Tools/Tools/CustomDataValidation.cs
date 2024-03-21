@@ -31,6 +31,30 @@ public class CustomDataValidation
     }
 
     [AttributeUsage(AttributeTargets.Property)]
+    public class MinBidValidation : ValidationAttribute
+    {
+        private readonly double _minValue;
+        
+
+        public MinBidValidation(double minValue)
+        {
+            _minValue = minValue;
+        }
+
+        protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
+        {
+            if (value is double intValue)
+            {
+                if (intValue >= _minValue)
+                {
+                    return ValidationResult.Success;
+                }
+            }
+            return new ValidationResult($"Value must be larger {_minValue}");
+        }
+    }
+
+    [AttributeUsage(AttributeTargets.Property)]
     public class AgeValidation : ValidationAttribute
     {
         private readonly int _minAge;

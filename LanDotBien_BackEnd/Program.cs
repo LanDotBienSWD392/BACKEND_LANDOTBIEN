@@ -20,6 +20,7 @@ using LanVar.Service.Implementation;
 using LanVar.Repository.IRepository;
 using LanVar.Repository.Repository;
 using LanVar.Service.IService;
+using LanVar.Infrastructure.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,9 +38,8 @@ builder.Services.AddDbContext<MyDbContext>(options =>
 );
 //Repository add o day
 builder.Services.AddScoped<IAuctionRepository, AuctionRepository>();
-builder.Services.AddScoped<IBidRepository, BidRepository>();
 builder.Services.AddScoped<IBillRepository, BillRepository>();
-
+builder.Services.AddScoped<IBidRepository, BidRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderItemRepository, OrderItemRepository>();
 builder.Services.AddScoped<IPackageRepository, PackageRepository>();
@@ -47,6 +47,7 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IRoomRegistrationsRepository, RoomRegistrationsRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserPermissionRepository, UserPermissionRepository>();
+
 // Service add o day
 builder.Services.AddScoped<IUserService,UserService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
@@ -67,6 +68,9 @@ builder.Services.AddCors(p => p.AddPolicy("MyCors", build =>
     build.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
 }));
 
+builder.Services.AddScoped<IBidService, BidService>();
+builder.Services.AddScoped<IVnPayService, VnPayService>();
+builder.Services.AddScoped<IRoomRegistrationsService, RoomRegistrationsService>();
 //sau class service cuar ai tu add vao day
 //Làm Ơn Add Service vào đây khi đã tạo rồi 
 
