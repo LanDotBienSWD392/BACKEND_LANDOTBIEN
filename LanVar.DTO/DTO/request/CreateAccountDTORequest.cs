@@ -10,6 +10,7 @@ namespace LanVar.DTO.DTO.request
 {
     public class CreateAccountDTORequest
     {
+        public long permission_id { get; set; }
         [StringLength(maximumLength: 40, MinimumLength = 8)]
         public required string Name { get; set; }
         [StringLength(maximumLength: 40, MinimumLength = 8)]

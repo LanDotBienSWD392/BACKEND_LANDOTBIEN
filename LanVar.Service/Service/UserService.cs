@@ -46,20 +46,30 @@ namespace LanVar.Service.Service
 		{
 			IEnumerable<User> checkEmail =
 				await _userRepository.GetByFilterAsync(x => x.email.Equals(createAccountDTORequest.Email));
-			IEnumerable<User> checkUsername =
+            /*IEnumerable<User> checkRole =
+                await _userRepository.GetByFilterAsync(x => x.permission_id.Equals(createAccountDTORequest.permission_id));*/
+            IEnumerable<User> checkUsername =
 				await _userRepository.GetByFilterAsync(x => x.username.Equals(createAccountDTORequest.Username));
-			if (checkEmail.Count() != 0)
-			{
-				throw new InvalidDataException($"Email is exist");
-			}
+            if (checkEmail.Any())
+            {
+                // Kiểm tra permission_id
+                foreach (var userCheck in checkEmail)
+                {
+                    if (userCheck.permission_id == createAccountDTORequest.permission_id)
+                    {
+                        throw new InvalidDataException($"Email is exist.");
+                    }
+                }
+            }
 
-			if (checkUsername.Count() != 0)
+            if (checkUsername.Count() != 0)
 			{
 				throw new InvalidDataException($"Username is exist");
 			}
 
 			var user = _mapper.Map<User>(createAccountDTORequest);
-			user.permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.role.Equals("Customer"))).First().id;
+/*			user.permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.role.Equals("Customer"))).First().id;
+*/			
 			user.password = EncryptPassword.Encrypt(createAccountDTORequest.Password);
 			user.status = true;
 			user.registerDay = DateTime.Now.Date;

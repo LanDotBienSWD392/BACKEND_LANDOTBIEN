@@ -43,6 +43,7 @@ namespace LanVar.Service.Service
             {
                 throw new Exception("Auction is not active.");
             }
+            roomRegistrationsDTO.status = RegisterStatus.ACTIVE.ToString();
             var roomRegistrations = _mapper.Map<RoomRegistrations>(roomRegistrationsDTO);
             roomRegistrations.register_time = DateTime.Now; // Assuming register time should be set upon creation
             await _roomRegistrationsRepository.AddAsync(roomRegistrations);
