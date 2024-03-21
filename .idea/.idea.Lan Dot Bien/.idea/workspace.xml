@@ -10,7 +10,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="add cart and bill function" />
+    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="fix hide item in cart" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,6 +66,7 @@
     <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/UserRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/AccountService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/AuctionService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Volumes/Hoaq's Gke dit bu/FU/Kì 7/SWD391/BackEnd_LANDOTBIEN/LanVar.Services/Service/OrderItemService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/ProductService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -254,7 +255,7 @@
       <workItem from="1710940012885" duration="3814000" />
       <workItem from="1710980355066" duration="9838000" />
       <workItem from="1710991805925" duration="2804000" />
-      <workItem from="1711018820976" duration="1161000" />
+      <workItem from="1711018820976" duration="1493000" />
     </task>
     <task id="LOCAL-00001" summary="add login, generate jwt and register, check validate, custom error, delete ILogger in repository">
       <option name="closed" value="true" />
@@ -352,7 +353,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711019745111</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fix hide item in cart">
+      <option name="closed" value="true" />
+      <created>1711020311905</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1711020311905</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -386,7 +395,8 @@
     <MESSAGE value="docker" />
     <MESSAGE value="workspace" />
     <MESSAGE value="add cart and bill function" />
-    <option name="LAST_COMMIT_MESSAGE" value="add cart and bill function" />
+    <MESSAGE value="fix hide item in cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix hide item in cart" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -524,6 +534,32 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/OrderItemService.cs</url>
+          <line>150</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/OrderItemService.cs" initialLine="150" containingFunctionPresentation="Method 'DeleteItemInCart'">
+            <startOffsets>
+              <option value="6364" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6417" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/OrderItemService.cs</url>
+          <line>149</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/OrderItemService.cs" initialLine="149" containingFunctionPresentation="Method 'DeleteItemInCart'">
+            <startOffsets>
+              <option value="6330" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6355" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="69" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -21,7 +21,7 @@ namespace LanVar.Insfrastructure.Repository
 
         public async Task<IEnumerable<OrderItem>> GetSelectedUserItem(long id)
         {
-            return _context.Items.Where(x => x.user_id == id && x.isSelected == true).ToList();
+            return _context.Items.Where(x => x.user_id == id && x.isSelected == true && x.hidden == false).ToList();
         }
         public async Task<bool> DeleteOrderByOrderCode(string orderCode)
         {
