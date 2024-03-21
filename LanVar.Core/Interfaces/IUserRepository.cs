@@ -15,6 +15,5 @@ namespace LanVar.Core.Interfaces
         Task<bool> DeleteUser(long id);
         Task<User> AddAsync(User user);
         Task<IEnumerable<User>> GetAllStaffUsers();
-        Task<bool> CheckEmailExistsByPermissionAsync(Func<object, bool> value, int permissionId);
     }
 }
