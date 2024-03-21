@@ -142,7 +142,7 @@ public class OrderItemService : IOrderItemService
         {
             throw new CustomException.InvalidDataException(HttpStatusCode.BadRequest.ToString(), "Access denied");
         }
-        if (orderItems.Any())
+        if (!orderItems.Any())
         {
             throw new CustomException.InvalidDataException(HttpStatusCode.BadRequest.ToString(),$"Order error");
         }

@@ -10,32 +10,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/ProductOwnerController/ProductOwnerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/ProductOwnerController/ProductOwnerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/StaffController/ManageOrder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/StaffController/ManageOrder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Migrations/20240317192505_Dante.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Migrations/20240317192505_Dante.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Migrations/MyDbContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Core/Entity/Bill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Entity/Bill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Core/Entity/MyDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Entity/MyDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Core/Entity/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Entity/Order.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Core/Entity/OrderItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Entity/OrderItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IOrderItemRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Interfaces/IOrderItemRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IOrderRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Interfaces/IOrderRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.DTO/AutoMapperProfile/AutoMapperProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/AutoMapperProfile/AutoMapperProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.DTO/DTO/request/CartDTORequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.DTO/DTO/request/CreateOrderDTORequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/DTO/request/CreateOrderDTORequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.DTO/DTO/response/CartDTOResponse.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.DTO/DTO/response/CreateOrderDTORespone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/DTO/response/CreateOrderDTORespone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderItemRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderItemRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Services/Interface/ICartService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Services/Interface/IOrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Interface/IOrderService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" afterDir="false" />
-    </list>
+    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="add cart and bill function" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -279,7 +254,7 @@
       <workItem from="1710940012885" duration="3814000" />
       <workItem from="1710980355066" duration="9838000" />
       <workItem from="1710991805925" duration="2804000" />
-      <workItem from="1711018820976" duration="711000" />
+      <workItem from="1711018820976" duration="1161000" />
     </task>
     <task id="LOCAL-00001" summary="add login, generate jwt and register, check validate, custom error, delete ILogger in repository">
       <option name="closed" value="true" />
@@ -369,7 +344,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710743577946</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add cart and bill function">
+      <option name="closed" value="true" />
+      <created>1711019745111</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1711019745111</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,7 +385,8 @@
     <MESSAGE value="update docker" />
     <MESSAGE value="docker" />
     <MESSAGE value="workspace" />
-    <option name="LAST_COMMIT_MESSAGE" value="workspace" />
+    <MESSAGE value="add cart and bill function" />
+    <option name="LAST_COMMIT_MESSAGE" value="add cart and bill function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
