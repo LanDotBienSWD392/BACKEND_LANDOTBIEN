@@ -44,15 +44,8 @@ namespace LanVar.Service.Service
 
 		public async Task<User> Register(CreateAccountDTORequest createAccountDTORequest)
 		{
-			IEnumerable<User> checkEmail =
-				await _userRepository.GetByFilterAsync(x => x.email.Equals(createAccountDTORequest.Email));
 			IEnumerable<User> checkUsername =
 				await _userRepository.GetByFilterAsync(x => x.username.Equals(createAccountDTORequest.Username));
-			if (checkEmail.Count() != 0)
-			{
-				throw new InvalidDataException($"Email is exist");
-			}
-
 			if (checkUsername.Count() != 0)
 			{
 				throw new InvalidDataException($"Username is exist");
@@ -70,7 +63,28 @@ namespace LanVar.Service.Service
 			return user;
 		}
 
-		public async Task<(string, LoginDTOResponse)> Login(LoginDTORequest loginDtoRequest)
+        public async Task<User> RegisterForProductOwner(CreateAccountDTORequest createAccountDTORequest)
+        {
+            IEnumerable<User> checkUsername =
+                await _userRepository.GetByFilterAsync(x => x.username.Equals(createAccountDTORequest.Username));
+            if (checkUsername.Count() != 0)
+            {
+                throw new InvalidDataException($"Username is exist");
+            }
+
+            var user = _mapper.Map<User>(createAccountDTORequest);
+            user.permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.role.Equals("ProductOwner"))).First().id;
+            user.password = EncryptPassword.Encrypt(createAccountDTORequest.Password);
+            user.status = false;
+            user.registerDay = DateTime.Now.Date;
+            user.image = null;
+            user.package_id = 1;
+
+            await _userRepository.Add(user);
+            return user;
+        }
+
+        public async Task<(string, LoginDTOResponse)> Login(LoginDTORequest loginDtoRequest)
 		{
 			string hashedPass = EncryptPassword.Encrypt(loginDtoRequest.Password);
 			IEnumerable<User> check = await _userRepository.GetByFilterAsync(x =>
@@ -108,7 +122,6 @@ namespace LanVar.Service.Service
 			}
 			return result;
 		}
-
-	}
+    }
 }
 
