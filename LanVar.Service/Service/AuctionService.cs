@@ -53,8 +53,6 @@ namespace LanVar.Service.Service
             var existingAuction = await _auctionRepository.GetByAuctionNameAsync(auctionDto.Auction_Name);
             if (existingAuction != null)
             {
-                // Nếu có, bạn có thể xử lý ở đây, ví dụ như trả về null hoặc một giá trị đặc biệt để xác định rằng đã xảy ra trùng lặp
-                // Trong ví dụ này, tôi sẽ trả về null
                 throw new Exception($"Auction Name existing!."); ;
             }
             // Kiểm tra xem có phòng nào trùng Product_id không
