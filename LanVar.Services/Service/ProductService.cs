@@ -73,10 +73,9 @@ namespace LanVar.Services.Service
             
             }
             var product = _mapper.Map<Product>(createProductDtoRequest);
-            string userId = _userService.GetUserID();
-            product.user_id = int.Parse(userId);
-            product.status = false;
-            
+            //string userId = _userService.GetUserID();
+            //product.user_id = int.Parse(userId);
+            product.status = true;
             Product addedProduct = await _genericProductRepository.Add(product);
 
             // Map the added product to ProductDTOResponse

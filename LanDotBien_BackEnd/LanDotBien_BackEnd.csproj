@@ -11,6 +11,12 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
+    <Compile Remove="Controllers\GuestController\**" />
+    <Content Remove="Controllers\GuestController\**" />
+    <EmbeddedResource Remove="Controllers\GuestController\**" />
+    <None Remove="Controllers\GuestController\**" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="CoreApiResponse" Version="1.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.2" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
@@ -48,7 +54,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\GuestController\" />
     <Folder Include="Controllers\ProductOwnerController\" />
     <Folder Include="Images\" />
   </ItemGroup>
