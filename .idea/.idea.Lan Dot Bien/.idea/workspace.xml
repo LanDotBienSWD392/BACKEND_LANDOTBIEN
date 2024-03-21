@@ -10,11 +10,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="fix hidden" />
+    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/LanDotBien_BackEnd.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/LanDotBien_BackEnd.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IBillRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Interfaces/IBillRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.DTO/DTO/response/ApiResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/DTO/response/ApiResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/BillRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/BillRepository.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JSON File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Merge.Settings">
     <option name="BRANCH" value="Kaneki" />
@@ -255,7 +271,7 @@
       <workItem from="1710940012885" duration="3814000" />
       <workItem from="1710980355066" duration="9838000" />
       <workItem from="1710991805925" duration="2804000" />
-      <workItem from="1711018820976" duration="3936000" />
+      <workItem from="1711018820976" duration="20471000" />
     </task>
     <task id="LOCAL-00001" summary="add login, generate jwt and register, check validate, custom error, delete ILogger in repository">
       <option name="closed" value="true" />
@@ -377,7 +393,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711030427215</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary=".">
+      <option name="closed" value="true" />
+      <created>1711030498271</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1711030498271</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,7 +438,8 @@
     <MESSAGE value="fix hide item in cart" />
     <MESSAGE value="fix hidden order" />
     <MESSAGE value="fix hidden" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix hidden" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -448,45 +473,6 @@
           <line>188</line>
           <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="188" containingFunctionPresentation="Method 'PurchasePackage'" />
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs</url>
-          <line>56</line>
-          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" initialLine="55" containingFunctionPresentation="Method 'CreateOrder'">
-            <startOffsets>
-              <option value="2300" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2354" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs</url>
-          <line>54</line>
-          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" initialLine="53" containingFunctionPresentation="Method 'CreateOrder'">
-            <startOffsets>
-              <option value="2217" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2218" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs</url>
-          <line>69</line>
-          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" initialLine="66" containingFunctionPresentation="Method 'CreateOrder'">
-            <startOffsets>
-              <option value="2920" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2941" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderRepository.cs</url>
@@ -591,6 +577,84 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs</url>
+          <line>72</line>
+          <properties documentPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" initialLine="70" containingFunctionPresentation="Method 'GetAllStaffUsers'">
+            <startOffsets>
+              <option value="2982" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3052" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs</url>
+          <line>75</line>
+          <properties documentPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" initialLine="73" containingFunctionPresentation="Method 'GetAllStaffUsers'">
+            <startOffsets>
+              <option value="3095" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3096" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs</url>
+          <line>74</line>
+          <properties documentPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" initialLine="72" containingFunctionPresentation="Method 'GetAllStaffUsers'">
+            <startOffsets>
+              <option value="3067" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3085" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs</url>
+          <line>77</line>
+          <properties documentPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" initialLine="75" containingFunctionPresentation="Method 'GetAllStaffUsers'">
+            <startOffsets>
+              <option value="3176" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3213" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs</url>
+          <line>78</line>
+          <properties documentPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" initialLine="76" containingFunctionPresentation="Method 'GetAllStaffUsers'">
+            <startOffsets>
+              <option value="3306" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3321" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs</url>
+          <line>81</line>
+          <properties documentPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" initialLine="79" containingFunctionPresentation="Method 'GetAllStaffUsers'">
+            <startOffsets>
+              <option value="3356" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3357" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="103" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
