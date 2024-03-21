@@ -1,5 +1,6 @@
 ﻿using LanVar.DTO.DTO.request;
 using LanVar.Service.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Tools.Tools;
 
@@ -52,12 +53,12 @@ namespace LanDotBien_BackEnd.Controllers.StaffController
         }
 
         // POST api/<ManageOrder>
-        [HttpPost("CreateOrder")]
-        public async Task<IActionResult> CreateOrder([FromBody] CreateOrderDTORequest createOrderDTORequest)
+        [HttpPost("CreateOrder"),Authorize]
+        public async Task<IActionResult> CreateOrder()
         {
             try
             {
-                var createOrder = await _ordererService.CreateOrder(createOrderDTORequest);
+                var createOrder = await _ordererService.CreateOrder();
                 return CreatedAtAction(nameof(GetOrderById), new { id = createOrder.id }, createOrder);
             }
             catch (CustomException.InvalidDataException ex)

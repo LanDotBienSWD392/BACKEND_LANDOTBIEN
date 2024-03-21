@@ -12,5 +12,6 @@ namespace LanVar.DTO.DTO.response
         public required long UsertID { get; set; }
         public DateTime Date { get; set; }
         public double Total_Price { get; set; }
+        public string orderCode { get; set; }
     }
 }

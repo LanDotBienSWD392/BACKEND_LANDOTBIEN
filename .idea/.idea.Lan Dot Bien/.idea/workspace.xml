@@ -10,12 +10,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="">
+    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="fix hidden order">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/ProductOwnerController/ProductOwnerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/ProductOwnerController/ProductOwnerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Service/Interface/IAccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Interface/IAccountService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Service/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Service/Service/UserService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,12 +20,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="Dante" />
+    <option name="BRANCH" value="Kaneki" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Kaneki" />
       </map>
     </option>
   </component>
@@ -48,10 +45,15 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/87bed8ddb3a8426686194432a8407b75d82200/83/052ec8b7/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/PackageController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/df33c7fd7db04a829574707592655c01d82000/26/2a2764ee/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/ManageManagerAccounts.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/PackageController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/CustomerController/SearchProduct.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/ManagerController/ManageStaffAccounts.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/ProductOwnerController/ProductOwnerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/StaffController/AuctionController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/UserController/UserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/UserController/UserPermissionController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Migrations/MyDbContextModelSnapshot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/appsettings.json" root0="FORCE_HIGHLIGHTING" />
@@ -64,10 +66,13 @@
     <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/ProductRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/LanVar.Service/Class1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/LanVar.Service/Service/PackageService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/LanVar.Service/Service/UserPermissionService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/LanVar.Service/Service/UserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/UserRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/AccountService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/AuctionService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Volumes/Hoaq's Gke dit bu/FU/Kì 7/SWD391/BackEnd_LANDOTBIEN/LanVar.Services/Service/OrderItemService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/ProductService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/Tools/Authentication.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/Tools/CustomDataValidation.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -76,7 +81,7 @@
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="Toolset" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -87,36 +92,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.LanDotBien_BackEnd: IIS Express.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.LanDotBien_BackEnd: http.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.39751554&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;HotReloadSettingsPage&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.LanDotBien_BackEnd: IIS Express.executor": "Run",
+    ".NET Launch Settings Profile.LanDotBien_BackEnd: http.executor": "Debug",
+    "Docker.LanDotBien_BackEnd/Dockerfile.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.2906793",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "HotReloadSettingsPage",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ],
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;C#&quot;
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "C#"
     ],
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
-      &quot;/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
-      &quot;/Users/hoangdinh/.local/share/Symbols/src&quot;
+    "rider.external.source.directories": [
+      "/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
+      "/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache",
+      "/Users/hoangdinh/.local/share/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.LanDotBien_BackEnd: http">
     <configuration name="LanDotBien_BackEnd: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/LanDotBien_BackEnd/LanDotBien_BackEnd.csproj" />
@@ -163,8 +170,36 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="LanDotBien_BackEnd/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="landotbien_backend" />
+          <option name="containerName" value="landotbien_backend" />
+          <option name="contextFolderPath" value="$PROJECT_DIR$" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="8080" />
+                <option name="hostIp" value="127.0.0.1" />
+                <option name="hostPort" value="8080" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="sourceFilePath" value="LanDotBien_BackEnd/Dockerfile" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
         <settings />
       </deployment>
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
@@ -173,11 +208,6 @@
     <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
-          <option name="secondarySourceFiles">
-            <list>
-              <option value="$PROJECT_DIR$/docker-compose.override.yml" />
-            </list>
-          </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
         </settings>
       </deployment>
@@ -213,7 +243,22 @@
       <workItem from="1710375619879" duration="4611000" />
       <workItem from="1710380871149" duration="8588000" />
       <workItem from="1710409695333" duration="7163000" />
-      <workItem from="1710742330633" duration="771000" />
+      <workItem from="1710514831676" duration="4518000" />
+      <workItem from="1710556850064" duration="6827000" />
+      <workItem from="1710582405527" duration="2160000" />
+      <workItem from="1710660611824" duration="10661000" />
+      <workItem from="1710683142817" duration="3622000" />
+      <workItem from="1710744217405" duration="469000" />
+      <workItem from="1710744689847" duration="121000" />
+      <workItem from="1710744889623" duration="1844000" />
+      <workItem from="1710836437314" duration="4802000" />
+      <workItem from="1710854584340" duration="14478000" />
+      <workItem from="1710870716729" duration="2344000" />
+      <workItem from="1710900185593" duration="9178000" />
+      <workItem from="1710940012885" duration="3814000" />
+      <workItem from="1710980355066" duration="9838000" />
+      <workItem from="1710991805925" duration="2804000" />
+      <workItem from="1711018820976" duration="3041000" />
     </task>
     <task id="LOCAL-00001" summary="add login, generate jwt and register, check validate, custom error, delete ILogger in repository">
       <option name="closed" value="true" />
@@ -263,7 +308,71 @@
       <option name="project" value="LOCAL" />
       <updated>1710489344194</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add create product for product owner">
+      <option name="closed" value="true" />
+      <created>1710493810525</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1710493810525</updated>
+    </task>
+    <task id="LOCAL-00008" summary="package">
+      <option name="closed" value="true" />
+      <created>1710514883403</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1710514883404</updated>
+    </task>
+    <task id="LOCAL-00009" summary="update docker">
+      <option name="closed" value="true" />
+      <created>1710683172642</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1710683172642</updated>
+    </task>
+    <task id="LOCAL-00010" summary="docker">
+      <option name="closed" value="true" />
+      <created>1710683202100</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1710683202100</updated>
+    </task>
+    <task id="LOCAL-00011" summary="workspace">
+      <option name="closed" value="true" />
+      <created>1710743577946</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1710743577946</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add cart and bill function">
+      <option name="closed" value="true" />
+      <created>1711019745111</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1711019745111</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fix hide item in cart">
+      <option name="closed" value="true" />
+      <created>1711020311905</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1711020311905</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fix hidden order">
+      <option name="closed" value="true" />
+      <created>1711020554605</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1711020554605</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +400,220 @@
     <MESSAGE value="add authorization" />
     <MESSAGE value="fix jwt, add more user information to jwt" />
     <MESSAGE value="fix search product engine" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix search product engine" />
+    <MESSAGE value="add create product for product owner" />
+    <MESSAGE value="package" />
+    <MESSAGE value="update docker" />
+    <MESSAGE value="docker" />
+    <MESSAGE value="workspace" />
+    <MESSAGE value="add cart and bill function" />
+    <MESSAGE value="fix hide item in cart" />
+    <MESSAGE value="fix hidden order" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix hidden order" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs</url>
+          <line>178</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="178" containingFunctionPresentation="Method 'PurchasePackage'" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs</url>
+          <line>179</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="179" containingFunctionPresentation="Method 'PurchasePackage'" />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs</url>
+          <line>182</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="182" containingFunctionPresentation="Method 'PurchasePackage'" />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs</url>
+          <line>186</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="186" containingFunctionPresentation="Method 'PurchasePackage'" />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs</url>
+          <line>188</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="188" containingFunctionPresentation="Method 'PurchasePackage'" />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs</url>
+          <line>56</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" initialLine="55" containingFunctionPresentation="Method 'CreateOrder'">
+            <startOffsets>
+              <option value="2300" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2354" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs</url>
+          <line>54</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" initialLine="53" containingFunctionPresentation="Method 'CreateOrder'">
+            <startOffsets>
+              <option value="2217" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2218" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs</url>
+          <line>69</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" initialLine="66" containingFunctionPresentation="Method 'CreateOrder'">
+            <startOffsets>
+              <option value="2920" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2941" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderRepository.cs</url>
+          <line>90</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderRepository.cs" initialLine="90" containingFunctionPresentation="Method 'Sum'">
+            <startOffsets>
+              <option value="2812" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2813" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderRepository.cs</url>
+          <line>96</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderRepository.cs" initialLine="96" containingFunctionPresentation="Method 'Sum'">
+            <startOffsets>
+              <option value="3071" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3089" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/BillService.cs</url>
+          <line>51</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/BillService.cs" initialLine="48" containingFunctionPresentation="Method 'CreateBill'">
+            <startOffsets>
+              <option value="2116" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2184" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/BillService.cs</url>
+          <line>52</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/BillService.cs" initialLine="49" containingFunctionPresentation="Method 'CreateBill'">
+            <startOffsets>
+              <option value="2197" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2215" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/BillService.cs</url>
+          <line>53</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/BillService.cs" initialLine="50" containingFunctionPresentation="Method 'CreateBill'">
+            <startOffsets>
+              <option value="2228" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2229" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/OrderItemService.cs</url>
+          <line>150</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/OrderItemService.cs" initialLine="150" containingFunctionPresentation="Method 'DeleteItemInCart'">
+            <startOffsets>
+              <option value="6364" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6417" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/OrderItemService.cs</url>
+          <line>149</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/OrderItemService.cs" initialLine="149" containingFunctionPresentation="Method 'DeleteItemInCart'">
+            <startOffsets>
+              <option value="6330" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6355" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderItemRepository.cs</url>
+          <line>45</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderItemRepository.cs" initialLine="45" containingFunctionPresentation="Method 'DeleteOrderByOrderCode'">
+            <startOffsets>
+              <option value="1688" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1712" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderItemRepository.cs</url>
+          <line>43</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderItemRepository.cs" initialLine="43" containingFunctionPresentation="Method 'DeleteOrderByOrderCode'">
+            <startOffsets>
+              <option value="1612" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1657" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderItemRepository.cs</url>
+          <line>53</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderItemRepository.cs" initialLine="53" containingFunctionPresentation="Method 'DeleteOrderByOrderCode'">
+            <startOffsets>
+              <option value="1898" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1932" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
