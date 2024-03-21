@@ -10,10 +10,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="fix hidden order">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="fix hidden" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -258,7 +255,7 @@
       <workItem from="1710940012885" duration="3814000" />
       <workItem from="1710980355066" duration="9838000" />
       <workItem from="1710991805925" duration="2804000" />
-      <workItem from="1711018820976" duration="3041000" />
+      <workItem from="1711018820976" duration="3936000" />
     </task>
     <task id="LOCAL-00001" summary="add login, generate jwt and register, check validate, custom error, delete ILogger in repository">
       <option name="closed" value="true" />
@@ -372,7 +369,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711020554605</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fix hidden">
+      <option name="closed" value="true" />
+      <created>1711030427215</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1711030427215</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +413,8 @@
     <MESSAGE value="add cart and bill function" />
     <MESSAGE value="fix hide item in cart" />
     <MESSAGE value="fix hidden order" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix hidden order" />
+    <MESSAGE value="fix hidden" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix hidden" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -575,42 +581,16 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderItemRepository.cs</url>
-          <line>45</line>
-          <properties documentPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderItemRepository.cs" initialLine="45" containingFunctionPresentation="Method 'DeleteOrderByOrderCode'">
+          <line>26</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderItemRepository.cs" initialLine="26" containingFunctionPresentation="Method 'DeleteOrderByOrderCode'">
             <startOffsets>
-              <option value="1688" />
+              <option value="904" />
             </startOffsets>
             <endOffsets>
-              <option value="1712" />
+              <option value="905" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderItemRepository.cs</url>
-          <line>43</line>
-          <properties documentPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderItemRepository.cs" initialLine="43" containingFunctionPresentation="Method 'DeleteOrderByOrderCode'">
-            <startOffsets>
-              <option value="1612" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1657" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderItemRepository.cs</url>
-          <line>53</line>
-          <properties documentPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderItemRepository.cs" initialLine="53" containingFunctionPresentation="Method 'DeleteOrderByOrderCode'">
-            <startOffsets>
-              <option value="1898" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1932" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="72" />
+          <option name="timeStamp" value="75" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
