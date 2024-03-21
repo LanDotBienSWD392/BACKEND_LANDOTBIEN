@@ -27,6 +27,7 @@ namespace LanVar.Core.Entity
 
         public double total_Price { get; set; }
         
+        public string orderCode { get; set; }
         public OrderStatus status { get; set; } // Confirmed - In Transit - Delivered - Canceled
 
         [ForeignKey("user_id")]

@@ -10,13 +10,18 @@ namespace LanVar.Core.Entity
         public long id { get; set; }
 
         [Required]
-        public long order_id { get; set; }
+        public long user_id { get; set; }
 
         public string payment_Method { get; set; }
 
         public double total_Price { get; set; }
+        
+        public bool status { get; set; }
+        
+        public string orderCode { get; set; }
+        public string paymentUrl { get; set; }
 
-        [ForeignKey("order_id")]
-        public Order order { get; set; }
+        [ForeignKey("user_id")]
+        public User user { get; set; }
     }
 }

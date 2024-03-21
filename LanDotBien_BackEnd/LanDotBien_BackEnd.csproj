@@ -5,9 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>true</InvariantGlobalization>
-    <UserSecretsId>66723fe2-60a6-4b8d-8d9e-98c66326efda</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
@@ -44,9 +42,8 @@
     <ProjectReference Include="..\LanVar.Insfrastructure\LanVar.Insfrastructure.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\LanVar.Service\LanVar.Service.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
+    <ProjectReference Include="..\LanVar.Services\LanVar.Services.csproj" />
+   
     <ProjectReference Include="..\Tools\Tools.csproj" />
   </ItemGroup>
 
@@ -60,5 +57,11 @@
     <Content Include="..\.dockerignore">
       <Link>.dockerignore</Link>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="LanVar.Service">
+      <HintPath>..\..\..\..\Kì 7\SWD391\BackEnd_LANDOTBIEN\LanDotBien_BackEnd\bin\Debug\net8.0\LanVar.Service.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

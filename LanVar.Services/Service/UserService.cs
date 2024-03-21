@@ -8,11 +8,12 @@ using LanVar.DTO.DTO.request;
 using LanVar.DTO.DTO.response;
 
 using LanVar.Service.Interface;
+using LanVar.Services.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Tools.Tools;
 
-namespace LanVar.Service.Service
+namespace LanVar.Services.Service
 {
 	public class UserService : IUserService
 	{
