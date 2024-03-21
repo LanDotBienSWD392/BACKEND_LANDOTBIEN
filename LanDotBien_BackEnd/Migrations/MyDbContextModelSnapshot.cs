@@ -61,21 +61,13 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 1L,
-<<<<<<< HEAD
-                            auctionDay = new DateTime(2024, 3, 27, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(7583),
-=======
-                            auctionDay = new DateTime(2024, 3, 28, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9800),
->>>>>>> origin/Hoaq
+                            auctionDay = new DateTime(2024, 3, 28, 21, 18, 56, 336, DateTimeKind.Local).AddTicks(7782),
                             auction_Name = "Auction 1",
                             deposit_Money = 50.0,
                             endDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             password = "1",
                             product_id = 1L,
-<<<<<<< HEAD
-                            startDay = new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(7582),
-=======
-                            startDay = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9800),
->>>>>>> origin/Hoaq
+                            startDay = new DateTime(2024, 3, 21, 21, 18, 56, 336, DateTimeKind.Local).AddTicks(7781),
                             status = 0
                         });
                 });
@@ -112,11 +104,7 @@ namespace LanDotBien_BackEnd.Migrations
                             id = 1L,
                             auction_id = 1L,
                             bid = 60.0,
-<<<<<<< HEAD
-                            bid_time = new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(7680),
-=======
-                            bid_time = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9910),
->>>>>>> origin/Hoaq
+                            bid_time = new DateTime(2024, 3, 21, 21, 18, 56, 336, DateTimeKind.Local).AddTicks(7907),
                             user_id = 1L
                         });
                 });
@@ -202,12 +190,8 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 1L,
-<<<<<<< HEAD
-                            date = new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(7622),
-=======
-                            date = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9840),
+                            date = new DateTime(2024, 3, 21, 21, 18, 56, 336, DateTimeKind.Local).AddTicks(7830),
                             orderCode = "SPX00000000001",
->>>>>>> origin/Hoaq
                             orderItem_id = 0L,
                             status = 1,
                             total_Price = 100.0,
@@ -216,12 +200,8 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 2L,
-<<<<<<< HEAD
-                            date = new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(7624),
-=======
-                            date = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9840),
+                            date = new DateTime(2024, 3, 21, 21, 18, 56, 336, DateTimeKind.Local).AddTicks(7832),
                             orderCode = "SPX00000000002",
->>>>>>> origin/Hoaq
                             orderItem_id = 0L,
                             status = 2,
                             total_Price = 100.0,
@@ -230,12 +210,8 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 3L,
-<<<<<<< HEAD
-                            date = new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(7626),
-=======
-                            date = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9850),
+                            date = new DateTime(2024, 3, 21, 21, 18, 56, 336, DateTimeKind.Local).AddTicks(7833),
                             orderCode = "SPX00000000003",
->>>>>>> origin/Hoaq
                             orderItem_id = 0L,
                             status = 3,
                             total_Price = 100.0,
@@ -244,12 +220,8 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 4L,
-<<<<<<< HEAD
-                            date = new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(7627),
-=======
-                            date = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9850),
+                            date = new DateTime(2024, 3, 21, 21, 18, 56, 336, DateTimeKind.Local).AddTicks(7835),
                             orderCode = "SPX00000000004",
->>>>>>> origin/Hoaq
                             orderItem_id = 0L,
                             status = 4,
                             total_Price = 100.0,
@@ -325,33 +297,19 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 1L,
-<<<<<<< HEAD
-                            endDay = new DateTime(2024, 4, 19, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(6782),
+                            endDay = new DateTime(2024, 4, 20, 21, 18, 56, 336, DateTimeKind.Local).AddTicks(2934),
                             packageName = "Basic",
                             package_Description = "Basic package",
-                            startDay = new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(6772),
-=======
-                            endDay = new DateTime(2024, 4, 20, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9730),
-                            packageName = "Basic",
-                            package_Description = "Basic package",
-                            startDay = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9700),
->>>>>>> origin/Hoaq
+                            startDay = new DateTime(2024, 3, 21, 21, 18, 56, 336, DateTimeKind.Local).AddTicks(2920),
                             status = true
                         },
                         new
                         {
                             id = 2L,
-<<<<<<< HEAD
-                            endDay = new DateTime(2024, 4, 19, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(6789),
+                            endDay = new DateTime(2024, 4, 20, 21, 18, 56, 336, DateTimeKind.Local).AddTicks(2940),
                             packageName = "Premium",
                             package_Description = "Premium package",
-                            startDay = new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(6788),
-=======
-                            endDay = new DateTime(2024, 4, 20, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9740),
-                            packageName = "Premium",
-                            package_Description = "Premium package",
-                            startDay = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9740),
->>>>>>> origin/Hoaq
+                            startDay = new DateTime(2024, 3, 21, 21, 18, 56, 336, DateTimeKind.Local).AddTicks(2940),
                             status = true
                         });
                 });
@@ -424,6 +382,9 @@ namespace LanDotBien_BackEnd.Migrations
                     b.Property<DateTime>("register_time")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<int>("status")
+                        .HasColumnType("int");
+
                     b.Property<long>("user_id")
                         .HasColumnType("bigint");
 
@@ -440,11 +401,8 @@ namespace LanDotBien_BackEnd.Migrations
                         {
                             id = 1L,
                             auction_id = 1L,
-<<<<<<< HEAD
-                            register_time = new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(7605),
-=======
-                            register_time = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9820),
->>>>>>> origin/Hoaq
+                            register_time = new DateTime(2024, 3, 21, 21, 18, 56, 336, DateTimeKind.Local).AddTicks(7809),
+                            status = 2,
                             user_id = 1L
                         });
                 });
@@ -518,11 +476,7 @@ namespace LanDotBien_BackEnd.Migrations
                         {
                             id = 1L,
                             address = "Admin Address",
-<<<<<<< HEAD
-                            dob = new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(7528),
-=======
-                            dob = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9760),
->>>>>>> origin/Hoaq
+                            dob = new DateTime(2024, 3, 21, 21, 18, 56, 336, DateTimeKind.Local).AddTicks(7681),
                             email = "admin@example.com",
                             gender = "Male",
                             identityCard = "123456789",
@@ -530,13 +484,8 @@ namespace LanDotBien_BackEnd.Migrations
                             package_id = 1L,
                             password = "c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec",
                             permission_id = 1L,
-<<<<<<< HEAD
                             phone = "123456789",
-                            registerDay = new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(7531),
-=======
-                            phone = 123456789,
-                            registerDay = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9760),
->>>>>>> origin/Hoaq
+                            registerDay = new DateTime(2024, 3, 21, 21, 18, 56, 336, DateTimeKind.Local).AddTicks(7692),
                             status = true,
                             username = "admin"
                         });
