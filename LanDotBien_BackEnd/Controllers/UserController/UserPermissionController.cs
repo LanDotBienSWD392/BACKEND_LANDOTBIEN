@@ -2,7 +2,7 @@ using System.Net;
 using LanVar.Core.Entity;
 using LanVar.DTO.DTO.response;
 using LanVar.Service.Interface;
-using LanVar.Service.Service;
+
 using Microsoft.AspNetCore.Mvc;
 using Tools.Tools;
 
@@ -21,8 +21,6 @@ public class UserPermissionController : ControllerBase
     [HttpPost("AddUserRole")]
     public async Task<IActionResult> UserPermissionAdd(UserPermission userPermission)
     {
-
-
         try
         {
             var role = await _userPermissionService.AddUserPermission(userPermission);
@@ -34,9 +32,6 @@ public class UserPermissionController : ControllerBase
             var response = new ApiResponse<UserPermission>(HttpStatusCode.Conflict, ex.Message);
             return BadRequest(response); // Trả về lỗi 400 Bad Request với thông báo lỗi
         }
-
-
-
     }
 
     [HttpGet("GetAllUserRole")]

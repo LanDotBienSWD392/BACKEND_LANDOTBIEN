@@ -2,7 +2,7 @@
 using LanVar.Core.Interfaces;
 using LanVar.Insfrastructure.Repository;
 using LanVar.Service.Interface;
-using LanVar.Service.Service;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace LanDotBien_BackEnd.Controllers.CustomerController

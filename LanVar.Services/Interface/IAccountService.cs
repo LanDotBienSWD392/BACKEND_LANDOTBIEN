@@ -4,9 +4,11 @@ using LanVar.Core.Entity;
 using LanVar.DTO.DTO.request;
 using LanVar.DTO.request;
 using LanVar.Service.DTO;
+using LanVar.DTO.DTO.request;
 using LanVar.Service.DTO.request;
 
-namespace LanVar.Service.Interface
+
+namespace LanVar.Services.Interface
 {
     public interface IAccountService
     {

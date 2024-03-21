@@ -10,7 +10,7 @@ namespace LanVar.Service.Interface
 {
     public interface IOrderService
     {
-        Task<Order> CreateOrder(CreateOrderDTORequest createOrderDTORequest);
+        Task<Order> CreateOrder();
         Task<IEnumerable<Order>> GetAllOrders();
         Task<Order> GetOrderById(long id);
         Task<Order> UpdateOrder(long id, UpdateOrderDTORequest updateOrderDTORequest);

@@ -1,6 +1,5 @@
 ﻿using LanVar.Core.Entity;
 using LanVar.Service.DTO;
-using LanVar.Service.DTO.request;
 using LanVar.Service.Interface;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,6 +8,8 @@ using System.Threading.Tasks;
 using LanVar.DTO.DTO.request;
 using Tools.Tools;
 using LanVar.DTO.request;
+using LanVar.Service.DTO.request;
+using LanVar.Services.Interface;
 
 namespace LanDotBien_BackEnd.Controllers.AdminController
 {

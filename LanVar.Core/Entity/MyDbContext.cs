@@ -6,7 +6,12 @@ namespace LanVar.Core.Entity
 {
     public class MyDbContext : DbContext
     {
-        public MyDbContext(DbContextOptions<MyDbContext> options) : base(options) { }
+        public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
+        {
+            
+        }
+
+        
         public DbSet<Auction> Auctions { get; set; }
         public DbSet<Bid> Bids { get; set; }
         public DbSet<Bill> Bills { get; set; }
@@ -76,20 +81,20 @@ namespace LanVar.Core.Entity
 
             // Seed data for Orders
             modelBuilder.Entity<Order>().HasData(
-                new Order { id = 1, user_id = 1, date = DateTime.Now, total_Price = 100.00, status = OrderStatus.Confirmed },
-                new Order { id = 2, user_id = 1, date = DateTime.Now, total_Price = 100.00, status = OrderStatus.InTransit },
-                new Order { id = 3, user_id = 1, date = DateTime.Now, total_Price = 100.00, status = OrderStatus.Delivered },
-                new Order { id = 4, user_id = 1, date = DateTime.Now, total_Price = 100.00, status = OrderStatus.Canceled }
+                new Order { id = 1, user_id = 1, date = DateTime.Now, total_Price = 100.00, status = OrderStatus.Confirmed, orderCode = "SPX00000000001"},
+                new Order { id = 2, user_id = 1, date = DateTime.Now, total_Price = 100.00, status = OrderStatus.InTransit, orderCode = "SPX00000000002" },
+                new Order { id = 3, user_id = 1, date = DateTime.Now, total_Price = 100.00, status = OrderStatus.Delivered, orderCode = "SPX00000000003" },
+                new Order { id = 4, user_id = 1, date = DateTime.Now, total_Price = 100.00, status = OrderStatus.Canceled, orderCode = "SPX00000000004" }
             );
 
             // Seed data for OrderItems
             modelBuilder.Entity<OrderItem>().HasData(
-                new OrderItem { id = 1, order_id = 1, product_id = 1 }
+                new OrderItem { id = 1,user_id = 1, product_id = 1, hidden = false}
             );
 
             // Seed data for Bills
             modelBuilder.Entity<Bill>().HasData(
-                new Bill { id = 1, order_id = 1, payment_Method = "Credit Card", total_Price = 100.00 }
+                new Bill { id = 1,user_id = 1,payment_Method = "Credit Card", total_Price = 100.00, status = false, paymentUrl = "", orderCode = "SPX00000000001", }
             );
 
             // Seed data for Bids

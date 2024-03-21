@@ -2,9 +2,10 @@ using System.Net;
 using LanVar.Core.Entity;
 using LanVar.DTO.DTO.request;
 using LanVar.DTO.DTO.response;
-using LanVar.Service.Implementation;
+
 using LanVar.Service.Interface;
-using LanVar.Service.Service;
+
+using LanVar.Services.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
