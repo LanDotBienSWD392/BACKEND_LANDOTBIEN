@@ -7,6 +7,9 @@ namespace LanVar.DTO.DTO.response;
 public class AuctionDTOResponse
 {
     public long id { get; set; }
+
+    public long Product_id { get; set; }
+
     public ProductDTOResponse Product { get; set; }
 
     public DateTime StartDay { get; set; }
