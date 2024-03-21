@@ -36,7 +36,6 @@ namespace LanVar.Service.Service
             return productResponses;
         }
 
-
         public async Task<IEnumerable<Product>> SearchProductsAsync(SearchProductDTORequest searchRequest)
         {
             var search = _mapper.Map<Product>(searchRequest);
@@ -61,6 +60,11 @@ namespace LanVar.Service.Service
             ProductDTOResponse productResponse = _mapper.Map<ProductDTOResponse>(addedProduct);
 
             return productResponse;
+        }
+        public async Task<IEnumerable<ProductDTOResponse>> GetProductsByOwnerId(long ownerId)
+        {
+            var products = await _productRepository.GetByUserIdAsync(ownerId);
+            return _mapper.Map<IEnumerable<ProductDTOResponse>>(products);
         }
 
     }

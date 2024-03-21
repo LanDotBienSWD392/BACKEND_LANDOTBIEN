@@ -40,9 +40,31 @@ namespace LanDotBien_BackEnd.Controllers.ProductOwnerController
                 var response = new ApiResponse<Package>(HttpStatusCode.Conflict, ex.Message);
                 return BadRequest(response); // Trả về lỗi 400 Bad Request với thông báo lỗi
             }
-
         }
-        
+
+        [HttpGet("GetProdcutByProductOwnerId")]
+        public async Task<IActionResult> GetProdcutByProductOwnerId(long ownerId)
+        {
+            try
+            {
+                // Gọi phương thức để lấy các sản phẩm của một chủ sở hữu sản phẩm cụ thể dựa trên ID
+                IEnumerable<ProductDTOResponse> products = await _productService.GetProductsByOwnerId(ownerId);
+
+                // Kiểm tra nếu không có sản phẩm được tìm thấy
+                if (products == null || !products.Any())
+                {
+                    return NotFound(); // Trả về HTTP 404 Not Found
+                }
+
+                return Ok(products); // Trả về danh sách sản phẩm được tìm thấy
+            }
+            catch (CustomException.InvalidDataException ex)
+            {
+                return BadRequest(ex.Message); // Trả về HTTP 400 Bad Request với thông báo lỗi từ ngoại lệ
+            }
+        }
+
+
         [HttpPost("PurchasePackage")]
         public async Task<IActionResult> PurchasePackage(long userId)
         {
