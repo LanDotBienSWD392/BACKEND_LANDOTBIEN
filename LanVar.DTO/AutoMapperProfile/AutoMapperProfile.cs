@@ -21,7 +21,15 @@ namespace LanVar.DTO.AutoMapperProfile
 			CreateMap<ProductDTOResponse, Product>().ReverseMap();
             CreateMap<AuctionDTOResponse, Auction>().ReverseMap();
             CreateMap<AuctionDTORequest, Auction>().ReverseMap();
-        }
+            CreateMap<OrderItemDTORequest, OrderItem>().ReverseMap();
+            CreateMap<OrderItemDTOResponse, OrderItem>().ReverseMap();
+            CreateMap<CreateOrderDTORequest, Order>().ReverseMap();
+            CreateMap<CreateOrderDTORespone, Order>().ReverseMap();
+            CreateMap<CreateOrderDTORequest, Order>()
+	            .ForMember(dest => dest.status, opt => opt.MapFrom(src => src.status ? OrderStatus.Confirmed : OrderStatus.Waiting));
+            CreateMap<BillDTOResponse, Bill>().ReverseMap();
+            CreateMap<BillDTORequest, Bill>().ReverseMap();
+		}
 	}
 }
 

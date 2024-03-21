@@ -61,13 +61,13 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 1L,
-                            auctionDay = new DateTime(2024, 3, 25, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(613),
+                            auctionDay = new DateTime(2024, 3, 28, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9800),
                             auction_Name = "Auction 1",
                             deposit_Money = 50.0,
                             endDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             password = "1",
                             product_id = 1L,
-                            startDay = new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(613),
+                            startDay = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9800),
                             status = 0
                         });
                 });
@@ -104,7 +104,7 @@ namespace LanDotBien_BackEnd.Migrations
                             id = 1L,
                             auction_id = 1L,
                             bid = 60.0,
-                            bid_time = new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(750),
+                            bid_time = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9910),
                             user_id = 1L
                         });
                 });
@@ -115,19 +115,30 @@ namespace LanDotBien_BackEnd.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<long>("order_id")
-                        .HasColumnType("bigint");
+                    b.Property<string>("orderCode")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("paymentUrl")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("payment_Method")
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<bool>("status")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<double>("total_Price")
                         .HasColumnType("double");
 
+                    b.Property<long>("user_id")
+                        .HasColumnType("bigint");
+
                     b.HasKey("id");
 
-                    b.HasIndex("order_id");
+                    b.HasIndex("user_id");
 
                     b.ToTable("Bill");
 
@@ -135,9 +146,12 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 1L,
-                            order_id = 1L,
+                            orderCode = "SPX00000000001",
+                            paymentUrl = "",
                             payment_Method = "Credit Card",
-                            total_Price = 100.0
+                            status = false,
+                            total_Price = 100.0,
+                            user_id = 1L
                         });
                 });
 
@@ -149,6 +163,10 @@ namespace LanDotBien_BackEnd.Migrations
 
                     b.Property<DateTime>("date")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<string>("orderCode")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<long>("orderItem_id")
                         .HasColumnType("bigint");
@@ -172,7 +190,8 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 1L,
-                            date = new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(676),
+                            date = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9840),
+                            orderCode = "SPX00000000001",
                             orderItem_id = 0L,
                             status = 1,
                             total_Price = 100.0,
@@ -181,7 +200,8 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 2L,
-                            date = new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(678),
+                            date = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9840),
+                            orderCode = "SPX00000000002",
                             orderItem_id = 0L,
                             status = 2,
                             total_Price = 100.0,
@@ -190,7 +210,8 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 3L,
-                            date = new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(679),
+                            date = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9850),
+                            orderCode = "SPX00000000003",
                             orderItem_id = 0L,
                             status = 3,
                             total_Price = 100.0,
@@ -199,7 +220,8 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 4L,
-                            date = new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(680),
+                            date = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9850),
+                            orderCode = "SPX00000000004",
                             orderItem_id = 0L,
                             status = 4,
                             total_Price = 100.0,
@@ -213,17 +235,23 @@ namespace LanDotBien_BackEnd.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<long>("order_id")
-                        .HasColumnType("bigint");
+                    b.Property<bool>("hidden")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("isSelected")
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<long>("product_id")
                         .HasColumnType("bigint");
 
+                    b.Property<long>("user_id")
+                        .HasColumnType("bigint");
+
                     b.HasKey("id");
 
-                    b.HasIndex("order_id");
-
                     b.HasIndex("product_id");
+
+                    b.HasIndex("user_id");
 
                     b.ToTable("OrderItem");
 
@@ -231,8 +259,10 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 1L,
-                            order_id = 1L,
-                            product_id = 1L
+                            hidden = false,
+                            isSelected = false,
+                            product_id = 1L,
+                            user_id = 1L
                         });
                 });
 
@@ -267,19 +297,19 @@ namespace LanDotBien_BackEnd.Migrations
                         new
                         {
                             id = 1L,
-                            endDay = new DateTime(2024, 4, 17, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(494),
+                            endDay = new DateTime(2024, 4, 20, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9730),
                             packageName = "Basic",
                             package_Description = "Basic package",
-                            startDay = new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(479),
+                            startDay = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9700),
                             status = true
                         },
                         new
                         {
                             id = 2L,
-                            endDay = new DateTime(2024, 4, 17, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(504),
+                            endDay = new DateTime(2024, 4, 20, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9740),
                             packageName = "Premium",
                             package_Description = "Premium package",
-                            startDay = new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(503),
+                            startDay = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9740),
                             status = true
                         });
                 });
@@ -368,7 +398,7 @@ namespace LanDotBien_BackEnd.Migrations
                         {
                             id = 1L,
                             auction_id = 1L,
-                            register_time = new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(645),
+                            register_time = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9820),
                             user_id = 1L
                         });
                 });
@@ -442,7 +472,7 @@ namespace LanDotBien_BackEnd.Migrations
                         {
                             id = 1L,
                             address = "Admin Address",
-                            dob = new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(540),
+                            dob = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9760),
                             email = "admin@example.com",
                             gender = "Male",
                             identityCard = "123456789",
@@ -452,7 +482,7 @@ namespace LanDotBien_BackEnd.Migrations
                             password = "admin",
                             permission_id = 1L,
                             phone = 123456789,
-                            registerDay = new DateTime(2024, 3, 18, 2, 25, 3, 897, DateTimeKind.Local).AddTicks(543),
+                            registerDay = new DateTime(2024, 3, 21, 18, 15, 15, 320, DateTimeKind.Local).AddTicks(9760),
                             status = true,
                             username = "admin"
                         });
@@ -542,13 +572,13 @@ namespace LanDotBien_BackEnd.Migrations
 
             modelBuilder.Entity("LanVar.Core.Entity.Bill", b =>
                 {
-                    b.HasOne("LanVar.Core.Entity.Order", "order")
+                    b.HasOne("LanVar.Core.Entity.User", "user")
                         .WithMany()
-                        .HasForeignKey("order_id")
+                        .HasForeignKey("user_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("order");
+                    b.Navigation("user");
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.Order", b =>
@@ -564,21 +594,21 @@ namespace LanDotBien_BackEnd.Migrations
 
             modelBuilder.Entity("LanVar.Core.Entity.OrderItem", b =>
                 {
-                    b.HasOne("LanVar.Core.Entity.Order", "order")
-                        .WithMany()
-                        .HasForeignKey("order_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("LanVar.Core.Entity.Product", "product")
                         .WithMany()
                         .HasForeignKey("product_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("order");
+                    b.HasOne("LanVar.Core.Entity.User", "user")
+                        .WithMany()
+                        .HasForeignKey("user_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("product");
+
+                    b.Navigation("user");
                 });
 
             modelBuilder.Entity("LanVar.Core.Entity.Product", b =>

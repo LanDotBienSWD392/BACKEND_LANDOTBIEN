@@ -20,6 +20,7 @@ using Swashbuckle.AspNetCore.Filters;
 using LanVar.Repository.IRepository;
 using LanVar.Repository.Repository;
 using LanVar.Service.IService;
+using LanVar.Service.Service;
 using LanVar.Services.Implementation;
 using LanVar.Services.Interface;
 using LanVar.Services.Service;
@@ -50,6 +51,7 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IRoomRegistrationsRepository, RoomRegistrationsRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserPermissionRepository, UserPermissionRepository>();
+builder.Services.AddScoped<IOrderItemRepository, OrderItemRepository>();
 // Service add o day
 builder.Services.AddScoped<IUserService,UserService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
@@ -57,6 +59,9 @@ builder.Services.AddScoped<IAuctionService, AuctionService>();
 builder.Services.AddScoped<IUserPermissionService, UserPermissionService>();
 builder.Services.AddScoped<IPackageService, PackageService>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IOrderItemService, OrderItemService>();
+builder.Services.AddScoped<IBillService, BillService>();
+
 
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IAccountService, AccountService>();
