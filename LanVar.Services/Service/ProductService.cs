@@ -73,10 +73,9 @@ namespace LanVar.Services.Service
             
             }
             var product = _mapper.Map<Product>(createProductDtoRequest);
-            string userId = _userService.GetUserID();
-            product.user_id = int.Parse(userId);
-            product.status = false;
-            
+            //string userId = _userService.GetUserID();
+            //product.user_id = int.Parse(userId);
+            product.status = true;
             Product addedProduct = await _genericProductRepository.Add(product);
 
             // Map the added product to ProductDTOResponse
@@ -84,6 +83,11 @@ namespace LanVar.Services.Service
             
 
             return productResponse;
+        }
+        public async Task<IEnumerable<ProductDTOResponse>> GetProductsByOwnerId(long ownerId)
+        {
+            var products = await _productRepository.GetByUserIdAsync(ownerId);
+            return _mapper.Map<IEnumerable<ProductDTOResponse>>(products);
         }
 
     }

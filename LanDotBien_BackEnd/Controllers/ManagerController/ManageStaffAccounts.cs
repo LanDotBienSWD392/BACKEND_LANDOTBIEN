@@ -55,7 +55,7 @@ namespace LanDotBien_BackEnd.Controllers.ManagerController
         }
 
         // PUT api/<ManageStaffAccounts>/5
-        [HttpPut("UpdateStaff{id}")]
+        [HttpPut("UpdateStaff/{id}")]
         public async Task<IActionResult> UpdateStaffUser(long id, [FromBody] UpdateUserDTORequest updateUserDTORequest)
         {
             try

@@ -10,6 +10,8 @@ public class AuctionDTOResponse
 
     public long Product_id { get; set; }
 
+    public ProductDTOResponse Product { get; set; }
+
     public DateTime StartDay { get; set; }
 
     public DateTime AuctionDay { get; set; }
@@ -22,4 +24,5 @@ public class AuctionDTOResponse
 
     public string Password { get; set; }
     /*public string ErrorMessage { get; set; }*/
+
 }

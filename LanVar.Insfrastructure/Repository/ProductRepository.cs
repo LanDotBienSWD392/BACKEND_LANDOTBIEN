@@ -27,6 +27,11 @@ namespace LanVar.Insfrastructure.Repository
             return await _context.Products.ToListAsync();
         }
 
+        public async Task<IEnumerable<Product>> GetByUserIdAsync(long ownerId)
+        {
+            return await _context.Set<Product>().Where(x => x.user_id == ownerId).ToListAsync();
+        }
+
         public async Task<IEnumerable<Product>> SearchProductsAsync(Product searchRequest)
         {
             return await _context.Products

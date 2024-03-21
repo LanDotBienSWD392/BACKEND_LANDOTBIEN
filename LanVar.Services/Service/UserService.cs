@@ -8,6 +8,7 @@ using LanVar.DTO.DTO.request;
 using LanVar.DTO.DTO.response;
 
 using LanVar.Service.Interface;
+using LanVar.Services.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Tools.Tools;
@@ -22,14 +23,15 @@ namespace LanVar.Services.Service
 		private readonly IConfiguration _configuration;
 		private readonly IMapper _mapper;
 		private readonly IHttpContextAccessor _httpContextAccessor;
+		private readonly IAccountService _accountService;
 		public UserService(
 			IUserRepository userRepository,
 			IMapper mapper,
 			IGenericRepository<User> genericRepository,
 			IConfiguration configuration,
 			IUserPermissionRepository userPermissionRepository,
-			IHttpContextAccessor httpContextAccessor
-			
+			IHttpContextAccessor httpContextAccessor,
+			IAccountService accountService 	
 			)
 		{
 			_userRepository = userRepository;
@@ -38,38 +40,46 @@ namespace LanVar.Services.Service
 			_genericRepository = genericRepository;
 			_userPermissionRepository = userPermissionRepository;
 			_httpContextAccessor = httpContextAccessor;
+			_accountService = accountService;
 		}
 
 		public async Task<User> Register(CreateAccountDTORequest createAccountDTORequest)
 		{
 			IEnumerable<User> checkEmail =
 				await _userRepository.GetByFilterAsync(x => x.email.Equals(createAccountDTORequest.Email));
-			IEnumerable<User> checkUsername =
+            IEnumerable<User> checkUsername =
 				await _userRepository.GetByFilterAsync(x => x.username.Equals(createAccountDTORequest.Username));
-			if (checkEmail.Count() != 0)
-			{
-				throw new InvalidDataException($"Email is exist");
-			}
+            if (checkEmail.Any())
+            {
+                // Kiểm tra permission_id
+                foreach (var userCheck in checkEmail)
+                {
+                    if (userCheck.permission_id == createAccountDTORequest.permission_id)
+                    {
+                        throw new InvalidDataException($"Email is exist.");
+                    }
+                }
+            }
 
-			if (checkUsername.Count() != 0)
+            if (checkUsername.Count() != 0)
 			{
 				throw new InvalidDataException($"Username is exist");
 			}
 
 			var user = _mapper.Map<User>(createAccountDTORequest);
-			user.permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.role.Equals("Customer"))).First().id;
+/*			user.permission_id = (await _userPermissionRepository.GetByFilterAsync(r => r.role.Equals("Customer"))).First().id;
+*/			
 			user.password = EncryptPassword.Encrypt(createAccountDTORequest.Password);
 			user.status = true;
 			user.registerDay = DateTime.Now.Date;
-			user.image = "nguyen rua anh nao de image laf required";
-			user.identityCard = "";
+			user.image = null;
 			user.package_id = 1;
 			
 			await _userRepository.Add(user);
 			return user;
 		}
 
-		public async Task<(string, LoginDTOResponse)> Login(LoginDTORequest loginDtoRequest)
+        public async Task<(string, LoginDTOResponse)> Login(LoginDTORequest loginDtoRequest)
 		{
 			string hashedPass = EncryptPassword.Encrypt(loginDtoRequest.Password);
 			IEnumerable<User> check = await _userRepository.GetByFilterAsync(x =>
@@ -108,6 +118,10 @@ namespace LanVar.Services.Service
 			return result;
 		}
 
-	}
+        /*public Task<User> RegisterForProductOwner(CreateAccountDTORequest createAccountDTORequest)
+        {
+            throw new NotImplementedException();
+        }*/
+    }
 }
 

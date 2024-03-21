@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace LanVar.Core.Entity
 {
@@ -20,6 +22,20 @@ namespace LanVar.Core.Entity
         public DbSet<RoomRegistrations> RoomRegistrations { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserPermission> UsersPermission { get; set; }
+        private string HashPassword(string password)
+        {
+            using (SHA512 sha512 = SHA512.Create())
+            {
+                byte[] hashBytes = sha512.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    builder.Append(hashBytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -31,9 +47,7 @@ namespace LanVar.Core.Entity
                 new UserPermission { id = 2, role = "Manager" },
                 new UserPermission { id = 3, role = "Staff" },
                 new UserPermission { id = 4, role = "ProductOwner" },
-                new UserPermission { id = 5, role = "Customer" },
-                new UserPermission { id = 6, role = "Guest" },
-                new UserPermission { id = 7, role = "User" }
+                new UserPermission { id = 5, role = "Customer" }
             );
 
             // Seed data for Packages
@@ -42,9 +56,12 @@ namespace LanVar.Core.Entity
                 new Package { id = 2, packageName = "Premium", package_Description = "Premium package", startDay = DateTime.Now, endDay = DateTime.Now.AddDays(30), status = true }
             );
 
-            // Seed data for Users
+            // Seed data for User
+            string plaintextPassword = "admin"; // Mật khẩu gốc
+            string hashedPassword = HashPassword(plaintextPassword); // Mã hóa mật khẩu bằng SHA-512
+
             modelBuilder.Entity<User>().HasData(
-                new User { id = 1, permission_id = 1, package_id = 1, identityCard = "123456789", name = "Admin", email = "admin@example.com", username = "admin", password = "admin", image = "null", phone = 123456789, dob = DateTime.Now, address = "Admin Address", gender = "Male", registerDay = DateTime.Now, status = true }
+                new User { id = 1, permission_id = 1, package_id = 1, identityCard = "123456789", name = "Admin", email = "admin@example.com", username = "admin", password = hashedPassword, phone = "123456789", dob = DateTime.Now, address = "Admin Address", gender = "Male", registerDay = DateTime.Now, status = true }
             );
 
             // Seed data for Products
@@ -59,7 +76,7 @@ namespace LanVar.Core.Entity
 
             // Seed data for RoomRegistrations
             modelBuilder.Entity<RoomRegistrations>().HasData(
-                new RoomRegistrations { id = 1, user_id = 1, auction_id = 1, register_time = DateTime.Now }
+                new RoomRegistrations { id = 1, user_id = 1, auction_id = 1, status = RegisterStatus.WAITING, register_time = DateTime.Now }
             );
 
             // Seed data for Orders
@@ -84,7 +101,6 @@ namespace LanVar.Core.Entity
             modelBuilder.Entity<Bid>().HasData(
                 new Bid { id = 1, auction_id = 1, user_id = 1, bid = 60.00, bid_time = DateTime.Now }
             );
-
         }
     }
 }

@@ -29,7 +29,14 @@ namespace LanVar.DTO.AutoMapperProfile
 	            .ForMember(dest => dest.status, opt => opt.MapFrom(src => src.status ? OrderStatus.Confirmed : OrderStatus.Waiting));
             CreateMap<BillDTOResponse, Bill>().ReverseMap();
             CreateMap<BillDTORequest, Bill>().ReverseMap();
-		}
+            CreateMap<BidDTORequest, Bid>().ReverseMap();
+            CreateMap<BidDTOResponse, Bid>().ReverseMap();
+            CreateMap<UserDTOResponse, User>().ReverseMap();
+            CreateMap<RoomRegistrationsDTORequest, RoomRegistrations>().ReverseMap();
+            CreateMap<RoomRegistrationsDTOResponse, RoomRegistrations>().ReverseMap();
+
+            CreateMap<RoomRegistrations, RoomRegistrationsDTOResponse>();
+        }
 	}
 }
 

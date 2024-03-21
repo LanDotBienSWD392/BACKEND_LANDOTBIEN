@@ -25,24 +25,10 @@ namespace LanDotBien_BackEnd.Controllers.ProductOwnerController
             _productService = productService;
             _accountService = accountService;
         }
-        // GET: api/<ProductOwnerController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
-        // GET api/<ProductOwnerController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<ProductOwnerController>
         /*[HttpPost("CreateProduct"), Authorize]*/
-        [HttpPost("CreateProduct"), Authorize]
-        public async Task<IActionResult> Post(CreateProductDTORequest createProductDtoRequest)
+        [HttpPost("CreateProduct")]
+        public async Task<IActionResult> CreateProduct(CreateProductDTORequest createProductDtoRequest)
         {
             try
             {
@@ -55,27 +41,37 @@ namespace LanDotBien_BackEnd.Controllers.ProductOwnerController
                 var response = new ApiResponse<Package>(HttpStatusCode.Conflict, ex.Message);
                 return BadRequest(response); // Trả về lỗi 400 Bad Request với thông báo lỗi
             }
-
         }
-        
+
+        [HttpGet("GetProdcutByProductOwnerId")]
+        public async Task<IActionResult> GetProdcutByProductOwnerId(long ownerId)
+        {
+            try
+            {
+                // Gọi phương thức để lấy các sản phẩm của một chủ sở hữu sản phẩm cụ thể dựa trên ID
+                IEnumerable<ProductDTOResponse> products = await _productService.GetProductsByOwnerId(ownerId);
+
+                // Kiểm tra nếu không có sản phẩm được tìm thấy
+                if (products == null || !products.Any())
+                {
+                    return NotFound(); // Trả về HTTP 404 Not Found
+                }
+
+                return Ok(products); // Trả về danh sách sản phẩm được tìm thấy
+            }
+            catch (CustomException.InvalidDataException ex)
+            {
+                return BadRequest(ex.Message); // Trả về HTTP 400 Bad Request với thông báo lỗi từ ngoại lệ
+            }
+        }
+
+
         [HttpPost("PurchasePackage")]
         public async Task<IActionResult> PurchasePackage(long userId)
         {
             
                 var updatedUser = await _accountService.PurchasePackage(userId);
                 return Ok(updatedUser);
-            
-            
-        }
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<ProductOwnerController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }

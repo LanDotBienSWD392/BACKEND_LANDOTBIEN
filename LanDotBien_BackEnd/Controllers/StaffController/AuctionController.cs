@@ -99,6 +99,42 @@ namespace LanDotBien_BackEnd.Controllers.StaffController
             }
         }
 
+        [HttpPut("AcceptAuction/{id}")]
+        public async Task<IActionResult> AcceptAuction(long id)
+        {
+            try
+            {
+                var accpetAuction = await _auctionService.AcceptAuction(id);
+                if (accpetAuction == null)
+                {
+                    return NotFound();
+                }
+                return Ok(accpetAuction);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+        // POST api/<AuctionController>/EnterAuction
+        [HttpPost("EnterAuction")]
+        public async Task<IActionResult> EnterAuction([FromBody] EnterAuctionDTORequest enterAuctionDTORequest)
+        {
+            try
+            {
+                var auction = await _auctionService.EnterAuctionAsync(enterAuctionDTORequest);
+                if (auction == null)
+                {
+                    return NotFound();
+                }
+                return Ok(auction);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
         // DELETE api/<AuctionController>/5
         [HttpDelete("DeleteAuction/{id}")]
         public async Task<IActionResult> DeleteAuction(long id)

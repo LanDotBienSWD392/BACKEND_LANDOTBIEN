@@ -108,7 +108,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.LanDotBien_BackEnd: IIS Express.executor": "Run",
-    ".NET Launch Settings Profile.LanDotBien_BackEnd: http.executor": "Debug",
+    ".NET Launch Settings Profile.LanDotBien_BackEnd: http.executor": "Run",
     "Docker.LanDotBien_BackEnd/Dockerfile.executor": "Run",
     "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
