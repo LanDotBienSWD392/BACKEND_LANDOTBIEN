@@ -11,8 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="fix hidden order">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Migrations/20240321094628_Dluong.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Migrations/20240321094628_Dluong.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Migrations/20240321141858_Dante.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Migrations/20240321141858_Dante.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Migrations/MyDbContextModelSnapshot.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +98,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.LanDotBien_BackEnd: IIS Express.executor": "Run",
-    ".NET Launch Settings Profile.LanDotBien_BackEnd: http.executor": "Debug",
+    ".NET Launch Settings Profile.LanDotBien_BackEnd: http.executor": "Run",
     "Docker.LanDotBien_BackEnd/Dockerfile.executor": "Run",
     "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
