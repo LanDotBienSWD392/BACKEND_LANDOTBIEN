@@ -25,37 +25,36 @@ namespace LanVar.Insfrastructure.Repository
         }
         public async Task<bool> DeleteOrderByOrderCode(string orderCode)
         {
-            // Find the order with the given order code
-            var orderToDelete = await _context.Orders.FirstOrDefaultAsync(x => x.orderCode.Equals(orderCode));
+            // Find all orders with the given order code
+            var ordersToDelete = await _context.Orders.Where(x => x.orderCode.Equals(orderCode)).ToListAsync();
 
-            if (orderToDelete == null)
+            if (ordersToDelete == null || ordersToDelete.Count == 0)
             {
-                // If the order with the given order code does not exist, return false
+                // If no orders with the given order code exist, return false
                 return false;
             }
 
-            // Find all order items associated with the order code
-            var orderItemsToDelete = await _context.Items
-                .Where(oi => oi.id == orderToDelete.orderItem_id)
-                .ToListAsync();
-
-            // Remove all order items from the context
-            //_context.Items.RemoveRange(orderItemsToDelete);
-            foreach (var orderItem in orderItemsToDelete)
+            foreach (var orderToDelete in ordersToDelete)
             {
-                orderItem.hidden = true;
+                // Find all order items associated with the order code
+                var orderItemsToDelete = await _context.Items
+                    .Where(oi => oi.id == orderToDelete.orderItem_id) // Assuming orderId is used to link order items
+                    .ToListAsync();
+
+                // Update the Hidden property to true for each order item
+                foreach (var orderItem in orderItemsToDelete)
+                {
+                    orderItem.hidden = true;
+                }
             }
-
-
-            // Remove the order itself from the context
-            //_context.Items.Remove(orderToDelete);
 
             // Save the changes to the database
             await _context.SaveChangesAsync();
 
-            // Return true to indicate successful deletion
+            // Return true to indicate successful update
             return true;
         }
+
 
 
 
