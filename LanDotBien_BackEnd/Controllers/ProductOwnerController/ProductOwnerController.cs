@@ -24,24 +24,10 @@ namespace LanDotBien_BackEnd.Controllers.ProductOwnerController
             _productService = productService;
             _accountService = accountService;
         }
-        // GET: api/<ProductOwnerController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
-        // GET api/<ProductOwnerController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<ProductOwnerController>
         /*[HttpPost("CreateProduct"), Authorize]*/
         [HttpPost("CreateProduct")]
-        public async Task<IActionResult> Post(CreateProductDTORequest createProductDtoRequest)
+        public async Task<IActionResult> CreateProduct(CreateProductDTORequest createProductDtoRequest)
         {
             try
             {
@@ -63,16 +49,6 @@ namespace LanDotBien_BackEnd.Controllers.ProductOwnerController
             
                 var updatedUser = await _accountService.PurchasePackage(userId);
                 return Ok(updatedUser);
-        }
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<ProductOwnerController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }
