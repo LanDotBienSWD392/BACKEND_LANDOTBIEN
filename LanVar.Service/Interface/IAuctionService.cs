@@ -15,6 +15,6 @@ namespace LanVar.Service.IService
         Task<AuctionDTOResponse> UpdateAuctionAsync(long id, AuctionDTORequest auctionDto);
         Task<bool> DeleteAuctionAsync(long id);
         Task<AuctionDTOResponse> AcceptAuction(long id);
-        Task<AuctionDTOResponse> EnterAuctionAsync(long id, string password);
+        Task<AuctionDTOResponse> EnterAuctionAsync(EnterAuctionDTORequest enterAuctionDTORequest);
     }
 }

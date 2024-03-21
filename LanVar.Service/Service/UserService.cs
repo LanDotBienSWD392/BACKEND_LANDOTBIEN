@@ -46,8 +46,6 @@ namespace LanVar.Service.Service
 		{
 			IEnumerable<User> checkEmail =
 				await _userRepository.GetByFilterAsync(x => x.email.Equals(createAccountDTORequest.Email));
-            /*IEnumerable<User> checkRole =
-                await _userRepository.GetByFilterAsync(x => x.permission_id.Equals(createAccountDTORequest.permission_id));*/
             IEnumerable<User> checkUsername =
 				await _userRepository.GetByFilterAsync(x => x.username.Equals(createAccountDTORequest.Username));
             if (checkEmail.Any())
@@ -118,6 +116,11 @@ namespace LanVar.Service.Service
 			}
 			return result;
 		}
+
+        /*public Task<User> RegisterForProductOwner(CreateAccountDTORequest createAccountDTORequest)
+        {
+            throw new NotImplementedException();
+        }*/
     }
 }
 

@@ -12,6 +12,9 @@ public class EnterAuctionDTORequest
     [Required(ErrorMessage = "id is required")]
     public long id { get; set; }
 
+    [Required(ErrorMessage = "User is required")]
+    public long user_id { get; set; }
+
     [Required(ErrorMessage = "Password is required")]
     public string Password { get; set; }
 }

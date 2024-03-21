@@ -43,12 +43,21 @@ namespace LanVar.Service.Service
             {
                 throw new Exception("Auction is not active.");
             }
-            roomRegistrationsDTO.status = RegisterStatus.ACTIVE.ToString();
+
+            // Check if user already registered in the auction
+            var existingRegistration = await _roomRegistrationsRepository.GetByFilterAsync(rr => rr.auction_id == roomRegistrationsDTO.auction_id && rr.user_id == roomRegistrationsDTO.user_id);
+            if (existingRegistration.Any())
+            {
+                throw new Exception("User has already registered in this auction.");
+            }
+
+            roomRegistrationsDTO.status = RegisterStatus.WAITING.ToString();
             var roomRegistrations = _mapper.Map<RoomRegistrations>(roomRegistrationsDTO);
             roomRegistrations.register_time = DateTime.Now; // Assuming register time should be set upon creation
             await _roomRegistrationsRepository.AddAsync(roomRegistrations);
             return _mapper.Map<RoomRegistrationsDTOResponse>(roomRegistrations);
         }
+
 
         public async Task<RoomRegistrationsDTOResponse> UpdateAsync(long id, RoomRegistrationsDTORequest roomRegistrationsDTO)
         {

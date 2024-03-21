@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using AutoMapper;
 using LanVar.Core.Entity;
@@ -51,5 +52,11 @@ namespace LanVar.Infrastructure.Repository
                 .ToListAsync();
         }
 
+        public async Task<List<RoomRegistrations>> GetByFilterAsync(Expression<Func<RoomRegistrations, bool>> filter)
+        {
+            return await _context.Set<RoomRegistrations>()
+                .Where(filter)
+                .ToListAsync();
+        }
     }
 }

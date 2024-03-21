@@ -297,13 +297,8 @@ namespace LanDotBien_BackEnd.Migrations
                 columns: new[] { "id", "endDay", "packageName", "package_Description", "startDay", "status" },
                 values: new object[,]
                 {
-<<<<<<<< HEAD:LanDotBien_BackEnd/Migrations/20240321083816_Dluong.cs
-                    { 1L, new DateTime(2024, 4, 20, 15, 38, 16, 16, DateTimeKind.Local).AddTicks(6498), "Basic", "Basic package", new DateTime(2024, 3, 21, 15, 38, 16, 16, DateTimeKind.Local).AddTicks(6485), true },
-                    { 2L, new DateTime(2024, 4, 20, 15, 38, 16, 16, DateTimeKind.Local).AddTicks(6505), "Premium", "Premium package", new DateTime(2024, 3, 21, 15, 38, 16, 16, DateTimeKind.Local).AddTicks(6505), true }
-========
-                    { 1L, new DateTime(2024, 4, 19, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(6782), "Basic", "Basic package", new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(6772), true },
-                    { 2L, new DateTime(2024, 4, 19, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(6789), "Premium", "Premium package", new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(6788), true }
->>>>>>>> origin/Dante:LanDotBien_BackEnd/Migrations/20240320034935_Dante.cs
+                    { 1L, new DateTime(2024, 4, 20, 16, 46, 27, 907, DateTimeKind.Local).AddTicks(6222), "Basic", "Basic package", new DateTime(2024, 3, 21, 16, 46, 27, 907, DateTimeKind.Local).AddTicks(6211), true },
+                    { 2L, new DateTime(2024, 4, 20, 16, 46, 27, 907, DateTimeKind.Local).AddTicks(6230), "Premium", "Premium package", new DateTime(2024, 3, 21, 16, 46, 27, 907, DateTimeKind.Local).AddTicks(6229), true }
                 });
 
             migrationBuilder.InsertData(
@@ -321,28 +316,17 @@ namespace LanDotBien_BackEnd.Migrations
             migrationBuilder.InsertData(
                 table: "User",
                 columns: new[] { "id", "address", "dob", "email", "gender", "identityCard", "image", "name", "package_id", "password", "permission_id", "phone", "registerDay", "status", "username" },
-<<<<<<<< HEAD:LanDotBien_BackEnd/Migrations/20240321083816_Dluong.cs
-                values: new object[] { 1L, "Admin Address", new DateTime(2024, 3, 21, 15, 38, 16, 16, DateTimeKind.Local).AddTicks(6536), "admin@example.com", "Male", "123456789", null, "Admin", 1L, "admin", 1L, "123456789", new DateTime(2024, 3, 21, 15, 38, 16, 16, DateTimeKind.Local).AddTicks(6537), true, "admin" });
-========
-                values: new object[] { 1L, "Admin Address", new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(7528), "admin@example.com", "Male", "123456789", null, "Admin", 1L, "c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec", 1L, "123456789", new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(7531), true, "admin" });
->>>>>>>> origin/Dante:LanDotBien_BackEnd/Migrations/20240320034935_Dante.cs
+                values: new object[] { 1L, "Admin Address", new DateTime(2024, 3, 21, 16, 46, 27, 907, DateTimeKind.Local).AddTicks(7245), "admin@example.com", "Male", "123456789", null, "Admin", 1L, "c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec", 1L, "123456789", new DateTime(2024, 3, 21, 16, 46, 27, 907, DateTimeKind.Local).AddTicks(7249), true, "admin" });
 
             migrationBuilder.InsertData(
                 table: "Order",
                 columns: new[] { "id", "date", "orderItem_id", "status", "total_Price", "user_id" },
                 values: new object[,]
                 {
-<<<<<<<< HEAD:LanDotBien_BackEnd/Migrations/20240321083816_Dluong.cs
-                    { 1L, new DateTime(2024, 3, 21, 15, 38, 16, 16, DateTimeKind.Local).AddTicks(6634), 0L, 1, 100.0, 1L },
-                    { 2L, new DateTime(2024, 3, 21, 15, 38, 16, 16, DateTimeKind.Local).AddTicks(6636), 0L, 2, 100.0, 1L },
-                    { 3L, new DateTime(2024, 3, 21, 15, 38, 16, 16, DateTimeKind.Local).AddTicks(6637), 0L, 3, 100.0, 1L },
-                    { 4L, new DateTime(2024, 3, 21, 15, 38, 16, 16, DateTimeKind.Local).AddTicks(6638), 0L, 4, 100.0, 1L }
-========
-                    { 1L, new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(7622), 0L, 1, 100.0, 1L },
-                    { 2L, new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(7624), 0L, 2, 100.0, 1L },
-                    { 3L, new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(7626), 0L, 3, 100.0, 1L },
-                    { 4L, new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(7627), 0L, 4, 100.0, 1L }
->>>>>>>> origin/Dante:LanDotBien_BackEnd/Migrations/20240320034935_Dante.cs
+                    { 1L, new DateTime(2024, 3, 21, 16, 46, 27, 907, DateTimeKind.Local).AddTicks(7371), 0L, 1, 100.0, 1L },
+                    { 2L, new DateTime(2024, 3, 21, 16, 46, 27, 907, DateTimeKind.Local).AddTicks(7374), 0L, 2, 100.0, 1L },
+                    { 3L, new DateTime(2024, 3, 21, 16, 46, 27, 907, DateTimeKind.Local).AddTicks(7375), 0L, 3, 100.0, 1L },
+                    { 4L, new DateTime(2024, 3, 21, 16, 46, 27, 907, DateTimeKind.Local).AddTicks(7376), 0L, 4, 100.0, 1L }
                 });
 
             migrationBuilder.InsertData(
@@ -353,11 +337,7 @@ namespace LanDotBien_BackEnd.Migrations
             migrationBuilder.InsertData(
                 table: "Auction",
                 columns: new[] { "id", "auctionDay", "auction_Name", "deposit_Money", "endDay", "password", "product_id", "startDay", "status" },
-<<<<<<<< HEAD:LanDotBien_BackEnd/Migrations/20240321083816_Dluong.cs
-                values: new object[] { 1L, new DateTime(2024, 3, 28, 15, 38, 16, 16, DateTimeKind.Local).AddTicks(6589), "Auction 1", 50.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "1", 1L, new DateTime(2024, 3, 21, 15, 38, 16, 16, DateTimeKind.Local).AddTicks(6587), 0 });
-========
-                values: new object[] { 1L, new DateTime(2024, 3, 27, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(7583), "Auction 1", 50.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "1", 1L, new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(7582), 0 });
->>>>>>>> origin/Dante:LanDotBien_BackEnd/Migrations/20240320034935_Dante.cs
+                values: new object[] { 1L, new DateTime(2024, 3, 28, 16, 46, 27, 907, DateTimeKind.Local).AddTicks(7322), "Auction 1", 50.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "1", 1L, new DateTime(2024, 3, 21, 16, 46, 27, 907, DateTimeKind.Local).AddTicks(7320), 0 });
 
             migrationBuilder.InsertData(
                 table: "Bill",
@@ -372,21 +352,12 @@ namespace LanDotBien_BackEnd.Migrations
             migrationBuilder.InsertData(
                 table: "Bid",
                 columns: new[] { "id", "auction_id", "bid", "bid_time", "user_id" },
-<<<<<<<< HEAD:LanDotBien_BackEnd/Migrations/20240321083816_Dluong.cs
-                values: new object[] { 1L, 1L, 60.0, new DateTime(2024, 3, 21, 15, 38, 16, 16, DateTimeKind.Local).AddTicks(6703), 1L });
+                values: new object[] { 1L, 1L, 60.0, new DateTime(2024, 3, 21, 16, 46, 27, 907, DateTimeKind.Local).AddTicks(7450), 1L });
 
             migrationBuilder.InsertData(
                 table: "RoomRegistrations",
                 columns: new[] { "id", "auction_id", "register_time", "status", "user_id" },
-                values: new object[] { 1L, 1L, new DateTime(2024, 3, 21, 15, 38, 16, 16, DateTimeKind.Local).AddTicks(6613), 2, 1L });
-========
-                values: new object[] { 1L, 1L, 60.0, new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(7680), 1L });
-
-            migrationBuilder.InsertData(
-                table: "RoomRegistrations",
-                columns: new[] { "id", "auction_id", "register_time", "user_id" },
-                values: new object[] { 1L, 1L, new DateTime(2024, 3, 20, 10, 49, 34, 574, DateTimeKind.Local).AddTicks(7605), 1L });
->>>>>>>> origin/Dante:LanDotBien_BackEnd/Migrations/20240320034935_Dante.cs
+                values: new object[] { 1L, 1L, new DateTime(2024, 3, 21, 16, 46, 27, 907, DateTimeKind.Local).AddTicks(7350), 2, 1L });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Auction_product_id",
