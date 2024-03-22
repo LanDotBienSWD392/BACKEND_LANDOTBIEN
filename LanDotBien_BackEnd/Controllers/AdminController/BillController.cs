@@ -61,7 +61,7 @@ public class BillController : ControllerBase
     }
 
     [HttpGet("Payment-CallBack")]
-    public async Task<IActionResult> GetAllStaffUsers()
+    public async Task<IActionResult> PaymentCallBack()
     {
         var response = _payService.PaymentExecute(Request.Query);
         if (response == null || response.VnPayResponseCode != "00")

@@ -13,10 +13,12 @@ namespace LanDotBien_BackEnd.Controllers.AdminController;
 public class PackageController : ControllerBase
 {
     private readonly IPackageService _packageService;
+    private readonly IVnPayService _payService;
 
-    public PackageController(IPackageService packageService)
+    public PackageController(IPackageService packageService, IVnPayService payService)
     {
         _packageService = packageService;
+        _payService = payService;
     }
     [HttpPost("AddPackage")]
     public async Task<IActionResult> UserPermissionAdd(Package package)
@@ -80,4 +82,5 @@ public class PackageController : ControllerBase
             return NotFound(response);
         }
     }
+    
 }

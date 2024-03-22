@@ -11,15 +11,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IOrderRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Interfaces/IOrderRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.DTO/LanVar.DTO.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/LanVar.DTO.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/LanVar.Insfrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Insfrastructure/LanVar.Insfrastructure.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderItemRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderItemRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/OrderItemService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/OrderItemService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Tools.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/Tools.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/PackageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/PackageController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/ProductOwnerController/ProductOwnerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/ProductOwnerController/ProductOwnerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/StaffController/ManageOrder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/StaffController/ManageOrder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Entity/MyDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Entity/MyDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Entity/Package.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Entity/Package.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Entity/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Entity/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/LanVar.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/LanVar.Core.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.DTO/AutoMapperProfile/AutoMapperProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/AutoMapperProfile/AutoMapperProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.DTO/DTO/request/CreateProductDTORequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/DTO/request/CreateProductDTORequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Interface/IPackageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Interface/IPackageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/AccountService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/AuctionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/AuctionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/PackageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/PackageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/Tools/CustomDataValidation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/Tools/CustomDataValidation.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +130,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.2906793&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.25592417&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -279,7 +291,8 @@
       <workItem from="1711088505022" duration="1766000" />
       <workItem from="1711090738135" duration="2228000" />
       <workItem from="1711092973303" duration="343000" />
-      <workItem from="1711093451710" duration="674000" />
+      <workItem from="1711093451710" duration="6653000" />
+      <workItem from="1711113239041" duration="5862000" />
     </task>
     <task id="LOCAL-00001" summary="add login, generate jwt and register, check validate, custom error, delete ILogger in repository">
       <option name="closed" value="true" />
@@ -417,7 +430,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711048290075</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="update vnpay method">
+      <option name="closed" value="true" />
+      <created>1711094443024</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1711094443024</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,7 +476,8 @@
     <MESSAGE value="fix hidden order" />
     <MESSAGE value="fix hidden" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="update vnpay method" />
+    <option name="LAST_COMMIT_MESSAGE" value="update vnpay method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -560,10 +582,10 @@
           <line>84</line>
           <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" initialLine="84" containingFunctionPresentation="Method 'Login'">
             <startOffsets>
-              <option value="2901" />
+              <option value="2881" />
             </startOffsets>
             <endOffsets>
-              <option value="3061" />
+              <option value="3041" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="106" />
@@ -573,10 +595,10 @@
           <line>83</line>
           <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" initialLine="83" containingFunctionPresentation="Method 'Login'">
             <startOffsets>
-              <option value="2827" />
+              <option value="2807" />
             </startOffsets>
             <endOffsets>
-              <option value="2897" />
+              <option value="2877" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="107" />
@@ -586,10 +608,10 @@
           <line>88</line>
           <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" initialLine="88" containingFunctionPresentation="Method 'Login'">
             <startOffsets>
-              <option value="3065" />
+              <option value="3045" />
             </startOffsets>
             <endOffsets>
-              <option value="3082" />
+              <option value="3062" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="108" />
@@ -599,10 +621,10 @@
           <line>93</line>
           <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" initialLine="93" containingFunctionPresentation="Method 'Login'">
             <startOffsets>
-              <option value="3217" />
+              <option value="3197" />
             </startOffsets>
             <endOffsets>
-              <option value="3243" />
+              <option value="3223" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="109" />
@@ -612,10 +634,10 @@
           <line>94</line>
           <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" initialLine="94" containingFunctionPresentation="Method 'Login'">
             <startOffsets>
-              <option value="3247" />
+              <option value="3227" />
             </startOffsets>
             <endOffsets>
-              <option value="3272" />
+              <option value="3252" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="110" />
@@ -625,10 +647,10 @@
           <line>95</line>
           <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" initialLine="95" containingFunctionPresentation="Method 'Login'">
             <startOffsets>
-              <option value="3276" />
+              <option value="3256" />
             </startOffsets>
             <endOffsets>
-              <option value="3277" />
+              <option value="3257" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="111" />
@@ -638,10 +660,10 @@
           <line>99</line>
           <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" initialLine="99" containingFunctionPresentation="Method 'Login'">
             <startOffsets>
-              <option value="3399" />
+              <option value="3379" />
             </startOffsets>
             <endOffsets>
-              <option value="3471" />
+              <option value="3451" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="112" />
@@ -651,10 +673,10 @@
           <line>100</line>
           <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" initialLine="100" containingFunctionPresentation="Method 'Login'">
             <startOffsets>
-              <option value="3475" />
+              <option value="3455" />
             </startOffsets>
             <endOffsets>
-              <option value="3554" />
+              <option value="3534" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="113" />
@@ -664,10 +686,10 @@
           <line>101</line>
           <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" initialLine="101" containingFunctionPresentation="Method 'Login'">
             <startOffsets>
-              <option value="3558" />
+              <option value="3538" />
             </startOffsets>
             <endOffsets>
-              <option value="3621" />
+              <option value="3601" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="114" />
@@ -677,10 +699,10 @@
           <line>102</line>
           <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" initialLine="102" containingFunctionPresentation="Method 'Login'">
             <startOffsets>
-              <option value="3625" />
+              <option value="3605" />
             </startOffsets>
             <endOffsets>
-              <option value="3658" />
+              <option value="3638" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="115" />
@@ -725,58 +747,6 @@
           <option name="timeStamp" value="118" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Tools/Tools/EncryptPassword.cs</url>
-          <line>8</line>
-          <properties documentPath="$PROJECT_DIR$/Tools/Tools/EncryptPassword.cs" initialLine="8" containingFunctionPresentation="Method 'Encrypt'">
-            <startOffsets>
-              <option value="152" />
-            </startOffsets>
-            <endOffsets>
-              <option value="184" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="119" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Tools/Tools/EncryptPassword.cs</url>
-          <line>9</line>
-          <properties documentPath="$PROJECT_DIR$/Tools/Tools/EncryptPassword.cs" initialLine="9" containingFunctionPresentation="Method 'Encrypt'">
-            <startOffsets>
-              <option value="193" />
-            </startOffsets>
-            <endOffsets>
-              <option value="250" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="121" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Tools/Tools/EncryptPassword.cs</url>
-          <line>10</line>
-          <properties documentPath="$PROJECT_DIR$/Tools/Tools/EncryptPassword.cs" initialLine="10" containingFunctionPresentation="Method 'Encrypt'">
-            <startOffsets>
-              <option value="259" />
-            </startOffsets>
-            <endOffsets>
-              <option value="304" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="122" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Tools/Tools/EncryptPassword.cs</url>
-          <line>11</line>
-          <properties documentPath="$PROJECT_DIR$/Tools/Tools/EncryptPassword.cs" initialLine="11" containingFunctionPresentation="Method 'Encrypt'">
-            <startOffsets>
-              <option value="313" />
-            </startOffsets>
-            <endOffsets>
-              <option value="351" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="123" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/LanVar.Services/Service/OrderItemService.cs</url>
           <line>54</line>
           <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/OrderItemService.cs" initialLine="54" containingFunctionPresentation="Method 'GetAllItemInCartByUserId'">
@@ -801,6 +771,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/PackageService.cs</url>
+          <line>84</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/PackageService.cs" initialLine="84" containingFunctionPresentation="Method 'CreatePaymentUrl'">
+            <startOffsets>
+              <option value="2918" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3010" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="134" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

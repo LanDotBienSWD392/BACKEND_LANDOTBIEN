@@ -47,6 +47,10 @@ namespace LanVar.Services.Implementation
             CreateOrderDTORequest createOrderDTORequest = new CreateOrderDTORequest();
             string userId = _userService.GetUserID();
             IEnumerable<OrderItem> orderItems = await _orderItemRepository.GetSelectedUserItem(long.Parse(userId));
+            if (orderItems == null)
+            {
+                throw new CustomException.InvalidDataException(HttpStatusCode.BadRequest.ToString(),"Order Items invalid");
+            }
     
             Order createdOrder = null; // Define the variable outside the loop to capture the last order created
             string code = await _orderRepository.GenerateNextOrderCodeAsync();

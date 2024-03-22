@@ -22,6 +22,7 @@ namespace LanVar.Core.Entity
         public DbSet<RoomRegistrations> RoomRegistrations { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserPermission> UsersPermission { get; set; }
+        public DbSet<User_Package> UserPackages { get; set; }
         private string HashPassword(string password)
         {
             using (SHA512 sha512 = SHA512.Create())
@@ -52,8 +53,16 @@ namespace LanVar.Core.Entity
 
             // Seed data for Packages
             modelBuilder.Entity<Package>().HasData(
-                new Package { id = 1, packageName = "Basic", package_Description = "Basic package", startDay = DateTime.Now, endDay = DateTime.Now.AddDays(30), status = true },
-                new Package { id = 2, packageName = "Premium", package_Description = "Premium package", startDay = DateTime.Now, endDay = DateTime.Now.AddDays(30), status = true }
+                new Package { id = 1, packageName = "Basic", package_Description = "Basic package",price = 0, status = true },
+                new Package { id = 2, packageName = "Premium", package_Description = "Premium package",price = 100000, status = true }
+            );
+            modelBuilder.Entity<User_Package>().HasData(
+                new User_Package
+                {
+                    id = 1, package_id = 2, user_id = 1, startDay = DateTime.Now, endDay = DateTime.Now.AddDays(30),
+                    status = PackageStatus.Active, price = 100000
+                }
+
             );
 
             // Seed data for User
@@ -61,7 +70,7 @@ namespace LanVar.Core.Entity
             string hashedPassword = HashPassword(plaintextPassword); // Mã hóa mật khẩu bằng SHA-512
 
             modelBuilder.Entity<User>().HasData(
-                new User { id = 1, permission_id = 1, package_id = 1, identityCard = "123456789", name = "Admin", email = "admin@example.com", username = "admin", password = hashedPassword, phone = "123456789", dob = DateTime.Now, address = "Admin Address", gender = "Male", registerDay = DateTime.Now, status = true }
+                new User { id = 1, permission_id = 1, identityCard = "123456789", name = "Admin", email = "admin@example.com", username = "admin", password = hashedPassword, phone = "123456789", dob = DateTime.Now, address = "Admin Address", gender = "Male", registerDay = DateTime.Now, status = true }
             );
 
             // Seed data for Products

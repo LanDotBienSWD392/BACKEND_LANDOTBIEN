@@ -81,6 +81,33 @@ public class CustomDataValidation
             return new ValidationResult($"Age must be between {_minAge} and {_maxAge}");
         }
     }
+    [AttributeUsage(AttributeTargets.Property)]
+    public class MoneyValidation : ValidationAttribute
+    {
+        private readonly int _minAge;
+        
+        public MoneyValidation(int minAge)
+        {
+            _minAge = minAge;
+            
+        }
+        protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
+        {
+            if (value is DateTime dob)
+            {
+                int age = DateTime.Now.Year - dob.Year;
+                if (dob.AddYears(age) > DateTime.Now.Date)
+                {
+                    age--;
+                }
+                if (age >= _minAge )
+                {
+                    return ValidationResult.Success;
+                }
+            }
+            return new ValidationResult($"Age must be higher {_minAge}");
+        }
+    }
 
     [AttributeUsage(AttributeTargets.Property)]
     public class EmailValidation : ValidationAttribute
