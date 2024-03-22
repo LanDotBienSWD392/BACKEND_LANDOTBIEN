@@ -72,6 +72,7 @@ builder.Services.AddScoped<IVnPayService, VnPayService>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IAccountService, AccountService>();
 
+
 //Build CORS
 builder.Services.AddCors(p => p.AddPolicy("MyCors", build =>
 {
@@ -86,6 +87,7 @@ builder.Services.AddScoped<IBidService, BidService>();
 builder.Services.AddScoped<IVnPayService, VnPayService>();
 builder.Services.AddScoped<IRoomRegistrationsService, RoomRegistrationsService>();
 builder.Services.AddScoped<IUserPackageService, UserPackageService>();
+builder.Services.AddHostedService<ExpiryCheckBackgroundService>();
 //sau class service cuar ai tu add vao day
 //Làm Ơn Add Service vào đây khi đã tạo rồi 
 

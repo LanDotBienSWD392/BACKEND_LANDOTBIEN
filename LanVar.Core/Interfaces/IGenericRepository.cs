@@ -15,6 +15,8 @@ namespace LanVar.Core.Interfaces
         void Remove(TEntity entity);
         Task<bool> Delete(long id);
         void RemoveRange(IEnumerable<TEntity> entities);
+        Task<List<TEntity>> GetWhereAsync(Expression<Func<TEntity, bool>> predicate);
+
         Task<IEnumerable<TEntity>> GetByFilterAsync(Expression<Func<TEntity, bool>> filterExpression);
     }
 }
