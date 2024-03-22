@@ -81,7 +81,19 @@ public class BillController : ControllerBase
         }
         return Ok("payment success");
     }
-    
+    [HttpGet("GetAllBills")]
+    public async Task<IActionResult> GetAllBills()
+    {
+        try
+        {
+            var bills = await _billService.GetAllBills();
+            return Ok(bills);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
 
 
     
