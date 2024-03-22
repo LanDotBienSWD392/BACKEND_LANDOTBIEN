@@ -106,15 +106,7 @@ namespace LanVar.Service.Service
             roomRegistration.status = RegisterStatus.WAITING;
             await _roomRegistrationsRepository.UpdateAsync(roomRegistration);
 
-            /*var bill = _mapper.Map<Bill>(roomRegistration.id.ToString());
-            bill.user_id = roomRegistration.user_id;
-            bill.orderCode = roomRegistration.id.ToString();
-            bill.paymentUrl = "";
-            bill.payment_Method = "VNPAY";
-            bill.total_Price = depositAmount;
-            bill.status = false;
 
-            await _genericBillRepository.Add(bill);*/
 
             // Trả về thông tin thanh toán
             return new PaymentInformationModel

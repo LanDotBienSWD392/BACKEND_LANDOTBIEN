@@ -53,11 +53,12 @@ namespace LanDotBien_BackEnd.Controllers.UserController
             {
                 var paymentModel = await _roomRegistrationsService.CreateDepositPayment(roomRegistrationId);
                 // Gọi dịch vụ thanh toán của VnPay để lấy URL thanh toán
+
                 var paymentUrl = await _vnPayService.CreatePaymentDepositUrl(paymentModel, HttpContext);
 
                 // Cập nhật trạng thái đăng ký phòng từ "Deposit" thành "Waiting"
-                await _roomRegistrationsService.UpdateStatusToWaiting(roomRegistrationId);
-
+/*                    await _roomRegistrationsService.UpdateStatusToWaiting(roomRegistrationId);
+*/
                 // Trả về URL thanh toán cho người dùng
                 return Ok(new { PaymentUrl = paymentUrl });
             }
@@ -68,7 +69,7 @@ namespace LanDotBien_BackEnd.Controllers.UserController
             }
         }
 
-        /*[HttpGet("Payment-CallBack")]
+        [HttpGet("Payment-CallBack")]
         public async Task<IActionResult> PaymentCallBack()
         {
             var response = _vnPayService.PaymentExecute(Request.Query);
@@ -76,10 +77,10 @@ namespace LanDotBien_BackEnd.Controllers.UserController
             {
                 throw new CustomException.InvalidDataException(HttpStatusCode.BadRequest.ToString(), "payment Fail");
             }
-
+            await _roomRegistrationsService.UpdateStatusToWaiting(long.Parse(response.OrderId));
 
             return Ok("payment success");
-        }*/
+        }
 
         /*// Phương thức callback sau khi thanh toán
         [HttpGet("PaymentCallBack")]

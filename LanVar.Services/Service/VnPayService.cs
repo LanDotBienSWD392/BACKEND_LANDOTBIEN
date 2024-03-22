@@ -47,7 +47,7 @@ public class VnPayService : IVnPayService
         /*vnpay.AddRequestData("vnp_OrderInfo", bill.orderCode);*/
         vnpay.AddRequestData("vnp_OrderInfo", model.OrderId);
         vnpay.AddRequestData("vnp_OrderType", "other"); //default value: other
-        vnpay.AddRequestData("vnp_ReturnUrl", _configuration["VnPay:PaymentBackReturnUrl"]);
+        vnpay.AddRequestData("vnp_ReturnUrl", _configuration["VnPay:PaymentDepositBackReturnUrl"]);
         vnpay.AddRequestData("vnp_TxnRef", tick);
         var paymentUrl = vnpay.CreateRequestUrl(_configuration["VnPay:BaseUrl"],
             _configuration["VnPay:HashSecret"]

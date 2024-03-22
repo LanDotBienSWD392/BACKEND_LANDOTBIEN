@@ -51,8 +51,10 @@ namespace LanVar.Services.Service
         public async Task<AuctionDTOResponse> CreateAuctionAsync(AuctionDTORequest auctionDto)
         {
             var checkPackage = await _userPackageService.GetByIdAsync(auctionDto.User_id);
-            if (checkPackage.package_id == 1)
-                throw new Exception($"You should buy package to create Auction!."); ;
+            if (checkPackage == null || checkPackage.status == PackageStatus.Expired)
+            {
+                throw new Exception($"You should buy package to create Auction!.");
+            }
             var existingAuction = await _auctionRepository.GetByAuctionNameAsync(auctionDto.Auction_Name);
             if (existingAuction != null)
             {
