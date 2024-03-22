@@ -14,6 +14,11 @@ public class ApiResponse<TEntity>
         StatusCode = statusCode;
         Message = message;
     }
+
+    public ApiResponse(string message)
+    {
+        Message = message;
+    }
     public ApiResponse(HttpStatusCode statusCode, string message)
     {
         
