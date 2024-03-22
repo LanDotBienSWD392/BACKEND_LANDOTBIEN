@@ -16,7 +16,7 @@ namespace LanVar.Insfrastructure.Repository
 
         public async Task<IEnumerable<OrderItem>> GetAllByUserIdAsync(long id)
         {
-            return _context.Items.Where(x => x.user_id == id).ToList();
+            return _context.Items.Where(x => x.user_id == id && x.hidden == false).ToList();
         }
 
         public async Task<IEnumerable<OrderItem>> GetSelectedUserItem(long id)

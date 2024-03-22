@@ -10,7 +10,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="" />
+    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/PackageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/PackageController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/ProductOwnerController/ProductOwnerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/ProductOwnerController/ProductOwnerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/StaffController/ManageOrder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/StaffController/ManageOrder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Entity/MyDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Entity/MyDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Entity/Package.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Entity/Package.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Entity/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Entity/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/LanVar.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/LanVar.Core.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.DTO/AutoMapperProfile/AutoMapperProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/AutoMapperProfile/AutoMapperProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.DTO/DTO/request/CreateProductDTORequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/DTO/request/CreateProductDTORequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Interface/IPackageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Interface/IPackageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/AccountService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/AuctionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/AuctionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/PackageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/PackageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/Tools/CustomDataValidation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/Tools/CustomDataValidation.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,6 +72,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/87bed8ddb3a8426686194432a8407b75d82200/83/052ec8b7/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/df33c7fd7db04a829574707592655c01d82000/26/2a2764ee/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Volumes/Hoaq's Gke dit bu/FU/Kì 7/SWD391/BackEnd_LANDOTBIEN/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/ManageManagerAccounts.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/PackageController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/CustomerController/SearchProduct.cs" root0="FORCE_HIGHLIGHTING" />
@@ -66,7 +89,6 @@
     <setting file="file://$PROJECT_DIR$/LanVar.Core/Entity/Product.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Core/Entity/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.DTO/DTO/request/PaymentInformationModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Volumes/Hoaq's Gke dit bu/FU/Kì 7/SWD391/BackEnd_LANDOTBIEN/LanVar.DTO/DTO/response/ApiResponse.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.DTO/DTO/response/PaymentResponseModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/BidRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/CartRepository.cs" root0="FORCE_HIGHLIGHTING" />
@@ -74,17 +96,12 @@
     <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/ProductRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/UserRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Volumes/Hoaq's Gke dit bu/FU/Kì 7/SWD391/BackEnd_LANDOTBIEN/LanVar.Services/Interface/IVnPayService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Volumes/Hoaq's Gke dit bu/FU/Kì 7/SWD391/BackEnd_LANDOTBIEN/LanVar.Services/Interface/IVnPayService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Services/Models/VnPayLibrary.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/AccountService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/AuctionService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Volumes/Hoaq's Gke dit bu/FU/Kì 7/SWD391/BackEnd_LANDOTBIEN/LanVar.Services/Service/OrderItemService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/ProductService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Volumes/Hoaq's Gke dit bu/FU/Kì 7/SWD391/BackEnd_LANDOTBIEN/LanVar.Services/Service/VnPayService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Volumes/Hoaq's Gke dit bu/FU/Kì 7/SWD391/BackEnd_LANDOTBIEN/LanVar.Services/Service/VnPayService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/Tools/Authentication.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/Tools/CustomDataValidation.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -107,13 +124,13 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;.NET Launch Settings Profile.LanDotBien_BackEnd: IIS Express.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.LanDotBien_BackEnd: http.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.LanDotBien_BackEnd: http.executor&quot;: &quot;Debug&quot;,
     &quot;Docker.LanDotBien_BackEnd/Dockerfile.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.2906793&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.25592417&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -271,6 +288,11 @@
       <workItem from="1710980355066" duration="9838000" />
       <workItem from="1710991805925" duration="2804000" />
       <workItem from="1711018820976" duration="20471000" />
+      <workItem from="1711088505022" duration="1766000" />
+      <workItem from="1711090738135" duration="2228000" />
+      <workItem from="1711092973303" duration="343000" />
+      <workItem from="1711093451710" duration="6653000" />
+      <workItem from="1711113239041" duration="5862000" />
     </task>
     <task id="LOCAL-00001" summary="add login, generate jwt and register, check validate, custom error, delete ILogger in repository">
       <option name="closed" value="true" />
@@ -400,7 +422,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711030498271</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary=".">
+      <option name="closed" value="true" />
+      <created>1711048290075</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1711048290075</updated>
+    </task>
+    <task id="LOCAL-00018" summary="update vnpay method">
+      <option name="closed" value="true" />
+      <created>1711094443024</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1711094443024</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -438,7 +476,8 @@
     <MESSAGE value="fix hidden order" />
     <MESSAGE value="fix hidden" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="update vnpay method" />
+    <option name="LAST_COMMIT_MESSAGE" value="update vnpay method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -472,32 +511,6 @@
           <line>188</line>
           <properties documentPath="$PROJECT_DIR$/LanVar.Service/Service/AccountService.cs" initialLine="188" containingFunctionPresentation="Method 'PurchasePackage'" />
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderRepository.cs</url>
-          <line>90</line>
-          <properties documentPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderRepository.cs" initialLine="90" containingFunctionPresentation="Method 'Sum'">
-            <startOffsets>
-              <option value="2812" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2813" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderRepository.cs</url>
-          <line>96</line>
-          <properties documentPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderRepository.cs" initialLine="96" containingFunctionPresentation="Method 'Sum'">
-            <startOffsets>
-              <option value="3071" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3089" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/LanVar.Services/Service/BillService.cs</url>
@@ -540,120 +553,237 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/LanVar.Services/Service/OrderItemService.cs</url>
-          <line>150</line>
+          <line>151</line>
           <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/OrderItemService.cs" initialLine="150" containingFunctionPresentation="Method 'DeleteItemInCart'">
             <startOffsets>
-              <option value="6364" />
+              <option value="6377" />
             </startOffsets>
             <endOffsets>
-              <option value="6417" />
+              <option value="6430" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/LanVar.Services/Service/OrderItemService.cs</url>
-          <line>149</line>
+          <line>150</line>
           <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/OrderItemService.cs" initialLine="149" containingFunctionPresentation="Method 'DeleteItemInCart'">
             <startOffsets>
-              <option value="6330" />
+              <option value="6343" />
             </startOffsets>
             <endOffsets>
-              <option value="6355" />
+              <option value="6368" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderItemRepository.cs</url>
-          <line>26</line>
-          <properties documentPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/OrderItemRepository.cs" initialLine="26" containingFunctionPresentation="Method 'DeleteOrderByOrderCode'">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/UserService.cs</url>
+          <line>84</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" initialLine="84" containingFunctionPresentation="Method 'Login'">
             <startOffsets>
-              <option value="904" />
+              <option value="2881" />
             </startOffsets>
             <endOffsets>
-              <option value="905" />
+              <option value="3041" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="75" />
+          <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs</url>
-          <line>72</line>
-          <properties documentPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" initialLine="70" containingFunctionPresentation="Method 'GetAllStaffUsers'">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/UserService.cs</url>
+          <line>83</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" initialLine="83" containingFunctionPresentation="Method 'Login'">
             <startOffsets>
-              <option value="2982" />
+              <option value="2807" />
             </startOffsets>
             <endOffsets>
-              <option value="3052" />
+              <option value="2877" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="98" />
+          <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs</url>
-          <line>75</line>
-          <properties documentPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" initialLine="73" containingFunctionPresentation="Method 'GetAllStaffUsers'">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/UserService.cs</url>
+          <line>88</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" initialLine="88" containingFunctionPresentation="Method 'Login'">
             <startOffsets>
-              <option value="3095" />
+              <option value="3045" />
             </startOffsets>
             <endOffsets>
-              <option value="3096" />
+              <option value="3062" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="99" />
+          <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs</url>
-          <line>74</line>
-          <properties documentPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" initialLine="72" containingFunctionPresentation="Method 'GetAllStaffUsers'">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/UserService.cs</url>
+          <line>93</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" initialLine="93" containingFunctionPresentation="Method 'Login'">
             <startOffsets>
-              <option value="3067" />
+              <option value="3197" />
             </startOffsets>
             <endOffsets>
-              <option value="3085" />
+              <option value="3223" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="100" />
+          <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs</url>
-          <line>77</line>
-          <properties documentPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" initialLine="75" containingFunctionPresentation="Method 'GetAllStaffUsers'">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/UserService.cs</url>
+          <line>94</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" initialLine="94" containingFunctionPresentation="Method 'Login'">
             <startOffsets>
-              <option value="3176" />
+              <option value="3227" />
             </startOffsets>
             <endOffsets>
-              <option value="3213" />
+              <option value="3252" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="101" />
+          <option name="timeStamp" value="110" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs</url>
-          <line>78</line>
-          <properties documentPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" initialLine="76" containingFunctionPresentation="Method 'GetAllStaffUsers'">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/UserService.cs</url>
+          <line>95</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" initialLine="95" containingFunctionPresentation="Method 'Login'">
             <startOffsets>
-              <option value="3306" />
+              <option value="3256" />
             </startOffsets>
             <endOffsets>
-              <option value="3321" />
+              <option value="3257" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="102" />
+          <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs</url>
-          <line>81</line>
-          <properties documentPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" initialLine="79" containingFunctionPresentation="Method 'GetAllStaffUsers'">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/UserService.cs</url>
+          <line>99</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" initialLine="99" containingFunctionPresentation="Method 'Login'">
             <startOffsets>
-              <option value="3356" />
+              <option value="3379" />
             </startOffsets>
             <endOffsets>
-              <option value="3357" />
+              <option value="3451" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="103" />
+          <option name="timeStamp" value="112" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/UserService.cs</url>
+          <line>100</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" initialLine="100" containingFunctionPresentation="Method 'Login'">
+            <startOffsets>
+              <option value="3455" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3534" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/UserService.cs</url>
+          <line>101</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" initialLine="101" containingFunctionPresentation="Method 'Login'">
+            <startOffsets>
+              <option value="3538" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3601" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="114" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/UserService.cs</url>
+          <line>102</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" initialLine="102" containingFunctionPresentation="Method 'Login'">
+            <startOffsets>
+              <option value="3605" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3638" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs</url>
+          <line>83</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs" initialLine="83" containingFunctionPresentation="Method 'GetByFilterAsync'">
+            <startOffsets>
+              <option value="2347" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2407" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs</url>
+          <line>84</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs" initialLine="84" containingFunctionPresentation="Method 'GetByFilterAsync'">
+            <startOffsets>
+              <option value="2420" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2483" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs</url>
+          <line>86</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs" initialLine="86" containingFunctionPresentation="Method 'GetByFilterAsync'">
+            <startOffsets>
+              <option value="2534" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2567" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/OrderItemService.cs</url>
+          <line>54</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/OrderItemService.cs" initialLine="54" containingFunctionPresentation="Method 'GetAllItemInCartByUserId'">
+            <startOffsets>
+              <option value="2248" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2347" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/OrderItemService.cs</url>
+          <line>55</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/OrderItemService.cs" initialLine="55" containingFunctionPresentation="Method 'GetAllItemInCartByUserId'">
+            <startOffsets>
+              <option value="2356" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2424" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LanVar.Services/Service/PackageService.cs</url>
+          <line>84</line>
+          <properties documentPath="$PROJECT_DIR$/LanVar.Services/Service/PackageService.cs" initialLine="84" containingFunctionPresentation="Method 'CreatePaymentUrl'">
+            <startOffsets>
+              <option value="2918" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3010" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="134" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -4,10 +4,11 @@ using LanVar.Core.Interfaces;
 using LanVar.DTO.DTO.request;
 using LanVar.DTO.DTO.response;
 using LanVar.Repository.IRepository;
-using LanVar.Service.IService;
+
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using LanVar.Service.Interface;
 
 namespace LanVar.Services.Service
 {
@@ -18,14 +19,16 @@ namespace LanVar.Services.Service
         private readonly IMapper _mapper;
         private readonly IAuctionRepository _auctionRepository;
         private readonly IProductRepository _productRepository;
+        private readonly IUserPackageRepository _userPackageService;
 
-        public AuctionService(IRoomRegistrationsRepository roomRegistrationsRepository ,IUserRepository userRepository, IMapper mapper, IAuctionRepository auctionRepository, IProductRepository productRepository)
+        public AuctionService(IRoomRegistrationsRepository roomRegistrationsRepository ,IUserRepository userRepository, IMapper mapper, IAuctionRepository auctionRepository, IProductRepository productRepository, IUserPackageRepository userPackageService)
         {
             _roomRegistrationsRepository = roomRegistrationsRepository;
             _userRepository = userRepository;
             _mapper = mapper;
             _auctionRepository = auctionRepository;
             _productRepository = productRepository;
+            _userPackageService = userPackageService;
 
         }
 
@@ -47,7 +50,7 @@ namespace LanVar.Services.Service
 
         public async Task<AuctionDTOResponse> CreateAuctionAsync(AuctionDTORequest auctionDto)
         {
-            var checkPackage = await _userRepository.GetByIdAsync(auctionDto.User_id);
+            var checkPackage = await _userPackageService.GetByIdAsync(auctionDto.User_id);
             if (checkPackage.package_id == 1)
                 throw new Exception($"You should buy package to create Auction!."); ;
             var existingAuction = await _auctionRepository.GetByAuctionNameAsync(auctionDto.Auction_Name);

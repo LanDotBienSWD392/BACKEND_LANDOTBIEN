@@ -55,7 +55,7 @@ namespace LanVar.Services.Implementation
             user.status = false;
             user.registerDay = DateTime.Now.Date;
             user.image = null;
-            user.package_id = 1;
+            
             await _userRepository.Add(user);
             return user;
         }
@@ -129,7 +129,7 @@ namespace LanVar.Services.Implementation
             users.status = true;
             users.registerDay = DateTime.Now.Date;
             users.image = null;
-            users.package_id = 1;
+            
             await _userRepository.Add(users);
             return users;
         }
@@ -210,8 +210,7 @@ namespace LanVar.Services.Implementation
                 //Thêm func check đã thanh toán ch
 
                 // Cập nhật package_id cho user
-                userToUpdate.package_id = 2;
-
+                
                return await _genericUserRepository.Update(userToUpdate);
             }
             catch (Exception ex)

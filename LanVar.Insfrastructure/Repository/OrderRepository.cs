@@ -82,10 +82,11 @@ namespace LanVar.Insfrastructure.Repository
             return nextCode;
         }
 
-        public async Task<Order> GetByOrderCode(string orderCode)
+        public async Task<IEnumerable<Order>> GetByOrderCode(string orderCode)
         {
-            return await _context.Orders.FirstOrDefaultAsync(x => x.orderCode.Equals(orderCode));
+            return await _context.Orders.Where(x => x.orderCode.Equals(orderCode)).ToListAsync();
         }
+
 
         public async Task<double> Sum(string orderCode)
         {

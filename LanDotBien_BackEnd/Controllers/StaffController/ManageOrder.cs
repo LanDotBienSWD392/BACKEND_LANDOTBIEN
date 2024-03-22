@@ -63,7 +63,7 @@ namespace LanDotBien_BackEnd.Controllers.StaffController
             }
             catch (CustomException.InvalidDataException ex)
             {
-                return StatusCode(500, $"Interal server error: {ex.Message}");
+                return StatusCode(500, $"Interal server error: Order not available");
             }
         }
 
