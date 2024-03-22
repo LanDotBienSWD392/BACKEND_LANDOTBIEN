@@ -27,7 +27,7 @@ namespace LanVar.Service.Service
             IBillRepository billRepository,
             IOrderItemRepository genericOrderItemRepository,
             IUserService userService,
-            IOrderItemRepository orderItemRepository, 
+            IOrderItemRepository orderItemRepository,
             IGenericRepository<Product> genericProductRepository,
             IOrderRepository orderRepository,
             IMapper mapper,
@@ -52,7 +52,7 @@ namespace LanVar.Service.Service
             var order = await _orderRepository.GetByOrderCode(orderCode.orderCode);
             if (order == null)
             {
-                throw new CustomException.InvalidDataException("cc","Order not found.");
+                throw new CustomException.InvalidDataException("cc", "Order not found.");
             }
 
             // Calculate the total price of the order
@@ -79,6 +79,21 @@ namespace LanVar.Service.Service
             BillDTOResponse billDtoResponse = _mapper.Map<BillDTOResponse>(bill);
             billDtoResponse.user_id = userName;
             return billDtoResponse;
+        }
+        public async Task<IEnumerable<BillDTOResponse>> GetAllBills()
+        {
+            IEnumerable<Bill> bills = await _billRepository.GetAllBillsAsync();
+
+            List<BillDTOResponse> billResponses = new List<BillDTOResponse>();
+
+            foreach (var bill in bills)
+            {
+                BillDTOResponse billResponse = _mapper.Map<BillDTOResponse>(bill);
+
+                billResponses.Add(billResponse);
+            }
+
+            return billResponses;
         }
     }
 }
