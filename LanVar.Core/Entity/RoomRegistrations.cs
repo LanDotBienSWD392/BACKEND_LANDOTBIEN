@@ -7,7 +7,8 @@ namespace LanVar.Core.Entity
     {
         ACTIVE,
         INACTIVE,
-        WAITING
+        WAITING,
+        DEPOSIT
     }
 
     [Table("RoomRegistrations")]
@@ -21,6 +22,8 @@ namespace LanVar.Core.Entity
 
         [Required]
         public long auction_id { get; set; }
+
+        /*public bool depositStatus { get; set; }*/
 
         public DateTime register_time { get; set; }
 

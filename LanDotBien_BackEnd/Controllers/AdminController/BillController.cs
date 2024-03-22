@@ -33,12 +33,12 @@ public class BillController : ControllerBase
     }
 
     [HttpPost("CreateBill"), Authorize] // Explicitly specify the HTTP method
-    public async Task<IActionResult> UserPermissionAdd(BillDTORequest billDtoRequest)
+    public async Task<IActionResult> CreateBill(BillDTORequest billDtoRequest)
     {
         try
         {
-            var packageAdd = await _billService.CreateBill(billDtoRequest);
-            var response = new ApiResponse<BillDTOResponse>(packageAdd, HttpStatusCode.Accepted, "Package add success");
+            var bill = await _billService.CreateBill(billDtoRequest);
+            var response = new ApiResponse<BillDTOResponse>(bill, HttpStatusCode.Accepted, "Package add success");
             return Ok(response); // Trả về kết quả thành công với dữ liệu UserPermission đã thêm
         }
         catch (CustomException.InvalidDataException ex)
@@ -51,7 +51,7 @@ public class BillController : ControllerBase
     public async Task<string> CreatePayment(PaymentInformationModel billDtoRequest)
     {
         
-            var paymentUrl = await _payService.CreatePaymentUrl(billDtoRequest, HttpContext);
+        var paymentUrl = await _payService.CreatePaymentUrl(billDtoRequest, HttpContext);
         
             // Assuming PaymentResponseModel has a property to hold the payment URL
             return paymentUrl;
@@ -59,7 +59,7 @@ public class BillController : ControllerBase
     }
 
     [HttpGet("Payment-CallBack")]
-    public async Task<IActionResult> GetAllStaffUsers()
+    public async Task<IActionResult> PaymentCallBack()
     {
         var response = _payService.PaymentExecute(Request.Query);
         if (response == null || response.VnPayResponseCode != "00")
@@ -67,26 +67,26 @@ public class BillController : ControllerBase
             throw new CustomException.InvalidDataException(HttpStatusCode.BadRequest.ToString(),"payment Fail");
         }
 
-        Bill bill = await _billRepository.GetByOrderCode(response.OrderId);
-        bill.status = true;
-        await _genericRepository.Update(bill);
-        Order order = await _orderRepository.GetByOrderCode(response.OrderId);
-    
-         if (order != null)
-         {
-             // Update the status of the retrieved order to false
-             order.status = OrderStatus.Confirmed; // Assuming 'status' is a property of Order class
-             await _genericOrderRepository.Update(order);
-         }
-         else
-         {
-             // Handle the case when the order is not found
-             // For example, you can throw an exception or return an appropriate response
-             return NotFound("Order not found");
-         }
+            Bill bill = await _billRepository.GetByOrderCode(response.OrderId);
+            bill.status = true;
+            await _genericRepository.Update(bill);
+            Order order = await _orderRepository.GetByOrderCode(response.OrderId);
+
+            if (order != null)
+            {
+                // Update the status of the retrieved order to false
+                order.status = OrderStatus.Confirmed; // Assuming 'status' is a property of Order class
+                await _genericOrderRepository.Update(order);
+            }
+            else
+            {
+                // Handle the case when the order is not found
+                // For example, you can throw an exception or return an appropriate response
+                return NotFound("Order not found");
+            }
+       
+        
          
-
-
         return Ok("payment success");
     }
     

@@ -6,18 +6,22 @@ using LanVar.Core.Entity;
 using LanVar.DTO.DTO.request;
 using LanVar.DTO.DTO.response;
 using LanVar.Repository.IRepository;
+using Microsoft.AspNetCore.SignalR;
+using Tools.Tools;
 
 public class BidService : IBidService
 {
     private readonly IBidRepository _repository;
     private readonly IAuctionRepository _auctionRepository;
     private readonly IMapper _mapper;
+    private readonly IHubContext<BidHub> _hubContext;
 
-    public BidService(IBidRepository repository, IMapper mapper, IAuctionRepository auctionRepository)
+    public BidService(IHubContext<BidHub> hubContext, IBidRepository repository, IMapper mapper, IAuctionRepository auctionRepository)
     {
         _repository = repository;
         _auctionRepository = auctionRepository;
         _mapper = mapper;
+        _hubContext = hubContext;
     }
 
     public async Task<BidDTOResponse> GetHighestBid(long auctionId)
@@ -30,6 +34,7 @@ public class BidService : IBidService
         return _mapper.Map<BidDTOResponse>(highestBid);
     }
 
+    
     public async Task<Bid> GetBidById(long id)
     {
         return await _repository.GetBidById(id);
@@ -64,6 +69,7 @@ public class BidService : IBidService
         var bid = _mapper.Map<Bid>(bidDTO);
         bid.bid_time = DateTime.Now; // Set bid time here
         await _repository.CreateBid(bid);
+        
     }
 
     public async Task UpdateBid(BidDTORequest bidDTO)
