@@ -10,28 +10,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="">
+    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="add buy package">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/PackageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/PackageController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/ProductOwnerController/ProductOwnerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/ProductOwnerController/ProductOwnerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/StaffController/ManageOrder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/StaffController/ManageOrder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Core/Entity/MyDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Entity/MyDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Core/Entity/Package.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Entity/Package.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Core/Entity/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Entity/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Core/LanVar.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/LanVar.Core.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.DTO/AutoMapperProfile/AutoMapperProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/AutoMapperProfile/AutoMapperProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.DTO/DTO/request/CreateProductDTORequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.DTO/DTO/request/CreateProductDTORequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Services/Interface/IPackageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Interface/IPackageService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/AccountService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/AuctionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/AuctionService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/PackageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/PackageService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Tools/CustomDataValidation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/Tools/CustomDataValidation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IGenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Interfaces/IGenericRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/UserPackageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/UserPackageService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +57,6 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/87bed8ddb3a8426686194432a8407b75d82200/83/052ec8b7/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/df33c7fd7db04a829574707592655c01d82000/26/2a2764ee/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Volumes/Hoaq's Gke dit bu/FU/Kì 7/SWD391/BackEnd_LANDOTBIEN/LanDotBien_BackEnd/Controllers/AdminController/BillController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/ManageManagerAccounts.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/AdminController/PackageController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanDotBien_BackEnd/Controllers/CustomerController/SearchProduct.cs" root0="FORCE_HIGHLIGHTING" />
@@ -98,6 +82,7 @@
     <setting file="file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/UserRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Services/Models/VnPayLibrary.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/AccountService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Volumes/Hoaq's Gke dit bu/FU/Kì 7/SWD391/BackEnd_LANDOTBIEN/LanVar.Services/Service/AccountService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/AuctionService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/OrderService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LanVar.Services/Service/ProductService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -121,38 +106,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.LanDotBien_BackEnd: IIS Express.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.LanDotBien_BackEnd: http.executor&quot;: &quot;Debug&quot;,
-    &quot;Docker.LanDotBien_BackEnd/Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.25592417&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;HotReloadSettingsPage&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.LanDotBien_BackEnd: IIS Express.executor": "Run",
+    ".NET Launch Settings Profile.LanDotBien_BackEnd: http.executor": "Run",
+    "Docker.LanDotBien_BackEnd/Dockerfile.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.25592417",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "HotReloadSettingsPage",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ],
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;C#&quot;
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "C#"
     ],
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
-      &quot;/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
-      &quot;/Users/hoangdinh/.local/share/Symbols/src&quot;
+    "rider.external.source.directories": [
+      "/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
+      "/Users/hoangdinh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache",
+      "/Users/hoangdinh/.local/share/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.LanDotBien_BackEnd: http">
     <configuration name="LanDotBien_BackEnd: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/LanDotBien_BackEnd/LanDotBien_BackEnd.csproj" />
@@ -293,6 +278,7 @@
       <workItem from="1711092973303" duration="343000" />
       <workItem from="1711093451710" duration="6653000" />
       <workItem from="1711113239041" duration="5862000" />
+      <workItem from="1711119188295" duration="7897000" />
     </task>
     <task id="LOCAL-00001" summary="add login, generate jwt and register, check validate, custom error, delete ILogger in repository">
       <option name="closed" value="true" />
@@ -438,7 +424,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711094443024</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="add buy package">
+      <option name="closed" value="true" />
+      <created>1711120076135</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1711120076135</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -477,7 +471,8 @@
     <MESSAGE value="fix hidden" />
     <MESSAGE value="." />
     <MESSAGE value="update vnpay method" />
-    <option name="LAST_COMMIT_MESSAGE" value="update vnpay method" />
+    <MESSAGE value="add buy package" />
+    <option name="LAST_COMMIT_MESSAGE" value="add buy package" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -709,39 +704,39 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs</url>
-          <line>83</line>
+          <line>88</line>
           <properties documentPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs" initialLine="83" containingFunctionPresentation="Method 'GetByFilterAsync'">
             <startOffsets>
-              <option value="2347" />
+              <option value="2529" />
             </startOffsets>
             <endOffsets>
-              <option value="2407" />
+              <option value="2589" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs</url>
-          <line>84</line>
+          <line>89</line>
           <properties documentPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs" initialLine="84" containingFunctionPresentation="Method 'GetByFilterAsync'">
             <startOffsets>
-              <option value="2420" />
+              <option value="2602" />
             </startOffsets>
             <endOffsets>
-              <option value="2483" />
+              <option value="2665" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="117" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs</url>
-          <line>86</line>
+          <line>91</line>
           <properties documentPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs" initialLine="86" containingFunctionPresentation="Method 'GetByFilterAsync'">
             <startOffsets>
-              <option value="2534" />
+              <option value="2716" />
             </startOffsets>
             <endOffsets>
-              <option value="2567" />
+              <option value="2749" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="118" />

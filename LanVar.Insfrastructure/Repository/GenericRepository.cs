@@ -79,6 +79,11 @@ namespace LanVar.Insfrastructure.Repository
             _context.Set<TEntity>().RemoveRange(entities);
         }
 
+        public async Task<List<TEntity>> GetWhereAsync(Expression<Func<TEntity, bool>> predicate)
+        {
+            return await dbSet.Where(predicate).ToListAsync();
+        }
+
         public async Task<IEnumerable<TEntity>> GetByFilterAsync(Expression<Func<TEntity, bool>> filterExpression)
         {
             var query = _context.Set<TEntity>().Where(filterExpression);
