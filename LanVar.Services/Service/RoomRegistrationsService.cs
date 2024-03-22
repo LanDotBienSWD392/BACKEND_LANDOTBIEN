@@ -19,9 +19,13 @@ namespace LanVar.Service.Service
         private readonly IAuctionRepository _auctionRepository;
         private readonly IRoomRegistrationsRepository _roomRegistrationsRepository;
         private readonly IMapper _mapper;
+        private readonly IVnPayService _vnPayService;
+        private readonly IGenericRepository<Bill> _genericBillRepository;
 
-        public RoomRegistrationsService(IAuctionRepository auctionRepository, IRoomRegistrationsRepository roomRegistrationsRepository, IMapper mapper)
+        public RoomRegistrationsService(IGenericRepository<Bill> genericRepository, IVnPayService vnPayService, IAuctionRepository auctionRepository, IRoomRegistrationsRepository roomRegistrationsRepository, IMapper mapper)
         {
+            _genericBillRepository = genericRepository;
+            _vnPayService = vnPayService;
             _auctionRepository = auctionRepository;
             _roomRegistrationsRepository = roomRegistrationsRepository;
             _mapper = mapper;
@@ -51,7 +55,7 @@ namespace LanVar.Service.Service
                 throw new Exception("User has already registered in this auction.");
             }
 
-            roomRegistrationsDTO.status = RegisterStatus.WAITING.ToString();
+            roomRegistrationsDTO.status = RegisterStatus.DEPOSIT.ToString();
             var roomRegistrations = _mapper.Map<RoomRegistrations>(roomRegistrationsDTO);
             roomRegistrations.register_time = DateTime.Now; // Assuming register time should be set upon creation
             await _roomRegistrationsRepository.AddAsync(roomRegistrations);
@@ -77,6 +81,78 @@ namespace LanVar.Service.Service
             var roomRegistrationsList = await _roomRegistrationsRepository.GetByAuctionIdAsync(auctionId);
             return _mapper.Map<List<RoomRegistrationsDTOResponse>>(roomRegistrationsList);
         }
+        public async Task<PaymentInformationModel> CreateDepositPayment(long roomRegistrationId)
+        {
+            var roomRegistration = await _roomRegistrationsRepository.GetByIdAsync(roomRegistrationId);
+            if (roomRegistration == null)
+            {
+                throw new Exception("Room registration not found.");
+            }
+            if (roomRegistration.status == RegisterStatus.WAITING)
+            {
+                throw new Exception("You are deposit.");
+            }
+
+            var auction = await _auctionRepository.GetByIdAsync(roomRegistration.auction_id);
+            if (auction == null || auction.status != AuctionStatus.ACTIVE)
+            {
+                throw new Exception("Auction is not active.");
+            } 
+
+            // Tính toán số tiền cần thanh toán là tiền đặt cọc của phiên đấu giá
+            double depositAmount = auction.deposit_Money;
+
+            // Cập nhật trạng thái đăng ký phòng từ "Deposit" thành "Waiting"
+            roomRegistration.status = RegisterStatus.WAITING;
+            await _roomRegistrationsRepository.UpdateAsync(roomRegistration);
+
+            /*var bill = _mapper.Map<Bill>(roomRegistration.id.ToString());
+            bill.user_id = roomRegistration.user_id;
+            bill.orderCode = roomRegistration.id.ToString();
+            bill.paymentUrl = "";
+            bill.payment_Method = "VNPAY";
+            bill.total_Price = depositAmount;
+            bill.status = false;
+
+            await _genericBillRepository.Add(bill);*/
+
+            // Trả về thông tin thanh toán
+            return new PaymentInformationModel
+            {
+                OrderId = roomRegistration.id.ToString(), // Sử dụng ID của đăng ký phòng làm OrderId
+                Amount = depositAmount // Số tiền cần thanh toán là tiền đặt cọc của phiên đấu giá
+                                       // Các thông tin khác cần thiết cho thanh toán có thể được thêm vào đây
+            };
+        }
+
+        public async Task UpdateStatusToWaiting(long roomRegistrationId)
+        {
+            var roomRegistration = await _roomRegistrationsRepository.GetByIdAsync(roomRegistrationId);
+            if (roomRegistration == null)
+            {
+                throw new Exception("Room registration not found.");
+            }
+
+            // Cập nhật trạng thái đăng ký phòng từ "Deposit" thành "Waiting"
+            roomRegistration.status = RegisterStatus.WAITING;
+            await _roomRegistrationsRepository.UpdateAsync(roomRegistration);
+        }
+
+        public async Task UpdateStatusAfterPayment(PaymentResponseModel paymentResponse)
+        {
+            var roomRegistrationId = long.Parse(paymentResponse.OrderId);
+            var roomRegistration = await _roomRegistrationsRepository.GetByIdAsync(roomRegistrationId);
+            if (roomRegistration == null)
+            {
+                throw new Exception("Room registration not found.");
+            }
+
+            // Kiểm tra tính hợp lệ của thanh toán, ví dụ: kiểm tra mã giao dịch, mã token, v.v.
+            // Nếu thanh toán hợp lệ, cập nhật trạng thái đăng ký phòng thành trạng thái tương ứng
+            roomRegistration.status = paymentResponse.Success ? RegisterStatus.ACTIVE : RegisterStatus.INACTIVE;
+            await _roomRegistrationsRepository.UpdateAsync(roomRegistration);
+        }
+
 
         public async Task<RoomRegistrationsDTOResponse> AcceptUser(long roomRegistrationId)
         {

@@ -3,6 +3,8 @@ using System;
 using System.Threading.Tasks;
 using LanVar.DTO.DTO.request;
 using LanVar.Service.DTO.request;
+using Microsoft.AspNetCore.SignalR;
+using Tools.Tools;
 
 namespace LanVar.Controllers
 {
@@ -11,9 +13,11 @@ namespace LanVar.Controllers
     public class BidController : ControllerBase
     {
         private readonly IBidService _bidService;
+        private readonly IHubContext<BidHub> _hubContext;
 
-        public BidController(IBidService bidService)
+        public BidController(IHubContext<BidHub> hubContext, IBidService bidService)
         {
+            _hubContext = hubContext;
             _bidService = bidService;
         }
 
@@ -24,7 +28,15 @@ namespace LanVar.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    // Tạo bid mới
                     await _bidService.CreateBid(bidDTO);
+
+                    // Lấy thông tin highest bid sau khi bid mới đã được lưu vào cơ sở dữ liệu
+                    var highestBid = await _bidService.GetHighestBid(bidDTO.auction_id);
+
+                    // Gửi thông điệp bid mới tới tất cả các máy khách
+                    await _hubContext.Clients.All.SendAsync("NewBid", highestBid);
+
                     return Ok("Bid created successfully.");
                 }
                 return BadRequest("Invalid bid data.");
@@ -34,6 +46,7 @@ namespace LanVar.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+
 
         [HttpGet("GetHighestBid/{id}")]
         public async Task<IActionResult> GetHighestBid(long id)

@@ -37,8 +37,8 @@ public class BillController : ControllerBase
     {
         try
         {
-            var packageAdd = await _billService.CreateBill(billDtoRequest);
-            var response = new ApiResponse<BillDTOResponse>(packageAdd, HttpStatusCode.Accepted, "Package add success");
+            var bill = await _billService.CreateBill(billDtoRequest);
+            var response = new ApiResponse<BillDTOResponse>(bill, HttpStatusCode.Accepted, "Package add success");
             return Ok(response); // Trả về kết quả thành công với dữ liệu UserPermission đã thêm
         }
         catch (CustomException.InvalidDataException ex)

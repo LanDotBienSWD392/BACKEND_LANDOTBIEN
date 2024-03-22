@@ -17,5 +17,9 @@ namespace LanVar.Service.Interface
         Task DeleteAsync(long id);
         Task<List<RoomRegistrationsDTOResponse>> GetByAuctionIdAsync(long auctionId);
         Task<RoomRegistrationsDTOResponse> AcceptUser(long roomRegistrationId);
+        Task<PaymentInformationModel> CreateDepositPayment(long roomRegistrationId);
+        Task UpdateStatusToWaiting(long roomRegistrationId);
+        Task UpdateStatusAfterPayment(PaymentResponseModel paymentResponse);
+
     }
 }
