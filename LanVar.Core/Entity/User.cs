@@ -12,8 +12,7 @@ namespace LanVar.Core.Entity
         [Required]
         public long permission_id { get; set; }
 
-        [Required]
-        public long package_id { get; set; }
+        
 
         public string identityCard { get; set; }
 
@@ -46,7 +45,6 @@ namespace LanVar.Core.Entity
         [ForeignKey("permission_id")]
         public UserPermission userPermission { get; set; }
 
-        [ForeignKey("package_id")]
-        public Package package { get; set; }
+        
     }
 }

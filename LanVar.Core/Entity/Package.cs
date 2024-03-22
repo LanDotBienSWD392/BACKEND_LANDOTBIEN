@@ -3,9 +3,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LanVar.Core.Entity
 {
+    
     [Table("Package")]
     public class Package
     {
+        
         [Key]
         public long id { get; set; }
 
@@ -14,10 +16,10 @@ namespace LanVar.Core.Entity
 
         [Required]
         public string package_Description { get; set; }
+        
+        public double price { get; set; }
 
-        public DateTime startDay { get; set; }
-
-        public DateTime endDay { get; set; }
+        
 
         public bool status { get; set; }
     }
