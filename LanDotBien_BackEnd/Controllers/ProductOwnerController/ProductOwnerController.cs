@@ -56,7 +56,6 @@ namespace LanDotBien_BackEnd.Controllers.ProductOwnerController
                 {
                     return NotFound(); // Trả về HTTP 404 Not Found
                 }
-
                 return Ok(products); // Trả về danh sách sản phẩm được tìm thấy
             }
             catch (CustomException.InvalidDataException ex)
