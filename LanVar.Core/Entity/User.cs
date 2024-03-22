@@ -12,8 +12,6 @@ namespace LanVar.Core.Entity
         [Required]
         public long permission_id { get; set; }
 
-        
-
         public string identityCard { get; set; }
 
         [Required]

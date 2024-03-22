@@ -93,7 +93,6 @@ namespace LanVar.Services.Service
             user.status = true;
             user.registerDay = DateTime.Now.Date;
             user.image = null;
-            user.package_id = 1;
 
             await _userRepository.Add(user);
             return user;
