@@ -24,6 +24,7 @@ using LanVar.Service.Service;
 using LanVar.Services.Implementation;
 using LanVar.Services.Interface;
 using LanVar.Services.Service;
+using LanVar.Infrastructure.Repository;
 
 
 var builder = WebApplication.CreateBuilder(args);

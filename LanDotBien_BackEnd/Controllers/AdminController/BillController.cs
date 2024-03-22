@@ -79,11 +79,6 @@ public class BillController : ControllerBase
             hidden.status = OrderStatus.Confirmed;
             await _genericOrderRepository.Update(hidden);
         }
-    
-         
-         
-
-
         return Ok("payment success");
     }
     
