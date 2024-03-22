@@ -7,4 +7,5 @@ namespace LanVar.Service.Interface;
 public interface IBillService
 {
     Task<BillDTOResponse> CreateBill(BillDTORequest orderCode);
+    Task<IEnumerable<BillDTOResponse>> GetAllBills();
 }

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bid Notification</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Bid Notification</h1>
+    <div id="bidInfo"></div>
+
+    <script>
+        // Thiết lập kết nối SignalR
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/bidHub")
+            .build();
+
+        connection.start().then(function () {
+            console.log("SignalR connected.");
+        }).catch(function (err) {
+            return console.error(err.toString());
+        });
+
+        // Xử lý sự kiện khi nhận được thông điệp từ máy chủ
+        connection.on("NewBid", function (bid) {
+            // Cập nhật thông tin bid mới nhất
+            updateBidInfo(bid);
+        });
+
+        // Hàm cập nhật thông tin bid mới nhất
+        function updateBidInfo(bid) {
+            $('#bidInfo').html('<p>New bid: ' + bid.amount + '</p>');
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bid Notification</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Bid Notification</h1>
+    <div id="bidInfo"></div>
+
+    <script>
+        // Thiết lập kết nối SignalR
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/bidHub")
+            .build();
+
+        connection.start().then(function () {
+            console.log("SignalR connected.");
+        }).catch(function (err) {
+            return console.error(err.toString());
+        });
+
+        // Xử lý sự kiện khi nhận được thông điệp từ máy chủ
+        connection.on("NewBid", function (bid) {
+            // Cập nhật thông tin bid mới nhất
+            updateBidInfo(bid);
+        });
+
+        // Hàm cập nhật thông tin bid mới nhất
+        function updateBidInfo(bid) {
+            $('#bidInfo').html('<p>New bid: ' + bid.amount + '</p>');
+        }
+    </script>
+</body>
+</html>

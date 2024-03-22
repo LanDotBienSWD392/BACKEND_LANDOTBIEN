@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Tools.Tools;
 
 namespace LanVar.DTO.DTO.request;
 
@@ -13,6 +14,7 @@ public class CreateProductDTORequest
     public string Product_Description { get; set; }
     /*[Required(ErrorMessage = "Image is required")]*/
     public string Image { get; set; }
+    [CustomDataValidation.MoneyValidation(1000000)]
     [Required(ErrorMessage = "Product Price is required")]
     public double Product_Price { get; set; }
     [Required(ErrorMessage = "Type is required")]

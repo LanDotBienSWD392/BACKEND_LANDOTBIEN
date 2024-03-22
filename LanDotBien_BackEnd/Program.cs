@@ -19,16 +19,19 @@ using Swashbuckle.AspNetCore.Filters;
 
 using LanVar.Repository.IRepository;
 using LanVar.Repository.Repository;
-using LanVar.Service.IService;
+
 using LanVar.Service.Service;
 using LanVar.Services.Implementation;
 using LanVar.Services.Interface;
 using LanVar.Services.Service;
 using LanVar.Infrastructure.Repository;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddSignalR();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -52,6 +55,8 @@ builder.Services.AddScoped<IRoomRegistrationsRepository, RoomRegistrationsReposi
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserPermissionRepository, UserPermissionRepository>();
 builder.Services.AddScoped<IOrderItemRepository, OrderItemRepository>();
+builder.Services.AddScoped<IUserPackageService, UserPackageService>();
+builder.Services.AddScoped<IUserPackageRepository, UserPackageRepository>();
 
 // Service add o day
 builder.Services.AddScoped<IUserService,UserService>();
@@ -80,6 +85,7 @@ builder.Services.AddCors(p => p.AddPolicy("MyCors", build =>
 builder.Services.AddScoped<IBidService, BidService>();
 builder.Services.AddScoped<IVnPayService, VnPayService>();
 builder.Services.AddScoped<IRoomRegistrationsService, RoomRegistrationsService>();
+builder.Services.AddScoped<IUserPackageService, UserPackageService>();
 //sau class service cuar ai tu add vao day
 //Làm Ơn Add Service vào đây khi đã tạo rồi 
 

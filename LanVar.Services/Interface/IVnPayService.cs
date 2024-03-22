@@ -8,4 +8,5 @@ public interface IVnPayService
 {
     Task<string> CreatePaymentUrl(PaymentInformationModel model, HttpContext context);
     PaymentResponseModel PaymentExecute(IQueryCollection collections);
+    Task<string> CreatePaymentDepositUrl(PaymentInformationModel model, HttpContext context);
 }

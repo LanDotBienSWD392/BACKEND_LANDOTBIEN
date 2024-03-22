@@ -37,8 +37,8 @@ public class BillController : ControllerBase
     {
         try
         {
-            var packageAdd = await _billService.CreateBill(billDtoRequest);
-            var response = new ApiResponse<BillDTOResponse>(packageAdd, HttpStatusCode.Accepted, "Package add success");
+            var bill = await _billService.CreateBill(billDtoRequest);
+            var response = new ApiResponse<BillDTOResponse>(bill, HttpStatusCode.Accepted, "Package add success");
             return Ok(response); // Trả về kết quả thành công với dữ liệu UserPermission đã thêm
         }
         catch (CustomException.InvalidDataException ex)
@@ -61,7 +61,7 @@ public class BillController : ControllerBase
     }
 
     [HttpGet("Payment-CallBack")]
-    public async Task<IActionResult> GetAllStaffUsers()
+    public async Task<IActionResult> PaymentCallBack()
     {
         var response = _payService.PaymentExecute(Request.Query);
         if (response == null || response.VnPayResponseCode != "00")
@@ -79,11 +79,6 @@ public class BillController : ControllerBase
             hidden.status = OrderStatus.Confirmed;
             await _genericOrderRepository.Update(hidden);
         }
-    
-         
-         
-
-
         return Ok("payment success");
     }
     

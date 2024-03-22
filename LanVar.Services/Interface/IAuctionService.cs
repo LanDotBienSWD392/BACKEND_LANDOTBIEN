@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace LanVar.Service.IService
+namespace LanVar.Service.Interface
 {
     public interface IAuctionService
     {

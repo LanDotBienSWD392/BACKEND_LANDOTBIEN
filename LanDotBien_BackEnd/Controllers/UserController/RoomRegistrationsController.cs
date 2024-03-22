@@ -3,6 +3,7 @@ using LanVar.Core.Entity;
 using LanVar.DTO.DTO.request;
 using LanVar.DTO.DTO.response;
 using LanVar.Service.Interface;
+using LanVar.Service.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -14,15 +15,18 @@ namespace LanDotBien_BackEnd.Controllers.UserController
     [ApiController]
     public class RoomRegistrationsController : ControllerBase
     {
+        private readonly IVnPayService _vnPayService;
         private readonly IRoomRegistrationsService _roomRegistrationsService;
         private readonly IMapper _mapper;
 
-        public RoomRegistrationsController(IRoomRegistrationsService roomRegistrationsService, IMapper mapper)
+        public RoomRegistrationsController(IVnPayService vnPayService, IRoomRegistrationsService roomRegistrationsService, IMapper mapper)
         {
+            _vnPayService = vnPayService;
             _roomRegistrationsService = roomRegistrationsService;
             _mapper = mapper;
         }
 
+        // Tạo đăng ký phòng
         [HttpPost("AddRoomRegistration")]
         public async Task<IActionResult> AddRoomRegistration(RoomRegistrationsDTORequest roomRegistrationsDTO)
         {
@@ -38,6 +42,70 @@ namespace LanDotBien_BackEnd.Controllers.UserController
                 return BadRequest(response);
             }
         }
+
+
+
+        // Thực hiện thanh toán đặt cọc
+        [HttpPost("Deposit")]
+        public async Task<IActionResult> Deposit(long roomRegistrationId)
+        {
+            try
+            {
+                var paymentModel = await _roomRegistrationsService.CreateDepositPayment(roomRegistrationId);
+                // Gọi dịch vụ thanh toán của VnPay để lấy URL thanh toán
+                var paymentUrl = await _vnPayService.CreatePaymentDepositUrl(paymentModel, HttpContext);
+
+                // Cập nhật trạng thái đăng ký phòng từ "Deposit" thành "Waiting"
+                await _roomRegistrationsService.UpdateStatusToWaiting(roomRegistrationId);
+
+                // Trả về URL thanh toán cho người dùng
+                return Ok(new { PaymentUrl = paymentUrl });
+            }
+            catch (CustomException.InvalidDataException ex)
+            {
+                var response = new ApiResponse<RoomRegistrationsDTOResponse>(HttpStatusCode.Conflict, ex.Message);
+                return BadRequest(response);
+            }
+        }
+
+        /*[HttpGet("Payment-CallBack")]
+        public async Task<IActionResult> PaymentCallBack()
+        {
+            var response = _vnPayService.PaymentExecute(Request.Query);
+            if (response == null || response.VnPayResponseCode != "00")
+            {
+                throw new CustomException.InvalidDataException(HttpStatusCode.BadRequest.ToString(), "payment Fail");
+            }
+
+
+            return Ok("payment success");
+        }*/
+
+        /*// Phương thức callback sau khi thanh toán
+        [HttpGet("PaymentCallBack")]
+        public async Task<IActionResult> PaymentCallBack(PaymentResponseModel paymentResponse)
+        {
+            try
+            {
+
+                if (paymentResponse.Success)
+                {
+                    // Xác minh tính hợp lệ của thanh toán
+                    // Cập nhật trạng thái của đăng ký phòng từ "Waiting" thành trạng thái tương ứng
+                    await _roomRegistrationsService.UpdateStatusAfterPayment(paymentResponse);
+                    return Ok("Payment success");
+                }
+                else
+                {
+                    return BadRequest("Payment failed");
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error");
+            }
+        }*/
+
 
         [HttpGet("GetListUserInRoom/{id}")]
         public async Task<IActionResult> GetListUserInRoom(long id)
