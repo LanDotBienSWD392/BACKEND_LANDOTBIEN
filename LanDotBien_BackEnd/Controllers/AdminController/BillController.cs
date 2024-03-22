@@ -33,7 +33,7 @@ public class BillController : ControllerBase
     }
 
     [HttpPost("CreateBill"), Authorize] // Explicitly specify the HTTP method
-    public async Task<IActionResult> UserPermissionAdd(BillDTORequest billDtoRequest)
+    public async Task<IActionResult> CreateBill(BillDTORequest billDtoRequest)
     {
         try
         {
@@ -50,11 +50,13 @@ public class BillController : ControllerBase
     [HttpPost("PaymentCallBack"), Authorize] // Explicitly specify the HTTP method
     public async Task<string> CreatePayment(PaymentInformationModel billDtoRequest)
     {
-        
-            var paymentUrl = await _payService.CreatePaymentUrl(billDtoRequest, HttpContext);
-        
+       
+        var paymentUrl = await _payService.CreatePaymentUrl(billDtoRequest, HttpContext);
+        Bill bill = await _billRepository.GetByOrderCode(billDtoRequest.OrderId);
+        bill.paymentUrl = paymentUrl;
+        await _genericRepository.Update(bill);
             // Assuming PaymentResponseModel has a property to hold the payment URL
-            return paymentUrl;
+        return paymentUrl;
         
     }
 
@@ -69,21 +71,16 @@ public class BillController : ControllerBase
 
         Bill bill = await _billRepository.GetByOrderCode(response.OrderId);
         bill.status = true;
+         
         await _genericRepository.Update(bill);
-        Order order = await _orderRepository.GetByOrderCode(response.OrderId);
+        IEnumerable<Order> order = await _orderRepository.GetByOrderCode(response.OrderId);
+        foreach (var hidden in order)
+        {
+            hidden.status = OrderStatus.Confirmed;
+            await _genericOrderRepository.Update(hidden);
+        }
     
-         if (order != null)
-         {
-             // Update the status of the retrieved order to false
-             order.status = OrderStatus.Confirmed; // Assuming 'status' is a property of Order class
-             await _genericOrderRepository.Update(order);
-         }
-         else
-         {
-             // Handle the case when the order is not found
-             // For example, you can throw an exception or return an appropriate response
-             return NotFound("Order not found");
-         }
+         
          
 
 

@@ -43,8 +43,8 @@ namespace LanDotBien_BackEnd.Controllers.ProductOwnerController
             }
         }
 
-        [HttpGet("GetProdcutByProductOwnerId")]
-        public async Task<IActionResult> GetProdcutByProductOwnerId(long ownerId)
+        [HttpGet("GetProductByProductOwnerId")]
+        public async Task<IActionResult> GetProductByProductOwnerId(long ownerId)
         {
             try
             {

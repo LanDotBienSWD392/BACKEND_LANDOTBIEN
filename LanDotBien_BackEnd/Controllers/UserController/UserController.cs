@@ -42,12 +42,12 @@ public class UserController : ControllerBase
         return Ok(createAccountDTORequest);
     }
 
-    /*[HttpPost("RegisterForProductOwner")]
+    [HttpPost("RegisterForProductOwner")]
     public async Task<IActionResult> RegisterForProductOwner(CreateAccountDTORequest createAccountDTORequest)
     {
         User user = await _userService.RegisterForProductOwner(createAccountDTORequest);
         return Ok(createAccountDTORequest);
-    }*/
+    }
 
     [HttpPost("Login")]
     public async Task<IActionResult> LoginUser([FromBody] LoginDTORequest loginDtoRequest)

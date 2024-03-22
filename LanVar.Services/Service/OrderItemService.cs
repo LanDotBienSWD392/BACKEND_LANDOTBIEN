@@ -62,8 +62,12 @@ public class OrderItemService : IOrderItemService
         {
             Product productInfor = await _genericProductRepository.GetById(orderItem.product_id);
             OrderItemDTOResponse orderItemDtoResponse = _mapper.Map<OrderItemDTOResponse>(orderItem);
+            
             orderItemDtoResponse.product_name = productInfor.product_Name;
             orderItemDtoResponse.user_name = userName.name;
+            orderItemDtoResponse.price = productInfor.product_Price;
+            orderItemDtoResponse.desciption = productInfor.product_Description;
+            orderItemDtoResponse.image = productInfor.image;
             orderItemResponse.Add(orderItemDtoResponse);
         }
         return orderItemResponse;
