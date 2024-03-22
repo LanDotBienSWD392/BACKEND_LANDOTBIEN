@@ -10,8 +10,6 @@ namespace LanVar.Core.Entity
         {
             
         }
-
-        
         public DbSet<Auction> Auctions { get; set; }
         public DbSet<Bid> Bids { get; set; }
         public DbSet<Bill> Bills { get; set; }

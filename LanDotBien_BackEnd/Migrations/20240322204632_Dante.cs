@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace LanDotBien_BackEnd.Migrations
 {
     /// <inheritdoc />
-    public partial class Dluong : Migration
+    public partial class Dante : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -27,8 +27,7 @@ namespace LanDotBien_BackEnd.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     package_Description = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    startDay = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    endDay = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    price = table.Column<double>(type: "double", nullable: false),
                     status = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
                 constraints: table =>
@@ -59,7 +58,6 @@ namespace LanDotBien_BackEnd.Migrations
                     id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     permission_id = table.Column<long>(type: "bigint", nullable: false),
-                    package_id = table.Column<long>(type: "bigint", nullable: false),
                     identityCard = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     name = table.Column<string>(type: "longtext", nullable: false)
@@ -84,12 +82,6 @@ namespace LanDotBien_BackEnd.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_User", x => x.id);
-                    table.ForeignKey(
-                        name: "FK_User_Package_package_id",
-                        column: x => x.package_id,
-                        principalTable: "Package",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_User_UserPermission_permission_id",
                         column: x => x.permission_id,
@@ -178,6 +170,37 @@ namespace LanDotBien_BackEnd.Migrations
                     table.PrimaryKey("PK_Product", x => x.id);
                     table.ForeignKey(
                         name: "FK_Product_User_user_id",
+                        column: x => x.user_id,
+                        principalTable: "User",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "UserPackages",
+                columns: table => new
+                {
+                    id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    package_id = table.Column<long>(type: "bigint", nullable: false),
+                    user_id = table.Column<long>(type: "bigint", nullable: false),
+                    startDay = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    endDay = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    price = table.Column<double>(type: "double", nullable: false),
+                    status = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserPackages", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_UserPackages_Package_package_id",
+                        column: x => x.package_id,
+                        principalTable: "Package",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UserPackages_User_user_id",
                         column: x => x.user_id,
                         principalTable: "User",
                         principalColumn: "id",
@@ -303,11 +326,11 @@ namespace LanDotBien_BackEnd.Migrations
 
             migrationBuilder.InsertData(
                 table: "Package",
-                columns: new[] { "id", "endDay", "packageName", "package_Description", "startDay", "status" },
+                columns: new[] { "id", "packageName", "package_Description", "price", "status" },
                 values: new object[,]
                 {
-                    { 1L, new DateTime(2024, 4, 21, 15, 52, 15, 107, DateTimeKind.Local).AddTicks(269), "Basic", "Basic package", new DateTime(2024, 3, 22, 15, 52, 15, 107, DateTimeKind.Local).AddTicks(259), true },
-                    { 2L, new DateTime(2024, 4, 21, 15, 52, 15, 107, DateTimeKind.Local).AddTicks(276), "Premium", "Premium package", new DateTime(2024, 3, 22, 15, 52, 15, 107, DateTimeKind.Local).AddTicks(275), true }
+                    { 1L, "Basic", "Basic package", 0.0, true },
+                    { 2L, "Premium", "Premium package", 100000.0, true }
                 });
 
             migrationBuilder.InsertData(
@@ -324,8 +347,8 @@ namespace LanDotBien_BackEnd.Migrations
 
             migrationBuilder.InsertData(
                 table: "User",
-                columns: new[] { "id", "address", "dob", "email", "gender", "identityCard", "image", "name", "package_id", "password", "permission_id", "phone", "registerDay", "status", "username" },
-                values: new object[] { 1L, "Admin Address", new DateTime(2024, 3, 22, 15, 52, 15, 107, DateTimeKind.Local).AddTicks(1233), "admin@example.com", "Male", "123456789", null, "Admin", 1L, "c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec", 1L, "123456789", new DateTime(2024, 3, 22, 15, 52, 15, 107, DateTimeKind.Local).AddTicks(1238), true, "admin" });
+                columns: new[] { "id", "address", "dob", "email", "gender", "identityCard", "image", "name", "password", "permission_id", "phone", "registerDay", "status", "username" },
+                values: new object[] { 1L, "Admin Address", new DateTime(2024, 3, 23, 3, 46, 29, 713, DateTimeKind.Local).AddTicks(9008), "admin@example.com", "Male", "123456789", null, "Admin", "c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec", 1L, "123456789", new DateTime(2024, 3, 23, 3, 46, 29, 713, DateTimeKind.Local).AddTicks(9015), true, "admin" });
 
             migrationBuilder.InsertData(
                 table: "Bill",
@@ -337,10 +360,10 @@ namespace LanDotBien_BackEnd.Migrations
                 columns: new[] { "id", "date", "orderCode", "orderItem_id", "status", "total_Price", "user_id" },
                 values: new object[,]
                 {
-                    { 1L, new DateTime(2024, 3, 22, 15, 52, 15, 107, DateTimeKind.Local).AddTicks(1351), "SPX00000000001", 0L, 1, 100.0, 1L },
-                    { 2L, new DateTime(2024, 3, 22, 15, 52, 15, 107, DateTimeKind.Local).AddTicks(1355), "SPX00000000002", 0L, 2, 100.0, 1L },
-                    { 3L, new DateTime(2024, 3, 22, 15, 52, 15, 107, DateTimeKind.Local).AddTicks(1357), "SPX00000000003", 0L, 3, 100.0, 1L },
-                    { 4L, new DateTime(2024, 3, 22, 15, 52, 15, 107, DateTimeKind.Local).AddTicks(1358), "SPX00000000004", 0L, 4, 100.0, 1L }
+                    { 1L, new DateTime(2024, 3, 23, 3, 46, 29, 713, DateTimeKind.Local).AddTicks(9242), "SPX00000000001", 0L, 1, 100.0, 1L },
+                    { 2L, new DateTime(2024, 3, 23, 3, 46, 29, 713, DateTimeKind.Local).AddTicks(9245), "SPX00000000002", 0L, 2, 100.0, 1L },
+                    { 3L, new DateTime(2024, 3, 23, 3, 46, 29, 713, DateTimeKind.Local).AddTicks(9247), "SPX00000000003", 0L, 3, 100.0, 1L },
+                    { 4L, new DateTime(2024, 3, 23, 3, 46, 29, 713, DateTimeKind.Local).AddTicks(9248), "SPX00000000004", 0L, 4, 100.0, 1L }
                 });
 
             migrationBuilder.InsertData(
@@ -349,9 +372,14 @@ namespace LanDotBien_BackEnd.Migrations
                 values: new object[] { 1L, "123456789", "", "Description for Product 1", "Product 1", 100.0, true, "Type 1", 1L });
 
             migrationBuilder.InsertData(
+                table: "UserPackages",
+                columns: new[] { "id", "endDay", "package_id", "price", "startDay", "status", "user_id" },
+                values: new object[] { 1L, new DateTime(2024, 4, 22, 3, 46, 29, 713, DateTimeKind.Local).AddTicks(2885), 2L, 100000.0, new DateTime(2024, 3, 23, 3, 46, 29, 713, DateTimeKind.Local).AddTicks(2874), 1, 1L });
+
+            migrationBuilder.InsertData(
                 table: "Auction",
                 columns: new[] { "id", "auctionDay", "auction_Name", "deposit_Money", "endDay", "password", "product_id", "startDay", "status" },
-                values: new object[] { 1L, new DateTime(2024, 3, 29, 15, 52, 15, 107, DateTimeKind.Local).AddTicks(1308), "Auction 1", 50.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "1", 1L, new DateTime(2024, 3, 22, 15, 52, 15, 107, DateTimeKind.Local).AddTicks(1307), 0 });
+                values: new object[] { 1L, new DateTime(2024, 3, 30, 3, 46, 29, 713, DateTimeKind.Local).AddTicks(9185), "Auction 1", 50.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "1", 1L, new DateTime(2024, 3, 23, 3, 46, 29, 713, DateTimeKind.Local).AddTicks(9184), 0 });
 
             migrationBuilder.InsertData(
                 table: "OrderItem",
@@ -361,12 +389,12 @@ namespace LanDotBien_BackEnd.Migrations
             migrationBuilder.InsertData(
                 table: "Bid",
                 columns: new[] { "id", "auction_id", "bid", "bid_time", "user_id" },
-                values: new object[] { 1L, 1L, 60.0, new DateTime(2024, 3, 22, 15, 52, 15, 107, DateTimeKind.Local).AddTicks(1427), 1L });
+                values: new object[] { 1L, 1L, 60.0, new DateTime(2024, 3, 23, 3, 46, 29, 713, DateTimeKind.Local).AddTicks(9328), 1L });
 
             migrationBuilder.InsertData(
                 table: "RoomRegistrations",
                 columns: new[] { "id", "auction_id", "register_time", "status", "user_id" },
-                values: new object[] { 1L, 1L, new DateTime(2024, 3, 22, 15, 52, 15, 107, DateTimeKind.Local).AddTicks(1332), 2, 1L });
+                values: new object[] { 1L, 1L, new DateTime(2024, 3, 23, 3, 46, 29, 713, DateTimeKind.Local).AddTicks(9218), 2, 1L });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Auction_product_id",
@@ -419,14 +447,19 @@ namespace LanDotBien_BackEnd.Migrations
                 column: "user_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_User_package_id",
-                table: "User",
-                column: "package_id");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_User_permission_id",
                 table: "User",
                 column: "permission_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserPackages_package_id",
+                table: "UserPackages",
+                column: "package_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserPackages_user_id",
+                table: "UserPackages",
+                column: "user_id");
         }
 
         /// <inheritdoc />
@@ -448,16 +481,19 @@ namespace LanDotBien_BackEnd.Migrations
                 name: "RoomRegistrations");
 
             migrationBuilder.DropTable(
+                name: "UserPackages");
+
+            migrationBuilder.DropTable(
                 name: "Auction");
+
+            migrationBuilder.DropTable(
+                name: "Package");
 
             migrationBuilder.DropTable(
                 name: "Product");
 
             migrationBuilder.DropTable(
                 name: "User");
-
-            migrationBuilder.DropTable(
-                name: "Package");
 
             migrationBuilder.DropTable(
                 name: "UserPermission");
