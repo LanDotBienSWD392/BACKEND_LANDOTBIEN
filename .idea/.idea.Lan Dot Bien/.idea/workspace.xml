@@ -10,14 +10,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="add buy package">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lan Dot Bien/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanDotBien_BackEnd/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Core/Interfaces/IGenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Core/Interfaces/IGenericRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Insfrastructure/Repository/GenericRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanVar.Services/Service/UserPackageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LanVar.Services/Service/UserPackageService.cs" afterDir="false" />
-    </list>
+    <list default="true" id="7422420e-ad26-4ddc-9138-3fc6121cf34c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -278,7 +271,7 @@
       <workItem from="1711092973303" duration="343000" />
       <workItem from="1711093451710" duration="6653000" />
       <workItem from="1711113239041" duration="5862000" />
-      <workItem from="1711119188295" duration="7897000" />
+      <workItem from="1711119188295" duration="8089000" />
     </task>
     <task id="LOCAL-00001" summary="add login, generate jwt and register, check validate, custom error, delete ILogger in repository">
       <option name="closed" value="true" />
@@ -432,7 +425,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711120076135</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="add auto check and set expired user package status">
+      <option name="closed" value="true" />
+      <created>1711139089237</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1711139089237</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,7 +473,8 @@
     <MESSAGE value="." />
     <MESSAGE value="update vnpay method" />
     <MESSAGE value="add buy package" />
-    <option name="LAST_COMMIT_MESSAGE" value="add buy package" />
+    <MESSAGE value="add auto check and set expired user package status" />
+    <option name="LAST_COMMIT_MESSAGE" value="add auto check and set expired user package status" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
