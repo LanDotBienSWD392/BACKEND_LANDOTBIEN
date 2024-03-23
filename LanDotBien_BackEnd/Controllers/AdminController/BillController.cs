@@ -85,7 +85,7 @@ public class BillController : ControllerBase
     public async Task<IActionResult> GetAllBills()
     {
         try
-        {
+        {   
             //lay het tat ca cac bill
             var bills = await _billService.GetAllBills();
             return Ok(bills);
